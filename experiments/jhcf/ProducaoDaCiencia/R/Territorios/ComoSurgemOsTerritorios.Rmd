@@ -1,0 +1,817 @@
+---
+title: "Como surgem os territórios? Modelando o surgimento dos territórios para um sistema de simulação da ciência mundial"
+author: "Jorge H C Fernandes"
+date: "22/09/2021"
+always_allow_html: yes
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Territórios
+
+Como surgem os territórios? Qual a estrutura de um conjunto de territórios representantes das principais cidades do mundo, onde ocorre a produção científica? De que maneira representar os atributos sintéticos dos territórios, bem como os vínculos físicos, informacionais, similaridades históricas, culturais, políticas, comerciais, industriais e de serviços entre os territórios? Qual a estrutura e comportamento de um modelo numérico quantitativo e(ou) algorítmico para simular a situação? 
+
+Na busca por desenvolver um modelo de simulação da produção científica mundial, é importante investigar de que forma a produção da ciência encontra-se vinculada aos territórios, cidades, províncias e países. As populações ocupam os territórios, e é nos territórios que surgem os problemas, ligados a questões como saúde, educação, segurança, economia etc. A maioria das pesquisas científicas é voltada para investigar os problemas que ocorrem nos territórios. Em complemento, as pesquisas tecnológicas visam resolver tais problemas, por meio do desenvolvimento de artefatos tecnológicos.
+
+Este documento apresenta uma versão inicial de uma modelagem matemática e estatística relativa ao surgimento e estruturação dos territórios de produção da ciência, baseado nas seguintes simplificações e suposições:
+
+* A rede de relacionamentos entre cidades no mundo é suficiente para determinar a rede dos territórios onde ocorre a produção da ciência, pois a grande maioria das universidades e centros de pesquisa do mundo está sediada em cidades (a comprovar, como?);
+
+* O brasil possui 5.570 cidades, e o IBGE de forma específica, e o Governo Brasileiro de forma geral, possuem um grande número de estudos sobre os relacionamentos entre municípios brasileiros. Os parâmetros estruturais desses relacionamentos podem ser usados para gerar de forma sintética uma rede mundial das cidades responsáveis pela produção da ciência (citar quais são essas outras fontes).
+
+Com base nessas suposições, este documento apresenta um workflow de ciência de dados, que faz uma exploração inicial dos dados do IBGE, a fim de identificar quais elementos estruturais são mais importantes na determinação das propriedades da rede de territórios no Brasil. Essas propriedades serão usadas para a geração simulada de uma rede mundial de territórios produtores e consumidores da ciência.
+Os dados do IBGE estão disponíveis a partir de [https://www.ibge.gov.br/geociencias/cartas-e-mapas/redes-geograficas/15798-regioes-de-influencia-das-cidades.html][https://www.ibge.gov.br/geociencias/cartas-e-mapas/redes-geograficas/15798-regioes-de-influencia-das-cidades.html]
+
+## Este código
+O script a seguir é composto por sete seções:
+
+1. Baixando e desempacotando os dados
+
+2. Leitura das planilhas e criação dos dataframes com dados relativos a arestas (ligações entre municípios) e vértices (atratividade dos municípios)
+
+3. declaração de funções
+
+* função que cria dois dataframes (arestas e vértices) para geração de um grafo no igraph, com base no corte de municípios de pequena população, bem como no corte de dependências (influências) fracas entre os municípios
+
+* função que cria um grafo igraph com base nos dataframes (arestas e vértices), sem vértices isolados
+
+* função que cria, a partir de um grafo igraph, dois dataframes (arestas e vértices) que podem ser usados no visNetwork
+
+4. Cria alguns grafos e visualizações para explorar as propriedades dos mesmos
+
+5. gera as famílias de grafos variando os limites de população e dependências, sumariza e captura as propriedades básicas de cada grafo
+
+## IBGE 
+
+Em 2018 o IBGE produziu um estudo sobre as dependências econômicas entre os municípios do Brasil, em uma pesquisa denominada REGIC2018: Regiões de influência dos municípios.
+
+Os dados complementares ao estudo estão disponíveis e usaremos dois dataframes, dentre outros:
+
+```{r}
+# Baixando os arquivos do IBGE sobre as regiões de influencia das cidades brasileiras
+url <- paste("https://geoftp.ibge.gov.br/organizacao_do_territorio/divisao_regional",
+  "/regioes_de_influencia_das_cidades/",
+  "Regioes_de_influencia_das_cidades_2018_Resultados_definitivos",
+  "/base_tabular/REGIC2018_Municipios_Ligacoes_e_atracao_xlsx.zip",sep="")
+# Desempacotando os dados
+temp <- tempfile()
+temp2 <- tempfile()
+download.file(url, temp)
+unzip(zipfile = temp, exdir = temp2)
+
+#Lê as planilhas e cria os dataframes com dados relativos a
+# arestas (ligações entre municípios) e vértices (atratividade dos municípios)
+# install.packages("readxl")
+library(readxl)
+REGIC2018_Quest_Ligacoes_entre_Municipios <- read_xlsx(file.path(temp2, 
+    "REGIC2018_Quest_Ligacoes_entre_Municipios.xlsx"))
+REGIC2018_Quest_Atracao_Municipios <- read_xlsx(file.path(temp2, 
+    "REGIC2018_Quest_Atracao_Municipios.xlsx"))
+
+# lê as planilhas descritivas das variáveis (metadados) 
+REGIC2018_Quest_Ligacoes_entre_Municipios_metadados <- read_xlsx(file.path(temp2, 
+    "REGIC2018_Quest_Ligacoes_entre_Municipios.xlsx"), sheet="Descrição das variáveis ")
+REGIC2018_Quest_Atracao_Municipios_metadados <- read_xlsx(file.path(temp2, 
+    "REGIC2018_Quest_Atracao_Municipios.xlsx"), sheet="Descrição de variáveis")
+
+# apresenta a quantidade registros nos dataframes sobre relacionamentos entre municípios
+nrow(REGIC2018_Quest_Ligacoes_entre_Municipios)
+nrow(REGIC2018_Quest_Ligacoes_entre_Municipios_metadados)
+# Fica evidente que são 67376 registros de relacionamentos, cada registro com 47 colunas
+```
+
+``` {r}
+# apresenta a quantidade registros nos dataframes com dados individuais dos municípios
+nrow(REGIC2018_Quest_Atracao_Municipios)
+nrow(REGIC2018_Quest_Atracao_Municipios_metadados)
+# evidencia-se que são 5277 municípios, cada qual com 20 colunas de dados
+```
+
+``` {r}
+# Lista os nomes das colunas do dataframe de relacionamentos entre municípios
+#São vinte as colunas, com os seus nomes indicados
+names(REGIC2018_Quest_Atracao_Municipios)
+```
+
+```{r}
+# Apresenta os metadados relativos a cada uma das colunas do dataframes de relacionamentos 
+# entre municípios. A leitura da descrição de cada uma das colunas permite compreender 
+# como os dados podem ser usados
+print(REGIC2018_Quest_Atracao_Municipios_metadados,n = 20)
+```
+
+``` {r}
+# Lista os nomes das colunas do dataframe de dados individuais dos municípios
+# São 47 as colunas no dataframe
+names(REGIC2018_Quest_Ligacoes_entre_Municipios)
+```
+
+``` {r}
+# Apresenta os metadados relativos a cada uma das colunas do dataframes de relacionamentos 
+# entre municípios. A leitura da descrição de cada uma das 47 colunas permite compreender 
+# como os dados podem ser usados
+print(REGIC2018_Quest_Ligacoes_entre_Municipios_metadados, n = 47)
+```
+
+## Explorando propriedades básicas dos dados dos municípios brasileiros
+
+Séries de dados podem ser analisadas inicialmente usando-se técnicas básicas da estatística descritiva.
+São duas as principais classes de medidas estatísticas descritivas:
+
+* Medidas de tendência central, como média e mediana
+* Medidas de dispersão,  que produzem números para sumarizar as distribuições
+ de frequência dos dados, como vistas em histogramas e boxplots. 
+
+São exemplos de medidas de dispersão:
+
+1. Desvio padrão (sd)
+2. Variância (variance)
+3. Amplitude (range)
+4. percentis (quantiles)
+5. Interquartis (IQR)
+
+## Explorando os dados de população dos municípios brasileiros
+
+Assumindo-se que os cientistas surge de forma dispersa na população, de onde eles viriam? Onde estão concentrados os centros de pesquisa? A análise dos dados populacionais e demográficos é importante para a criação de um modelo de produção da ciência.
+
+### Medidas de tendência central relativas à população
+
+```{r}
+# Temos como exemplo a lista da população das cidades brasileiras, em 2018, 
+# baseada parcialmente nos 5277 registros de  municípios
+mean(as.numeric(REGIC2018_Quest_Atracao_Municipios$POP2018))
+median(as.numeric(REGIC2018_Quest_Atracao_Municipios$POP2018))
+```
+```{r}
+# Na primeira tentativa de cálcular a média e mediana observamos que foi produzido um 
+# erro (NA).  Isso indica a presença de registros com valores nulos (NA) 
+# Demanda-se que o dado seja limpo, com remoção de valores nulos que contaminaram o 
+# cálculo da média e mediana. Nesse caso, é necessário obter um dado limpo.
+# A limpeza com na.omit() eliminou os registros com valores nulos para POP2018.
+
+pop2018 <- na.omit(REGIC2018_Quest_Atracao_Municipios$POP2018)
+
+# Apenas um registro nulo foi identificado, pois houve um decréscimo para 5276 
+# dados de pop2018 
+length(pop2018)
+
+# podemos agora calcular a média e mediana
+
+mean(as.numeric(pop2018))
+median(as.numeric(pop2018))
+
+# o que significa a média ser bem superior à mediana?
+```
+
+```{r}
+# uma plotagem do tipo boxplot pode ajudar na melhor visualização da 
+# dispersão dos dados
+boxplot(pop2018)
+
+# nota-se que há outliers na população, com valores muito elevados
+```
+```{r}
+# um histograma com distribuição de frequencia pode ajudar na melhor visualização 
+# da dispersão dos dados
+hist(pop2018)
+
+# nota-se que nota-se que distribuição de frequência é bastante distorçida 
+# (skewed) para a direita, indicadora de desigualdades
+```
+```{r}
+# Adotando-se uma escala logarítmica pra distribuição de frequência encontramos 
+# uma curva próxima a uma normal
+hist(log(pop2018))
+
+# Comprova-se que existem muitas desigualdades populacionais entre os municípios, 
+# indicadora de elevadas concentrações econômicas, de poder, culturais etc.
+# Poderia esse dado ser usado para representar a realidade mundial das cidades?
+```
+```{r}
+# Usando-se o logarítmo da população, podemos ter uma melhor visualização do boxplot
+boxplot(log(pop2018))
+
+# Nota-se que há muitos outliers, mesmo usando-se uma escala logarítmica
+```
+### Medidas de dispersão relativas à população
+
+```{r}
+# Medidas como desvio padrão são mais adequadas quando a distribuição de frequência 
+# é normal. Por que?
+sd(pop2018)
+
+# A interpretação da variância não é trivial
+var(pop2018)
+
+# Qual a menor e maior população das cidades brasileiras?
+range(pop2018)
+
+# De que forma se fatia a desigualdade populacional brasileira? 
+# O mesmo ocorre nas cidades do mundo?
+quantile(pop2018)
+
+# A distância populacional entre os quartis 1 (25%) e 3 (75%) é muito pequena:
+IQR(pop2018)
+
+# 80% dos municípios brasileiros tem uma população menor ou igual a 32664 habitantes
+quantile(pop2018, probs=0.80)
+```
+
+## Que outros dados podemos explorar no dataset dos municípios?
+
+```{r}
+#Vamos analisar de forma mais adequada os metadados em REGIC2018_Quest_Atracao_Municipios_metadados?
+# 
+
+print(REGIC2018_Quest_Atracao_Municipios_metadados[,c("DESCRIÇÃO")], cex=0.30)
+
+#Com base nos dados apresentados, pode-se ver que as colunas 10 e 15
+# também apresentam potenciais usos na construção de um modelo
+
+print(REGIC2018_Quest_Atracao_Municipios[,c("IA","IA_Q5")])
+```
+
+## Declara algumas funções para explorar as propriedades de grafo dos datasets do IBGE
+
+```{r}
+
+#       3. declarando uma função que cria dois dataframes (arestas e vértices) 
+#           em formato próprio para geração de um grafo no igraph, com
+#               base no corte de 
+#                       municípios de pequena população, 
+#                       dependências (influências) fracas entre os municípios
+gerar_datasets_grafo <- function(df_ligacoes, df_municipios, limite_inferior_dependência_fluxos, limite_inferior_populacao) {
+        # Estabelece um limite mínimo de dependência de from para to, 
+        # para manter as conexões no grafo
+        # limite_inferior_dependência_fluxos <- 0.85
+
+        # Estabelece um limite mínimo de população, para manter as conexões no grafo
+        # limite_inferior_populacao <- 20000
+
+        # filtrando as arestas conforme os limites de população
+        regic2018_arestas <-
+          df_ligacoes[
+            df_ligacoes$PERC_LIG>=limite_inferior_dependência_fluxos &
+            df_ligacoes$POP2018_O>=limite_inferior_populacao &
+            df_ligacoes$POP2018_D>=limite_inferior_populacao
+          ,]
+
+        # 3.2 Selecionando os dados relevantes das arestas
+        # coloca nos registros de arestas os dados essenciais e opcionais 
+        # para a geração  e análise do grafo
+        regic2018_arestas <- regic2018_arestas[,c(
+          "MUN_ORIGEM","MUN_DESTINO","PERC_LIG","IA","IA_Q1","IA_Q2","IA_Q3",
+          "IA_Q4","IA_Q5","IA_Q6","IA_Q7","IA_Q8","IA_Q9","IA_Q10")]
+
+        # 3.3 - Organizando os vértices
+        # Identificando os municípios registrados e seus principais atributos
+        regic2018_vertices <- df_municipios[,c(
+          "CODMUN","NOME_MUN","POP2018","IA","HIERAR_CID","NOME_HIERAR_CID")]
+        # Renomeando atributos dos vértices e arestas para adaptação no visNetwork
+        names(regic2018_arestas) <- c("FROM","TO",names(regic2018_arestas)[3:14])
+        # Renomeando aS primeiraS colunas do dataframe de vértices ajustado 
+        # para adaptação a visualização no visNetwork
+        names(regic2018_vertices) <- c("ID","LABEL",names(regic2018_vertices)[3:6])
+        # Removendo as arestas cujos identificadores não estão presentes 
+        # na tabela dos municípios 
+        regic2018_arestas <- regic2018_arestas[
+          regic2018_arestas$FROM %in% regic2018_vertices$ID,]
+        regic2018_arestas <- regic2018_arestas[
+          regic2018_arestas$TO %in% regic2018_vertices$ID,]
+
+        #### Remove registros de arestas com valores NA
+        regic2018_arestas <- na.omit(regic2018_arestas)
+        #### Remove registros de vértices com valores NA
+        regic2018_vertices <- na.omit(regic2018_vertices)
+
+        return (list(regic2018_arestas, regic2018_vertices))
+}
+
+```
+
+```{r}
+# 4. declarando uma função que cria um grafo igraph com base nos dataframes 
+# (arestas e vértices), removendo os vértices isolados
+# install.packages("igraph")
+library(igraph)
+
+cria_grafo_componentes <- function(regic2018_arestas, regic2018_vertices, removeIsolados=TRUE) {
+
+        ### 3.4 - Criando a rede
+        #install.packages("igraph")
+        library(igraph)
+        #
+        rede_municipios <- graph_from_data_frame(
+            regic2018_arestas,regic2018_vertices, directed = TRUE)
+        #
+        if (removeIsolados) {
+                # identificando os vértices isolados
+                isolados <- which(degree(rede_municipios)==0)
+                # removendo os vértices isolados
+                rede_municipios <- delete.vertices(rede_municipios,isolados)
+        }
+        return (rede_municipios)
+}
+```
+```{r}
+
+# 5. declarando uma função que cria, a partir de um grafo igraph, 
+#  dois dataframes (arestas e vértices) que podem ser usados no visNetwork
+gera_vis_dataframes_from_igraph <- function(grafo) {
+
+        # gera um dataframe global correspondente ao igraph
+        grafo_dataframe <-  as_long_data_frame(grafo)
+
+        # obtém um novo dataframe apenas com os dados das arestas
+        edges<-data.frame(cbind(
+                grafo_dataframe[,c("from")],
+                grafo_dataframe[,c("to")],
+                grafo_dataframe[,c("PERC_LIG")]*grafo_dataframe[,c("from_POP2018")],
+                grafo_dataframe[,c("PERC_LIG")],
+                grafo_dataframe[,c("from_name")],
+                grafo_dataframe[,c("to_name")],
+                grafo_dataframe[,c("from_LABEL")],
+                grafo_dataframe[,c("to_LABEL")],
+                grafo_dataframe[,c("from_POP2018")],
+                grafo_dataframe[,c("to_POP2018")],
+                grafo_dataframe[,c("from_IA")],
+                grafo_dataframe[,c("to_IA")]
+        ))
+        # renomeia as colunas do dataframe de arestas
+        names(edges)<-c(
+          "from","to","value","perc_lig","from_name","to_name","from_LABEL",
+          "to_LABEL","from_POP2018","to_POP2018","from_IA","to_IA")
+
+        # obtém um novo dataframe apenas com os dados dos vértices
+        nodes<-data.frame(cbind(
+                c(edges$from,edges$to),
+                c(edges$from_name,edges$to_name),
+                c(edges$from_LABEL,edges$to_LABEL),
+                as.numeric(c(edges$from_POP2018,edges$to_POP2018)),
+                as.numeric(c(edges$from_IA,edges$to_IA))
+        )
+        )
+        # elimina os vértices duplicados
+        nodes<-unique(nodes)
+        # renomeia as colunas do dataframe de vértices
+        names(nodes)<-c("id","COD_IBGE","label","value","IA")
+
+        # retorna os dois dataframes em uma lista
+        return (list(nodes, edges))
+}
+
+```
+
+```{r}
+plot_rede_cidade <- function(grafo_componentes, plot_community=FALSE, cex.main = 0.3, layout=layout_nicely, edge.arrow.size=.2, vertex.label=NA) {
+  if (plot_community) {
+    community <- walktrap.community(grafo_componentes)
+    plot(community, grafo_componentes, vertex.label=NA, 
+                     main = paste("#V=",
+                        as.character(length(V(grafo_componentes))),
+                        ",#E=",
+                        as.character(length(E(grafo_componentes))),
+                        ",D=",
+                        as.character(diameter(grafo_componentes)),
+                        ",#Comp=",
+                        as.character(components(grafo_componentes)$no),
+                        ",T=",
+                        as.character(sum(count_triangles(grafo_componentes))),
+                        ",#Comm=",
+                        as.character(length(community))
+                        ),
+                     cex.main = 0.1, cex.lab=0.1, layout=layout, 
+                     edge.arrow.size=edge.arrow.size
+         )
+  } else {
+    plot(grafo_componentes, vertex.label=vertex.label, 
+                     main = paste("#V=",
+                        as.character(length(V(grafo_componentes))),
+                        ",#E=",
+                        as.character(length(E(grafo_componentes))),
+                        ",D=",
+                        as.character(diameter(grafo_componentes)),
+                        ",#C=",
+                        as.character(components(grafo_componentes)$no),
+                        ",T=",
+                        as.character(sum(count_triangles(grafo_componentes)))
+                        ),
+                     cex.main = 0.3, layout=layout,
+                     edge.arrow.size=edge.arrow.size
+         )
+    
+  }
+}
+```
+
+```{r}
+
+# 6.1 declara uma função que filtra e apresenta visualização dos grafos
+library(visNetwork)
+visualiza_dataset <- function(dataset_list,plot=FALSE,vis=TRUE,removeIsolados=TRUE) {
+
+        # cria o grafo, eliminado componentes isolados
+        grafo_componentes <- cria_grafo_componentes(
+          dataset_list[[1]], dataset_list[[2]], removeIsolados)
+
+        # apresenta sumário das propriedades do grafo
+        grafo_componentes
+
+        # plota o grafo de forma simples
+        if (plot) {
+                plot_rede_cidade(grafo_componentes, plot_community=TRUE)
+        }
+
+        #plota o grafo com um visualizador avançado
+        #install.packages("visNetwork"")
+
+        if (vis) {
+                dataframes_visNetwork <- 
+                  gera_vis_dataframes_from_igraph(grafo_componentes)
+
+                visNetwork(
+                  dataframes_visNetwork[[1]],dataframes_visNetwork[[2]])  %>% 
+                    visEdges(arrows = 'to')  %>%
+                    visPhysics(stabilization = FALSE) %>%
+                    visEdges(smooth = FALSE)
+        }
+}
+
+```
+
+## Cria alguns grafos e visualizações para explorar visualmente as propriedades dos mesmos
+
+```{r}
+# Uma rede formada apenas por cidades com 90.000 habitantes ou mais, 
+# inclusive as de baixo grau de dependência total perante outra (>= 10%)
+
+visualiza_dataset (gerar_datasets_grafo(
+        REGIC2018_Quest_Ligacoes_entre_Municipios,
+        REGIC2018_Quest_Atracao_Municipios,
+        0.10, #limite_inferior_dependência_fluxos 
+        90000) #limite_inferior_populacao
+        , vis = FALSE, plot = TRUE
+)
+```
+
+
+
+```{r}
+# Uma rede formada apenas por cidades com 45.000 habitantes ou mais, 
+# inclusive as de baixo grau de dependência total perante outra (>= 10%)
+
+visualiza_dataset (gerar_datasets_grafo(
+        REGIC2018_Quest_Ligacoes_entre_Municipios,
+        REGIC2018_Quest_Atracao_Municipios,
+        0.10, #limite_inferior_dependência_fluxos 
+        45000) #limite_inferior_populacao
+        , vis = FALSE, plot = TRUE
+)
+```
+
+```{r}
+# Uma rede formada apenas por cidades com 90.000 habitantes ou mais, 
+# com alto grau de dependência total perante outra (>= 40%)
+
+visualiza_dataset (gerar_datasets_grafo(
+        REGIC2018_Quest_Ligacoes_entre_Municipios,
+        REGIC2018_Quest_Atracao_Municipios,
+        0.40, #limite_inferior_dependência_fluxos 
+        90000) #limite_inferior_populacao
+        , vis = FALSE, plot = TRUE
+)
+```
+
+```{r}
+# Uma rede formada apenas por cidades com 45.000 habitantes ou mais, 
+# com alto grau de dependência total perante outra (>= 40%)
+
+visualiza_dataset (gerar_datasets_grafo(
+        REGIC2018_Quest_Ligacoes_entre_Municipios,
+        REGIC2018_Quest_Atracao_Municipios,
+        0.40, #limite_inferior_dependência_fluxos 
+        45000) #limite_inferior_populacao
+        , vis = FALSE, plot = TRUE
+)
+```
+```{r}
+# Uma rede formada apenas por cidades com 30.000 habitantes ou mais, 
+# com alto grau de dependência total perante outra (>= 40%)
+
+visualiza_dataset (gerar_datasets_grafo(
+        REGIC2018_Quest_Ligacoes_entre_Municipios,
+        REGIC2018_Quest_Atracao_Municipios,
+        0.40, #limite_inferior_dependência_fluxos 
+        30000) #limite_inferior_populacao
+        , vis = FALSE, plot = TRUE
+)
+```
+
+```{r}
+# Uma rede formada apenas por cidades com 200.000 habitantes ou mais, 
+# com alto grau de dependência total perante outra
+
+visualiza_dataset (gerar_datasets_grafo(
+        REGIC2018_Quest_Ligacoes_entre_Municipios,
+        REGIC2018_Quest_Atracao_Municipios,
+        0.80, #limite_inferior_dependência_fluxos 
+        200000) #limite_inferior_populacao
+        , vis = FALSE, plot = TRUE
+)
+```
+
+```{r}
+# Uma rede formada apenas por cidades com 200.000 habitantes ou mais, 
+# com qualquer grau de dependência total perante outra
+
+visualiza_dataset (gerar_datasets_grafo(
+        REGIC2018_Quest_Ligacoes_entre_Municipios,
+        REGIC2018_Quest_Atracao_Municipios,
+        0.00, #limite_inferior_dependência_fluxos 
+        200000) #limite_inferior_populacao
+        , vis = FALSE, plot = TRUE
+)
+```
+
+### Sumarizando propriedades de grafos
+
+```{r}
+
+# função que gera um sumário com as propriedades de um grafo
+sumariza_grafo <- function(lf, lp, grafo) {
+        return(list(
+                        limite_fluxos=lf,
+                        limite_populacao=lp,
+                        # guarda os grafos originais, para flexibilizar análises
+                        grafo=grafo,
+                        componentes=components(grafo)$no,
+                        vertices=length(V(grafo)),
+                        arestas=length(E(grafo)),
+                        diametro=diameter(grafo),
+                        triangulos=sum(count_triangles(grafo))
+                ))
+}
+
+```
+
+### Criando familias de grafos com redes entre cidades
+
+```{r}
+# define as faixas de valores a explorar, na geração das famílias de grafos
+limites_fluxos <- seq(from = 0.95, to = 0.05, by = -0.05)
+limites_populacao <- seq(from=500000, to=5000, by = -5000)
+
+# cria as famílias de grafos
+familias_de_grafos <- list()
+plota_todos_graficos <- TRUE
+plotar <- c(501:600)
+g <- 1
+par(mfrow=c(2,1))
+for (lf in limites_fluxos) {
+        for (lp in limites_populacao) {
+                datasets <- gerar_datasets_grafo(
+                        REGIC2018_Quest_Ligacoes_entre_Municipios,
+                        REGIC2018_Quest_Atracao_Municipios,
+                        lf,
+                        lp)
+                grafo <- cria_grafo_componentes(datasets[[1]], datasets[[2]])
+
+                rec <- sumariza_grafo(lf, lf, grafo)
+
+                main <- paste("[lf=",as.character(lf),",lp=",as.character(lp),
+                                            ",#C=",as.character(rec$componentes),
+                                            ",#E=",as.character(rec$arestas),
+                                            ",#V=",as.character(rec$vertices),
+                                            ",D=",as.character(rec$diametro),
+                                          ",#T=",as.character(rec$triangulos),"]"
+                                            )
+                print(main)
+                if (plota_todos_graficos | g %in% plotar) {
+                  if (length(E(grafo))>0) {
+                    plot_rede_cidade(grafo, plot_community = TRUE)
+                  }
+                }
+
+                familias_de_grafos <- append(familias_de_grafos, list(rec))
+                g <- g + 1
+        }
+}
+# Informa quantos grafos foram gerados, sendo que cada grafo apresenta 
+# um conjunto de N pontos em N gráficos diferentes
+length(familias_de_grafos)
+
+```
+
+### Cria as curvas para cada família de pontos dentro de um mesmo parâmetro 
+### de filtros para geração de um grafo
+
+```{r}
+# um gráfico tem um conjunto de curvas, cada curva referente à variação de uma 
+# propriedade do grafo em função da variação da população miníma,  mantendo-se 
+# fixo um limite inferior dos fluxos que relacionam os habitantes de um território 
+# dependendo de produtos e serviços ofertados pelo outro território
+#
+# Cria cinco gráficos, cada um com uma família de curvas para uma mesma métrica do grafo
+GraficoComponentesXPopulacao <- list()
+GraficoArestasXPopulacao <- list()
+GraficoDiametroXPopulacao <- list()
+GraficoVerticesXPopulacao <- list()
+GraficoTriangulosXPopulacao <- list()
+
+i<-1
+# guarda os limites máximos de cada métrica, para definir o tamanho do eixo Y durante a plotagem
+maxComponentes <- 0
+maxArestas <- 0
+maxDiametro <- 0
+maxVertices <- 0
+maxTriangulos <- 0
+
+par(mfrow=c(1,1))
+# Varre as famílias de grafos e gera as curvas para cada tipo de grafo
+for (lf in limites_fluxos) {
+        curvaComponentes <- c() # cria uma curva para um determinado valor de lf
+        curvaArestas <- c() # cria uma curva para um determinado valor de lf
+        curvaDiametro <- c() # cria uma curva para um determinado valor de lf
+        curvaVertices <- c() # cria uma curva para um determinado valor de lf
+        curvaTriangulos <- c() # cria uma curva para um determinado valor de lf
+        curvaLabel <- NULL
+        for (lp in limites_populacao) {
+                rec <- familias_de_grafos[[i]] # recupera um dos registros, 
+                                              # que vai gerar um ponto na curva 
+                curvaComponentes<-c(curvaComponentes,rec$componentes)
+                if (rec$componentes > maxComponentes) 
+                  { maxComponentes <- rec$componentes }
+
+                curvaArestas<-c(curvaArestas,rec$arestas)
+                if (rec$arestas > maxArestas) { maxArestas <- rec$arestas }
+
+                curvaDiametro<-c(curvaDiametro,rec$diametro)
+                if (rec$diametro > maxDiametro) { maxDiametro <- rec$diametro }
+
+                curvaVertices<-c(curvaVertices,rec$vertices)
+                if (rec$vertices > maxVertices) { maxVertices <- rec$vertices }
+
+                curvaTriangulos<-c(curvaTriangulos,rec$triangulos)
+                if (rec$triangulos > maxTriangulos) { maxTriangulos <- rec$triangulos }
+
+                curvaLabel <- paste(as.character(rec$limite_fluxos),":",
+                                    as.character(lf))
+                i <- i + 1
+        }
+        curvaComponentesMaisLabel <- list(
+          label=curvaLabel,curva=curvaComponentes,legend=limites_populacao)
+        GraficoComponentesXPopulacao <-
+                append(GraficoComponentesXPopulacao,list(curvaComponentesMaisLabel))
+        #print(length(GraficoComponentesXPopulacao))
+        curvaArestasMaisLabel <- list(
+          label=curvaLabel,curva=curvaArestas,legend=limites_populacao)
+        GraficoArestasXPopulacao <-
+                append(GraficoArestasXPopulacao,list(curvaArestasMaisLabel))
+        #print(length(GraficoComponentesXPopulacao))
+        curvaDiametroMaisLabel <- list(
+          label=curvaLabel,curva=curvaDiametro,legend=limites_populacao)
+        GraficoDiametroXPopulacao <-
+                append(GraficoDiametroXPopulacao,list(curvaDiametroMaisLabel))
+        #print(length(GraficoComponentesXPopulacao))
+        curvaVerticesMaisLabel <- list(
+          label=curvaLabel,curva=curvaVertices,legend=limites_populacao)
+        GraficoVerticesXPopulacao <-
+                append(GraficoVerticesXPopulacao,list(curvaVerticesMaisLabel))
+        #print(length(GraficoComponentesXPopulacao))
+        curvaTriangulosMaisLabel <- list(
+          label=curvaLabel,curva=curvaTriangulos,legend=limites_populacao)
+        GraficoTriangulosXPopulacao <-
+                append(GraficoTriangulosXPopulacao,list(curvaTriangulosMaisLabel))
+        #print(length(GraficoComponentesXPopulacao))
+}
+
+```
+
+### Gera uma paleta de cores para plotar cada curva com uma cor específica
+
+```{r}
+
+# o código da função foi gerado a partir do comando choose_palette()
+#install.packages("colorspace")
+library(colorspace)
+# execute choose palette para gerar uma paleta de cores de boa qualidade
+pal <- choose_palette() 
+```
+
+### Qual a variação no número de componentes no grafo, em função do tamanho da população dos municipios de origem, conforme varia o limite inferior dos fluxos populacionais?
+
+```{r}
+c <- 1
+cores <- pal(length(GraficoComponentesXPopulacao))
+plot(main="Qtd componentes no grafo em função do limite inferior do fluxo populacional observado",
+        xlab="População da cidade de origem",
+        ylab="Quantidade de componentes no grafo", 
+        limites_populacao,GraficoComponentesXPopulacao[[1]]$curva, 
+        col=cores[c],pch=c, ylim = c(0, maxComponentes))
+lines(limites_populacao,GraficoComponentesXPopulacao[[1]]$curva, 
+      col=cores[c],ylim = c(0, maxComponentes))
+legend(x=mean(limites_populacao),y=maxComponentes,title="Limite inferior do fluxo populacional",legend=limites_fluxos,col=cores,
+       pch=1:length(GraficoComponentesXPopulacao),cex = 0.6)
+for (c in 2:length(GraficoComponentesXPopulacao)) {
+        points(limites_populacao,GraficoComponentesXPopulacao[[c]]$curva, 
+               col=cores[c],pch=c)
+        lines(limites_populacao,GraficoComponentesXPopulacao[[c]]$curva, col=cores[c])
+}
+
+```
+
+### Qual a variação no número de arestas no grafo, em função do tamanho da população dos municipios de origem, conforme varia o limite inferior dos fluxos populacionais
+
+```{r}
+
+c <- 1
+cores <- pal(length(GraficoArestasXPopulacao))
+plot(main="Qtd arestas no grafo em função do limite inferior do fluxo populacional observado",
+        xlab="População da cidade de origem",
+        ylab="Quantidade de arestas no grafo", 
+        x = limites_populacao,GraficoArestasXPopulacao[[1]]$curva, 
+        col=cores[c],pch=c, ylim = c(0, maxArestas))
+lines(limites_populacao,GraficoArestasXPopulacao[[1]]$curva, 
+      col=cores[c],ylim = c(0, maxArestas))
+legend(x=mean(limites_populacao),y=maxArestas,
+       title="Limite inferior do fluxo populacional",legend=limites_fluxos,
+       col=cores,pch=1:length(GraficoArestasXPopulacao),cex = 0.6)
+for (c in 2:length(GraficoArestasXPopulacao)) {
+        points(limites_populacao,GraficoArestasXPopulacao[[c]]$curva, 
+               col=cores[c],pch=c)
+        lines(limites_populacao,GraficoArestasXPopulacao[[c]]$curva, col=cores[c])
+}
+
+```
+
+### Qual a variação do diâmetro no grafo, em função do tamanho da população dos municipios de origem, conforme varia o limite inferior dos fluxos populacionais?
+
+```{r}
+c <- 1
+cores <- pal(length(GraficoDiametroXPopulacao))
+plot(main="Diâmetro do grafo em função do limite inferior do fluxo populacional observado",
+        xlab="População da cidade de origem",
+        ylab="Diâmetro do grafo", 
+        limites_populacao,GraficoDiametroXPopulacao[[1]]$curva, 
+        col=cores[c],pch=c, ylim = c(0, maxDiametro))
+lines(limites_populacao,GraficoDiametroXPopulacao[[1]]$curva, col=cores[c],
+      ylim = c(0, maxDiametro))
+legend(x=mean(limites_populacao),y=maxDiametro,
+       title="Limite inferior do fluxo populacional",
+       legend=limites_fluxos,
+       col=cores,pch=1:length(GraficoDiametroXPopulacao),cex = 0.6)
+for (c in 2:length(GraficoDiametroXPopulacao)) {
+        points(limites_populacao,GraficoDiametroXPopulacao[[c]]$curva, col=cores[c],pch=c)
+        lines(limites_populacao,GraficoDiametroXPopulacao[[c]]$curva, col=cores[c])
+}
+
+```
+
+# Qual a variação na quantidae de vértices no grafo, em função do tamanho da população dos municípios de origem, conforme varia o limite inferior dos fluxos populacionais?
+
+```{r}
+c <- 1
+cores <- pal(length(GraficoVerticesXPopulacao))
+plot(main="Vertices do grafo em função do limite inferior do fluxo populacional observado",
+        xlab="População da cidade de origem",
+        ylab="Vertices do grafo", 
+     limites_populacao,GraficoVerticesXPopulacao[[1]]$curva, 
+     col=cores[c],pch=c, ylim = c(0, maxVertices))
+lines(limites_populacao,GraficoVerticesXPopulacao[[1]]$curva, 
+      col=cores[c],ylim = c(0, maxVertices))
+legend(x=mean(limites_populacao),y=maxVertices,
+       title="Limite inferior do fluxo populacional",legend=limites_fluxos,col=cores,
+       pch=1:length(GraficoVerticesXPopulacao),cex = 0.6)
+for (c in 2:length(GraficoVerticesXPopulacao)) {
+        points(limites_populacao,GraficoVerticesXPopulacao[[c]]$curva, 
+               col=cores[c],pch=c)
+        lines(limites_populacao,GraficoVerticesXPopulacao[[c]]$curva, col=cores[c])
+}
+
+```
+
+## Qual a variação no número de triângulos no grafo, em função do tamanho da população dos municipios de origem, conforme varia o limite inferior dos fluxos populacionais?
+```{r}
+c <- 1
+cores <- pal(length(GraficoTriangulosXPopulacao))
+plot(main="Triângulos x limite inferior do fluxo populacional observado",
+        xlab="População da cidade de origem",
+        ylab="Triângulos do grafo", 
+     limites_populacao,GraficoTriangulosXPopulacao[[1]]$curva, 
+     col=cores[c],pch=c, ylim = c(0, maxTriangulos))
+lines(limites_populacao,GraficoTriangulosXPopulacao[[1]]$curva, col=cores[c],
+      ylim = c(0, maxTriangulos))
+legend(x=mean(limites_populacao),y=maxTriangulos,
+       title="Limite inferior do fluxo populacional",legend=limites_fluxos,
+       col=cores,pch=1:length(GraficoTriangulosXPopulacao),cex = 0.6)
+for (c in 2:length(GraficoTriangulosXPopulacao)) {
+        points(limites_populacao,GraficoTriangulosXPopulacao[[c]]$curva, 
+               col=cores[c],pch=c)
+        lines(limites_populacao,GraficoTriangulosXPopulacao[[c]]$curva, col=cores[c])
+}
+```

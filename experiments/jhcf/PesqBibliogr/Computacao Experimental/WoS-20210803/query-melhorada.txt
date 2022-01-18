@@ -1,0 +1,14 @@
+(experimental or numeric* or statist* 
+    or hypothes* or empiric* or inferen*) 
+and
+simul* 
+and
+(agent or multiagent or multi-agent of (multi and agent)) 
+and
+(social or society or group or behavi*) 
+
+(Topic)
+
+6,125 results from 
+Science Citation Index Expanded (SCI-EXPANDED), 
+Social Sciences Citation Index (SSCI): 

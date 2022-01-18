@@ -1,0 +1,99 @@
+Área de Pesquisa	induz existência de uma ou mais	Revista Científica
+Vínculos Entre territórios	podem ser	Similaridades Histórico- Culturais- Políticos
+Projeto de Pesquisa	possui distintos atributos de	Necessidade de Custeio
+Área de Pesquisa	possui distintos atributos de	Inserção Social
+Artigo	tem como atributos	Autor de Correspondência
+Número	usualmente significa	Mês
+Relatórios	surgem com base em	Dataset
+Organização de Pesquisa	possui atributos como	Política Científica
+Consumidores da Ciência	financiam as	Revista Científica
+Cientista	envolve-se em	Projeto de Pesquisa
+Projeto de Pesquisa	possui uma	Rede de Cientistas
+Projeto de Pesquisa	possui distintos atributos de	Necessidade de Capital
+Consumidores da Ciência	podem ser	Indústria- Comércio- Serviços
+Artigo	tem como atributos	Corpo
+Artigo	surgem com base em	Relatórios
+Artigo	tem como atributos	Palavras-Chave
+Banca de Revisores	agrega um conjunto de	Cientista
+Artigo Publicado	tem como atributos	Data
+Revista Científica	é um tipo de	Organização de Pesquisa
+Território Geográfico	possui atributos	Econômicos
+Território Geográfico	possui atributos	Políticos
+Volume	Usualmente significa	Anos desde o Início da Publicação
+Metodologia Predominante	pode ter viéses	Experimental
+Revista Científica	tem como editor-chefe um ou mais	Cientista
+Citações	citam	Artigo Publicado
+Dataset	são descritos por	Metadados
+Metodologia Predominante	pode ter viéses	Social
+Revista Científica	possui uma	Banca de Revisores
+Revista Científica	publica artigos em uma ou mais	Área de Pesquisa
+Área de Pesquisa	possui distintos atributos de	Empregabilidade
+Número	usualmente significa	Trimestre
+Comportamentos Individuais	envolve uso de uma ou mais	Metodologia Predominante
+Artigo Publicado	tem como atributos	Número
+Metodologia Predominante	pode ter viéses	Observacional
+Metodologia Predominante	pode ter viéses	Exata
+Território Geográfico	possui atributos	Geográficos Físicos
+Artigo Publicado	refere-se a	Artigo
+Política Científica	pode ter viéses	Relaxados
+Artigo	tem como atributos	Autores
+Número	usualmente significa	Semestre
+Demográficos	determinados pela	Pirâmide Populacional
+Artigo	são submetidos a publicação em	Revista Científica
+Artigo Publicado	tem como atributos	Páginas Inicial e Final
+Campus	localiza-se em um	Território Geográfico
+Revista Científica	tem	Ano de Início
+Território Geográfico	parte de uma	Rede Mundial de Territórios
+Metodologia Predominante	pode ter viéses	Quantitativa
+Produtos de Pesquisa	podem ser	Relatórios
+Organização de Pesquisa	é sediada em um ou mais	Campus
+Cientista	possui atributos como	Sexo
+Consumidores da Ciência	podem ser	Cientista
+Revista Científica	publica	Artigo Publicado
+Cientista	atua em uma ou mais	Organização de Pesquisa
+Vínculos Entre territórios	podem ser	Físicos
+Linguagem	tem como atributos	Vocabulário
+Cientista	atua em uma ou mais	Área de Pesquisa
+Capitalista	induz	Acesso Fechado
+Vínculos Entre territórios	podem ser	Informacionais
+Rede de Cientistas	vincula um conjunto de	Cientista
+Comportamentos Individuais	envolve uso de uma ou mais	Atitudes Cooperativas
+Comportamentos Individuais	envolve uso de uma ou mais	Linguagem
+Artigo	tem como atributos	Citações
+Política Científica	pode ter viéses	Capitalista
+Território Geográfico	possui atributos	Demográficos
+Produtos de Pesquisa	são criados pelos	Cientista
+Território Geográfico	possui atributos	Históricos
+Cientista	possui atributos como	Idade
+Artigo Publicado	é representado por	Referência Bibliográfica
+Indústria- Comércio- Serviços	viabiliza	Desenvolvimento Tecnológico
+Autor de Correspondência	é um	Cientista
+Território Geográfico	possui atributos	Culturais
+Política Científica	pode ter viéses	Socialista
+Projeto de Pesquisa	pesquisa sobre uma ou mais	Área de Pesquisa
+Política Científica	pode ter viéses	Estritos
+Consumidores da Ciência	Adquire, acessa, lê	Artigo Publicado
+Artigo	tem como atributos	Título
+Metodologia Predominante	pode ter viéses	Qualitativa
+Área de Pesquisa	possui distintos atributos de	Maturidade
+Artigo	tem como atributos	Linguagem
+Projeto de Pesquisa	possui distintos atributos de	Prazo
+Produtos de Pesquisa	podem ser	Artigo
+Consumidores da Ciência	podem ser	Estado/Governo
+Artigo	tem como atributos	Resumo
+Área de Pesquisa	possui distintos atributos de	Metodologia Predominante
+Projeto de Pesquisa	gera vários	Produtos de Pesquisa
+Autores	agregam um conjunto de	Cientista
+Projeto de Pesquisa	é liderado por	Organização de Pesquisa
+Produtos de Pesquisa	podem ser	Dataset
+Revista Científica	rejeita ou aceita publicar um ou mais	Artigo
+Rede Mundial de Territórios	agrega em rede vários	Território Geográfico
+Vínculos Entre territórios	podem ser	Trocas Comerciais- Industriais
+Artigo Publicado	tem como atributos	DOI
+Consumidores da Ciência	podem ser	Sociedade
+Socialista	induz	Acesso Aberto
+Cientista	possui atributos como	Comportamentos Individuais
+Projeto de Pesquisa	possui distintos atributos de	Metas a Alcançar
+Artigo Publicado	tem como atributos	Volume
+Rede Mundial de Territórios	representa	Vínculos Entre territórios
+Linguagem	tem como atributos	Frequência de uso

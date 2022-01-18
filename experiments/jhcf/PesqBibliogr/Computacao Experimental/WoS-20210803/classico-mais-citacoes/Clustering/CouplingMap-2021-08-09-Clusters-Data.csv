@@ -1,0 +1,4 @@
+"label","group","freq","centrality","impact","color"
+"simulation - conf 68.6% systems - conf 64.7% dynamics - conf 27.5%","1","81","0.355813783075596","4.03342510633522","#E41A1C80"
+"agents - conf 87.5% coordination - conf 100% consensus - conf 68.2%","2","58","0.380029879134017","4.39265235698691","#377EB880"
+"dynamics - conf 59.4% model - conf 75.8% evolution - conf 69.6%","3","111","0.442678834063998","3.37148930911913","#4DAF4A80"

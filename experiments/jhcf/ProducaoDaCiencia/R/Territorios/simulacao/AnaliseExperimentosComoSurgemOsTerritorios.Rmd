@@ -1,0 +1,250 @@
+---
+title: "Análise Experimentos Surgem os Territórios"
+author: "Jorge H C Fernandes"
+date: "08/11/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introdução
+
+Este documento apresenta análises preliminares realizadas na simulação surgem os territórios, que são comparadas com os dados analisados de forma empírica, obtidos do IBGE. O objetivo é avaliar que ajustes de parâmetros melhor sugerem a evolução da população brasileira, nos últimos cem anos, considerando-se a data base de 1919.
+
+O primeiro passo foi ler o arquivo com os dados do modelo gerados na última simulação
+
+```{r}
+library(readr)
+setwd("~/Área de Trabalho/ExpComp20211/Comput-Experim-20202")
+model_data <- read_csv("experiments/jhcf/ProducaoDaCiencia/Python/experimentos/model_data_iter_10_steps_10_2021-11-05 17:32:12.906885.csv")
+agent_data <- read_csv("experiments/jhcf/ProducaoDaCiencia/Python/experimentos/agent_data_iter_10_steps_10_2021-11-05 17:32:12.906885.csv")
+#View(model_data)
+#View(agent_data)
+```
+
+Os dados em model_data foram gerados com 10 passos de simulação para cada registro coletado, e foram executadas 10 simulações diferentes para cada configuração de parâmetros. 
+O dataset contém 12.960 registros totais, de modo que foram exploradas 1296
+ configurações de parâmetros. 
+ 
+```{r}
+nrow(model_data)
+nrow(agent_data)
+```
+O dataset principal possui as seguintes variáveis para cada registro:
+```{r}
+names(model_data)
+```
+
+O dataset detalhe possui as seguintes variáveis para cada registro:
+```{r}
+names(agent_data)
+```
+Com base no descrito no relatório da simulação, as seguintes variáveis dependentes foram manipuladas, com os valores listados a seguir:
+
+```{r} 
+alpha <- c(0.31, 0.41, 0.51)
+beta <- c(0.31, 0.54, 0.61)
+gamma <- c(0.02, 0.05, 0.1)
+initial_trading_perc <- c(0.1, 0.2, 0.4, 0.8)
+trading_revigoration <- c(20, 40, 80)
+```
+
+Uma simples observação inicial dos registros mostra que há aparentemente um bug no framework MESA, pois as colunas gamma, trading_revigoration, num_nodes, beta, alpha e initial_trade_perc estão com valores trocados entre si. Uma observação mais detalhada das demais colunas também sugere que apenas esses valores foram trocados. Por outro lado, através do estudo do código fonte de model.py observa-se que os valores de beta, alpha e gamma que foram efetivamente usados para geração do grafo livre de escala são os que foram ajustados automaticamente conforme informado na apresentação do código do construtor da classe Python do modelo, que estão nas variáveis AplhaAjuste, BetaAjuste e GammaAjuste. Assim sendo, as colunas alpha, beta e gamma reais serão desprezadas. 
+
+Desse modo, as seguintes operações vão gerar um dataset com apenas os valores a serem utilizados nessa primeira análise:
+
+```{r}
+names(model_data)[names(model_data)=="gamma"]<- "num_nodes_"
+names(model_data)[names(model_data)=="initial_trading_perc"]<- "trading_revigoration_"
+names(model_data)[names(model_data)=="alpha"]<- "initial_trading_perc_"
+names(model_data)[names(model_data)=="trading_revigoration"]<- "alpha"
+names(model_data)[names(model_data)=="beta"]<- "gamma"
+names(model_data)[names(model_data)=="num_nodes"]<- "beta"
+
+model_data_clean <- model_data[,c("Run", "num_nodes_", "alpha", "AlphaAjuste", "beta", "BetaAjuste", "gamma", "GammaAjuste", "initial_trading_perc_", "trading_revigoration_", "InitialPopulation", "FinalPopulation", "StrongComponentsGT1", "Weakcomponents", "Transitivity", "Available", "Trading", "Resistant", "ChannelsDeceasedRate")]
+nrow(model_data_clean)
+#View(model_data_clean)
+
+names(agent_data)[names(agent_data)=="gamma"]<- "num_nodes_"
+names(agent_data)[names(agent_data)=="initial_trading_perc"]<- "trading_revigoration_"
+names(agent_data)[names(agent_data)=="alpha"]<- "initial_trading_perc_"
+names(agent_data)[names(agent_data)=="trading_revigoration"]<- "alpha"
+names(agent_data)[names(agent_data)=="beta"]<- "gamma"
+names(agent_data)[names(agent_data)=="num_nodes"]<- "beta"
+agent_data_clean <- agent_data[,c("Run", "num_nodes_", "alpha", "beta", "gamma", "initial_trading_perc_", "trading_revigoration_", "Population", "Economic complexity", "Trading state")]
+nrow(agent_data_clean)
+#View(agent_data_clean)
+```
+
+De outra forma, as seguintes variáveis foram controladas, com os valores indicados:
+* "fraction_of_brazilian_population": 30/211,
+* "delta_in": 0.02, 
+* "delta_out": 0.02, 
+* "trading_spread_chance": 0.5,
+* "trading_control_frequency": 0.2,
+* "trading_recovery_chance": 0.25,
+* "trading_resistance_chance": 0.2,
+* "non_trading_decay": 20,
+
+A explicação para cada uma das variáveis pode ser vista no começo do relatório descritivo da simulação.
+
+Com base nas variáveis acima indicadas, cabe então a formulação de algumas questões que podem ser inicialmente respondidas pelos dados coletados:
+* Qual o número de nós "num_nodes" na simulação que melhor produz dados estatísticamente bem dispersos : [10, 20, 40, 80], para modelar uma rede similar à empiricamente investigada??
+* Qual a combinação de alpha, beta e gamma, que melhor modela uma rede similar à empiricamente investigada?
+* Qual a percentagem inicial de territórios que se encontram comercializando ("initial_trading_perc"), que melhor modela uma rede similar à empiricamente investigada: [0.1, 0.2, 0.4, 0.8]?
+* Qual a taxa de revigoração de canais de comércio ("trading_revigoration"): [20, 40, 80], que melhor modela a rede empiricamente investigada?
+Tudo isso, cobsiderando fixas as variáveis de controle. 
+
+Ainda antes de avançar para a questão dos graficos, cabe perguntar quais as variáveis dependentes da simulação (resultados, agregados) melhor representam as condições dos dados empíricos analisados. 
+Essas variáveis dependentes são:
+* [final_population] População do território;
+* [number_trading] quantidade de territórios que estão ativamente tentando comercializar; 
+* [number_resistant] quantidade de territórios que estão resistentes ao comércio; 
+* [number_available] quantidade de territórios que estão disponíveis para comercializar; 
+* [network_number_strongly_connected_components_not_unitary] quantidade de componentes fortemente conectados no grafo, com tamanho acima de 1 vértice;
+* [network_number_weakly_connected_components_not_unitary] quantidade de componentes fracamente conectados no grafo;
+* [network_transitivity] Transitividade da rede
+* [network_channels_deceased_rate] Taxa média de canais de troca que morrem anualmente;
+
+Embora a simulação tenha trabalhado com a situação do comércio, e que os dados empíricos tenham elementos suficentes para estudo das relações de influência entre os municípios, na análise a seguir serão inicialmente consideradas apenas as duas variáveis dependentes, que evidenciam propriedades estruturais básicas da rede, e que são:
+* População final do território (está crescendo? Cresceu durante a simulação de dez anos, entre 32 e 36 milhões de habitantes?)
+* Transitividade da rede (Apresenta valores de transitividade próximos aos obtidos nos dados empíricos?)
+
+Os parâmetros para variáveis independentes que apresentarem respostas afirmativas a essas duas questões serão usados em um novo ciclo de simulação, para considerar um período mais longo de simulação, no aprofundamento futuro desse trabalho.
+
+O primeiro parâmetro avaliado foi o da transitividade, a fim de se avaliar as diferentes na variação de transitividade nos grafos com 10, 20, 40 e 80 vértices.
+
+```{r}
+hist(model_data_clean$Transitivity[model_data_clean$num_nodes_==10],breaks=100)
+```
+```{r}
+hist(model_data_clean$Transitivity[model_data_clean$num_nodes_==20],breaks=100)
+```
+
+```{r}
+hist(model_data_clean$Transitivity[model_data_clean$num_nodes_==40],breaks=100)
+```
+
+```{r}
+hist(model_data_clean$Transitivity[model_data_clean$num_nodes_==80],breaks=100)
+```
+Observa-se que os grafos com 10 e 20 vérices não apresentaram normalidade no histograma do número de triângulos, o que faz supor que essas quantidades são pequenas demais para modelar um processo estatisticamente estável, e desse modo foram eliminados os registros de simulações que usavam 10 e 20 vértices.
+
+```{r}
+model_data_clean <- model_data_clean[model_data_clean$num_nodes_ %in% c(40,80),]
+nrow(model_data_clean)
+```
+Também serão removidos os registros de dados individuais dos agentes simulados em redes com esses números de vértices de 10 e 20.
+
+```{r}
+agent_data_clean <- agent_data_clean[agent_data_clean$num_nodes_ %in% c(40,80),]
+nrow(agent_data_clean)
+```
+
+A fim de se obter os parâmetros que produzem as melhores distribuições de frequencia da população, as linhas a seguir comparam a distribuição obtida com uma rede de 80 nós, em comparação a uma que tem 40 nós, mantendo-se todos os demais parâmetros fixados. ou seja, em cada uma das 10 simulações, totalizando 800 dados populacionais de territórios, relacionados em cada um dos histogramas.
+
+```{r}
+hist(agent_data_clean[agent_data_clean$num_nodes_==80&
+                   agent_data_clean$alpha==0.51&
+                   agent_data_clean$beta==0.61&
+                   agent_data_clean$gamma==0.02&
+                   agent_data_clean$initial_trading_perc_==0.8&
+                     agent_data_clean$trading_revigoration_==20,]$Population,breaks=100, main = "Frequência da população de territórios: Simulações com 80 vértices")
+
+hist(agent_data_clean[agent_data_clean$num_nodes_==40&
+                   agent_data_clean$alpha==0.51&
+                   agent_data_clean$beta==0.61&
+                   agent_data_clean$gamma==0.02&
+                   agent_data_clean$initial_trading_perc_==0.8&
+                     agent_data_clean$trading_revigoration_==20,]$Population,breaks=100,main = "Frequência da população de territórios: Simulações com 40 vértices")
+```
+Tendo em vista que a distribuição de frequencia com o uso de 40 nós, também não apresenta aparente uniformidade na distribuição de frequencia, decidiu-se por eliminar as configurações de simulação com 40 nós, e focar apenas das de 80. Nota-se, por outro lado, que a curva ainda apresenta uma forma bem menos acentuada que a que ocorre na curva populacional das cidades brasileiras, conforme os dados do IBGE. Entretanto, foram feitas simulações com apenas 10 anos, e nesse caso deve-se avaliar se a curva vai se acentuar com 100 anos de simulação. 
+
+```{r}
+model_data_clean_2 <- model_data_clean[model_data_clean$num_nodes_ == 80,]
+nrow(model_data_clean_2)
+agent_data_clean_2 <- agent_data_clean[agent_data_clean$num_nodes_==80,]
+nrow(agent_data_clean_2)
+```
+Agora, será feita a geração de uma série de gráficos que exploram a variação populacional conforme as variações de configuração.
+
+## Explorando alpha, beta e gamma
+
+Sabendo-se que para cada uma das 27 combinações de valores distintos para alpha, beta e gamma, foram geradas 12 simulações para as variações de initial_trading_perc e trading_revigoration, chega-se a um número de 12 * 80 = 960 territŕios simulados, para cada combinação de alpha, beta e gamma.
+
+```{r}
+alpha <- c(0.31, 0.41, 0.51)
+beta <- c(0.31, 0.54, 0.61)
+gamma <- c(0.02, 0.05, 0.1)
+length(alpha)*length(beta)*length(gamma)
+
+initial_trading_perc <- c(0.1, 0.2, 0.4, 0.8)
+trading_revigoration <- c(20, 40, 80)
+length(initial_trading_perc)* length(trading_revigoration)
+
+length(initial_trading_perc)* length(trading_revigoration)*80
+```
+O código a seguir gera os histogramas para cada uma dessas combinações de alpha, beta e gamma
+
+```{r}
+    for (gam_ in gamma) {
+for (alp_ in alpha) {
+  for (bet_ in beta) {
+        populacao_dez_simulacoes <- agent_data_clean_2[
+            agent_data_clean_2$alpha==alp_&
+                 agent_data_clean_2$beta==bet_&
+                 agent_data_clean_2$gamma==gam_,]$Population
+        hist(populacao_dez_simulacoes,breaks=100,xlim=range(0,5000000),
+            main = paste("Pop: alp:",alp_," bet:",bet_," gam:",gam_," max:",max(as.integer(populacao_dez_simulacoes))," avg:",as.integer(mean(populacao_dez_simulacoes))))
+        
+  }
+  }
+}
+```
+
+
+A comparação visual entre os 27 gráficos mostra uma satisfatoria homogeneidade nos dados, em todas as simulações, mas a combinação alpha,beta,gamma = 0.41,0.61,0.02 alcançou a maior população máxima, enquanto que alpha,beta,gamma=0.51,0.54,01 alcançou a menor população..
+
+Agora vamos à comparação a variação dos demais parâmetros: initial_trading_perc e trading_revigoration, sabendo que para cada uma dessas combinações foram gerados 27 * 80 = 2160 registros.
+
+
+```{r}
+    for (per_ in initial_trading_perc) {
+for (rev_ in trading_revigoration) {
+        populacao_dez_simulacoes <- agent_data_clean_2[
+            agent_data_clean_2$initial_trading_perc_==per_&
+                   agent_data_clean_2$trading_revigoration_==rev_,]$Population
+        hist(populacao_dez_simulacoes,breaks=100,xlim=range(0,5000000),
+            main = paste("Pop: % trade:",per_," revigoratio:",rev_," max:",max(as.integer(populacao_dez_simulacoes))," avg:",as.integer(mean(populacao_dez_simulacoes))))
+  }
+}
+```
+
+Os históricos das simulações acima todos apresentaram boa uniformidade na distribuição das populações, e nota-se que os valores de trading revigoration de 40 pontos produzem menores populações finais que os valores 20 e 80. Assim sendo, esses será usado como base para o aprofundamento da simulação.
+Colocando-se agora os valores de revigoration no laço interno, pode-se fazer uma análise da variabilidade gerada pelo percentual inicial de territórios que estão comercializando.
+
+
+```{r}
+for (rev_ in c(40)) {
+    for (per_ in initial_trading_perc) {
+        populacao_dez_simulacoes <- agent_data_clean_2[
+            agent_data_clean_2$initial_trading_perc_==per_&
+                   agent_data_clean_2$trading_revigoration_==rev_,]$Population
+        hist(populacao_dez_simulacoes,breaks=100,xlim=range(0,5000000),
+            main = paste("Pop: % trade:",per_," revigoratio:",rev_," max:",max(as.integer(populacao_dez_simulacoes))," avg:",as.integer(mean(populacao_dez_simulacoes))))
+  }
+}
+```
+
+O maior resultado alcançado foi para o percentual inicial de 80% dos territórios comercializando.
+
+Volta-se agora a uma nova simulação, dessa vez com cem anos completos, dada a escolha dos seguintes valores fixados: 
+
+num_nodes = 80
+alpha,beta,gamma = 0.41,0.61,0.02
+initial_trading_perc = 0.8
+trading_revigoration = 40
+
+O processo de investigação continua.

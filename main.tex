@@ -1,0 +1,121 @@
+\documentclass[12pt]{book}
+
+\input{packages}
+\input{packages-estudantes}
+
+% define cores personalizadas para o texto de cada autor
+\input{autores} 
+
+\makenoidxglossaries
+\loadglsentries{1-Introducao/tarefas/1.1-Glossario/estudantes/main}
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\captionsetup[table]{name=Quadro}
+
+\newcommand{\githubusername}{\textless githubusername\textgreater}
+
+\begin{document}
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\clearpage
+\thispagestyle{empty}
+
+\begin{titlepage}
+\begin{center}
+ {\huge\bfseries \includegraphics[width=4cm]{unb-logo.jpg}\\
+	CIC0203 - Computação Experimental - TA - 2021.2\\
+	Notas e Registros\\}
+ % ----------------------------------------------------------------
+ \vspace{1.5cm}
+{\large	% author names and affiliations
+	Jorge Henrique Cabral Fernandes}\\
+	\vspace{1.5cm}
+	{\large Brasília, \DTMnow}
+\end{center}
+\end{titlepage}
+	%\date{10 de março de 2021}
+	% make the title area
+%	\maketitle
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\printnoidxglossary
+	\clearpage
+\pagenumbering{arabic}
+
+
+	\chapter*{Resumo}
+
+	Este documento contém notas de aula e registros em geral, produzidos de forma textual, pelo professor e turma da disciplina CIC0203 - Computação Experimental - TA - 2021.2.
+	
+	A disciplina adotará a abordagem de estudos estatísticos de simulações computacionais, como base para a construção de experimentos.
+
+\part{Introdução}
+
+    \chapter{Aula/Texto de Apoio: O que é a Ciência?}
+
+    \input{1-Introducao/aulas/1.1-Ciencia}
+
+	\includepdf[pages=-]{1-Introducao/aulas/Ciencia-e-sua-Avaliacao}
+
+    \chapter{Tarefas: Glossário e impressões Iniciais Sobre a Ciência}
+    
+    \input{1-Introducao/tarefas/1.1-Glossario/espec-tarefa}
+
+    \input{1-Introducao/tarefas/1.2-Impressoes-Ciencia/espec-tarefa}
+
+
+\part{Estudos Empíricos Exploratórios}
+
+\input{2-Analise-Exploratoria-Dados/aulas/2.1-Revisao-Estatistica-1/main}
+
+\input{2-Analise-Exploratoria-Dados/aulas/2.2-Pesquisa-Bibliografica/main}
+
+%\chapter{Pesquisas Bibliográficas: Respostas d(a/o)s Estudantes}
+
+\input{2-Analise-Exploratoria-Dados/tarefas/2.2-Pesquisa-Bibliografica/espec-tarefa}
+
+\input{2-Analise-Exploratoria-Dados/tarefas/2.2-Pesquisa-Bibliografica/estudantes/main}
+
+\chapter{Slides: Pesquisa Bibliográfica com Bibliometrix\label{bibliometrix}}
+	
+\includepdf[pages=-]{2-Analise-Exploratoria-Dados/aulas/2.2-Pesquisa-Bibliografica/R-RStudio-Bibliometrix.pdf}
+
+\part{Simulação como Estratégia Experimental}
+
+\chapter{Slides: Fundamentos da Computação Experimental\label{fundamentos:ce}}
+
+\includepdf[pages=-]{3-Computacao-Experimental/aulas/3.2-Computacao-Ciencia-Experimental-Simulacao/slides-Aula-12082021-Computacao-Experimental-Conceitos-Fundamentais.pdf}
+
+\chapter{Tarefa: Fundamentos da Experimentação: Respostas d(a/o)s Estudantes}
+
+%\input{3-Computacao-Experimental/aulas/3.2-Computacao-Ciencia-Experimental-Simulacao/fundamentos}
+
+%\input{aulas/3-Simulacao/fundamentos}
+
+\chapter{Apresentação do Protocolo ODD\label{oddprotocol}}
+	
+%\includepdf[pages=-]{aulas/3-Simulacao/ProtocoloODD.pdf}
+
+\chapter{O Modelo CE20211 e o Protocolo ODD: Respostas d(a/o)s Estudantes}
+
+%\input{aulas/3-Simulacao/oodprotocol}
+
+%	\appendix
+%    \include{textoslides}
+
+\part{Estudo Empíricos de Submodelos: Respostas d(a/o)s Estudantes}
+
+%\input{EstudoEmpiricoSubmodelos}
+
+\part{Projetos de Simulações: Respostas d(a/o)s Estudantes}
+
+%\input{ProjetoSimulacaoSubmodelos}
+
+\part{Implementação de Simulações e Análises de Dados: Respostas d(a/o)s Estudantes}
+
+%\input{ImplementacaoSimulacaoSubmodelos}
+
+\bibliographystyle{plainnat}
+\bibliography{RESIC}
+
+\end{document}.

@@ -7,17 +7,17 @@ O planejamento do estudo deve motivar o tema escolhido e o interesse do autor.
 
 No caso do meu trabalho, as perguntas que o nortearam foram:
 \begin{itemize}
-    \item Qual a base de conhecimentos científicos produzida em torno do tema simulação multiagente voltada à compreensão de fenômenos sociais ligados à produção da ciência? 
-    \item Como a simulação multiagente tem sido usada para compreender a ciência? 
-    \item Quais os principais termos e conceitos ligados à frente de pesquisa no tema simulação multiagente em sua relação com a  mensuração da ciência? 
-    \item Qual a estrutura social da comunidade, se é que existe, que pesquisa sobre o tema simulação multiagente e mensuração da ciência?
+    \item Qual a base de conhecimentos científicos produzida em torno do tema simulação multiagente voltada à compreensão de fenômenos sociais, com ênfase em métodos experimentais? 
+    \item Como a simulação multiagente tem sido usada para compreender fenômenos sociais, com ênfase em métodos experimentais? 
+    \item Quais os principais termos e conceitos ligados à frente de pesquisa no tema simulação multiagente de fenômenos sociais, com ênfase em métodos experimentais? 
+    \item Qual a estrutura social da comunidade, se é que existe, que pesquisa sobre o tema simulação multiagente de fenômenos sociais, com ênfase em métodos experimentais?
 \end{itemize}
 
 \subsection{O que já existe de pesquisa bibliométrica sobre esse tema?}
 
-A pesquisa é um estudo base para aprofundamento no campo da Cientometria, como fez \cite{chavalarias_whats_2017}.
-É também uma pesquisa que visa aprofundar na questão da simulação multiagente e da computação experimental, como o fez \cite{gore_classifying_2016}.
+\cite{gore_classifying_2016} fizeram uma pesquisa que visava aprofundar a questão da simulação multiagente em relação à computação experimental.
 
+A pesquisa é base para um posterior aprofundamento no campo da Cientometria, como fez \cite{chavalarias_whats_2017}.
 
 \subsection{Uso do Bibliometrix e Biblioshiny}
 Serão usadas a ferramenta e o \textit{workflow} proposto pelos autores do pacote Bibliometrix, conforme indica a figura ~\ref{fig:bibliometrix:workflow}.
@@ -35,14 +35,14 @@ Outros aspectos a reforçar:
 
 \section{Coleta de dados}
 
-A coleta de dados feita usando o WoS no dia 27 de junho de 2021, acessado por meio do Portal de Periódicos da CAPES.
+A coleta de dados feita usando o WoS no dia 03 de agosto de 2021, acessado por meio do Portal de Periódicos da CAPES.
 
 Foram feitas buscas nas coleções Science  Citation  Index  Expanded (SCI -EXPANDED) e Social  Sciences  Citation  Index (SSCI), que contém registros relativos a vários campos do conhecimento, no qual o SCI-EXPANDED foca mais na área das ciências exatas e naturais, enquanto que o SSCI indexa artigos da área das ciências sociais. Observe que os artigos nessas duas coleções são indexados desde 1945. 
 
-Foi usada a \textit{query} de busca ilustrada nas linhas 1 a 10 da listagem \ref{query20210727-2}.
+Foi usada a \textit{query} de busca ilustrada nas linhas 1 a 10 da listagem \ref{query20210803-2}.
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca e quantitativo de registros encontrados},label=query20210727-2]
-{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210727/query.txt}
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca},label=query20210803-2]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/query.txt}
 
 \subsection{Explicação para os termos de busca usados}
 A busca consistiu de quatro cláusulas disjuntivas, unidas por uma conjunção \textit{and}.
@@ -64,40 +64,40 @@ Poderia ter também \texttt{multi agent},e  também \texttt{multi and agent}
 A $4^{a}$ cláusula, linha 8,  usou os termos \texttt{social} e \texttt{society} para recuperar artigos que tratem de temas ligados à sociedade.
 Os termos \texttt{group} e \texttt{behavi*} visam recuperar estudos que tratam de questões comportamentais e grupais.
 
-Os 6105 registros obtidos encontram-se no github do projeto, em \url{https://github.com/jhcf/Comput-Experim-20202}, no diretório {\small experiments / jhcf / PesqBibliogr / SimulacaoMultiagente / WoS-20210727 / 6105records.txt}. 
+Os 8115 registros obtidos encontram-se no github do projeto, em \url{https://github.com/jhcf/Comput-Experim-20212}, no diretório { experiments / jhcf / PesqBibliogr / SimulacaoMultiagente / WoS-20210803 / classico-mais-citacoes / 8115recs.txt}. 
 
-Foi utilizada a opção export full record no WoS, para que os mesmos fossem recuperados, em sete blocos de até 1.000 registros por vez.
+Foi utilizada a opção \textit{export full record} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 8115 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 8001-8115).
 
 \section{Análise dos dados}
 
 \subsection{Filtragem de registros}
 Antes da análise, é possível aplicar filtros sobre os registros obtidos.
 
-Foi aplicado um filtro ao dataset inicial, com 8.115 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas. Após a aplicação desse filtro, 5.787 registros foram mantidos no dataset, que será doravante chamado MultiAgentSimulationSociety/Artigos, ou MASSA@jhcf.
+Foi aplicado um filtro ao \textit{dataset} inicial, com 8.115 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas\footnote{A suposição é que que o conhecimento de maior qualidade sobre o tema está nas publicações em revistas.}. Após a aplicação desse filtro, 5.787 registros foram mantidos no \textit{dataset}, que será doravante chamado MultiAgentSimulationSociety/Artigos, ou MASSA@jhcf.
 
-\subsection{Análise bibliométrica descritiva do dataset MASSA@jhcf}
+\subsection{Análise bibliométrica descritiva do \textit{dataset} MASSA@jhcf}
 
-A análise bibliométrica descritiva faz uma descrição inicial do Dataset. Para explicação detalhada de como são calculadas as diversas taxas geradas pelo Bibliometrix veja a documentação do package a partir da página \url{https://cran.r-project.org/web/packages/bibliometrix/index.html}. A análise bibliométrica descritiva é gerada pela função \texttt{biblioAnalysis}.
+A análise bibliométrica descritiva faz uma descrição inicial do \textit{dataset}. Para explicação detalhada de como são calculadas as diversas taxas geradas pelo Bibliometrix veja a documentação do \textit{package} a partir da página \url{https://cran.r-project.org/web/packages/bibliometrix/index.html}. A análise bibliométrica descritiva é gerada pela função \texttt{biblioAnalysis}.
 
-As informações mais gerais sobre o dataset MASSA@jhcf são as seguintes:
+As informações mais gerais sobre o \textit{dataset} MASSA@jhcf são as seguintes:
 \begin{description}
-    \item [``Timespan''] Os artigos que atenderam aos critérios de busca e filtragem foram publicados a partir de 1990, até 2021. Ou seja, não foram contrados registros entre 1945 e 1989.
-    \item [``Sources (Journals, Books, etc)]" São 2.319 fontes de informação que publicaram os documentos recuperados no dataset MASSA@jhcf. Ou seja, em média, cada \textit{scientific journal} publicou $5.787/2.319=2,5$ artigos. \footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência a quantidade de artigos publicados por revista.}
-    \item [``Average years from publication''] A média do tempo de publicação dos artigos no dataset MASSA@jhcf é de 7,36 anos.
-    \item [``Average citations per documents''] Cada artigo no dataset MASSA@jhcf foi citado, em média 20,7 vezes\footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência de  citações a artigos.}.
-    \item [``Average citations per year per doc''] Após publicado, cada um dos 5.787 artigos do dataset MASSA@jhcf  foi citado 2,262 vezes por ano, em média.
-    \item [ "References''] O dataset MASSA@jhcf contém 201.464 referências citadas (tags CR).
-    \item [``Keywords Plus (ID)" ] 13.735 distintas palavras-chave do tipo Keywords Plus (ID)\footnote{KeyWords Plus são ``termos de índice gerados automaticamente a partir dos títulos de artigos citados. Os termos do KeyWords Plus devem aparecer mais de uma vez na bibliografia e são ordenados de frases com várias palavras a termos únicos. O KeyWords Plus aumenta o número de resultados tradicional de palavras-chave ou títulos.'' Fonte: \url{https://images.webofknowledge.com/WOKRS410B4/help/pt_BR/WOS/hp_full_record.html}} foram encontradas no dataset MASSA@jhcf. 
-    \item [``Author's Keywords (DE)''] 15.704 distintas palavras-chave indicadas pelos autores foram encontradas no dataset.
-    \item [``Authors''] 19.410 distintos nomes de autores foram encontrados no dataset\footnote{Um mesmo autor pode ter uma ou mais diferentes grafias no dataset, e serão reconhecidos dois ou mais autores diferentes, embora de fato sejam apenas um. Isso significa que a quantidade de \textbf{nomes de autores} equivale à quantidade de \textbf{autores}. Adicionalmente, é possível que distintos autores sejam reconhecidos com o mesmo nome, isso é, que sejam homônimos. Ou seja, o dataset em geral conterá erros de contagem na quantidade de autores reais.}.
-    \item [``Author Appearances''] Os 19.410 distintos (nomes de) autores foram encontrados 23.470 vezes, como autores de artigos.
-    \item [``Authors of single-authored documents''] Dentre os 19.410 distintos (nomes de) autores encontrados, 375 deles editaram artigos individualmente, isso é, sem co-autores.
-    \item [``Authors of multi-authored documents''] Dentre os 19.410 distintos (nomes de) autores encontrados, 19.035 deles editaram artigos com um ou mais co-autores"
-    \item [``Single-authored documents''] Dentre os 5.787 documentos presentes no dataset MASSA, 409 foram escritos por um único autor, e os 5.378 restantes foram elaborados em co-autoria.
-    \item [``Documents per Author''] Dentre os 19.410 distintos (nomes de) autores, cada um publicou em média 0,298 artigos.
-    \item [``Authors per Document''] Cada um dos 5.787 documentos presentes no dataset MASSA foi autorado com 3,35 autores em média ($19.410 / 5.787 = 3,35$).
-    \item [``Co-Authors per Documents''] As 23.470 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 4,06 vezes para os 5.787 documentos do dataset MASSA@jhcf.
-    \item [``Collaboration Index''] Os 19.035 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 3,54 vezes para editar os 5.378 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 3,54. 
+    \item [\textit{Timespan}] Os artigos que atenderam aos critérios de busca e filtragem foram publicados a partir de 1990, até 2021. Ou seja, não foram encontrados registros entre 1945 e 1989.
+    \item [\textit{Sources (Journals, Books, etc)}] São 2.319 fontes de informação que publicaram os documentos recuperados no dataset MASSA@jhcf. Ou seja, em média, cada \textit{scientific journal} publicou $5.787/2.319=2,5$ artigos. \footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência a quantidade de artigos publicados por revista.}
+    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no dataset MASSA@jhcf é de 7,36 anos.
+    \item [\textit{Average citations per documents}] Cada artigo no dataset MASSA@jhcf foi citado, em média 20,7 vezes\footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência de  citações a artigos.}.
+    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 5.787 artigos do dataset MASSA@jhcf  foi citado 2,262 vezes por ano, em média.
+    \item [\textit{References}] O dataset MASSA@jhcf contém 201.464 referências citadas (tags CR).
+    \item [\textit{Keywords Plus (ID)}] 13.735 distintas palavras-chave do tipo Keywords Plus (ID)\footnote{\textit{KeyWords Plus} são ``termos de índice gerados automaticamente a partir dos títulos de artigos citados. Os termos do KeyWords Plus devem aparecer mais de uma vez na bibliografia e são ordenados de frases com várias palavras a termos únicos. O KeyWords Plus aumenta o número de resultados tradicional de palavras-chave ou títulos.'' Fonte: \url{https://images.webofknowledge.com/WOKRS410B4/help/pt_BR/WOS/hp_full_record.html}} foram encontradas no dataset MASSA@jhcf. 
+    \item [\textit{Author's Keywords (DE)}] 15.704 distintas palavras-chave indicadas pelos autores foram encontradas no \textit{dataset}.
+    \item [\textit{Authors}] 19.410 distintos nomes de autores foram encontrados no dataset\footnote{Um mesmo autor pode ter uma ou mais diferentes grafias no dataset, e serão reconhecidos dois ou mais autores diferentes, embora de fato sejam apenas um. Isso significa que a quantidade de \textbf{nomes de autores} equivale à quantidade de \textbf{autores}. Adicionalmente, é possível que distintos autores sejam reconhecidos com o mesmo nome, isso é, que sejam homônimos. Ou seja, o dataset em geral conterá erros de contagem na quantidade de autores reais.}.
+    \item [\textit{Author Appearances}] Os 19.410 distintos (nomes de) autores foram encontrados 23.470 vezes, como autores de artigos.
+    \item [\textit{Authors of single-authored documents}] Dentre os 19.410 distintos (nomes de) autores encontrados, 375 deles editaram artigos individualmente, isso é, sem co-autores.
+    \item [\textit{Authors of multi-authored documents}] Dentre os 19.410 distintos (nomes de) autores encontrados, 19.035 deles editaram artigos com um ou mais co-autores"
+    \item [\textit{Single-authored documents}] Dentre os 5.787 documentos presentes no dataset MASSA, 409 foram escritos por um único autor, e os 5.378 restantes foram elaborados em co-autoria.
+    \item [\textit{Documents per Author}] Dentre os 19.410 distintos (nomes de) autores, cada um publicou em média 0,298 artigos.
+    \item [\textit{Authors per Document}] Cada um dos 5.787 documentos presentes no dataset MASSA foi autorado com 3,35 autores em média ($19.410 / 5.787 = 3,35$).
+    \item [\textit{Co-Authors per Documents}] As 23.470 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 4,06 vezes para os 5.787 documentos do dataset MASSA@jhcf.
+    \item [\textit{Collaboration Index}] Os 19.035 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 3,54 vezes para editar os 5.378 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 3,54. 
 \end{description}
 
 \subsection{Evolução da Produção Científica}

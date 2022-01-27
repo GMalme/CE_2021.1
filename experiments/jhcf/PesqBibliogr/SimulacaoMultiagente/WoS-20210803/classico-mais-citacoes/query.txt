@@ -1,13 +1,10 @@
-(experimental or numeric* or statist* 
-    or hypothes* or empiric* or inferen*) 
+    (experimental or numeric* or statist* 
+        or hypothes* or empiric* or inferen*) 
 and
-simul* 
+    simul* 
 and
-(agent or multiagent or multi-agent of (multi and agent)) 
+    (agent or multiagent or multi-agent of (multi and agent))
 and
-(social or society or group or behavi*) 
+    (social or society or group or behavi*) 
 
 (Topic)
-
-WOs Classic
-main collection

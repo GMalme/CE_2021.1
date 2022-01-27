@@ -39,29 +39,28 @@ A coleta de dados feita usando o WoS no dia 03 de agosto de 2021, acessado por m
 
 Foram feitas buscas nas coleções Science  Citation  Index  Expanded (SCI -EXPANDED) e Social  Sciences  Citation  Index (SSCI), que contém registros relativos a vários campos do conhecimento, no qual o SCI-EXPANDED foca mais na área das ciências exatas e naturais, enquanto que o SSCI indexa artigos da área das ciências sociais. Observe que os artigos nessas duas coleções são indexados desde 1945. 
 
-Foi usada a \textit{query} de busca ilustrada nas linhas 1 a 10 da listagem \ref{query20210803-2}.
+Foi usada a \textit{query} de busca ilustrada nas linhas 1 a 9 da listagem \ref{query20210803-2}.
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca},label=query20210803-2]
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais.},label=query20210803-2]
 {experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/query.txt}
 
 \subsection{Explicação para os termos de busca usados}
-A busca consistiu de quatro cláusulas disjuntivas, unidas por uma conjunção \textit{and}.
+A busca consistiu de quatro cláusulas disjuntivas, unidas por uma conjunção \textit{and}, aplicadas à busca por tópico (O termo de busca pode aparecer no Título, no Abstract, na Author Keywords, ou nas Keywords Plus da referência)
 
 Os termos \texttt{experimental}, \texttt{numeric*}, \texttt{statist*}, \texttt{hypothes*}, 
 \texttt{empiric*}
-e \texttt{inferen} foram usados na primeira cláusula da query para recuperar artigos que tenham em seu título, palavras-chave e resumo, termos relacionados a métodos experimentais,
+e \texttt{inferen} (linhas 1 e 2 da query) foram usados na primeira cláusula da query para recuperar artigos que tenham em seu título, palavras-chave e resumo, termos relacionados a métodos experimentais,
 métodos numéricos,
 métodos estatísticos,
 teste de hipóteses,
 métodos empíricos e métodos inferenciais.
 
-O termo / cláusula  \texttt{simul*} foi usado em conjunção com os demais para recuperar apenas trabalhos que explicitem o uso da simulação.
+O termo / cláusula  \texttt{simul*}, na linha 4, foi usado em conjunção com os demais para recuperar apenas trabalhos que explicitem o uso da simulação.
 Foi usado um único termo devido à forte adesão ao termo simulação por parte dos pesquisadores que usam simulação. Não existem outros sinônimos frequentes para esse uso.
 
-A cláusula na linha 6, faz uma união entre os termos \texttt{agent} e \texttt{multiagent}.
-Poderia ter também \texttt{multi agent},e  também \texttt{multi and agent}
+A cláusula nas linhas 6 e 7 faz união entre o uso dos termos \texttt{agent} e \texttt{multiagent}, \texttt{multi-agent},e  também \texttt{multi and agent}, para cobrir as variadas formas de escrita do conceito.
 
-A $4^{a}$ cláusula, linha 8,  usou os termos \texttt{social} e \texttt{society} para recuperar artigos que tratem de temas ligados à sociedade.
+A $4^{a}$ cláusula, linha 9,  usou os termos \texttt{social} e \texttt{society} para recuperar artigos que tratem de temas ligados à sociedade.
 Os termos \texttt{group} e \texttt{behavi*} visam recuperar estudos que tratam de questões comportamentais e grupais.
 
 Os 8115 registros obtidos encontram-se no github do projeto, em \url{https://github.com/jhcf/Comput-Experim-20212}, no diretório { experiments / jhcf / PesqBibliogr / SimulacaoMultiagente / WoS-20210803 / classico-mais-citacoes / 8115recs.txt}. 
@@ -75,7 +74,7 @@ Antes da análise, é possível aplicar filtros sobre os registros obtidos.
 
 Foi aplicado um filtro ao \textit{dataset} inicial, com 8.115 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas\footnote{A suposição é que que o conhecimento de maior qualidade sobre o tema está nas publicações em revistas.}. Após a aplicação desse filtro, 5.787 registros foram mantidos no \textit{dataset}, que será doravante chamado MultiAgentSimulationSociety/Artigos, ou MASSA@jhcf.
 
-\subsection{Análise bibliométrica descritiva do \textit{dataset} MASSA@jhcf}
+\subsection{Análise descritiva do \textit{dataset} MASSA@jhcf}
 
 A análise bibliométrica descritiva faz uma descrição inicial do \textit{dataset}. Para explicação detalhada de como são calculadas as diversas taxas geradas pelo Bibliometrix veja a documentação do \textit{package} a partir da página \url{https://cran.r-project.org/web/packages/bibliometrix/index.html}. A análise bibliométrica descritiva é gerada pela função \texttt{biblioAnalysis}.
 

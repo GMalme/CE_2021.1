@@ -3,8 +3,9 @@
 and
     simul* 
 and
-    (agent or multiagent or multi-agent of (multi and agent))
+    (agent or multiagent or multi-agent 
+        or (multi and agent))
 and
-    (social or society or group or behavi*) 
+    (social or society or group or behavi*)
 
 (Topic)

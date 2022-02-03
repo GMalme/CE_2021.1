@@ -33,9 +33,23 @@ A \textit{string} (ou \textit{query}) de busca inicialmente utilizada foi a segu
 
 A proposta é apenas pesquisar sobre Processamento de Linguagem Natural, sem muito rigor na aplicação em que essa arquitetura de rede neural é aplicada. Portanto, inicialmente a pesquisa foi apenas "natural language processing".
 
-Porém, uma rápida olhada pelos artigos retornados evidenciou uma grande quantidade de artigos sobre linguísticas, e áreas que não são da computação. Como o objetivo aqui adquirir modelos de Deep Learning, a pesquisa foi ajustada para filtrar apenas por NLP ligadas diretamente a computação e inteligência artificial, evidenciado pelas cláusulas "neural network", "(machine or deep) and learning" e "artificial intelligence". Essa nova pesquisa trouxe melhores resultados, todos evidenciando redes neurais e variadas técnicas de machine learning.
+Porém, uma rápida olhada pelos artigos retornados evidenciou uma grande quantidade de artigos sobre linguísticas, e áreas que não são da computação. Como o objetivo aqui adquirir modelos de Deep Learning, a pesquisa foi ajustada para filtrar apenas por NLP ligadas diretamente a computação e inteligência artificial, evidenciado pelas cláusulas "neural network", "(machine or deep) and learning" e "artificial intelligence". Essa nova pesquisa trouxe melhores resultados, todos evidenciando redes neurais e variadas técnicas de machine learning. O total de registros retornado pela query foi 
 
 \subsubsection{Refinamento da Coleta de Dados}
 
- Em seguida, em uma análise mais fina, utilizando a \textbf{Rede de Co-ocorrências de Palavras-chave}, podemos evidenciar outras palavras chaves que estavam aparecendo entre os registros da pesquisa, que não deveriam estar aparecendo. É possível observar na imagem \ref{}
+ Em seguida, em uma análise mais fina, utilizando a \textbf{Rede de Co-ocorrências de Palavras-chave}, podemos evidenciar outras palavras chaves que estavam aparecendo entre os registros da pesquisa, que não deveriam estar aparecendo. É possível observar na imagem \ref{fig:ABMHub:NLPgraph1}, palavras como "câncer" ou "diagnóstico" que estão relacionadas a visão computacional mais que NLP, aparecendo com pesos não-desprezíveis.
+ 
+ \begin{figure}
+    \centering
+    \includegraphics[angle=0,width=1\textwidth]{experiments/ABMHub/PesquisaBibliometrica/NLP/network.png}
+    \caption{Grafo de relação de keywords}
+    \label{fig:ABMHub:NLPgraph1}
+\end{figure}
+
+Assim, é necessário uma nova iteração da pesquisa, para evitar que registros de visão computacional corrompam a pesquisa de NLP. É delicado fazer isso, pois existem muitas menções a Visão Computacional nos registros de LP, já que ambos são ligados a Deep Learning, então retirar a keyword "Visão Computacional" provavelmente removeria muitos registros que não gostaríamos de remover da pesquisa. Assim, a melhor solução encontrada foi remover palavras que não têm intersecção entre os dois assuntos. Por exemplo, "medical", "cancer" e "diagnosis".
+
+Assim, chegamos na mais recente query:
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre Procesasmento de Linguagem Natural.},label=queryNLP03022022]
+{experiments/ABMHub/PesquisaBibliometrica/NLP/pesquisa_nova.txt}
 

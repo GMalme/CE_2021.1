@@ -1,0 +1,41 @@
+\chapter{Análise Bibliográfica sobre Processamento de Linguagem Natural, por Lucas de Almeida Bandeira Macedo}
+
+\section{Planejamento do estudo}
+
+Com a vinda de assistentes virtuais, como a Alexa (Amazon), Cortana (Microsoft) ou Siri (Apple), as pessoas costumam se perguntar cada vez mais: "como que esse programa está entendendo o que eu falo?".
+
+Mas não só de assistentes virtuais vive o Processamento de Linguagem Natural (também conhecido como NLP - Natural Language Processing), afinal, qualquer texto ou fala pode ser interpretado por uma máquina e devidamente classificado. Por exemplo, uma aplicação famosa é o "classificador de sentimentos", em que um modelo treinado consegue classificar textos entre sentimentos "positivos" ou "negativos". Com a ascensão do Twitter, uma rede social baseada em pequenos textos de não mais que 280 caracteres, NLP se torna cada vez mais interessante.
+
+Assim, as perguntas que traçam o norte para este estudo são:
+
+\begin{itemize}
+    \item Quais os principais conceitos ligados com Processamento de Linguagem Natural?
+    \item Como se dá o progresso das pesquisas em NLP ao longo dos anos? As redes sociais influenciaram esse crescimento?
+    \item Qual o estado da estrutura social da comunidade de NLP?
+\end{itemize}
+
+\subsection{Uso do Bibliometrix e Biblioshiny}
+
+Será usada a ferramenta Bibliometrix, com sua função Biblioshiny, para gerar gráficos e grafos iterativos e personalizáveis, para auxiliar na interpretação da realidade científica do tópico.
+
+\section{Coleta de dados}
+
+A coleta de dados foi feita utilizando o site Web of Science (WoS), no dia 03/02/2022, através do portal periódico da capes.
+
+A pesquisa foi realizada utilizando as edições "Science Citation Index Expanded" e "Conference Proceedings Citation Index – Science", ambas coleções são voltadas para, principalmente, as ciências exatas.
+
+A \textit{string} (ou \textit{query}) de busca inicialmente utilizada foi a seguinte:
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre Procesasmento de Linguagem Natural.},label=queryNLP03022022]
+{experiments/ABMHub/PesquisaBibliometrica/NLP/pesquisa_velha.txt}
+
+\subsection{Explicação para os termos de busca usados}
+
+A proposta é apenas pesquisar sobre Processamento de Linguagem Natural, sem muito rigor na aplicação em que essa arquitetura de rede neural é aplicada. Portanto, inicialmente a pesquisa foi apenas "natural language processing".
+
+Porém, uma rápida olhada pelos artigos retornados evidenciou uma grande quantidade de artigos sobre linguísticas, e áreas que não são da computação. Como o objetivo aqui adquirir modelos de Deep Learning, a pesquisa foi ajustada para filtrar apenas por NLP ligadas diretamente a computação e inteligência artificial, evidenciado pelas cláusulas "neural network", "(machine or deep) and learning" e "artificial intelligence". Essa nova pesquisa trouxe melhores resultados, todos evidenciando redes neurais e variadas técnicas de machine learning.
+
+\subsubsection{Refinamento da Coleta de Dados}
+
+ Em seguida, em uma análise mais fina, utilizando a \textbf{Rede de Co-ocorrências de Palavras-chave}, podemos evidenciar outras palavras chaves que estavam aparecendo entre os registros da pesquisa, que não deveriam estar aparecendo. É possível observar na imagem \ref{}
+

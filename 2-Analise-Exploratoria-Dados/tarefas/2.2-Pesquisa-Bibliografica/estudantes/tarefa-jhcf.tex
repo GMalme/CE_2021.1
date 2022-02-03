@@ -65,7 +65,7 @@ Os termos \texttt{group} e \texttt{behavi*} visam recuperar estudos que tratam d
 
 Os 8115 registros obtidos encontram-se no github do projeto, em \url{https://github.com/jhcf/Comput-Experim-20212}, no diretório { experiments / jhcf / PesqBibliogr / SimulacaoMultiagente / WoS-20210803 / classico-mais-citacoes / 8115recs.txt}. 
 
-Foi utilizada a opção \textit{export full record} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 8115 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 8001-8115).
+Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 8115 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 8001-8115).
 
 \section{Análise dos dados}
 
@@ -174,16 +174,94 @@ Breves comentários sobre cada um desses trabalhos serão tratados em seção po
 
 Nenhum desses 10 documentos citados está contido no dataset recuperado.
 
-\subsection{Análises Bibliométricas: Fontes de Informação}
+%\subsection{Análises Bibliométricas: Fontes de Informação}
 
-\begin{figure}
-    \centering
+%\begin{figure}
+%    \centering
 %    \includegraphics[angle=0,width=1\textwidth]{}
-    \caption{Plotagem ``Três Campos'' (Sankey plot) do dataset MASSA@jhcf: 20 Autores, Citações e Palavras-Chave mais proeminentes.}
-    \label{fig:MASSA@jhcf:ThreeFieldPlot}
+%    \caption{Plotagem ``Três Campos'' (Sankey plot) do dataset MASSA@jhcf: 20 Autores, Citações e Palavras-Chave mais proeminentes.}
+%    \label{fig:MASSA@jhcf:ThreeFieldPlot}
+%\end{figure}
+
+\section{Refinamento da Coleta de Dados}
+
+No dia 03 de fevereiro de 2022, no decorrer das análises mais refinadas do dataset MASSA@jhcf, identificou-se um grupo de artigos que não se encaixavam no tema de interesse, e que eram voltados para pesquisas no campo da biologia experimental e nanotecnologia. Isso sugeriu que a query de busca precisaria ser reformulada, para excluir artigos que não se enquadrassem na temática desejada.
+O conjunto das palavras-chave que refletia essa dissonância ficou evidente na análise da estrutura intelectual do conhecimento, do tipo \textbf{Rede de Co-ocorrências de Palavras-chave}, ilustrada no cluster em roxo, à esquerda da figura \ref{fig:MASSA@jhcf:redecoocorr-150-termos}.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[clip=true,trim={9cm 0cm 7cm 0cm },width=0.6\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Structure-Informetric/Conceptual/Co-occurrence Network-Keywords-Plus-150-termos.png}
+    \caption{Rede de co-ocorrência de palavras, com 150 termos, aplicada ao dataset MASSA@jhcf.}
+    \label{fig:MASSA@jhcf:redecoocorr-150-termos}
 \end{figure}
 
-\subsection{Análises Bibliométricas: Autores}
+As seguintes 30 palavras foram identificadas nesse \textit{cluster}:
+in-vitro,
+adsorption,
+mechanism,
+water,
+force-field,
+molecular-dynamics,
+binding,
+simulations,
+nanoparticles,
+bubbles,
+derivatives,
+temperature,
+in-vivo,
+mathematical-model,
+oscillations,
+scattering,
+cancer,
+contrast agents,
+expression,
+protein,
+activation,
+delivery,
+surface,
+removal,
+acid,
+agent,
+reduction,
+aqueous-solution,
+degradation,
+expectations.
 
-\subsection{Análises Bibliométricas: Documentos}
+Algumas delas foram escolhidas para servir como indicativas de artigos fora do escopo, e introduzidas na query original, gerando a nova query aprimorada, ilustrada nas linhas 1 a 13 da listagem \ref{query20220203}.
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais, com escopo negativo de artigos que tratam de experimentos biológicos em vitro.},label=query20220203]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/query-Refinada.txt}
+
+Ou seja justifica-se, na listagem \ref{query20220203}, a inclusão da cláusula \textit{not (
+ adsoption or molecular -dynamics or force -field
+ or in -vitro or nanopartic* or in -vivo
+ or aqueous -solution or protein or surface)}, entre as linhas 10 e 13 da query, pois elas irão remover artigos não se enquadram no escopo da busca desejada, por usarem uma ou mais dessas palavras no título, resumo ou palavras-chave do artigo.
+ 
+Com essa nova query de busca foram recuperados, no mesmo dia, 6.935 documentos, que se encontram no arquivo ``wos6935recs.txt'', no diretório ``experiments / jhcf / PesqBibliogr / SimulacaoMultiagente / WoS-20220203 /''.
+Uma nova análise dos dados recuperados é apresentada a seguir.
+
+\section{Nova Análise dos Dados}
+
+\subsection{Nova filtragem de registros}
+
+Sobre os 6.935 documentos recuperados, foram agora aplicados dois filtros:
+\begin{itemize}
+    \item Remoção dos registros de documentos que não são artigos full paper, publicados em revistas;
+    \item Remoção dos registros de artigos científicos que não fazem parte do \textit{core} da bibliografa, segundo a Lei de Bradford.
+\end{itemize}
+
+Com os filtros aplicados obteve-se um total de 1.975 registros, que doravante serão chamados de forma coletiva, de dataset MASSA2@jhcf.
+
+\subsection{Análise descritiva do dataset MASSA2@jhcf}
+
+\begin{table}[]
+    \centering
+\csvautotabular[separator=semicolon
+%,filter not strcmp={\csvcolii}{}
+]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/MASSA2-Main-Information.csv}
+    \caption{Principais dados descritivos do dataset MASSA2@jhcf.}
+    \label{tab:MASSA2:Main}
+\end{table}
+
+Nota-se, com os resultados da tabela \ref{tab:MASSA2:Main}, que o dataset abrange um período de 31 anos de publicações, com 136 revistas distintas, publicando 1975 artigos, com idade média de publicação de sete anos.
 

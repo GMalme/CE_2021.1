@@ -1,0 +1,15 @@
+    (experimental or numeric* or statist* 
+        or hypothes* or empiric* or inferen*) 
+and
+    simul* 
+and
+    (agent or multiagent or multi-agent 
+        or (multi and agent))
+and
+    (social or society or group or behavi*)
+not (
+    adsoption or molecular-dynamics or force-field 
+    or in-vitro or nanopartic* or in-vivo	
+    or aqueous-solution or protein or surface) 
+
+(Topic)

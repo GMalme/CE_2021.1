@@ -30,6 +30,7 @@ A \textit{string} (ou \textit{query}) de busca inicialmente utilizada foi a segu
 {experiments/ABMHub/PesquisaBibliometrica/NLP/pesquisa_velha.txt}
 
 \subsection{Explicação para os termos de busca usados}
+\label{sec:ABMHub:query}
 
 A proposta é apenas pesquisar sobre Processamento de Linguagem Natural, sem muito rigor na aplicação em que essa arquitetura de rede neural é aplicada. Portanto, inicialmente a pesquisa foi apenas "natural language processing".
 
@@ -88,11 +89,22 @@ Ainda utilizando a ferramenta Bibliometrix, faremos uma análise descritiva do d
 
 A evolução da produção científica do assunto é um dos principais motivadores dessa pesquisa. Afinal, com a quantidade absurda de dados que existem hoje livremente disponíveis na internet (e em exponencial crescimento), provavelmente influencia muito a qualidade de modelos gerados em qualquer área de machine learning. É esperado que, motivado por essa crescente de dados, e com a popularização de assistentes virtuais, NLP seja um tópico cada vez mais estudado.
 
-Podemos ver que as suposições anteriores são verdadeiras (ou, ao menos, aparentemente verdadeiras). Como visto na figura \ref{fig:ABMHub:ASP}, a crescente em deep learning 
-
  \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/ABMHub/PesquisaBibliometrica/NLP/anualScientificProduction.png}
     \caption{Produção científica anual}
     \label{fig:ABMHub:ASP}
+\end{figure}
+
+Podemos ver que as suposições anteriores são verdadeiras (ou, ao menos, aparentemente verdadeiras). Como visto na figura \ref{fig:ABMHub:ASP}, a crescente absurda e exponencial em deep learning entre 2016 e 2021 realmente dá pistas que NLP está cada vez mais relevante no mundo moderno, e que continuará crescendo em influência por um bom tempo. É importante ressaltar que a queda apresentada no fim do gráfico ocorre apenas porque esses registros foram extraídos no começo do ano 2022.
+
+Também é interessante observar que o primeiro registro é em 1990. O conceito de NLP foi inventado antes dessa data, mas apenas a partir desse ponto que NLP começou a ser estudado junto com Machine Learning, e a query utilizada (seção \ref{sec:ABMHub:query}) especifica que é necessária a ligação de processamento de linguagem natural com inteligência artificial.
+
+\subsection{Evolução das Citações}
+
+ \begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/ABMHub/PesquisaBibliometrica/NLP/citationsPerYear.png}
+    \caption{Produção científica anual}
+    \label{fig:ABMHub:CPY}
 \end{figure}

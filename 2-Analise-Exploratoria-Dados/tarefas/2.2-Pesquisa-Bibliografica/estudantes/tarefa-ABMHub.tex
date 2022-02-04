@@ -33,7 +33,7 @@ A \textit{string} (ou \textit{query}) de busca inicialmente utilizada foi a segu
 
 A proposta é apenas pesquisar sobre Processamento de Linguagem Natural, sem muito rigor na aplicação em que essa arquitetura de rede neural é aplicada. Portanto, inicialmente a pesquisa foi apenas "natural language processing".
 
-Porém, uma rápida olhada pelos artigos retornados evidenciou uma grande quantidade de artigos sobre linguísticas, e áreas que não são da computação. Como o objetivo aqui adquirir modelos de Deep Learning, a pesquisa foi ajustada para filtrar apenas por NLP ligadas diretamente a computação e inteligência artificial, evidenciado pelas cláusulas "neural network", "(machine or deep) and learning" e "artificial intelligence". Essa nova pesquisa trouxe melhores resultados, todos evidenciando redes neurais e variadas técnicas de machine learning. O total de registros retornado pela query foi 
+Porém, uma rápida olhada pelos artigos retornados evidenciou uma grande quantidade de artigos sobre linguísticas, e áreas que não são da computação. Como o objetivo aqui adquirir modelos de Deep Learning, a pesquisa foi ajustada para filtrar apenas por NLP ligadas diretamente a computação e inteligência artificial, evidenciado pelas cláusulas "neural network", "(machine or deep) and learning" e "artificial intelligence". Essa nova pesquisa trouxe melhores resultados, todos evidenciando redes neurais e variadas técnicas de machine learning. O total de registros retornado pela query foi 10152.
 
 \subsubsection{Refinamento da Coleta de Dados}
 
@@ -41,7 +41,7 @@ Porém, uma rápida olhada pelos artigos retornados evidenciou uma grande quanti
  
  \begin{figure}
     \centering
-    \includegraphics[angle=0,width=1\textwidth]{experiments/ABMHub/PesquisaBibliometrica/NLP/network.png}
+    \includegraphics[width=1\textwidth]{experiments/ABMHub/PesquisaBibliometrica/NLP/grafo_keywords.png}
     \caption{Grafo de relação de keywords}
     \label{fig:ABMHub:NLPgraph1}
 \end{figure}
@@ -50,6 +50,46 @@ Assim, é necessário uma nova iteração da pesquisa, para evitar que registros
 
 Assim, chegamos na mais recente query:
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre Procesasmento de Linguagem Natural.},label=queryNLP03022022]
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query refinada de busca sobre Procesasmento de Linguagem Natural.},label=queryRefinadaNLP03022022]
 {experiments/ABMHub/PesquisaBibliometrica/NLP/pesquisa_nova.txt}
 
+Esta query refinada retornou 8557 registros.
+
+\subsection{Filtragem de registros}
+
+Após a refinagem, foi estabelecido que usaremos o dataset de 8557 registros. Portanto, podemos começar a tratá-lo e analisá-lo. Para isso, começamos filtrando registros indesejados, como prévias de artigos, críticas sobre outros arquivos, cartas e etc. Assim, deixaremos apenas os artigos, pois é o método padrão de publicação científica, e capítulos de livros, já que é um tipo de publicação recorrente na área. Após o filtro, reduzimos nosso dataset para 3308 registros. A partir deste ponto, o "dataset" mencionado será o dataset filtrado.
+
+\subsection{Análise descritiva do \textit{dataset}}
+
+Ainda utilizando a ferramenta Bibliometrix, faremos uma análise descritiva do dataset adquirido, ou seja cálculos de diversas métricas para trazer \textit{insights}.
+
+\begin{description}
+    \item [\textit{Timespan}] De 1990 até 2022 (hoje). Não foram encontrados registros de 1945 até 1989.
+    \item [\textit{Sources (Journals, Books, etc)}] 750 fontes diferentes de artigos.
+    \item [\textit{Average years from publication}] A média do tempo de publicação dosartigos no dataset é de 3,85 anos.
+    \item [\textit{Average citations per documents}] Cada artigo foi citado em média 14.03 vezes.
+    \item [\textit{Average citations per year per doc}] Os artigos do dataset por inteiro são, em média, citados 2567 vezes por ano.
+    \item [\textit{References}] Os artigos têm 108452 referência para outras fontes.
+    \item [\textit{Keywords Plus (ID)}] Há 2414 diferentes palavras chaves.
+    \item [\textit{Author's Keywords (DE)}] Há 7439 diferentes palavras chaves, segundo os autores.
+    \item [\textit{Authors}] Há 10028 diferentes autores.
+    \item [\textit{Author Appearances}] Há 13237 autores (considerando repetição nomes para diferentes artigos).
+    \item [\textit{Authors of single-authored documents}] Há 154 autores que fizeram trabalhos sozinhos.
+    \item [\textit{Authors of multi-authored documents}] Há 9874 autores que fizeram trabalhos com outras pessoas.
+    \item [\textit{Single-authored documents}] Há 163 trabalhos com apenas um autor.
+    \item [\textit{Documents per Author}] Há, em média, 0,33 autores por trabalho.
+    \item [\textit{Authors per Document}] Há, em média, 3,03 trabalhos por autor.
+    \item [\textit{Co-Authors per Documents}] As 13237 aparições de autores se distribuem, em média 4 vezes para os 3308 documentos do dataset.
+    \item [\textit{Collaboration Index}] Os autores que editaram artigos com um ou mais co-autores, colaboraram em media 3,54 vezes para editar os elaborados em co-autoria.
+\end{description}
+
+\subsection{Evolução da Produção Científica}
+
+ \begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/ABMHub/PesquisaBibliometrica/NLP/anualScientificProduction.png}
+    \caption{Produção científica anual}
+    \label{fig:ABMHub:NLPgraph1}
+\end{figure}
+
+A evolução da produção científica do assunto é um dos principais motivadores dessa pesquisa. Afinal, com a quantidade absurda de dados que existem hoje livremente disponíveis na internet (e em exponencial crescimento), provavelmente influencia muito a qualidade de modelos gerados em qualquer área de machine learning. É esperado que, motiva

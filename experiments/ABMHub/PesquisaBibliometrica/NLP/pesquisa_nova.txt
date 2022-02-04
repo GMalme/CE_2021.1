@@ -1,0 +1,11 @@
+(natural and language and process*)
+
+and
+
+((neural and network) or 
+((deep or machine) and learn*) or 
+(artificial and intelligence)) 
+
+not 
+
+(cancer or diagnos* or disease or medic*)

@@ -8,7 +8,7 @@
 %\def\UrlBreaks{\do\/\do-}
 \usepackage[T1]{fontenc}
 \usepackage{url}
-\usepackage{breakurl}
+\usepackage[anythingbreaks]{breakurl}
 
 \usepackage{pdfpages}
 
@@ -229,3 +229,9 @@
 \usepackage{caption}
 
 \usepackage{csvsimple} % para leitura de arquivos csv
+
+\usepackage{fancyhdr,ragged2e}
+\fancyhead{}
+\lhead{\parbox[t]{0.35\textwidth}{\RaggedRight\rightmark\strut}}
+\rhead{\parbox[t]{0.63\textwidth}{\RaggedLeft\leftmark\strut}}
+\setlength{\headheight}{5\baselineskip}

@@ -33,23 +33,24 @@ Outros aspectos a reforçar:
 \end{itemize}
 
 
-\section{Coleta de dados}
+\section{Coleta de dados\label{MASSA:coleta}}
 
 A coleta de dados feita usando o WoS no dia 03 de agosto de 2021, acessado por meio do Portal de Periódicos da CAPES.
 
-Foram feitas buscas nas coleções Science  Citation  Index  Expanded (SCI -EXPANDED) e Social  Sciences  Citation  Index (SSCI), que contém registros relativos a vários campos do conhecimento, no qual o SCI-EXPANDED foca mais na área das ciências exatas e naturais, enquanto que o SSCI indexa artigos da área das ciências sociais. Observe que os artigos nessas duas coleções são indexados desde 1945. 
+Foram feitas buscas nas coleções \textbf{Science  Citation  Index  Expanded (SCI -EXPANDED)} e \textbf{Social  Sciences  Citation  Index (SSCI)}, que contém registros relativos a vários campos do conhecimento, no qual o SCI-EXPANDED foca mais na área das ciências exatas e naturais, enquanto que o SSCI indexa artigos da área das ciências sociais. Observe que os artigos nessas duas coleções são indexados desde 1945. 
 
-Foi usada a \textit{query} de busca ilustrada nas linhas 1 a 9 da listagem \ref{query20210803-2}.
+Foi usada a \query\  de busca ilustrada nas linhas 1 a 9 da listagem \ref{query20210803-2}.
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais.},label=query20210803-2]
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais.},label=query20210803-2]
 {experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/query.txt}
 
-\subsection{Explicação para os termos de busca usados}
+\subsection{Explicação para os termos de busca usados\label{MASSA:query}}
+
 A busca consistiu de quatro cláusulas disjuntivas, unidas por uma conjunção \textit{and}, aplicadas à busca por tópico (O termo de busca pode aparecer no Título, no Abstract, na Author Keywords, ou nas Keywords Plus da referência)
 
 Os termos \texttt{experimental}, \texttt{numeric*}, \texttt{statist*}, \texttt{hypothes*}, 
 \texttt{empiric*}
-e \texttt{inferen} (linhas 1 e 2 da query) foram usados na primeira cláusula da query para recuperar artigos que tenham em seu título, palavras-chave e resumo, termos relacionados a métodos experimentais,
+e \texttt{inferen} (linhas 1 e 2 da query) foram usados na primeira cláusula da \query\  para recuperar artigos que tenham em seu título, palavras-chave e resumo, termos relacionados a métodos experimentais,
 métodos numéricos,
 métodos estatísticos,
 teste de hipóteses,
@@ -63,7 +64,7 @@ A cláusula nas linhas 6 e 7 faz união entre o uso dos termos \texttt{agent} e 
 A $4^{a}$ cláusula, linha 9,  usou os termos \texttt{social} e \texttt{society} para recuperar artigos que tratem de temas ligados à sociedade.
 Os termos \texttt{group} e \texttt{behavi*} visam recuperar estudos que tratam de questões comportamentais e grupais.
 
-Os 8115 registros obtidos encontram-se no github do projeto, em \url{https://github.com/jhcf/Comput-Experim-20212}, no diretório { experiments / jhcf / PesqBibliogr / SimulacaoMultiagente / WoS-20210803 / classico-mais-citacoes / 8115recs.txt}. 
+Os 8.115 registros obtidos encontram-se no github do projeto, em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/ WoS-20210803/classico-mais-citacoes/8115recs.txt}. 
 
 Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 8115 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 8001-8115).
 
@@ -72,30 +73,30 @@ Foram utilizadas as opções \textit{Exportar registros para arquivo de texto se
 \subsection{Filtragem de registros}
 Antes da análise, é possível aplicar filtros sobre os registros obtidos.
 
-Foi aplicado um filtro ao \textit{dataset} inicial, com 8.115 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas\footnote{A suposição é que que o conhecimento de maior qualidade sobre o tema está nas publicações em revistas.}. Após a aplicação desse filtro, 5.787 registros foram mantidos no \textit{dataset}, que será doravante chamado MultiAgentSimulationSociety/Artigos, ou MASSA@jhcf.
+Foi aplicado um filtro ao \dataset\   inicial, com 8.115 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas\footnote{A suposição é que que o conhecimento de maior qualidade sobre o tema está nas publicações em revistas.}. Após a aplicação desse filtro, 5.787 registros foram mantidos no \dataset, que será doravante chamado MultiAgentSimulationSociety/Artigos, ou MASSA@jhcf.
 
-\subsection{Análise descritiva do \textit{dataset} MASSA@jhcf}
+\subsection{Análise descritiva do \dataset\   MASSA@jhcf}
 
-A análise bibliométrica descritiva faz uma descrição inicial do \textit{dataset}. Para explicação detalhada de como são calculadas as diversas taxas geradas pelo Bibliometrix veja a documentação do \textit{package} a partir da página \url{https://cran.r-project.org/web/packages/bibliometrix/index.html}. A análise bibliométrica descritiva é gerada pela função \texttt{biblioAnalysis}.
+A análise bibliométrica descritiva faz uma descrição inicial do \dataset\  . Para explicação detalhada de como são calculadas as diversas taxas geradas pelo Bibliometrix veja a documentação do \textit{package} a partir da página \url{https://cran.r-project.org/web/packages/bibliometrix/index.html}. A análise bibliométrica descritiva é gerada pela função \texttt{biblioAnalysis}.
 
-As informações mais gerais sobre o \textit{dataset} MASSA@jhcf são as seguintes:
+As informações mais gerais sobre o \dataset\   MASSA@jhcf são as seguintes:
 \begin{description}
     \item [\textit{Timespan}] Os artigos que atenderam aos critérios de busca e filtragem foram publicados a partir de 1990, até 2021. Ou seja, não foram encontrados registros entre 1945 e 1989.
-    \item [\textit{Sources (Journals, Books, etc)}] São 2.319 fontes de informação que publicaram os documentos recuperados no dataset MASSA@jhcf. Ou seja, em média, cada \textit{scientific journal} publicou $5.787/2.319=2,5$ artigos. \footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência a quantidade de artigos publicados por revista.}
-    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no dataset MASSA@jhcf é de 7,36 anos.
-    \item [\textit{Average citations per documents}] Cada artigo no dataset MASSA@jhcf foi citado, em média 20,7 vezes\footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência de  citações a artigos.}.
-    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 5.787 artigos do dataset MASSA@jhcf  foi citado 2,262 vezes por ano, em média.
-    \item [\textit{References}] O dataset MASSA@jhcf contém 201.464 referências citadas (tags CR).
-    \item [\textit{Keywords Plus (ID)}] 13.735 distintas palavras-chave do tipo Keywords Plus (ID)\footnote{\textit{KeyWords Plus} são ``termos de índice gerados automaticamente a partir dos títulos de artigos citados. Os termos do KeyWords Plus devem aparecer mais de uma vez na bibliografia e são ordenados de frases com várias palavras a termos únicos. O KeyWords Plus aumenta o número de resultados tradicional de palavras-chave ou títulos.'' Fonte: \url{https://images.webofknowledge.com/WOKRS410B4/help/pt_BR/WOS/hp_full_record.html}} foram encontradas no dataset MASSA@jhcf. 
-    \item [\textit{Author's Keywords (DE)}] 15.704 distintas palavras-chave indicadas pelos autores foram encontradas no \textit{dataset}.
-    \item [\textit{Authors}] 19.410 distintos nomes de autores foram encontrados no dataset\footnote{Um mesmo autor pode ter uma ou mais diferentes grafias no dataset, e serão reconhecidos dois ou mais autores diferentes, embora de fato sejam apenas um. Isso significa que a quantidade de \textbf{nomes de autores} equivale à quantidade de \textbf{autores}. Adicionalmente, é possível que distintos autores sejam reconhecidos com o mesmo nome, isso é, que sejam homônimos. Ou seja, o dataset em geral conterá erros de contagem na quantidade de autores reais.}.
+    \item [\textit{Sources (Journals, Books, etc)}] São 2.319 fontes de informação que publicaram os documentos recuperados no \dataset\   MASSA@jhcf. Ou seja, em média, cada \textit{scientific journal} publicou $5.787/2.319=2,5$ artigos. \footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência a quantidade de artigos publicados por revista.}
+    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \dataset\   MASSA@jhcf é de 7,36 anos.
+    \item [\textit{Average citations per documents}] Cada artigo no \dataset\   MASSA@jhcf foi citado, em média 20,7 vezes\footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência de  citações a artigos.}.
+    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 5.787 artigos do \dataset\   MASSA@jhcf  foi citado 2,262 vezes por ano, em média.
+    \item [\textit{References}] O \dataset\   MASSA@jhcf contém 201.464 referências citadas (tags CR).
+    \item [\textit{Keywords Plus (ID)}] 13.735 distintas palavras-chave do tipo Keywords Plus (ID)\footnote{\textit{KeyWords Plus} são ``termos de índice gerados automaticamente a partir dos títulos de artigos citados. Os termos do KeyWords Plus devem aparecer mais de uma vez na bibliografia e são ordenados de frases com várias palavras a termos únicos. O KeyWords Plus aumenta o número de resultados tradicional de palavras-chave ou títulos.'' Fonte: \url{https://images.webofknowledge.com/WOKRS410B4/help/pt_BR/WOS/hp_full_record.html}} foram encontradas no \dataset\   MASSA@jhcf. 
+    \item [\textit{Author's Keywords (DE)}] 15.704 distintas palavras-chave indicadas pelos autores foram encontradas no \dataset\  .
+    \item [\textit{Authors}] 19.410 distintos nomes de autores foram encontrados no \dataset\  \footnote{Um mesmo autor pode ter uma ou mais diferentes grafias no \dataset\  , e serão reconhecidos dois ou mais autores diferentes, embora de fato sejam apenas um. Isso significa que a quantidade de \textbf{nomes de autores} equivale à quantidade de \textbf{autores}. Adicionalmente, é possível que distintos autores sejam reconhecidos com o mesmo nome, isso é, que sejam homônimos. Ou seja, o \dataset\   em geral conterá erros de contagem na quantidade de autores reais.}.
     \item [\textit{Author Appearances}] Os 19.410 distintos (nomes de) autores foram encontrados 23.470 vezes, como autores de artigos.
     \item [\textit{Authors of single-authored documents}] Dentre os 19.410 distintos (nomes de) autores encontrados, 375 deles editaram artigos individualmente, isso é, sem co-autores.
     \item [\textit{Authors of multi-authored documents}] Dentre os 19.410 distintos (nomes de) autores encontrados, 19.035 deles editaram artigos com um ou mais co-autores"
-    \item [\textit{Single-authored documents}] Dentre os 5.787 documentos presentes no dataset MASSA, 409 foram escritos por um único autor, e os 5.378 restantes foram elaborados em co-autoria.
+    \item [\textit{Single-authored documents}] Dentre os 5.787 documentos presentes no \dataset\   MASSA, 409 foram escritos por um único autor, e os 5.378 restantes foram elaborados em co-autoria.
     \item [\textit{Documents per Author}] Dentre os 19.410 distintos (nomes de) autores, cada um publicou em média 0,298 artigos.
-    \item [\textit{Authors per Document}] Cada um dos 5.787 documentos presentes no dataset MASSA foi autorado com 3,35 autores em média ($19.410 / 5.787 = 3,35$).
-    \item [\textit{Co-Authors per Documents}] As 23.470 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 4,06 vezes para os 5.787 documentos do dataset MASSA@jhcf.
+    \item [\textit{Authors per Document}] Cada um dos 5.787 documentos presentes no \dataset\   MASSA foi autorado com 3,35 autores em média ($19.410 / 5.787 = 3,35$).
+    \item [\textit{Co-Authors per Documents}] As 23.470 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 4,06 vezes para os 5.787 documentos do \dataset\   MASSA@jhcf.
     \item [\textit{Collaboration Index}] Os 19.035 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 3,54 vezes para editar os 5.378 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 3,54. 
 \end{description}
 
@@ -104,43 +105,43 @@ As informações mais gerais sobre o \textit{dataset} MASSA@jhcf são as seguint
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Dataset/AnnualScientificProduction-2021-08-05.png}
-    \caption{Evolução da produção científica no dataset MASSA@jhcf.}
+    \caption{Evolução da produção científica no \dataset\   MASSA@jhcf.}
     \label{fig:evol:anual:MASSA@jhcf}
 \end{figure}
 
-A figura \ref{fig:evol:anual:MASSA@jhcf} apresenta a evolução da produção científica mundial no tema de interesse, segundo o dataset MASSA@jhcf. A curva mostra uma tendência de crescimento aproximadamente exponencial da quantidade de publicações, desde a primeira identificada em 1990.
+A figura \ref{fig:evol:anual:MASSA@jhcf} apresenta a evolução da produção científica mundial no tema de interesse, segundo o \dataset\   MASSA@jhcf. A curva mostra uma tendência de crescimento aproximadamente exponencial da quantidade de publicações, desde a primeira identificada em 1990.
 
-O \textit{Annual Growth Rate} do dataset é de 17,06\%, bem maior que a taxa média de crescimento da publicação científica mundial, de cerca de 3,3\% anuais, em 2016, como ilustra o estudo em \url{https://www.researchgate.net/publication/333972683_Dynamics_of_scientific_production_in_the_world_in_Europe_and_in_France_2000-2016}, página 23.
+O \textit{Annual Growth Rate} do \dataset\   é de 17,06\%, bem maior que a taxa média de crescimento da publicação científica mundial, de cerca de 3,3\% anuais, em 2016, como ilustra o estudo em \url{https://www.researchgate.net/publication/333972683_Dynamics_of_scientific_production_in_the_world_in_Europe_and_in_France_2000-2016}, página 23.
 
-\subsection{Interpretação do Crescimento} A maior taxa de crescimento do dataset MASSA@jhcf, bem como o seu grande volume, sugerem que o assunto em pauta desperta intenso interesse, inclusive de ordem econômica.
+\subsection{Interpretação do Crescimento} A maior taxa de crescimento do \dataset\   MASSA@jhcf, bem como o seu grande volume, sugerem que o assunto em pauta desperta intenso interesse, inclusive de ordem econômica.
 
 \subsection{Evolução das Citações}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Dataset/AverageArticleCitationPerYear-2021-08-09.png}
-    \caption{Evolução das citações ao dataset MASSA@jhcf.}
+    \caption{Evolução das citações ao \dataset\   MASSA@jhcf.}
     \label{fig:evol:anual:citacoes:MASSA@jhcf}
 \end{figure}
 
-A figura \ref{fig:evol:anual:citacoes:MASSA@jhcf} apresenta a evolução da média de citações aos 5.787 artigos no dataset MASSA@jhcf. 
-Nota-se grande estabilidade na média anual de citações, onde os artigos publicados em 1992 possuem cerca de 2 citações médias, e em 2015 (17 anos depois) o valou alterou-se apenas para três. O pico que aparece no ano de 2008 deve-se, possivelmente, à presença de um artigo do dataset, publicado em 2008, que possui um número surpreendente grande de citações. \footnote{Note que o cálculo do número  médio de citações, nesse caso, utiliza os valores computados no tag "TC (Times Cited)", já presentes no dataset obtido. Ou seja, o gráfico baseia-se no número de citações globais (externas ao dataset MASSA@jhcf), e não no número de citações locais (citações a um artigo do dataset feitas por alguns dos outros artigos dentro do próprio dataset).}.
+A figura \ref{fig:evol:anual:citacoes:MASSA@jhcf} apresenta a evolução da média de citações aos 5.787 artigos no \dataset\   MASSA@jhcf. 
+Nota-se grande estabilidade na média anual de citações, onde os artigos publicados em 1992 possuem cerca de 2 citações médias, e em 2015 (17 anos depois) o valou alterou-se apenas para três. O pico que aparece no ano de 2008 deve-se, possivelmente, à presença de um artigo do \dataset, publicado em 2008, que possui um número surpreendente grande de citações. \footnote{Note que o cálculo do número  médio de citações, nesse caso, utiliza os valores computados no tag "TC (Times Cited)", já presentes no \dataset\   obtido. Ou seja, o gráfico baseia-se no número de citações globais (externas ao \dataset\   MASSA@jhcf), e não no número de citações locais (citações a um artigo do \dataset\   feitas por alguns dos outros artigos dentro do próprio \dataset).}.
 
 \subsection{Interpretação das Citações}
-Mesmo perante um crescimento aproximadamente exponencial no volume de publicações, a ocorrência de um crescimento nas citações médias ao longo dos anos sugere que os artigos do dataset possuem uma tendência de crescimento no tamanho da bibliografia citada, bem como também despertam grande interesse dos cientistas nas demais áreas do conhecimento (já que se trata de citações globais).
+Mesmo perante um crescimento aproximadamente exponencial no volume de publicações, a ocorrência de um crescimento nas citações médias ao longo dos anos sugere que os artigos do \dataset\   possuem uma tendência de crescimento no tamanho da bibliografia citada, bem como também despertam grande interesse dos cientistas nas demais áreas do conhecimento (já que se trata de citações globais).
 
 \subsection{\textit{Three-Field Plots (Sankey diagram)}}
 
-As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos'') apresentam afinidades entre três conjuntos de atributos agregados que ocorrem no dataset. Uma plotagem do tipo Sankey busca mostrar os principais fluxos entre diferentes conjuntos de itens. \footnote{Para uma introdução ver \url{https://en.wikipedia.org/wiki/Sankey_diagram}. Para obter detalhes sobre a forma de geração e utilização desse gráfico, inclusive de forma interativa, veja o vídeo em \url{https://www.youtube.com/watch?v=jBb1iha6-sg}.} 
+As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos'') apresentam afinidades entre três conjuntos de atributos agregados que ocorrem no \dataset. Uma plotagem do tipo Sankey busca mostrar os principais fluxos entre diferentes conjuntos de itens. \footnote{Para uma introdução ver \url{https://en.wikipedia.org/wiki/Sankey_diagram}. Para obter detalhes sobre a forma de geração e utilização desse gráfico, inclusive de forma interativa, veja o vídeo em \url{https://www.youtube.com/watch?v=jBb1iha6-sg}.} 
 
 \begin{figure}
     \centering
     \includegraphics[angle=0,width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Dataset/ThreeFieldPlot-AU-CR-DE-20-20-20.png}
-    \caption{Plotagem ``Três Campos'' (Sankey plot) do dataset MASSA@jhcf: 20 Autores, Citações e Palavras-Chave mais proeminentes.}
+    \caption{Plotagem ``Três Campos'' (Sankey plot) do \dataset\   MASSA@jhcf: 20 Autores, Citações e Palavras-Chave mais proeminentes.}
     \label{fig:MASSA@jhcf:ThreeFieldPlot}
 \end{figure}
 
-A figura \ref{fig:MASSA@jhcf:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' do dataset MASSA@jhcf, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 20 Palavras-Chave mais frequentes empregadas pelos autores.
+A figura \ref{fig:MASSA@jhcf:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' do \dataset\   MASSA@jhcf, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 20 Palavras-Chave mais frequentes empregadas pelos autores.
 
 \subsection{Interpretação da figura \ref{fig:MASSA@jhcf:ThreeFieldPlot}}
 Os vinte autores mais relevantes, em relação aos artigos mais relevantes citados, e as palavras-chave mais relevantes são aparentemente de origem asiática, mais especificamente chinesa, com base nos sobrenomes. De outra formal, a mesma origem chinesa parece não se aplicar aos trabalhos mais citados, aparentemente europeus ou norte-americanos. Isso sugere estar ocorrendo uma migração recente da produção científica, do ocidente para o oriente. 
@@ -153,7 +154,7 @@ A fim de melhor evidenciar as citações mais relevantes segundo o peso dos auto
 \begin{figure}
     \centering
     \includegraphics[angle=0,width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Dataset/ThreeFieldPlot-AU-CR-DE-20-10-20.png}
-    \caption{Plotagem ``Três Campos'' (Sankey plot) do dataset MASSA@jhcf: 10 Autores, 20 Citações e Palavras-Chave mais proeminentes.}
+    \caption{Plotagem ``Três Campos'' (Sankey plot) do \dataset\   MASSA@jhcf: 10 Autores, 20 Citações e Palavras-Chave mais proeminentes.}
     \label{fig:MASSA@jhcf:ThreeFieldPlot:10-20-20}
 \end{figure}
 
@@ -172,7 +173,7 @@ Breves comentários sobre cada um desses trabalhos serão tratados em seção po
     \item \cite{grimm_standard_2006} apresenta o protocolo ODD, proposto para padronizar a descrição de modelos de simulação multiagente.
 \end{itemize}
 
-Nenhum desses 10 documentos citados está contido no dataset recuperado.
+Nenhum desses 10 documentos citados está contido no \dataset\   recuperado.
 
 %\subsection{Análises Bibliométricas: Fontes de Informação}
 
@@ -185,13 +186,13 @@ Nenhum desses 10 documentos citados está contido no dataset recuperado.
 
 \section{Refinamento da Coleta de Dados}
 
-No dia 03 de fevereiro de 2022, no decorrer das análises mais refinadas do dataset MASSA@jhcf, identificou-se um grupo de artigos que não se encaixavam no tema de interesse, e que eram voltados para pesquisas no campo da biologia experimental e nanotecnologia. Isso sugeriu que a query de busca precisaria ser reformulada, para excluir artigos que não se enquadrassem na temática desejada.
+No dia 03 de fevereiro de 2022, no decorrer das análises mais refinadas do \dataset\ MASSA@jhcf, identificou-se um grupo de artigos que não se encaixavam no tema de interesse, e que eram voltados para pesquisas no campo da biologia experimental e nanotecnologia. Isso sugeriu que a \query\  de busca precisaria ser reformulada, para excluir artigos que não se enquadrassem na temática desejada.
 O conjunto das palavras-chave que refletia essa dissonância ficou evidente na análise da estrutura intelectual do conhecimento, do tipo \textbf{Rede de Co-ocorrências de Palavras-chave}, ilustrada no cluster em roxo, à esquerda da figura \ref{fig:MASSA@jhcf:redecoocorr-150-termos}.
 
 \begin{figure}[htp]
     \centering
     \includegraphics[clip=true,trim={9cm 0cm 7cm 0cm },width=0.6\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Structure-Informetric/Conceptual/Co-occurrence Network-Keywords-Plus-150-termos.png}
-    \caption{Rede de co-ocorrência de palavras, com 150 termos, aplicada ao dataset MASSA@jhcf.}
+    \caption{Rede de co-ocorrência de palavras, com 150 termos, aplicada ao \dataset\   MASSA@jhcf.}
     \label{fig:MASSA@jhcf:redecoocorr-150-termos}
 \end{figure}
 
@@ -227,17 +228,20 @@ aqueous-solution,
 degradation,
 expectations.
 
-Algumas delas foram escolhidas para servir como indicativas de artigos fora do escopo, e introduzidas na query original, gerando a nova query aprimorada, ilustrada nas linhas 1 a 13 da listagem \ref{query20220203}.
+Ficou evidente, pela interpretação do significado da maioria desses termos, que tais artigos não tratavam de simulação de fenômenos sociais. Isso sugere que a query está com problemas de precisão, isso é, muitos registros recuperados não atendem à necessidade de informação do pesquisador. 
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais, com escopo negativo de artigos que tratam de experimentos biológicos em vitro.},label=query20220203]
+Algumas dessas palavras foram então escolhidas para servir como indicativas de artigos fora do escopo, e introduzidas a partir da \query\  original, gerando uma nova \query, aprimorada e ilustrada nas linhas 1 a 13 da listagem \ref{query20220203}.
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais, com escopo negativo de artigos que tratam de experimentos biológicos em vitro.},label=query20220203]
 {experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/query-Refinada.txt}
 
-Ou seja justifica-se, na listagem \ref{query20220203}, a inclusão da cláusula \textit{not (
+Além das justificativas para os termos usados entre as linhas 1 a 9, já descritas em \ref{MASSA:query},  justifica-se na listagem \ref{query20220203}, a inclusão da cláusula \textit{not (
  adsoption or molecular -dynamics or force -field
  or in -vitro or nanopartic* or in -vivo
- or aqueous -solution or protein or surface)}, entre as linhas 10 e 13 da query, pois elas irão remover artigos não se enquadram no escopo da busca desejada, por usarem uma ou mais dessas palavras no título, resumo ou palavras-chave do artigo.
+ or aqueous -solution or protein or surface)}, entre as linhas 10 e 13 da \query, pois elas irão remover artigos não se enquadram no escopo da busca desejada, por usarem uma ou mais desses termos no título, resumo ou palavras-chave do artigo.
  
-Com essa nova query de busca foram recuperados, no mesmo dia, 6.935 documentos, que se encontram no arquivo ``wos6935recs.txt'', no diretório ``experiments / jhcf / PesqBibliogr / SimulacaoMultiagente / WoS-20220203 /''.
+Usando a nova \query\ de busca, foram recuperados 6.935 documentos, que se encontram em
+\url{https://github.com/jhcf/Comput-Experim-20212/experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/ WoS-20220203/wos6935recs.txt}. Isso sugere que aproximadamente 1.000 registros não se enquadravam na necessidade de busca.
 Uma nova análise dos dados recuperados é apresentada a seguir.
 
 \section{Nova Análise dos Dados}
@@ -246,22 +250,22 @@ Uma nova análise dos dados recuperados é apresentada a seguir.
 
 Sobre os 6.935 documentos recuperados, foram agora aplicados dois filtros:
 \begin{itemize}
-    \item Remoção dos registros de documentos que não são artigos full paper, publicados em revistas;
+    \item Remoção dos registros de documentos que não são artigos \textit{full paper}, isso é, artigos completos publicados em revistas;
     \item Remoção dos registros de artigos científicos que não fazem parte do \textit{core} da bibliografa, segundo a Lei de Bradford.
 \end{itemize}
 
-Com os filtros aplicados obteve-se um total de 1.975 registros, que doravante serão chamados de forma coletiva, de dataset MASSA2@jhcf.
+Com os filtros aplicados obteve-se um total de 1.975 registros, que doravante serão chamados de forma coletiva, de \dataset\   MASSA2@jhcf.
 
-\subsection{Análise descritiva do dataset MASSA2@jhcf}
+\subsection{Análise descritiva do \dataset\   MASSA2@jhcf}
 
 \begin{table}[]
     \centering
 \csvautotabular[separator=semicolon
 %,filter not strcmp={\csvcolii}{}
 ]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/MASSA2-Main-Information.csv}
-    \caption{Principais dados descritivos do dataset MASSA2@jhcf.}
+    \caption{Principais dados descritivos do \dataset\   MASSA2@jhcf.}
     \label{tab:MASSA2:Main}
 \end{table}
 
-Nota-se, com os resultados da tabela \ref{tab:MASSA2:Main}, que o dataset abrange um período de 31 anos de publicações, com 136 revistas distintas, publicando 1975 artigos, com idade média de publicação de sete anos.
+Nota-se, com os resultados da tabela \ref{tab:MASSA2:Main}, que o \dataset\   abrange um período de 31 anos de publicações, com 136 revistas distintas, publicando 1975 artigos, com idade média de publicação de sete anos.
 

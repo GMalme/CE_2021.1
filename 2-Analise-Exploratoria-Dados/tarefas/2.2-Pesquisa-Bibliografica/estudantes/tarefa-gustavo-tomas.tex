@@ -1,24 +1,29 @@
 %% Keywords usadas: (graphic processing unit or GPU) and (lighting or light or shadow*)
 
-\chapter{Análise Bibliográfica sobre , por Gustavo Tomás}
+\chapter{Análise Bibliográfica sobre Graphics Processing Unit, por Gustavo Tomás}
 
 \section{Planejamento do estudo}
 
-O objetivo do trabalho é analisar o impacto das GPUs (Graphic Processing Units) no processamento e simulação da luz. Para isso, foram utilizadas as ferramentas Bibliometrix e Biblioshiny.
+O objetivo do trabalho é analisar o impacto e popularização das tecnologias utilizadas pelas GPUs (Graphic Processing Units) no processamento e simulação da luz. Para isso, foram utilizadas as ferramentas Bibliometrix e Biblioshiny. Algumas perguntas para basear a pesquisa são:
 
-\subsection{O que já existe de pesquisa bibliométrica sobre esse tema?}
+\begin{itemize}
+    \item Qual tecnologia obteve maior crescimento ao passar dos anos?
+    \item Quais autores possuem o maior impacto no desenvolvimento dessas tecnologias?
+\end{itemize}
 
 \subsection{Limitações} O exercício relatado foi feito em cerca de uma semana, entre os dias 02 e 10 de fevereiro de 2022 e a base de dados utilizada foi Web Of Science (WoS).
 
 \section{Coleta de dados}
 
-A coleta de dados foi feita usando o WoS no dia 03/02/2022, por meio do Portal de Periódicos da CAPES. Foram feitas buscas nas coleções Science Citation Index Expanded (SCI-EXPANDED) e Social Sciences Citation Index (SSCI), mas com o foco em registros relativos a área de ciências naturais e exatas. A busca utilizada foi a seguinte:
+A coleta de dados foi feita usando o WoS no dia 04/02/2022, por meio do Portal de Periódicos da CAPES. Foram feitas buscas nas coleções Science Citation Index Expanded (SCI-EXPANDED) e Social Sciences Citation Index (SSCI), mas com o foco em registros relativos a área de ciências naturais e exatas. A busca utilizada foi a seguinte:
 
 \begin{verbatim}
-(graphic processing unit or GPU) and (lighting or light or shadow*)
+(graphic processing unit or GPU) 
+and
+(lighting or light or shadow*)
 \end{verbatim}
 
-Essa busca consiste em dois termos, sendo que o primeiro é composto pela GPU (por extenso ou pela sigla) e o segundo pelas palavras luz ou iluminação ou sombra(s). Dessa forma, foram encontrados 1311 registros, sendo que nesse trabalho foram utilizados os primeiros 1000 registros, disponíveis em \ref{}.
+Essa busca consiste em dois termos, sendo que o primeiro é composto pela GPU (por extenso ou pela sigla) e o segundo pelas palavras luz ou iluminação ou sombra(s). Dessa forma, foram encontrados 1311 registros, sendo que nesse trabalho foram utilizados os primeiros 1000 registros.
 
 \section{Análise dos dados}
 
@@ -27,42 +32,65 @@ Antes da análise, foram aplicados filtros aos registros, de forma que apenas re
 
 \subsection{Análise descritiva do dataset}
 
-As informações mais gerais sobre o \textit{dataset} MASSA@jhcf são as seguintes:
+As informações mais gerais sobre o \textit{dataset} são as seguintes:
 \begin{description}
-    \item [\textit{Timespan}] Os artigos que atenderam aos critérios de busca e filtragem foram publicados a partir de 1990, até 2021. Ou seja, não foram encontrados registros entre 1945 e 1989.
-    \item [\textit{Sources (Journals, Books, etc)}] São 2.319 fontes de informação que publicaram os documentos recuperados no dataset MASSA@jhcf. Ou seja, em média, cada \textit{scientific journal} publicou $5.787/2.319=2,5$ artigos. \footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência a quantidade de artigos publicados por revista.}
-    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no dataset MASSA@jhcf é de 7,36 anos.
-    \item [\textit{Average citations per documents}] Cada artigo no dataset MASSA@jhcf foi citado, em média 20,7 vezes\footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência de  citações a artigos.}.
-    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 5.787 artigos do dataset MASSA@jhcf  foi citado 2,262 vezes por ano, em média.
-    \item [\textit{References}] O dataset MASSA@jhcf contém 201.464 referências citadas (tags CR).
-    \item [\textit{Keywords Plus (ID)}] 13.735 distintas palavras-chave do tipo Keywords Plus (ID)\footnote{\textit{KeyWords Plus} são ``termos de índice gerados automaticamente a partir dos títulos de artigos citados. Os termos do KeyWords Plus devem aparecer mais de uma vez na bibliografia e são ordenados de frases com várias palavras a termos únicos. O KeyWords Plus aumenta o número de resultados tradicional de palavras-chave ou títulos.'' Fonte: \url{https://images.webofknowledge.com/WOKRS410B4/help/pt_BR/WOS/hp_full_record.html}} foram encontradas no dataset MASSA@jhcf. 
-    \item [\textit{Author's Keywords (DE)}] 15.704 distintas palavras-chave indicadas pelos autores foram encontradas no \textit{dataset}.
-    \item [\textit{Authors}] 19.410 distintos nomes de autores foram encontrados no dataset\footnote{Um mesmo autor pode ter uma ou mais diferentes grafias no dataset, e serão reconhecidos dois ou mais autores diferentes, embora de fato sejam apenas um. Isso significa que a quantidade de \textbf{nomes de autores} equivale à quantidade de \textbf{autores}. Adicionalmente, é possível que distintos autores sejam reconhecidos com o mesmo nome, isso é, que sejam homônimos. Ou seja, o dataset em geral conterá erros de contagem na quantidade de autores reais.}.
-    \item [\textit{Author Appearances}] Os 19.410 distintos (nomes de) autores foram encontrados 23.470 vezes, como autores de artigos.
-    \item [\textit{Authors of single-authored documents}] Dentre os 19.410 distintos (nomes de) autores encontrados, 375 deles editaram artigos individualmente, isso é, sem co-autores.
-    \item [\textit{Authors of multi-authored documents}] Dentre os 19.410 distintos (nomes de) autores encontrados, 19.035 deles editaram artigos com um ou mais co-autores"
-    \item [\textit{Single-authored documents}] Dentre os 5.787 documentos presentes no dataset MASSA, 409 foram escritos por um único autor, e os 5.378 restantes foram elaborados em co-autoria.
-    \item [\textit{Documents per Author}] Dentre os 19.410 distintos (nomes de) autores, cada um publicou em média 0,298 artigos.
-    \item [\textit{Authors per Document}] Cada um dos 5.787 documentos presentes no dataset MASSA foi autorado com 3,35 autores em média ($19.410 / 5.787 = 3,35$).
-    \item [\textit{Co-Authors per Documents}] As 23.470 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 4,06 vezes para os 5.787 documentos do dataset MASSA@jhcf.
-    \item [\textit{Collaboration Index}] Os 19.035 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 3,54 vezes para editar os 5.378 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 3,54. 
+    \item  [\textit{Timespan}] Os artigos analisados foram publicados entre os anos de 1992 e 2022.
+    \item  [\textit{Sources}] O dataset é composto por 360 fontes diferentes (dentre artigos, livros e outros).
+    \item 
+    [\textit{Average years from publication}] A média do tempo de publicação é de 6 anos.
+    \item 
+    [\textit{Average citations per document}] Cada artigo no dataset foi citado em média 18.55 vezes.
+    \item 
+    [\textit{References}] O dataset contém 27463 referências citadas.
 \end{description}
 
 \subsection{Evolução da Produção Científica}
 
-\subsection{Interpretação do Crescimento}
+O gráfico em \ref{fig:gpu-prod-cient} apresenta a evolução da produção científica, mostrando uma forte tendência de crescimento a partir de 2007.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-prod-cient.png}
+    \caption{Evolução da produção científica}
+    \label{fig:gpu-prod-cient}
+\end{figure}
+
+O gráfico mostra um enorme crescimento na área, com destaque ao ano de 2021 com 120 documentos produzidos, um crescimento de 25\% em relação ao ano de 2020.
+
+Nos anos de 2019-2021, em particular, foram introduzidas novas placas de vídeo no mercado, com poder computacional bem maior que as anteriores (é possível comparar as placas 1080 com as gerações 2080 e 3080 e perceber um aumento substancial de qualidade).
 
 \subsection{Evolução das Citações}
 
-\subsection{Interpretação das Citações}
+A figura em \ref{fig:gpu-citation-year} mostra o número de citações médias feitas por ano. Nota-se uma grande quantidade de citações no ano de 2007, provavelmente devido a um artigo muito citado por outros autores. Nota-se também o que em uma faixa de 20 anos (1992-2021) o número de citações por ano aumentou de 0.2 para 1.0, um aumento de 5 vezes.
 
-\subsection{\textit{Three-Field Plots (Sankey diagram)}}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-citation-year.png}
+    \caption{Evolução das citações por ano}
+    \label{fig:gpu-citation-year}
+\end{figure}
 
-\subsection{Interpretação da figura}
+\subsection{\textit{Gráfico de três campos}}
 
-\subsection{Análises Bibliométricas: Fontes de Informação}
+O gráfico em \ref{fig:gpu-three-field} mostra um gráfico de três campos feitos com os dados acerca das referências, autores e palavras-chaves mais relevantes.
 
-\subsection{Análises Bibliométricas: Autores}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-three-field.png}
+    \caption{Gráfico de três campos analisando palavras-chave}
+    \label{fig:gpu-three-field}
+\end{figure}
 
-\subsection{Análises Bibliométricas: Documentos}
+Observando as palavras-chaves, é possível perceber que termos como iluminação, processamento em paralelo e \textit{ray tracing} são expressões relevantes no contexto de GPUs.
 
+Observando os autores é possível perceber que a maior parte é de origem asiática e que esses autores utilizam principalmente \textit{masuda n 2006 opt express} como referência.
+
+\subsection{Refinamento da coleta de dados}
+
+O gráfico em \ref{fig:gpu-co-occur} mostra a rede de co-ocorrências de palavras-chave. Dentro os termos é possível perceber que os assuntos tratados são relevantes ao tópico de GPUs, com destaque ao campo em verde que separa assuntos relativos a dispersão de luz em meios turbulentos (\textit{turbid media}).
+
+\begin{figure}[ht]
+    \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-co-ocurr.png}
+    \caption{Rede de co-ocorrências de palavras-chave}
+    \label{fig:gpu-co-occur}
+\end{figure}

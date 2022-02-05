@@ -108,3 +108,24 @@ Também é interessante observar que o primeiro registro é em 1990. O conceito 
     \caption{Produção científica anual}
     \label{fig:ABMHub:CPY}
 \end{figure}
+
+Podemos perceber que há um claro crescimento médio desde 1990 das citações médias por ano. Uma das coisas que mais chama atenção são os 4 picos no gráfico: em 2001, 2005, 2011 e 2017. Esses provavelmente são de artigos (ou grupos de artigos) que tiveram um impacto fora do comum, trazendo novos conceitos ou realizando descobertas fantásticas.
+
+Esta é, inclusive, uma das perguntas feitas como motivação de pesquisa: "Como se dá o progresso das pesquisas em NLP ao longo dos anos? As redes sociais influenciaram esse crescimento?". Vemos que há crescimento mas, exclusivamente através desses dados, é difícil tirar conclusões sobre a relação deste crescimento com a vinda de redes sociais. 
+
+\subsection{\textit{Three-Field Plots (Sankey diagram)}}
+
+Como o nome indica, "Three-Field Plots" são tipos de gráficos que buscam correlacionar três tipos de dados diferentes, sem a necessidade de uma terceira dimensão adicionada em cima de um gráfico bidimensional. Na imagem \ref{fig:ABMHub:TFP}, temos um exemplo de plotagem de três campos que interliga os autores presentes no dataset, com fontes que eles citaram, assim como palavras chaves que costumam usar em seus artigos. 
+
+ \begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/ABMHub/PesquisaBibliometrica/NLP/tfp1.png}
+    \caption{Three Field Plot - Citações, Autores e Palavras chaves}
+    \label{fig:ABMHub:TFP1}
+\end{figure}
+
+Nessa plotagem, podemos extrair algumas informações muito interessantes sobre o estado atual de NLP. Primeiramente, vemos que o artigo mais citado por todos os artigos do dataset aqui apresentado é sobre computação neural (ou redes neurais), o que faz muito sentido, considerando que a NLP moderna é baseada em machine e deep learning. Outra observação interessante é que os artigos, em geral, são igualmente citados, mostrando que existe uma série de conceitos base para a NLP que são usados na maioria das aplicações do conceito.
+
+Outro ponto interessante é que quase todos os autores listados no gráfico são chineses. Isso evidencia muito claramente a ascensão da China como potencia intelectual e tecnológica, principalmente em uma área tão relevante como a Inteligência Artificial.
+
+Por último, as keywords também merecem sua atenção. Como esperado por ser o foco do dataset, Processamento de Linguagem Natural é a palavra-chave com mais menções. Mas, em seguida, vemos "Deep Learning", "Machine Learning" e "Neural Networks", o que faz muito sentido, partindo do princípio que (como dito anteriormente), NLP se apoia nesses conceitos atualmente. Também temos, com tamanho considerável, "sentiment analysis" e "task analysis", que são aplicações muito famosas de NLP.

@@ -1,0 +1,4 @@
+(((deep) AND (fake))
+OR ((fake) AND (speech))
+OR (deepfake)) 
+NOT (news)

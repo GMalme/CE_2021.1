@@ -2,3 +2,26 @@
 
 \section{Planejamento do estudo}
 
+A mineração de dados é comumente associada ao mercado devido a análise de produtos que o consumidor queira comprar com base nos seus dados de compras, porém existem várias outras áreas que se beneficiam da mineração de dados como medicina para prever o número de pacientes com cada categoria e detecção de fraudes.
+
+Este estudo fará a análise bibliográfica sobre a mineração de dados em particular na área de medicina para tentar responder as seguintes perguntas:
+
+\begin{itemize}
+    \item Quais são os autores que mais produzem artigos relacionados a mineração de dados na área de medicina?
+    \item O surgimento do coronavírus deu um impulso na produção de artigos?
+    \item Quais são os principais padrões que a mineração de dados busca explorar?
+\end{itemize}
+
+\subsection{Uso do Bibliometrix e Biblioshiny}
+Neste estudo serão utilizados a ferramenta e o workflow Bibliometrix e Biblioshiny da linguagem R para poder visualizar dados e gráficos relacionados a lista de base obtida.
+
+\section{Coleta de Dados}
+A coleta de dados foi feita no dia 04 de Fevereiro de 2022 a partir do Web Of Science por meio do Portal de Periódicos da CAPES, disponibilizado graças ao acesso CAFe. Para realizar a busca utilizou-se a query ilustrada a seguir:
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre mineração de dados na área de medicina.},label=query20220204-vinis-caixe]
+{experiments/vinis-caixe/PesqBibliogr/MineracaoDados/WoS-20220204/query.txt}
+
+\subsection{Explicação para os termos de busca usados}
+Data e Mining foram usados para recuperar artigos relacionados a mineração de dados, health care, medicine e medical utilizados para obter artigos sobre a área de medicina e a palavra patient foi usada para obter artigos que possuam dados de pacientes em específico. No decorrer da análise poderá haver um refinamento dessa \query\.
+
+\section{Análise da dados}

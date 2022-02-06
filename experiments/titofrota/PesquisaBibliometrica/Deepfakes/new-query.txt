@@ -1,0 +1,5 @@
+(deepfake OR deep-fake
+OR fake AND (deep OR speech)
+OR face-swap*)
+NOT (labor OR finger* OR job* OR medical
+OR shading OR lighting OR biometric OR attack)

@@ -1,0 +1,37 @@
+\chapter{Análise Bibliográfica sobre o Uso de Big Data na Política, por Enzo Nunes Leal Sampaio}
+
+\section{Planejamento do estudo}
+Política, do grego \textit{politikos} significa algo relacionado com grupos sociais que integram a Pólis \citep{wikipedia_politica_nodate}. Diante dessa definição podemos assumir que a política faz parte do dia a dia de todas as pessoas.
+
+A partir desse pensamento foi questionado sobre a participação da computação nesse tema. Mais especificamente, como o Big Data pode influenciar na política.
+
+Dessa forma, os questionamentos que norteam este estudo são:
+
+\begin{itemize}
+    \item Qual a base de conhecimento produzida sobre o tema de Uso de Big Data na Política?
+    \item Como os partidos políticos usam o Big Data em suas campanhas?
+    \item Como certos grupos políticos podem se beneficiam do uso de Big Data?
+\end{itemize}
+
+\subsection{Uso do Bibliometrix e Biblioshiny}
+
+O Bibliometrix é uma biblioteca da linguagem R que permite a realização de análises quantitativas e estatística sobre publicações científicas.
+
+O Biblioshiny é uma ferramenta do pacote Bibliometrix que contribui com aspectos visuais às funções executadas pela biblioteca.
+
+A pesquisa bibliográfica sobre o tema já mencionado é feita usando, principalmente, essas duas ferramentas.
+
+\subsection{Limitações}
+O estudo foi feito em uma semana com trabalhos de duração de uma hora por dia e utilizando somente a base de dados Web of Science(WoS).
+
+\section{Coleta de dados}
+A coleta de dados foi feita a partir da base Web of Science no dia 3 de fevereiro de 2022, acessado pelo Portal de Periódicos da CAPES. As buscas foram feitas nas coleções Science Citation Index Expanded(SCI-EXPANDED) e Social Sciences Citation Index (SSCI) com foco nas categorias relacionadas às ciências exatas e foram obtidos 2540 registros. A pesquisa pode ser vista a seguir:
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/busca.tex}
+
+\subsection{Explicações para os termos de busca usados}
+Como o objetivo é buscar registros que relacionem \textbf{Big Data} e \textbf{Política} é feita uma conjunção entre duas cláusulas principais, sendo que, na primeira tem-se uma outra cláusula conjuntiva entre as palavras \textit{big} e \textit{data}. Já na segunda cláusula principal tem-se uma disjunção entre 4 cláusulas.
+
+A primeira é uma disjunção entre \textit{politica} e \textit{parties}. A segunda é \textit{elections}. A terceira é uma disjunção entre \textit{party} e \textit{campaigns}. Essas três cláusulas são feitas tendo como objetivo obter registros que ajudem a responder o segundo questionamento feito na primeira seção deste texto.
+
+Por fim, a última cláusula \textit{policy} busca associar todos os temas já relatados com política.

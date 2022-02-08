@@ -7,8 +7,8 @@
 O objetivo do trabalho é analisar o impacto e popularização das tecnologias utilizadas pelas GPUs (Graphic Processing Units) no processamento e simulação da luz. Para isso, foram utilizadas as ferramentas Bibliometrix e Biblioshiny. Algumas perguntas para basear a pesquisa são:
 
 \begin{itemize}
-    \item Qual tecnologia obteve maior crescimento ao passar dos anos?
-    \item Quais autores possuem o maior impacto no desenvolvimento dessas tecnologias?
+    \item Como se deu o crescimento das pesquisas sobre GPUs com o passar dos anos?
+    \item Quais autores possuem o maior impacto nesses campos de pesquisa?
 \end{itemize}
 
 \subsection{Limitações} O exercício relatado foi feito em cerca de uma semana, entre os dias 02 e 10 de fevereiro de 2022 e a base de dados utilizada foi Web Of Science (WoS).
@@ -23,7 +23,7 @@ and
 (lighting or light or shadow*)
 \end{verbatim}
 
-Essa busca consiste em dois termos, sendo que o primeiro é composto pela GPU (por extenso ou pela sigla) e o segundo pelas palavras luz ou iluminação ou sombra(s). Dessa forma, foram encontrados 1311 registros, sendo que nesse trabalho foram utilizados os primeiros 1000 registros.
+Essa busca consiste em dois termos, sendo que o primeiro é composto pela GPU (por extenso ou pela sigla) e o segundo pelas palavras luz ou iluminação ou sombra(s). Dessa forma, foram encontrados 1311 registros, sendo que nesse trabalho foram utilizados os primeiros 1000 registros. Esse dataset doravante será chamado de db\_GPU.
 
 \section{Análise dos dados}
 
@@ -51,7 +51,7 @@ O gráfico em \ref{fig:gpu-prod-cient} apresenta a evolução da produção cien
 \begin{figure}[ht]
     \centering
     \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-prod-cient.png}
-    \caption{Evolução da produção científica}
+    \caption{Evolução da produção científica presente no \textit{db\_GPU}}
     \label{fig:gpu-prod-cient}
 \end{figure}
 
@@ -66,7 +66,7 @@ A figura em \ref{fig:gpu-citation-year} mostra o número de citações médias f
 \begin{figure}[ht]
     \centering
     \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-citation-year.png}
-    \caption{Evolução das citações por ano}
+    \caption{Evolução das citações por ano no \textit{db\_GPU}}
     \label{fig:gpu-citation-year}
 \end{figure}
 
@@ -77,20 +77,28 @@ O gráfico em \ref{fig:gpu-three-field} mostra um gráfico de três campos feito
 \begin{figure}[ht]
     \centering
     \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-three-field.png}
-    \caption{Gráfico de três campos analisando palavras-chave}
+    \caption{Gráfico de três campos analisando palavras-chave no \textit{db\_GPU}}
     \label{fig:gpu-three-field}
 \end{figure}
 
 Observando as palavras-chaves, é possível perceber que termos como iluminação, processamento em paralelo e \textit{ray tracing} são expressões relevantes no contexto de GPUs.
 
+Em particular, a técnica de \textit{Ray Tracing} foi otimizada nos últimos anos, de forma que é possível aplicá-la em simulações em tempo real (que antes não era possível devido ao alto custo computacional).
+
 Observando os autores é possível perceber que a maior parte é de origem asiática e que esses autores utilizam principalmente \textit{masuda n 2006 opt express} como referência.
+
+Essa publicação em específico relata avanços feitos na redução do custo computacional para geração de hologramas (objetos tridimensionais) em ambientes computacionais.
 
 \subsection{Refinamento da coleta de dados}
 
-O gráfico em \ref{fig:gpu-co-occur} mostra a rede de co-ocorrências de palavras-chave. Dentro os termos é possível perceber que os assuntos tratados são relevantes ao tópico de GPUs, com destaque ao campo em verde que separa assuntos relativos a dispersão de luz em meios turbulentos (\textit{turbid media}).
+O gráfico em \ref{fig:gpu-co-occur} mostra a rede de co-ocorrências de palavras-chave no \textit{db\_GPU}. Dentro os termos é possível perceber que os assuntos tratados são relevantes ao tópico de GPUs, com destaque ao campo em verde que separa assuntos relativos a dispersão de luz em meios turbulentos (\textit{turbid media}).
 
 \begin{figure}[ht]
     \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-co-ocurr.png}
-    \caption{Rede de co-ocorrências de palavras-chave}
+    \caption{Rede de co-ocorrências de palavras-chave no \textit{db\_GPU}}
     \label{fig:gpu-co-occur}
 \end{figure}
+
+Esses tópicos são de especial interesse ao tópico de simulação de luz, pois essa simulação se dá por meio de aproximações ao mundo real (modelos físicos e fórmulas matemáticas). Um modelo eficiente consegue reter a essência dos fenômenos reais, de modo que é possível realizar uma simulação realista com uma capacidade computacional não tão elevada.
+
+Softwares de animação (como blender) e de simulação possuem \textit{engines} que simulam fenômenos físicos, tais como corpos sólidos, emissores, índice de refração de materiais e reflexo da luz. Em especial, a \textbf{simulação de Monte Carlo} permite que uma amostra aleatória de possíveis caminhos de luz convirjam para uma solução correta, tornando esse método um dos métodos físicos mais precisos existentes.

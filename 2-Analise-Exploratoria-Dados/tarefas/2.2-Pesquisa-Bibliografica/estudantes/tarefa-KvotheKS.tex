@@ -11,6 +11,14 @@
         \item Análise de vetores em ótica, para saber como a iluminação afetará um determinado ambiente;
         \item Análise da topologia, com fins de otimizar \emph{path-finding};
     \end{itemize}
+    
+    Considerando o corpo de estudo, algumas questões surgem:
+    \begin{item}
+        \item Quais são os principais interesses relacionados ao estudo dos fenômenos naturais voltados a computação?
+        \item Quem são os agentes que produzem o maior volume de artigos?
+        \item Quais são os corpos de estudo mais relacionados entre si?
+    \end{item}
+    Todas elas serão analisadas e respondidas no decorrer da seção.
 \subsection{Uso do Bibliometrix e Biblioshiny}
      Com o auxílio das ferramentas disponibilizadas pelo Bibliometrix, como o Biblioshiny, serão analisados os artigos encontrados, por meio de gráficos e tabelas.   
 \section{Coleta de Dados}
@@ -19,16 +27,16 @@
     Por fins de diminuir o tamanho do \emph{dataset}, só foi utilizada a edição \emph{Science Citation Index Expanded}, que tem o foco voltado para ciências exatas e naturais.
     
     A busca inicial foi feita com a seguinte \emph{query}:
-\begin{lstlisting}
+\begin{lstlisting}[basicstyle = \normalsize]
 ((algorit* ) and (Optimization)) and 
 (optics or ((fluid* or aero*) and dynamics))
 \end{lstlisting}
 \subsection{Explicação para a \emph{Query}}
     A busca foi feita com o objetivo de encontrar apenas técnicas para otimizar algoritmos relacionados a ótica, aerodinâmica e hidrodinâmica.
     
-    Os termos $((algorit* ) and (Optimization))$ são para encontrar apenas os artigos relacionados a algoritmos computacionais.
+    Os termos \verb|((algorit* ) and (Optimization))| são para encontrar apenas os artigos relacionados a algoritmos computacionais.
     
-    Já $(optics or ((fluid* or aero*) and dynamics))$ serve para falar que tanto faz um artigo de ótica ou de aerodinâmica ou de hidrodinâmica.
+    Já \verb|(optics or ((fluid* or aero*) and dynamics))| serve para falar que tanto faz um artigo de ótica ou de aerodinâmica ou de hidrodinâmica.
     
     Com a \emph{Query} já montada, os registros foram exportados do WoS com todas as informações disponíveis e no formato de arquivo de texto sem formatação. Foram recuperados desa maneira, 7443 registros no total.
 \section{Análise dos dados}

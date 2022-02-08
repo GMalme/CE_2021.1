@@ -262,9 +262,9 @@ Após os filtros aplicados (apenas um)  obteve-se um total de 4.647 registros, q
 
 \begin{table}[]
     \centering
-%\csvautotabular[separator=semicolon
+\csvautotabular[separator=semicolon
 %,filter not strcmp={\csvcolii}{}
-%]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Descritiva/MASSA2-Main-Information.csv}
+]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Descritiva/MASSA2-Main-Information.csv}
     \caption{Principais dados descritivos do \dataset\   MASSA2@jhcf.}
     \label{tab:MASSA2:Main}
 \end{table}
@@ -275,8 +275,9 @@ Adicionalmente, o \dataset\ apresenta 157.507 referências citadas, com uma méd
 
 14.229 autores distintos produziram os artigos, com uma média de 3,73 autores por documento.
 
-\subsubsection{Evolução da Produção Científica Anual}
-No tema de simulação multiagente de fenômenos sociais, a evolução da produção científica mundial é sumarizada no gráfico da figura 
+\subsubsection{Evolução anual da produção científica}
+
+No tema de simulação multiagente de fenômenos sociais, a evolução anual da produção científica mundial é sumarizada no gráfico da figura \ref{fig:MASSA2:Evolucao}.
 
 \begin{figure}
     \centering
@@ -285,8 +286,199 @@ No tema de simulação multiagente de fenômenos sociais, a evolução da produ�
     \label{fig:MASSA2:Annual-Scientific-Production}
 \end{figure}
 
-Nota-se que não há muita diferença na evolução, em comparação ao \dataset\ MASSA@jhcf, que mostra-se em ascendência forte, a partir dos ultimos seis anos (2015).
+Entre 1991 e 2005 o crescimento de publicações era quase linear. As publicações mostram-se em ascendência forte a partir dos últimos seis anos (2015). Esse crescimento tem sido visto em várias outras áreas de conhecimento.
+
+\subsubsection{Média de citações anuais por artigo}
+
+O gráfico da figura \ref{fig:MASSA2:Media:Citacoes} apresenta a evolução das citações anuais médias, para os artigos do \dataset\ MASSA2@jhcf. Observa-se que há um crescimento discreto da média, onde os artigos mais recentes tendem a ser mais citados, como esperado. A redução da média no ano de 2021 deve-se, provavelmente, à insuficiência de indexação e de citação para os artigos mais recentes, tendo em vista que p ano de 2021 foi encerrado há menos de dois meses. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Descritiva/MASSA2-Average-Citations-per-Year.png}
+    \caption{Média de citações para cada artigo do \dataset\ MASSA2@jhcf, conforme o ano de publicação}
+    \label{fig:MASSA2:Media:Citacoes}
+\end{figure}
+
+Para que melhor se compreenda como foi produzido o gráfico, a tabela \ref{tab:MASSA2:Media:Citacoes} apresenta parcialmente os dados de citação anual para os artigos do \dataset\ MASSA2@jhcf. A título de exemplo, nota-se que no \dataset\ foram encontrados 9 artigos publicados no ano de 1991, tendo sido cada artigo citado, em média, aproximadamente 31,4 vezes. Dado que esses artigos já tem 31 anos citáveis, obtém-se uma média de 1,01 citações anuais, aproximadamente.
+
+\begin{table}[]
+    \centering
+\csvautotabular[separator=semicolon
+%,filter not strcmp={\csvcolii}{}
+]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Descritiva/MASSA2-Average-Citations-per-Year.csv}
+    \caption{Dados parciais de citação anual para os artigos do \dataset\   MASSA2@jhcf.}
+    \label{tab:MASSA2:Media:Citacoes}
+\end{table}
+
+\subsubsection{Diagramas de Sankey (\textit{three fields plots})} 
+
+A fim de apresentar mais alguns dados sumários gerais sobre  o \dataset, as figuras \ref{fig:MASSA2:Sankey:CR-AU-DE} e \ref{fig:MASSA2:Sankey:SO:DE:AU_UN} apresentam plotagens do tipo 
+\textit{three fields plots}, também conhecidas pelo nome de Diagramas de Sankey \citep{riehmann_interactive_2005}, que possibilitam várias combinações de afinidades mais evidentes entre as diversas colunas dos registros do \dataset.
+
+A primeira plotagem, figura \ref{fig:MASSA2:Sankey:CR-AU-DE}, apresenta as afinidades mais evidentes entre 15 Autores (centro), 15 Palavras-chave (direita) e 15 Referências citadas (esquerda). Ao centro, observa-se que os autores mais evidentes, segundo a técnica apresentada, tem origem asiática, a julgar pelos nomes. 
+
+As 15 palavras-chave mais evidentes sugerem que o \dataset\ possui artigos que refletem a busca sobre o tema desejado, mas que há muitas palavras distintas que representam o mesmo conceito, como as a seguir listadas:
+\begin{enumerate}
+    \item multi-agent systems;
+    \item multiagent system;
+    \item multiagent system; 
+    \item agent-based model;  
+    \item agent-based models;
+    \item agent-based modeling;
+    \item agent-based simulation;
+\end{enumerate}
+
+As cinco palavras a seguir sugerem, o que pode ser comprovado com o aprofundamento desse estudo bibliográfico, que o estado da arte no tema busca atualmente respostas, ou possui fundamentos nas seguintes questões:
+\begin{description}
+    \item [event-triggered control] Como eventos disparadores exercem  controle sobre o comportamento (coletivo) de grupos sociais?
+    \item [consensus] Como usar simulação multi-agente para entender o surgimento de consenso em grupos sociais?
+    \item [opinion dynamics] Como usar simulação multi-agente para entender a dinâmica de opiniões que se formam em grupos sociais?
+    \item [social networks] Como os métodos da análise de redes sociais podem ser usados no tema da simulação multiagente?
+    \item [reinforcement learning] Como usar os métodos e técnicas de aprendizagem por reforço em simulação multiagente?
+    \item [game theory] Como usar os métodos e técnicas da teoria dos jogos em simulação multiagente?
+\end{description}
+
+Algumas das referências citadas, apresentadas à esquerda do gráfico, devem evidenciar a pertinência das questões acima sugeridas, a ser comprovado até o final do estudo. 
+
+\begin{figure}
+    \centering
+    \includegraphics[angle=90,width=1\textwidth,height=0.9\textheight]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Descritiva/MASSA2-Three-Fields-Plot-CR-AU-DE.png}
+    \caption{Diagrama Sankey, relacionando as afinidades mais evidentes entre Autores (centro), Palavras-chave (direita) e Referências citadas (esquerda).}
+    \label{fig:MASSA2:Sankey:CR-AU-DE}
+\end{figure}
+
+A segunda plotagem, figura \ref{fig:MASSA2:Sankey:SO:DE:AU_UN}, apresenta as afinidades mais evidentes entre 15 revistas (esquerda), 15 palavras-chave (centro) e 15 instituições de filiação dos autores (direita). Com base na técnica usada, fica evidente a proeminência dos seguintes \textit{journals} sobre os demais, sendo apresentado um breve trecho do foco de cada revista, extraído da página online da revista:
+\begin{itemize}
+    \item JASSS: The Journal of Artificial Societies and Social Simulation. \textit{\small  is an interdisciplinary journal for the exploration and understanding of social processes by means of computer simulation. Since its first issue in 1998, it has been a world-wide leading reference for readers interested in social simulation and the application of computer simulation in the social sciences.}. Fonte \url{https://www.jasss.org/admin/about.html};
+    \item PHYSICA A-STATISTICAL MECHANICS AND ITS APPLICATIONS. \textit{\small ... publishes research in the field of statistical mechanics and its applications. Statistical mechanics sets out to explain the behaviour of macroscopic systems, or the large scale, by studying the statistical properties of the microscopic or nanoscopic constituents. Applications of the concepts and techniques of statistical mechanics include: applications to physical and physiochemical systems such as solids, liquids and gases, interfaces, glasses, colloids, complex fluids, polymers, complex networks, applications to economic and social systems (e.g. socio-economic networks, financial time series, agent based models, systemic risk, market dynamics, computational social science, science of science, evolutionary game theory, cultural and political complexity), and traffic and transportation (e.g. vehicular traffic, pedestrian and evacuation dynamics, network traffic, swarms and other forms of collective transport in biology, models of intracellular transport, self-driven particles), as well as biological systems (biological signalling and noise, biological fluctuations, cellular systems and biophysics); and other interdisciplinary applications such as artificial intelligence (e.g. deep learning, genetic algorithms or links between theory of information and thermodynamics/statistical physics.).}. Fonte: \url{https://www.journals.elsevier.com/physica-a-statistical-mechanics-and-its-applications};
+    \item IEEE ACCESS. \textit{\small ... is a multidisciplinary, all-electronic archival journal, continuously presenting the results of original research or development across all IEEE’s fields of interest. Supported by article processing charges (APC), its hallmarks are a rapid peer review and publication process of 4 to 6 weeks, with open access to all readers.}. Fonte: \url{https://ieeeaccess.ieee.org/about-ieee-access/learn-more-about-ieee-access/}
+\end{itemize} 
+
+\begin{figure}
+    \centering
+    \includegraphics[angle=90,width=1\textwidth,height=0.9\textheight]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Descritiva/MASSA2-Three-Fields-Plot-SO:DE:AU_UN.png}
+    \caption{Diagrama Sankey, relacionando as afinidades mais evidentes entre revistas (esquerda), palavras-chave (centro) e instituição de filiação dos autores (direita).}
+    \label{fig:MASSA2:Sankey:SO:DE:AU_UN}
+\end{figure}
+
+Observa-se, com base no escopo declarado de cada uma das revistas, que a revista JASSS é bem enquadrada no escopo da busca, enquanto que a revista IEEE Access não tem relação direta com o tema. Já a revista Physica A aborda o tema de forma mais ampla do que o buscado, com ênfase em métodos da mecânica estatística, que não são os únicos possíveis de serem empregados.
+Os nomes das demais 8 revistas, apresentadas no diagrama, são os seguintes:
+\begin{enumerate}
+    \item NEUROCOMPUTING \textit{\small  ... welcomes theoretical contributions aimed at winning further understanding of neural networks and learning systems, including, but not restricted to, architectures, learning methods, analysis of network dynamics, theories of learning, self-organization, biological neural network modelling, sensorimotor transformations and interdisciplinary topics with artificial intelligence, artificial life, cognitive science, computational learning theory, fuzzy logic, genetic algorithms, information theory, machine learning, neurobiology and pattern recognition.}. Fonte: \url{https://www.journals.elsevier.com/neurocomputing};
+    \item IEEE TRANSACTIONS ON AUTOMATIC CONTROL \textit{\small publishes high-quality papers on the theory, design, and applications of control engineering.  Two types of contributions are regularly considered: 
+1) Papers:  Presentation of significant research, development, or application of control concepts. 
+2) Technical Notes and Correspondence:  Brief technical notes, comments on published areas or established control topics, corrections to papers and notes published in the Transactions.
+In addition, special papers (tutorials, surveys, and perspectives on the theory and applications of control systems topics) are solicited. }. Fonte: \url{https://ieeexplore.ieee.org/xpl/aboutJournal.jsp?punumber=9};
+    \item AUTONOMOUS AGENTS AND MULTI-AGENT SYSTEMS \textit{\small is the official journal of the International Foundation for Autonomous Agents and Multi-Agent Systems. It provides a leading forum for disseminating significant original research results in the foundations, theory, development, analysis, and applications of autonomous agents and multi-agent systems. Coverage in Autonomous Agents and Multi-Agent Systems includes, but is not limited to:
+Agent decision-making architectures and their evaluation, including: cognitive models; knowledge representation; logics for agency; ontological reasoning; planning (single and multi-agent); reasoning (single and multi-agent)
+Cooperation and teamwork, including: distributed problem solving; human-robot/agent interaction; multi-user/multi-virtual-agent interaction; coalition formation; coordination
+Agent communication languages, including: their semantics, pragmatics, and implementation; agent communication protocols and conversations; agent commitments; speech act theory
+Ontologies for agent systems, agents and the semantic web, agents and semantic web services, Grid-based systems, and service-oriented computing
+Agent societies and societal issues, including: artificial social systems; environments, organizations and institutions; ethical and legal issues; privacy, safety and security; trust, reliability and reputation
+Agent-based system development, including: agent development techniques, tools and environments; agent programming languages; agent specification or validation languages
+Agent-based simulation, including: emergent behavior; participatory simulation; simulation techniques, tools and environments; social simulation
+Agreement technologies, including: argumentation; collective decision making; judgment aggregation and belief merging; negotiation; norms
+Economi c paradigms, including: auction and mechanism design; bargaining and negotiation; economically-motivated agents; game theory (cooperative and non-cooperative); social choice and voting
+Learning agents, including: computational architectures for learning agents; evolution, adaptation; multi-agent learning.
+Robotic agents, including: integrated perception, cognition, and action; cognitive robotics; robot planning (including action and motion planning); multi-robot systems.
+Virtual agents, including: agents in games and virtual environments; companion and coaching agents; modeling personality, emotions; multimodal interaction; verbal and non-verbal expressiveness
+Significant, novel applications of agent technology
+Comprehensive reviews and authoritative tutorials of research and practice in agent systems
+Comprehensive and authoritative reviews of books dealing with agents and multi-agent systems.
+Official journal of the International Foundation for Autonomous Agents and Multi-Agent Systems.
+Covers the foundations, theory, development, analysis, and applications of autonomous agents and multi-agent systems.
+Presents comprehensive reviews and authoritative tutorials of research and practice in agent systems.}. Fonte: \url{https://www.springer.com/journal/10458};
+    \item INTERNATIONAL JOURNAL OF MODERN PHYSICS C \textit{\small is a journal dedicated to Computational Physics and aims at publishing both review and research articles on the use of computers to advance knowledge in physical sciences and the use of physical analogies in computation. Topics covered include: algorithms; computational biophysics; computational fluid dynamics; statistical physics; complex systems; computer and information science; condensed matter physics, materials science; socio- and econophysics; data analysis and computation in experimental physics; environmental physics; traffic modelling; physical computation including neural nets, cellular automata and genetic algorithms.}. Fonte: \url{https://www.worldscientific.com/page/ijmpc/aims-scope};
+    \item COMPLEXITY \textit{\small The purpose of Complexity is to report important advances in the scientific study of complex systems. Complex systems are characterized by interactions between their components that produce new information — present in neither the initial nor boundary conditions — which limit their predictability. Given the amount of information processing required to study complexity, the use of computers has been central to complex systems research. Concepts relevant to Complexity include:
+    Adaptability, robustness, and resilience;
+    Complex networks;
+    Criticality;
+    Evolution and emergent behaviour;
+    Nonlinear dynamics;
+    Pattern formation;
+    Self-organization.
+Methods used within the scientific study of complex systems frequently include:
+    Agent-based modelling;
+    Analytical methods;
+    Cellular automata;
+    Computational methods;
+    Data science;
+    Game theory;
+    Machine learning;
+    Statistical mechanics.
+Applications of complex systems may be related to the following disciplines, among others:
+Computational social science;    Digital epidemiology;
+    Ecology;
+    Economics;
+    Engineering;
+    Socio-technical systems;
+    Statistical linguistics;
+    Systems biology;
+    Urban systems.}. Fonte: \url{https://www.hindawi.com/journals/complexity/about/};
+    \item ECOLOGICAL MODELLING \textit{\small publishes new mathematical models and systems analysis for describing ecological processes, and novel applications of models for environmental management.
+We welcome research on process-based models embedded in theory with explicit causative agents and innovative applications of existing models. And because applications can help refine models and propose new directions for research, the journal publishes both to help foster reproducibility and utility.Human activity and well-being are dependent on and integrated with the functioning of ecosystems and the services they provide. We aim to understand these basic ecosystem functions using mathematical and conceptual modelling, systems analysis, thermodynamics, computer simulations, and ecological theory, and look to a wide spectrum of applications ranging from basic ecology to human ecology to socio-ecological systems. The journal welcomes original research articles, review articles, viewpoint articles and short communications.}. Fonte: \url{https://www.journals.elsevier.com/ecological-modelling};
+    \item JOURNAL OF THEORETICAL BIOLOGY \textit{\small is the leading forum for theoretical perspectives that give insight into biological processes. It covers a very wide range of topics and is of interest to biologists in many areas of research, including:
+Brain and Neuroscience;
+Cancer Growth and Treatment;
+Cell Biology;
+Developmental Biology;
+Ecology;
+Evolution;
+Immunology;
+Infectious and non-infectious Diseases;
+Mathematical, Computational, Biophysical and Statistical Modeling;
+Microbiology, Molecular Biology, and Biochemistry;
+Networks and Complex Systems;
+Physiology;
+Pharmacodynamics;
+Animal Behavior and Game Theory}. Fonte: \url{https://www.journals.elsevier.com/journal-of-theoretical-biology};
+    \item JOURNAL OF STATISTICAL MECHANICS-THEORY AND EXPERIMENT \textit{\small is targeted to a broad community interested in different aspects of statistical physics, which are roughly defined by the fields represented in the conferences called 'Statistical Physics'. Submissions from experimentalists working on all the topics which have some 'connection to statistical physics are also strongly encouraged.
+The journal covers different topics which correspond to the following keyword sections:
+Quantum statistical physics, condensed matter, integrable systems;
+Classical statistical mechanics, equilibrium and non-equilibrium;
+Disordered systems, classical and quantum;
+Interdisciplinary statistical mechanics;
+Biological modelling and information}. Fonte: \url{https://iopscience.iop.org/journal/1742-5468/page/about_the_journal}.
+\end{enumerate}
+Considerando a possibilidade de pertinência da questão ecológica ao tema dos sistemas multi-agentes, todos os \textit{journals} identificados apresentam pertinência às perguntas de pesquisa formuladas. 
+
+Acerca das instituições de filiação dos autores, nota-se que 1/3 delas é localizada na china, 1/3 nos EUA, e o restante na Europa e Austrália. É provável que muitos pesquisadores de origem chinesa trabalhem em universidades fora da china, no tema do \dataset.
 
 
+\subsection{Medidas bibliométricas}
+
+As medidas bibliométricas propriamente ditas, relativas ao \dataset\ MASSA2@jhcf, serão exploradas nesta subseção, e são organizadas em três conjuntos:
+\begin{description}
+    \item [Relativas às Fontes de Informação] Uma vez que foram consideradas apenas as publicações em revistas, todas as fontes de informação mensuradas serão revistas científicas, ou \textit{journals}. As principais medidas são de impacto das fontes, mensuradas com base no número de citações que os artigos publicados nas revistas obtiveram de outras publicações, possivelmente feitas em outras fontes de informação, como outras revistas, seções de livros, artigos de conferência etc. As citações são registradas pelas organizações que fazem indexação de artigos, como a Web of Science e SCOPUS;
+    \item [Relativas aos Autores] Sempre que um artigo publicado por um ou mais autores e também indexado por uma organização (Web of Science,  SCOPUS etc), é citado em um outro artigo também indexado por essa mesma organização, então é feita a anotação de uma citação ao mesmo, e o impacto potencial desse autor sobre a ciência é atestado pelo valor mais alto da citação do conjunto de seus artigos indexados. Várias métricas (índice H, G, M etc) podem ser derivadas dessa medida (quantidade de citações), e são exploradas tanto em relação aos autores como em relação às revistas onde esses artigos foram publicados;
+    \item [Relativas aos Documentos] Cada citação adicional a  um documento (artigo de revista, de conferência, livro, ou  capítulo de livro) é um indicador do impacto do documento em si, que evidencia a sua importância. Além das citações, a ocorrência de palavras dentro dos documentos, inclusive ordenada pelo tempo, também produz indicadores numéricos (métricas) relevantes para analisar a importância do documento em relação a outros. 
+\end{description}
+
+Essas medidas serão apresentadas a seguir.
+
+\subsubsection{Bibliometrias aplicadas aos documentos (Artigos científicos) no \dataset}
+
+\paragraph{Citações globais aos artigos no \dataset}
+
+Cada registro recuperado no \dataset\ apresenta um conjunto de informações, dentre as quais pode constar a quantidade de vezes que uma citação ao mesmo foi registrada no índice do WoS, desde que no momento da extração seja feita essa solicitação (\textit{TC - Times Cited}).
+A tabela \ref{tab:MASSA2:GlobalCitations} apresenta a lista dos 25 artigos do \dataset, que foram mais citados, ordenados de forma decrescente pelo número global de citações do artigo, nos índices da WoS. Para ada artigo é apresentada a referencia abreviada, o DOI e a quantidade de vezes que ele foi citado globalmente (no índice do WoS). Para recuperar a página do artigo deve-se abrir uma url prefixada com \url{http://doi.org/}, e informar o valor do DOI indicado, por exemplo \url{http://doi.org/10.1109/TAC.2008.2010897} levará à página do artigo mais citado, cujo título é ``Flocking of Multi-Agents With a Virtual Leader''.
+
+\begin{table}[]
+
+    \centering
+\footnotesize
+\csvreader[tabular = |r|l|l|r|,
+separator=semicolon
+%,filter not strcmp={\csvcolii}{},
+, table head = \hline\hline \# & Artigo (Referência Abreviada) & DOI (Digital Object Identifier) & Cit.\\ \hline\hline,
+table foot = \hline\hline
+]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-Most-Global-Cited-Documents.csv}{Paper=\paper, DOI=\doi,Total Citations=\totcit}{ \thecsvrow & {\tiny\paper} & {\tiny \doi} & \totcit}
+
+    \caption{25 artigos mais citados no \dataset\ MASSA2@jhcf.}
+    \label{tab:MASSA2:GlobalCitations}
+\end{table}
 
 
+\paragraph{Referências aos (outros) artigos, capítulos de livros etc (documentos) citados pelos artigos no \dataset}
+
+\paragraph{Uso de palavras dentro dos artigos no \dataset}

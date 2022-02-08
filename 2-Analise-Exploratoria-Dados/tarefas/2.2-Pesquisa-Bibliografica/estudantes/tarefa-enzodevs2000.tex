@@ -25,7 +25,7 @@ A pesquisa bibliográfica sobre o tema já mencionado é feita usando, principal
 O estudo foi feito em uma semana com trabalhos de duração de uma hora por dia e utilizando somente a base de dados Web of Science(WoS).
 
 \section{Coleta de dados}
-A coleta de dados foi feita a partir da base Web of Science no dia 3 de fevereiro de 2022, acessado pelo Portal de Periódicos da CAPES. As buscas foram feitas nas coleções Science Citation Index Expanded(SCI-EXPANDED) e Social Sciences Citation Index (SSCI) com foco nas categorias relacionadas às ciências exatas e foram obtidos 2540 registros. A pesquisa pode ser vista a seguir:
+A coleta de dados foi feita a partir da base Web of Science no dia 3 de fevereiro de 2022, acessado pelo Portal de Periódicos da CAPES. As buscas foram feitas nas coleções Science Citation Index Expanded(SCI-EXPANDED) e Social Sciences Citation Index (SSCI) com foco nas categorias relacionadas às ciências exatas e foram obtidos 2093 registros. A pesquisa pode ser vista a seguir:
 
 \lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/busca.tex}
 
@@ -38,3 +38,9 @@ Por fim, a última cláusula \textit{policy} busca associar todos os temas já r
 
 \section{Análise dos dados}
 
+\subsection{Filtragem de registros}
+Antes de prosseguir com a análise, uma filtragem dos registros é feita para que se tenha como resultado somente registros de artigos publicados em revistas científicas. Dessa forma, com os 2097 registros inicias, chega-se, no final, ao número de 1834 registros.
+
+\subsection{Análise descritiva do \textit{dataset}}
+
+Com o auxilio do pacote Bibliometrix e de sua ferramenta visual Biblioshiny. Pode-se chegar as seguintes informações sobre o \textit{dataset}

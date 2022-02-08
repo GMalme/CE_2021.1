@@ -8,8 +8,8 @@ and
 and
     (social or society or group or behavi*)
 not (
-    adsoption or molecular-dynamics or force-field 
-    or in-vitro or nanopartic* or in-vivo	
-    or aqueous-solution or protein or surface) 
+    adsoption or molecular -dynamics or force -field 
+    or in -vitro or nanopartic* or in -vivo	
+    or aqueous -solution or protein or surface) 
 
 (Topic)

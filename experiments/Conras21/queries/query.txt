@@ -1,0 +1,2 @@
+(artificial intelligence) and (experimental or numeric* or statist* 
+    or hypothes* or empiric* or inferen*) 

@@ -1,0 +1,37 @@
+\documentclass[12pt]{book}
+
+\input{packages}
+\input{packages-estudantes}
+
+% define cores personalizadas para o texto de cada autor
+\input{autores} 
+
+\makenoidxglossaries
+\loadglsentries{1-Introducao/tarefas/1.1-Glossario/estudantes/main}
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\captionsetup[table]{name=Quadro}
+\renewcommand{\lstlistingname}{Listagem de Código}
+
+\newcommand{\dataset}{\textit{dataset}}
+\newcommand{\query}{\textit{query}}
+\newcommand{\githubusername}{\textless githubusername\textgreater}
+
+\begin{document}
+
+\input{2-Analise-Exploratoria-Dados/aulas/2.1-Revisao-Estatistica-1/main}
+
+\input{2-Analise-Exploratoria-Dados/aulas/2.2-Pesquisa-Bibliografica/main}
+
+%\chapter{Pesquisas Bibliográficas: Respostas d(a/o)s Estudantes}
+
+\input{2-Analise-Exploratoria-Dados/tarefas/2.2-Pesquisa-Bibliografica/espec-tarefa}
+
+\input{2-Analise-Exploratoria-Dados/tarefas/2.2-Pesquisa-Bibliografica/estudantes/tarefa-jhcf}
+
+\input{2-Analise-Exploratoria-Dados/tarefas/2.2-Pesquisa-Bibliografica/estudantes/tarefa-fernandams}
+
+\bibliographystyle{plainnat}
+\bibliography{RESIC}
+
+\end{document}.

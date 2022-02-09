@@ -13,11 +13,11 @@
     \end{itemize}
     
     Considerando o corpo de estudo, algumas questões surgem:
-    \begin{item}
+    \begin{itemize}
         \item Quais são os principais interesses relacionados ao estudo dos fenômenos naturais voltados a computação?
         \item Quem são os agentes que produzem o maior volume de artigos?
         \item Quais são os corpos de estudo mais relacionados entre si?
-    \end{item}
+    \end{itemize}
     Todas elas serão analisadas e respondidas no decorrer da seção.
 \subsection{Uso do Bibliometrix e Biblioshiny}
      Com o auxílio das ferramentas disponibilizadas pelo Bibliometrix, como o Biblioshiny, serão analisados os artigos encontrados, por meio de gráficos e tabelas.   
@@ -45,7 +45,7 @@
      \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/KvotheKS/PesqBibliogr/AlgoritmosSimulacaoOptica-Dinamica/WoS-20220202/OldQueryDataset/CoOccurrence.png}
-    \caption{Rede de co-ocorrência}
+    \caption{Rede de co-ocorrência para análise inicial, com foco na região azul, onde se encontra \emph{genetic algorithm}}
     \label{fig:KvotheKS:OldQueryCoOccurrence}
 \end{figure}
     
@@ -64,17 +64,29 @@ not ((genetic* and algorit*) or medic* or (machin* and learn*))
 
     Com os novos parâmetros, o objetivo de retirar tudo relacionado a medicina e a maioria de algoritmos genéticos foi atingido. Como resultado da nova busca, foram retornados 4917 elementos. Contudo, considerando apenas o número de artigos, o número cai para 4859.
     
-    Como demonstração da melhora do \emph{dataset}, segue o gráfico \ref{fig:KvotheKS:Final_Data_Set}:
+    Como demonstração da melhora do \emph{dataset}, que a partir de agora terá o nome de NaturalPhenomenaAlgorithmsOptimization ou NPAO@KvotheKS, segue o gráfico \ref{fig:KvotheKS:Final_Data_Set}:
     
     \begin{figure}[H]
     \centering
     \includegraphics[width=1.3\textwidth]{experiments/KvotheKS/PesqBibliogr/AlgoritmosSimulacaoOptica-Dinamica/WoS-20220202/Dataset/AU_CR_DE.png}
-    \caption{Dataset final}
+    \caption{Sankey Diagram contendo os artigos e tópicos mais relevantes do \emph{dataset} NPAO@KvotheKS}
     \label{fig:KvotheKS:Final_Data_Set}
 \end{figure}
 
-\subsection{Análise descritiva do \emph{dataset}}
-    As informações iniciais do \emph{dataset} de 4859 registros são as seguintes:
+\subsection{Demonstração da qualidade do \emph{dataset} NPAO@KvotheKS}
+
+    A figura \ref{fig:KvotheKS:Final_Data_Set} não é o suficiente para termos uma noção de quão bom foi o processo de filtragem produzido pela nova \emph{query}. Para isso, será introduzido um gráfico demonstrando a estrutura formada entre as palavras, baseado no quanto elas relacionam entre si.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{experiments/KvotheKS/PesqBibliogr/AlgoritmosSimulacaoOptica-Dinamica/WoS-20220202/Clustering/Conceptual_structure_map.PNG}
+        \caption{Agrupamento das palavras-chave, em termos das correlações}
+        \label{fig:KvotheKS:Conceptual_structure_map}
+    \end{figure}
+    
+    Esse nível de correlação não 
+\subsection{Análise descritiva do \emph{dataset} NPAO@KvotheKS}
+    As informações iniciais do \emph{dataset} NPAO@KvotheKS de 4859 registros são as seguintes:
     
 \begin{description}
     \item [\textit{Timespan}] Todos os artigos que passaram pelo filtro e pela busca foram feitos de 1985 a 2022.
@@ -82,14 +94,14 @@ not ((genetic* and algorit*) or medic* or (machin* and learn*))
     \item [\textit{Average years from publication}] A média de tempo para publicação é de 7,95 anos.
     \item [\textit{Average citations per documents}] A média de citações dos artigos é de 17,87 vezes.
     \item [\textit{Average citations per year per doc}] Os artigos, após sua publicação, tiveram em média 1,887 citações anuais.
-    \item [\textit{References}] A quantidade total de referências do \emph{dataset} se dá em 127.349.
-    \item [\textit{Keywords Plus (ID)}] 7.218 palavras-chave distintas foram encontradas no \emph{dataset}.
+    \item [\textit{References}] A quantidade total de referências do \emph{dataset} NPAO@KvotheKS se dá em 127.349.
+    \item [\textit{Keywords Plus (ID)}] 7.218 palavras-chave distintas foram encontradas no \emph{dataset} NPAO@KvotheKS.
     \item [\textit{Author's Keywords (DE)}] 10.367 palavras-chave distintas escritas pelos autores.
     \item [\textit{Authors}] No total, foram 14.247 autores, sendo que boa parte deles tem origem chinesa.
     \item [\textit{Author Appearances}] No total, tiveram 20.024 aparições de autores, sendo que o número de autores distintos é, como mencionado anteriormente, 14.247
     \item [\textit{Authors of single-authored documents}] Dentre o número total de autores, apenas 206 fizeram pelo menos 1 artigo sozinhos.
     \item [\textit{Authors of multi-authored documents}] Se retirarmos do número total de autores, o número de autores que escreveram artigo(s) sozinhos, chegamos em 14.041 autores que escreveram apenas artigos coletivos.
-    \item [\textit{Single-authored documents}] Dentro do \emph{dataset} apenas 227 deles são de criação individual.
+    \item [\textit{Single-authored documents}] Dentro do \emph{dataset} NPAO@KvotheKS apenas 227 deles são de criação individual.
     \item [\textit{Documents per Author}] Se dividirmos o número total de artigos pela quantidade de autores, chegamos em 0,341 artigos/autor.
     \item [\textit{Authors per Document}] Agora, inversamente se fizermos a quantidade de autores distintos divido pelo número de artigos, chegamos em 2,93 autores(/artigo.
     \item [\textit{Co-Authors per Documents}] Se pegarmos o número total de autores (também os repetidos) e dividirmos pela quantidade de documentos, temos 4.12 autores/artigo
@@ -100,23 +112,29 @@ not ((genetic* and algorit*) or medic* or (machin* and learn*))
     \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{experiments/KvotheKS/PesqBibliogr/AlgoritmosSimulacaoOptica-Dinamica/WoS-20220202/Dataset/Annual_Scientific.png}
-    \caption{Produção anual científica}
+    \caption{Produção anual científica de artigos do escopo do \emph{dataset} NPAO@KvotheKS}
     \label{fig:KvotheKS:Annual_Scientific}
 \end{figure}
 \subsection{Interpretação do crescimento}
-    Com o avanço dos computadores e uma disponibilidade maior de recursos científicos como um todo, vários temas acabam ganhando força por fatores variados. No caso do meu \emph{dataset}, os estudos vão de análise topológica para robôs a estudo de aerodinâmica para aviões, e no fim acabam em simulações de iluminação.
-\subsection{\emph{Clustering Network}}
-    Como meio de demonstrar o quão "compacto" estão os resultados do \emph{dataset}, podemos utilizar uma \emph{Clustering Network}, que mostra em, em forma de grafo, quais estudos estão relacionados entre si, e qual peso de cada um.  
+    Com o avanço dos computadores e uma disponibilidade maior de recursos científicos como um todo, vários temas acabam ganhando força por fatores variados. No caso do meu \emph{dataset} NPAO@KvotheKS, os estudos vão de análise topológica para robôs a estudo de aerodinâmica para aviões, e no fim acabam em simulações de iluminação.
+\subsection{\emph{Clustering Map} de palavras-chave}
+    Como meio de demonstrar o quão "compacto" estão os resultados do \emph{dataset} NPAO@KvotheKS, podemos utilizar uma \emph{Clustering Map}, que mostra, neste caso, como as palavras-chave estão relacionadas, considerando os artigos onde elas aparecem.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/KvotheKS/PesqBibliogr/AlgoritmosSimulacaoOptica-Dinamica/WoS-20220202/Dataset/Cluster_network.png}
-    \caption{Grafo de citações}
+    \includegraphics[width=1\textwidth]{experiments/KvotheKS/PesqBibliogr/AlgoritmosSimulacaoOptica-Dinamica/WoS-20220202/Clustering/Cluster_map.png}
+    \caption{Mapa de palavras-chave. Mostra como elas se relacionam no \emph{dataset} NPAO@KvotheKS}
     \label{fig:KvotheKS:Cluster_}
 \end{figure}
-\subsection{Interpretação da rede}
-    Analisando a figura \ref{fig:KvotheKS:Cluster_}, podemos ver o quão inter-relacionados os artigos estão. Isso é um resultado óbvio do refinamento de dados feito anteriormente. Também mostra que alguns tópicos, como hidrodinâmica, aparecem em maior peso, por causa das revistas em qual artigos foram publicados. 
-\subsection{\emph{Three-Field Plot}}
-    Já foi demonstrado um dos \emph{Sankey diagrams} anteriormente \ref{fig:KvotheKS:Final_Data_Set}, onde o resultado mais interessante são as palavras-chave a direita, que mostram realmente quais são os tópicos mais abordados no \emph{dataset}. Porém alguns dados interessantes não foram abordados.
+
+\subsection{Interpretação do mapa de agrupamento de palavras-chave}
+    Analisando a figura \ref{fig:KvotheKS:Cluster_}, podemos concluir algumas coisas:
+    \begin{itemize}
+        \item Os temas computacionais são fortíssimos, e não parecem estar em segundo lugar a nenhum outro tópico
+        \item O escopo do estudo é claro, onde estudo de fenômenos naturais se agrupa claramente sob as palavras-chave \emph{trajectory optimization}, o que indica uma analise vetorial de sistemas.
+    \end{itemize}
+    
+\section{analises bibliométricas considerando países e revistas}
+    Já foi demonstrado um dos \emph{Sankey diagrams} anteriormente \ref{fig:KvotheKS:Final_Data_Set}, onde o resultado mais interessante são as palavras-chave a direita, que mostram realmente quais são os tópicos mais abordados no \emph{dataset} NPAO@KvotheKS. Porém alguns dados interessantes não foram abordados.
     
 \begin{figure}[H]
     \centering
@@ -124,6 +142,35 @@ not ((genetic* and algorit*) or medic* or (machin* and learn*))
     \caption{Afiliações, revistas e países}
     \label{fig:KvotheKS:SankeyCountry}
 \end{figure}
+
 \subsection{Considerações do peso dos países}
-    Os dados interessantes da figura \ref{fig:KvotheKS:SankeyCountry} se dão nos países e universidades. Mais da metade dos artigos são chineses, porém não só há uma diversidade grande de universidades chinesas, mas também há uma falta de diferença entre as estado-unidenses, por onde artigos de vários países acabam passando.
-\section{}
+    Os dados interessantes da figura \ref{fig:KvotheKS:SankeyCountry} se dão nos países e universidades. Mais da metade dos artigos são chineses, porém não só há uma diversidade grande de universidades chinesas, mas também há uma falta de diferença entre as estado-unidenses, por onde artigos de vários países acabam passando. Esse grande interesse chinês pelas áreas de estudo englobadas pelo \emph{dataset} NPAO@KvotheKS parece se filtrar principalmente para temas de ótica, como demonstrado também pela figura \ref{fig:KvotheKS:Final_Data_Set}.
+    
+    Para deixar ainda mais claro o ultimo ponto feito, podemos também utilizar os dados recebidos do gráfico de importância das revistas \ref{fig:KvotheKS:Source_Growth}:
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{experiments/KvotheKS/PesqBibliogr/AlgoritmosSimulacaoOptica-Dinamica/WoS-20220202/Bibliometric/Sources/Source_growth.png}
+        \caption{Crescimento anual das publicações nas revistas mais relevantes}
+        \label{fig:KvotheKS:Source_Growth}
+    \end{figure}
+    
+    Das 5 revistas mais relevantes, 4 delas são de ótica, demonstrando que grande parte do volume do \emph{dataset} NPAO@KvotheKS se trata de estudos direcionados a análise de trajetória no sentido de iluminação, e não de corpos fluidos.
+
+\subsection{Analise da importância da produção científica de países}
+    
+    Pelas seções anteriores foi abordado o fato de que a China é o país com maior volume de artigos de todo o mundo, além do fato de que também é o com maiores tendências de aumentarem ainda mais esse volume. Um detalhe que ainda não foi mencionado porém, é o de que nenhum dos artigos mais importantes vem de lá.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{experiments/KvotheKS/PesqBibliogr/AlgoritmosSimulacaoOptica-Dinamica/WoS-20220202/Bibliometric/Authors/Most_cited_countries.png}
+        \caption{Número total de citações por país, note a clara liderança dos E.U.A}
+        \label{fig:KvotheKS:Most_cited_countries}
+    \end{figure}
+    
+    O gráfico pode trazer dados surpreendentes, considerando a clara vantagem em números que a China tem. Este fenômeno pode ser explicado com dois fatores que deixam os E.U.A como lideres na produção de artigos de maior peso:
+    
+    \begin{itemize}
+        \item Os artigos de maior peso foram feitos entre 1960 e 1980, época em que a produção científica da China era bem mais fraca que a estado-unidense;
+        \item Considerando os temas abordados pelos artigos do \emph{dataset} NPAO@KvotheKS, podemos ver que a base do conhecimento não muda tanto, ou seja, os grandes artigos,também, raramente mudam;
+    \end{itemize}

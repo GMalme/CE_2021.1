@@ -1,0 +1,127 @@
+ï»¿PT J
+AU Matthews, RB
+   Gilbert, NG
+   Roach, A
+   Polhill, JG
+   Gotts, NM
+AF Matthews, Robin B.
+   Gilbert, Nigel G.
+   Roach, Alan
+   Polhill, J. Gary
+   Gotts, Nick M.
+TI Agent-based land-use models: a review of applications
+SO LANDSCAPE ECOLOGY
+LA English
+DT Article
+DE agent-based modelling; land-use; complexity; policy analysis;
+   interactions; decision-making
+ID DECISION-SUPPORT-SYSTEMS; MULTIAGENT SYSTEM; ECOLOGICAL THEORY;
+   SIMULATION; MANAGEMENT; LANDSCAPE; COMPLEXITY; VIETNAM; GAME
+AB Agent-based modelling is an approach that has been receiving attention by the land use modelling community in recent years, mainly because it offers a way of incorporating the influence of human decision-making on land use in a mechanistic, formal, and spatially explicit way, taking into account social interaction, adaptation, and decision-making at different levels. Specific advantages of agent-based models include their ability to model individual decision-making entities and their interactions, to incorporate social processes and non-monetary influences on decision-making, and to dynamically link social and environmental processes. A number of such models are now beginning to appear-it is timely, therefore, to review the uses to which agent-based land use models have been put so far, and to discuss some of the relevant lessons learnt, also drawing on those from other areas of simulation modelling, in relation to future applications. In this paper, we review applications of agent-based land use models under the headings of (a) policy analysis and planning, (b) participatory modelling, (c) explaining spatial patterns of land use or settlement, (d) testing social science concepts and (e) explaining land use functions. The greatest use of such models so far has been by the research community as tools for organising knowledge from empirical studies, and for exploring theoretical aspects of particular systems. However, there is a need to demonstrate that such models are able to solve problems in the real world better than traditional modelling approaches. It is concluded that in terms of decision support, agent-based land-use models are probably more useful as research tools to develop an underlying knowledge base which can then be developed together with end-users into simple rules-of-thumb, rather than as operational decision support tools.
+C1 Macaulay Land Use Res Inst, Integrated Land Use Syst Grp, Aberdeen AB15 8QH, Scotland.
+   Univ Surrey, Dept Sociol, Guildford GU2 7XH, Surrey, England.
+RP Matthews, RB (corresponding author), Macaulay Land Use Res Inst, Integrated Land Use Syst Grp, Aberdeen AB15 8QH, Scotland.
+EM r.matthews@macaulay.ac.uk
+RI Gilbert, Nigel/N-1085-2019; Gilbert, Nigel/B-9761-2009; Polhill,
+   Gary/S-5400-2016; Matthews, Robin B/E-7975-2013
+OI Polhill, Gary/0000-0002-8596-0590; Gilbert, Nigel/0000-0002-5937-2410
+CR An L, 2005, ANN ASSOC AM GEOGR, V95, P54, DOI 10.1111/j.1467-8306.2005.00450.x
+   Axelrod R, 1997, PRINCETON STUDIES CO
+   Balmann A, 2002, COMPLEXITY AND ECOSYSTEM MANAGEMENT, P127
+   Balmann A, 1997, EUR REV AGRIC ECON, V24, P85, DOI 10.1093/erae/24.1.85
+   Barreteau O, 2001, JASSS-J ARTIF SOC S, V4
+   Barreteau O, 2000, ANN OPER RES, V94, P139, DOI 10.1023/A:1018908931155
+   Becu N, 2003, ECOL MODEL, V170, P319, DOI 10.1016/S0304-3800(03)00236-9
+   Berger T., 2002, Quarterly Journal of International Agriculture, V41, P119
+   Berger T, 2001, AGR ECON-BLACKWELL, V25, P245, DOI 10.1111/j.1574-0862.2001.tb00205.x
+   Boero R, 2005, JASSS-J ARTIF SOC S, V8
+   Boissau S, 2004, MT RES DEV, V24, P101, DOI 10.1659/0276-4741(2004)024[0101:TSRPGI]2.0.CO;2
+   Bousquet F, 2004, ECOL MODEL, V176, P313, DOI 10.1016/j.ecolmodel.2004.01.011
+   Bousquet F, 2002, COMPLEXITY AND ECOSYSTEM MANAGEMENT, P248
+   Brown DG, 2004, ENVIRON MODELL SOFTW, V19, P1097, DOI 10.1016/j.envsoft.2003.11.012
+   Carpenter SR, 2002, SCOPE SER, V60, P51
+   Castella JC, 2005, ECOL SOC, V10
+   Colfer C. J. P., 2003, SMALL SCALE EC MANAG, V2, P135
+   D'Aquino P, 2003, JASSS-J ARTIF SOC S, V6
+   Deadman P, 2004, ENVIRON PLANN B, V31, P693, DOI 10.1068/b3098
+   Dean JS, 2000, SFI STU SCI, P179
+   Deffuant G, 2002, COMPLEXITY AND ECOSYSTEM MANAGEMENT, P158
+   Epstein J.M., 1996, GROWING ARTIFICIAL S
+   Etienne M, 2003, JASSS-J ARTIF SOC S, V6, P2
+   Evans TP, 2004, J ENVIRON MANAGE, V72, P57, DOI 10.1016/j.jenvman.2004.02.008
+   Ferber J., 1999, MULTIAGENT SYSTEMS I
+   Gotts NM, 2003, ARTIF INTELL REV, V19, P3, DOI 10.1023/A:1022120928602
+   Gotts NM, 2003, CYBERNET SYST, V34, P663, DOI [10.1080/716100277, 10.1080/01969720390241566]
+   Grimm V, 1999, ECOL MODEL, V115, P275, DOI 10.1016/S0304-3800(98)00186-0
+   Happe K., 2004, STUDIES AGR FOOD SEC, V30
+   Hare M, 2004, MATH COMPUT SIMULAT, V64, P25, DOI 10.1016/S0378-4754(03)00118-6
+   Hoffmann M, 2002, COMPLEXITY AND ECOSYSTEM MANAGEMENT, P218
+   Huigen MGA, 2004, J ENVIRON MANAGE, V72, P5, DOI 10.1016/j.jenvman.2004.01.010
+   HUSTON M, 1988, BIOSCIENCE, V38, P682, DOI 10.2307/1310870
+   Izquierdo LR, 2004, JASSS-J ARTIF SOC S, V7
+   IZQUIERDO LR, 2003, FRAMING LAND USE DYN, P163
+   Janssen MA, 2000, ECOL MODEL, V131, P249, DOI 10.1016/S0304-3800(00)00256-8
+   Janssen MA, 2001, ECOL MODEL, V140, P111, DOI 10.1016/S0304-3800(01)00260-5
+   Kohler T. A., 2000, DYNAMICS HUMAN PRIMA, P1
+   LANSING JS, 1993, AM ANTHROPOL, V95, P97, DOI 10.1525/aa.1993.95.1.02a00050
+   Lempert R, 2002, P NATL ACAD SCI USA, V99, P7195, DOI 10.1073/pnas.072079399
+   Ligtenberg A, 2004, J ENVIRON MANAGE, V72, P43, DOI 10.1016/j.jenvman.2004.02.007
+   Loibl W, 2003, ENVIRON MODELL SOFTW, V18, P553, DOI 10.1016/S1364-8152(03)00030-6
+   Lynam T, 2002, COMPLEXITY AND ECOSYSTEM MANAGEMENT, P188
+   Manson SM, 2005, AGR ECOSYST ENVIRON, V111, P47, DOI 10.1016/j.agee.2005.04.024
+   MANSON SM, 2004, INTEGRATED LAND CHAN
+   Manson S, 2006, COMPUT ENVIRON URBAN, V30, P230, DOI 10.1016/j.compenvurbsys.2005.01.009
+   Matthews R, 2006, ECOL MODEL, V194, P329, DOI 10.1016/j.ecolmodel.2005.10.032
+   Matthews RB, 2005, AGR ECOSYST ENVIRON, V111, P119, DOI 10.1016/j.agee.2005.06.016
+   MATTHEWS RB, 2002, CROP SOIL SIMULATION
+   Matthews R, 2006, J AGR ECON, V57, P199, DOI 10.1111/j.1477-9552.2006.00047.x
+   McCown RL, 2002, AGR SYST, V74, P179, DOI 10.1016/S0308-521X(02)00026-4
+   McCown RL, 2002, AGR SYST, V74, P11, DOI 10.1016/S0308-521X(02)00020-3
+   Milner-Gulland EJ, 2006, ECOL COMPLEX, V3, P23, DOI 10.1016/j.ecocom.2005.05.004
+   MOHRING M, 2001, JASSS-J ARTIF SOC S, V4, P1
+   Moss S., 2001, INTEGRATED ASSESSMEN, V2, P17, DOI DOI 10.1023/A:1011527523183
+   OTTER HS, 2001, JASSS-J ARTIF SOC S, V4, P2
+   Parker DC, 2004, AGR ECOSYST ENVIRON, V101, P233, DOI 10.1016/j.agee.2003.09.007
+   Parker DC, 2003, ANN ASSOC AM GEOGR, V93, P314, DOI 10.1111/1467-8306.9302004
+   Polhill JG, 2001, CYBERNET SYST, V32, P285, DOI 10.1080/019697201300001885
+   Prabhu R, 2003, SMALL SCALE FOREST M, V2, P185
+   RAJAN KS, 2001, P 22 AS C REM SENS
+   RAMANATH AM, 2004, JASSS-J ARTIF SOC S, V7, P1
+   Sanders L, 1997, ENVIRON PLANN B, V24, P287, DOI 10.1068/b240287
+   Scheffer M, 2003, TRENDS ECOL EVOL, V18, P648, DOI 10.1016/j.tree.2003.09.002
+   Sengupta R, 2005, ENVIRON PLANN B, V32, P821, DOI 10.1068/b31193
+   Sinclair TR, 1996, AGRON J, V88, P698, DOI 10.2134/agronj1996.00021962008800050004x
+   Stephens William, 2002, P129, DOI 10.1079/9780851995632.0129
+   TORRENS PM, 2002, AGENT BASED MODELS L, P72
+   VANDERBELT M, 2004, MEDIATED MODELLING S
+   Verburg PH, 2006, LANDSCAPE ECOL, V21, P1171, DOI 10.1007/s10980-006-0029-4
+   Weisbuch G, 2000, ECOL ECON, V35, P381, DOI 10.1016/S0921-8009(00)00219-6
+   Weisbuch G, 1999, ADV COMPLEX SYST, V02, P11, DOI DOI 10.1142/S0219525999000035
+   Wu JG, 2002, LANDSCAPE ECOL, V17, P355, DOI 10.1023/A:1020561630963
+NR 73
+TC 465
+Z9 485
+U1 10
+U2 289
+PU SPRINGER
+PI DORDRECHT
+PA VAN GODEWIJCKSTRAAT 30, 3311 GZ DORDRECHT, NETHERLANDS
+SN 0921-2973
+EI 1572-9761
+J9 LANDSCAPE ECOL
+JI Landsc. Ecol.
+PD DEC
+PY 2007
+VL 22
+IS 10
+BP 1447
+EP 1459
+DI 10.1007/s10980-007-9135-1
+PG 13
+WC Ecology; Geography, Physical; Geosciences, Multidisciplinary
+SC Environmental Sciences & Ecology; Physical Geography; Geology
+GA 227BL
+UT WOS:000250632100005
+OA Green Accepted
+DA 2021-08-04
+ER

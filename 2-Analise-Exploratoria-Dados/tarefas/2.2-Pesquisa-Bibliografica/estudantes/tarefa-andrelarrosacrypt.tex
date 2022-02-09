@@ -1,27 +1,30 @@
-\chapter{Análise Bibliográfica sobre Simulação Multiagente e Fenômenos Sociais, por Jorge Fernandes\label{chap:bibliometria:jhcf}}
+\chapter{Análise Bibliográfica sobre Criptografia no Universo da Computação Quântica, por André Larrosa Chimpliganond}
 
 \section{Planejamento do estudo}
-O planejamento o  desenho do estudo deve descrever as motivações, questões de interesse, escopo, limitações e objetivos do trabalho.
+Como se transmitir informações de modo que esta só possa ser acessada pela pessoa certa? Responder essa pergunta e elaborar métodos para por a solução em prática é área de estudo da criptografia. Utilizando de alta complexidade matemática, técnicas de criptografia codificam informações de modo que só possam ser decodificadas por quem possuir a chave. Mas como o advento e evolução da computação quântica afeta a maneira como criptografamos os dados?
 
-O planejamento do estudo deve motivar o tema escolhido e o interesse do autor.
-
-No caso do meu trabalho, as perguntas que o nortearam foram:
+Partindo dessa pergunta, podemos explorar outras que irão nortear o trabalho:
 \begin{itemize}
-    \item Qual a base de conhecimentos científicos produzida em torno do tema simulação multiagente voltada à compreensão de fenômenos sociais, com ênfase em métodos experimentais? 
-    \item Como a simulação multiagente tem sido usada para compreender fenômenos sociais, com ênfase em métodos experimentais? 
-    \item Quais os principais termos e conceitos ligados à frente de pesquisa no tema simulação multiagente de fenômenos sociais, com ênfase em métodos experimentais? 
-    \item Qual a estrutura social da comunidade, se é que existe, que pesquisa sobre o tema simulação multiagente de fenômenos sociais, com ênfase em métodos experimentais?
+    \item Quais conceitos relacionados à esse embate entre a criptografia e computação quântica?
+    \item Quais autores, instituições e nações estão à frente desse tema?
+    \item Como esse conteúdo tem se desenvolvido ao longo do tempo?
 \end{itemize}
 
+
+
+% nao sei se vou colocar
 \subsection{O que já existe de pesquisa bibliométrica sobre esse tema?}
 
 \cite{gore_classifying_2016} fizeram uma pesquisa que visava aprofundar a questão da simulação multiagente em relação à computação experimental.
 
 A pesquisa é base para um posterior aprofundamento no campo da Cientometria, como fez \cite{chavalarias_whats_2017}.
+% 
 
-\subsection{Uso do Bibliometrix e Biblioshiny}
-Serão usadas a ferramenta e o \textit{workflow} proposto pelos autores do pacote Bibliometrix, conforme indica a figura ~\ref{fig:bibliometrix:workflow}.
+\subsection{Ferramentas}
+Será utilizada a interface web para o pacote Bibliometrix (Biblioshiny). O pacote Bibliometrix é uma ferramenta R que fornece um conjunto de ferramentas para a investigação quantitativa em cientometria e bibliometria.
 
+
+% nao sei se vou colocar
 \subsection{Limitações} O exercício relatado foi feito em uma semana, envolvendo entre 5 a 10 horas de trabalho de cada autor.
 
 Outros aspectos a reforçar:
@@ -31,74 +34,58 @@ Outros aspectos a reforçar:
 \item é obrigatório declarar um conjunto de perguntas de pesquisa.
 \item é preciso declarar o objetivo da pesquisa, que no caso da aqui relatada foi exercitar inicialmente, e relatar, o uso da técnica de análise bibliométrica, para fins didáticos.
 \end{itemize}
+%
+
+\section{Coleta de dados}%label
+
+A coleta de dados feita usando o Web Of Science  no dia 09 de fevereiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
+
+Foram feitas buscas nas coleções \textbf{Science Citation Index Expanded (SCI-EXPANDED)--1945-presente}, \textbf{Conference Proceedings Citation Index – Science (CPCI-S)--1990-presente} e \textbf{Emerging Sources Citation Index (ESCI)--2017-presente}. 
+
+Foi usada a seguinte \query\  de busca
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre criptografia quântica.}]%label
+{experiments/andrelarrosacrypt/AnaliseBibliometrica/CriptografiaQuantica/query.txt}
+
+\subsection{Explicação para os termos de busca usados}%label
+
+Foram elaboradas duas cláusulas de busca unidas por \textit{and}. A primeira foca nos elementos relacionados ao universo quântico, enquanto a segunda faz referência à criptografia.
 
 
-\section{Coleta de dados\label{MASSA:coleta}}
+Os 10522 registros obtidos encontram-se no github do projeto, em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/andrelarrosacrypt/AnaliseBibliometrica/CriptografiaQuantica/rec_1.txt} e \url{https://github.com/jhcf/Comput-Experim-20212/experiments/andrelarrosacrypt/AnaliseBibliometrica/CriptografiaQuantica/rec_2.txt}. 
+% enviar arquivo completo direto no overleaf
 
-A coleta de dados feita usando o WoS no dia 03 de agosto de 2021, acessado por meio do Portal de Periódicos da CAPES.
-
-Foram feitas buscas nas coleções \textbf{Science  Citation  Index  Expanded (SCI -EXPANDED)} e \textbf{Social  Sciences  Citation  Index (SSCI)}, que contém registros relativos a vários campos do conhecimento, no qual o SCI-EXPANDED foca mais na área das ciências exatas e naturais, enquanto que o SSCI indexa artigos da área das ciências sociais. Observe que os artigos nessas duas coleções são indexados desde 1945. 
-
-Foi usada a \query\  de busca ilustrada nas linhas 1 a 9 da listagem \ref{query20210803-2}.
-
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais.},label=query20210803-2]
-{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/query.txt}
-
-\subsection{Explicação para os termos de busca usados\label{MASSA:query}}
-
-A busca consistiu de quatro cláusulas disjuntivas, unidas por uma conjunção \textit{and}, aplicadas à busca por tópico (O termo de busca pode aparecer no Título, no Abstract, na Author Keywords, ou nas Keywords Plus da referência)
-
-Os termos \texttt{experimental}, \texttt{numeric*}, \texttt{statist*}, \texttt{hypothes*}, 
-\texttt{empiric*}
-e \texttt{inferen} (linhas 1 e 2 da query) foram usados na primeira cláusula da \query\  para recuperar artigos que tenham em seu título, palavras-chave e resumo, termos relacionados a métodos experimentais,
-métodos numéricos,
-métodos estatísticos,
-teste de hipóteses,
-métodos empíricos e métodos inferenciais.
-
-O termo / cláusula  \texttt{simul*}, na linha 4, foi usado em conjunção com os demais para recuperar apenas trabalhos que explicitem o uso da simulação.
-Foi usado um único termo devido à forte adesão ao termo simulação por parte dos pesquisadores que usam simulação. Não existem outros sinônimos frequentes para esse uso.
-
-A cláusula nas linhas 6 e 7 faz união entre o uso dos termos \texttt{agent} e \texttt{multiagent}, \texttt{multi-agent},e  também \texttt{multi and agent}, para cobrir as variadas formas de escrita do conceito.
-
-A $4^{a}$ cláusula, linha 9,  usou os termos \texttt{social} e \texttt{society} para recuperar artigos que tratem de temas ligados à sociedade.
-Os termos \texttt{group} e \texttt{behavi*} visam recuperar estudos que tratam de questões comportamentais e grupais.
-
-Os 8.115 registros obtidos encontram-se no github do projeto, em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/ WoS-20210803/classico-mais-citacoes/8115recs.txt}. 
-
-Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 8115 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 8001-8115).
+Foram exportadas todas as informações disponíveis na Web Of Science de cada documento
 
 \section{Análise dos dados}
 
 \subsection{Filtragem de registros}
-Antes da análise, é possível aplicar filtros sobre os registros obtidos.
 
-Foi aplicado um filtro ao \dataset\   inicial, com 8.115 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas\footnote{A suposição é que que o conhecimento de maior qualidade sobre o tema está nas publicações em revistas.}. Após a aplicação desse filtro, 5.787 registros foram mantidos no \dataset, que será doravante chamado MultiAgentSimulationSociety/Artigos, ou MASSA@jhcf.
 
-\subsection{Análise descritiva do \dataset\   MASSA@jhcf}
+Após carregar o dataset na plataforma biblioshiny, foi feita uma filtragem dos documentos com o intuito de selecionar apenas os artigos publicados em revistas científicas (\textit{ARTICLE}). Após a filtragem, sobraram 7131 documentos. Esse novo dataset será nomeado CriptografiaQuanticaArtigos ou CQA@andrelarrosacrypt.
 
-A análise bibliométrica descritiva faz uma descrição inicial do \dataset\  . Para explicação detalhada de como são calculadas as diversas taxas geradas pelo Bibliometrix veja a documentação do \textit{package} a partir da página \url{https://cran.r-project.org/web/packages/bibliometrix/index.html}. A análise bibliométrica descritiva é gerada pela função \texttt{biblioAnalysis}.
-
-As informações mais gerais sobre o \dataset\   MASSA@jhcf são as seguintes:
+\subsection{Informações principais do \dataset\   CQA@andrelarrosacrypt}
 \begin{description}
-    \item [\textit{Timespan}] Os artigos que atenderam aos critérios de busca e filtragem foram publicados a partir de 1990, até 2021. Ou seja, não foram encontrados registros entre 1945 e 1989.
-    \item [\textit{Sources (Journals, Books, etc)}] São 2.319 fontes de informação que publicaram os documentos recuperados no \dataset\   MASSA@jhcf. Ou seja, em média, cada \textit{scientific journal} publicou $5.787/2.319=2,5$ artigos. \footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência a quantidade de artigos publicados por revista.}
-    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \dataset\   MASSA@jhcf é de 7,36 anos.
-    \item [\textit{Average citations per documents}] Cada artigo no \dataset\   MASSA@jhcf foi citado, em média 20,7 vezes\footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência de  citações a artigos.}.
-    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 5.787 artigos do \dataset\   MASSA@jhcf  foi citado 2,262 vezes por ano, em média.
-    \item [\textit{References}] O \dataset\   MASSA@jhcf contém 201.464 referências citadas (tags CR).
-    \item [\textit{Keywords Plus (ID)}] 13.735 distintas palavras-chave do tipo Keywords Plus (ID)\footnote{\textit{KeyWords Plus} são ``termos de índice gerados automaticamente a partir dos títulos de artigos citados. Os termos do KeyWords Plus devem aparecer mais de uma vez na bibliografia e são ordenados de frases com várias palavras a termos únicos. O KeyWords Plus aumenta o número de resultados tradicional de palavras-chave ou títulos.'' Fonte: \url{https://images.webofknowledge.com/WOKRS410B4/help/pt_BR/WOS/hp_full_record.html}} foram encontradas no \dataset\   MASSA@jhcf. 
-    \item [\textit{Author's Keywords (DE)}] 15.704 distintas palavras-chave indicadas pelos autores foram encontradas no \dataset\  .
-    \item [\textit{Authors}] 19.410 distintos nomes de autores foram encontrados no \dataset\  \footnote{Um mesmo autor pode ter uma ou mais diferentes grafias no \dataset\  , e serão reconhecidos dois ou mais autores diferentes, embora de fato sejam apenas um. Isso significa que a quantidade de \textbf{nomes de autores} equivale à quantidade de \textbf{autores}. Adicionalmente, é possível que distintos autores sejam reconhecidos com o mesmo nome, isso é, que sejam homônimos. Ou seja, o \dataset\   em geral conterá erros de contagem na quantidade de autores reais.}.
-    \item [\textit{Author Appearances}] Os 19.410 distintos (nomes de) autores foram encontrados 23.470 vezes, como autores de artigos.
-    \item [\textit{Authors of single-authored documents}] Dentre os 19.410 distintos (nomes de) autores encontrados, 375 deles editaram artigos individualmente, isso é, sem co-autores.
-    \item [\textit{Authors of multi-authored documents}] Dentre os 19.410 distintos (nomes de) autores encontrados, 19.035 deles editaram artigos com um ou mais co-autores"
-    \item [\textit{Single-authored documents}] Dentre os 5.787 documentos presentes no \dataset\   MASSA, 409 foram escritos por um único autor, e os 5.378 restantes foram elaborados em co-autoria.
-    \item [\textit{Documents per Author}] Dentre os 19.410 distintos (nomes de) autores, cada um publicou em média 0,298 artigos.
-    \item [\textit{Authors per Document}] Cada um dos 5.787 documentos presentes no \dataset\   MASSA foi autorado com 3,35 autores em média ($19.410 / 5.787 = 3,35$).
-    \item [\textit{Co-Authors per Documents}] As 23.470 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 4,06 vezes para os 5.787 documentos do \dataset\   MASSA@jhcf.
-    \item [\textit{Collaboration Index}] Os 19.035 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 3,54 vezes para editar os 5.378 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 3,54. 
+    \item[Período]	1988 - 2022
+    \item[Fontes]	675
+    \item[Documentos]	7131
+    \item[Média de tempo de publicação]	8.31
+    \item[Média de citações por documento]	33.05
+    \item[Média de citações por ano por documento]	2.75
+    \item[Referências]	83981
+    \item[Palavras-chave (Keywords Plus (ID))]   3187
+    \item[Palavras-chave (Author's Keywords (DE))] 8201
+    \item[Autores]   10925
+    \item[Aparições de autores]	28034
+    \item[Autores de documentos de autoria única]	436
+    \item[Autores de documentos de autoria múltipla]	10489
+    \item[Documentos de autoria única]	706
+    \item[Média de documentos por autor]	0.653
+    \item[Média de autores por documento]	1.53
+    \item[Média de co-autores por documento]	3.93
+    \item[Index de colaboração (Autores de documentos de autoria múltipla/Docuemntos de autoria múltipla)]        1.63
 \end{description}
+
 
 \subsection{Evolução da Produção Científica}
 

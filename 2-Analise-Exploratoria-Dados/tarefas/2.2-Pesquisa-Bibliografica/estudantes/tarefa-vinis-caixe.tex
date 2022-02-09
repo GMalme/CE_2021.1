@@ -22,7 +22,7 @@ A coleta de dados foi feita no dia 04 de Fevereiro de 2022 a partir do Web Of Sc
 {experiments/vinis-caixe/PesqBibliogr/MineracaoDados/WoS-20220204/query.txt}
 
 \subsection{Explicação para os termos de busca usados}
-Data e Mining foram usados para recuperar artigos relacionados a mineração de dados, health care, medicine e medical utilizados para obter artigos sobre a área de medicina e a palavra patient foi usada para obter artigos que possuam dados de pacientes em específico. No decorrer da análise poderá haver um refinamento dessa \query\.
+Data e Mining foram usados para recuperar artigos relacionados a mineração de dados, health care, medicine e medical utilizados para obter artigos sobre a área de medicina e a palavra patient foi usada para obter artigos que possuam dados de pacientes em específico. No decorrer da análise poderá haver um refinamento dessa \query\ .
 
 O resultado foi uma lista com 7367 registros, ela foi obtida usando a opção exportar arquivo de texto sem formatação, contendo todas as seleções possíveis no Web of Science. Os registros foram recuperados em oito blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 7001-7367).
 
@@ -79,3 +79,20 @@ A alta taxa de crescimento indica que existe interesse em utilizar mineração d
     \caption{Média de citações por ano do \dataset\ .}
     \label{fig:cit:anual:vinis-caixe}
 \end{figure}
+
+Observa-se na figura \ref{fig:cit:anual:vinis-caixe} que não existe estabilidade na média anual de citações, isto é visto nos anos de 1996 até 2002 aonde existe pico seguido de declínio sequencialmente, no ano 2017 no qual apresenta maior pico no gráfico e em 2021 por causa da sua média de 1,2 citações por artigo, média menor em relação a todos os anos de 1996 até 2020.
+
+\subsection{Interpretação das Citações}
+
+Apesar das subidas e descidas no gráfico é possível ver um aumento de citações a partir de 1996 que pode corresponder ao início do aumento de publicações, no entanto apesar de 2021 ser o ano com maior número de publicações e possui um baixo número médio de citações por artigo, podendo ser interpretado que parte destes artigos são de baixa qualidade.
+
+\subsection{\textit{Three-Field Plots (Sankey diagram)}}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/vinis-caixe/PesqBibliogr/MineracaoDados/WoS-20220204/Dataset/ThreeFieldPlot-2022-02-09.png}
+    \caption{Plotagem com três campos do \dataset\ contendo 20 Citações, Autores e Palavras-Chave.}
+    \label{fig:cit:plot:vinis-caixe}
+\end{figure}
+
+A figura \ref{fig:cit:plot:vinis-caixe} apresenta a plotagem com três campos de 20 citações, autores e palavras-chaves mais relevantes e suas relações.

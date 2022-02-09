@@ -1,0 +1,15 @@
+(
+    (artificial and intelligence) or 
+    (machine and learning)        or 
+    (computer and vision)
+)
+and 
+(
+    racialism                                 or 
+    racism                                    or 
+    racial                                    or 
+    ((ethnical or racial) and discrimination) or 
+    (race and prejudice)                      or 
+    (race and snobbery)
+)
+        

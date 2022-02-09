@@ -15,7 +15,7 @@ O objetivo do trabalho é analisar o impacto e popularização das tecnologias u
 
 \section{Coleta de dados}
 
-A coleta de dados foi feita usando o WoS no dia 04/02/2022, por meio do Portal de Periódicos da CAPES. Foram feitas buscas nas coleções Science Citation Index Expanded (SCI-EXPANDED) e Social Sciences Citation Index (SSCI), mas com o foco em registros relativos a área de ciências naturais e exatas. A busca utilizada foi a seguinte:
+A coleta de dados foi feita usando o WoS no dia 09/02/2022, por meio do Portal de Periódicos da CAPES. Foram feitas buscas nas coleções Science Citation Index Expanded (SCI-EXPANDED) e Social Sciences Citation Index (SSCI), mas com o foco em registros relativos a área de ciências naturais e exatas. A busca utilizada foi a seguinte:
 
 \begin{verbatim}
 (graphic processing unit or GPU) 
@@ -23,25 +23,25 @@ and
 (lighting or light or shadow*)
 \end{verbatim}
 
-Essa busca consiste em dois termos, sendo que o primeiro é composto pela GPU (por extenso ou pela sigla) e o segundo pelas palavras luz ou iluminação ou sombra(s). Dessa forma, foram encontrados 1311 registros, sendo que nesse trabalho foram utilizados os primeiros 1000 registros. Esse dataset doravante será chamado de db\_GPU.
+Essa busca consiste em dois termos, sendo que o primeiro é composto pela GPU (por extenso ou pela sigla) e o segundo pelas palavras luz ou iluminação ou sombra(s). Dessa forma, foram encontrados 2321 registros. Esse dataset doravante será chamado de db\_GPU.
 
 \section{Análise dos dados}
 
 \subsection{Filtragem de registros}
-Antes da análise, foram aplicados filtros aos registros, de forma que apenas registros do tipo \textit{article}, de qualquer ano e com qualquer número de citações, fossem analisados. O resultado consiste em 850/1000 registros originais.
+Antes da análise, foram aplicados filtros aos registros, de forma que apenas registros do tipo \textit{article}, de qualquer ano e com qualquer número de citações, fossem analisados. O resultado consiste em 1202/2321 registros originais.
 
 \subsection{Análise descritiva do dataset}
 
 As informações mais gerais sobre o \textit{dataset} são as seguintes:
 \begin{description}
-    \item  [\textit{Timespan}] Os artigos analisados foram publicados entre os anos de 1992 e 2022.
-    \item  [\textit{Sources}] O dataset é composto por 360 fontes diferentes (dentre artigos, livros e outros).
+    \item  [\textit{Timespan}] Os artigos analisados foram publicados entre os anos de 1981 e 2022.
+    \item  [\textit{Sources}] O dataset é composto por 492 fontes diferentes (dentre artigos, livros e outros).
     \item 
-    [\textit{Average years from publication}] A média do tempo de publicação é de 6 anos.
+    [\textit{Average years from publication}] A média do tempo de publicação é de 5.47 anos.
     \item 
-    [\textit{Average citations per document}] Cada artigo no dataset foi citado em média 18.55 vezes.
+    [\textit{Average citations per document}] Cada artigo no dataset foi citado em média 20.79 vezes.
     \item 
-    [\textit{References}] O dataset contém 27463 referências citadas.
+    [\textit{References}] O dataset contém 41985 referências citadas.
 \end{description}
 
 \subsection{Evolução da Produção Científica}
@@ -61,7 +61,7 @@ Nos anos de 2019-2021, em particular, foram introduzidas novas placas de vídeo 
 
 \subsection{Evolução das Citações}
 
-A figura em \ref{fig:gpu-citation-year} mostra o número de citações médias feitas por ano. Nota-se uma grande quantidade de citações no ano de 2007, provavelmente devido a um artigo muito citado por outros autores. Nota-se também o que em uma faixa de 20 anos (1992-2021) o número de citações por ano aumentou de 0.2 para 1.0, um aumento de 5 vezes.
+A figura em \ref{fig:gpu-citation-year} mostra o número de citações médias feitas por ano. Nota-se uma grande quantidade de citações no ano de 2007, provavelmente devido a um artigo muito citado por outros autores. Nota-se também o que em uma faixa de 40 anos (1981-2021) o número de citações por ano aumentou de 0.2 para 1.0, um aumento de 5 vezes.
 
 \begin{figure}[ht]
     \centering

@@ -2,6 +2,8 @@
 
 
 \section{Planejamento do estudo}
+
+O Big Data estuda, analisa e trata de um conjunto de dados maior e mais complexo que as processadas em sistemas tradicionais. Isso permite a resolução de problemas que não eram possíveis anteriormente.
 %O planejamento o  desenho do estudo deve descrever as motivações, questões de interesse, escopo, limitações e objetivos do trabalho.
 
 %O planejamento do estudo deve motivar o tema escolhido e o interesse do autor.
@@ -24,26 +26,40 @@
 
 \subsection{Uso do Bibliometrix e Biblioshiny}
 
+A pesquisa bibliométrica foi realizada com o uso do RStudio, foram usados o pacote \textit{Bibliometrix} e o aplicativo \textit{Biblioshiny} a partir do que foi apresentado em aula, como mostrado na figura ~\ref{fig:bibliometrix:workflow}. Através do acesso café do portal Periódicos CAPES, foi utilizada a \textit{Web of Science} para extrair os artigos usados na pesquisa.
+
 
 \subsection{Limitações} 
-Está tarefa foi feita com
+
+Nesta tarefa foram feitas duas buscas na base de dados WoS, pois na primeira, o número de artigos não foi suficiente para gerar gráficos apresentáveis.
 
 
 \section{Coleta de dados}
 
-Anotações feitas durante uma pesquisa em base bibliográfica:
+A coleta de dados feita usando o Web Of Science (WoS) no dia 03 de fevereiro de 2022, acessado por meio do Portal de Periódicos da CAPES. Foram feitas buscas nas coleções \textbf{Science  Citation  Index  Expanded (SCI -EXPANDED)}, \textbf{Social Sciences  Citation  Index (SSCI)}, \textbf{Conference Proceedings Citation Index-Science (CPI-S)} e \textbf{Emerging Sources Citation Index(ESCI)}. Foram colocados na pesquisa, artigos de 2010 a 2022. Foram encontrados 1265 artigos.
+
+\subsection{Query de Busca}
+
+Foi usada a query de busca abaixo: 
 
 big data and economy (experimental  or  numeric* or  statist* or  hypothes* or  empiric* or  inferen * social  or  society  or  behavi *)
 
-A coleta de dados feita usando o Web Of Science (WoS) no dia 03 de fevereiro de 2022, acessado por meio do Portal de Periódicos da CAPES. Foram feitas buscas nas coleções Science  Citation  Index  Expanded (SCI -EXPANDED), Social Sciences  Citation  Index (SSCI), Conference Proceedings Citation Index-Science (CPI-S) e Emerging Sources Citation Index(ESCI), com foco.
-Foi pesquisado artigos de 2010 a 2022.
-Foram encontrados 1265 artigos.
+\subsubsection{Explicação para os termos de busca usados\label{MASSA:query}}
+
+
+\subsection{Registros recuperados}
+
+Os 1.265 registros obtidos como resultado da busca encontram-se em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/Tong00020/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/1265records.txt}
+
+Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 1.265 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-1265).
 
 \section{Análise dos dados}
 
+
+
 \subsection{Filtragem de registros}
 
-Sobrou 1168 ao colocar apenas "ARTICLE" como tipo de documento com o uso filtro do biblioshiny.
+Sobrou 1.168 artigos ao colocar apenas "ARTICLE" como tipo de documento com o uso filtro do biblioshiny.
 
 
 
@@ -52,8 +68,8 @@ MASSA@Tong00020}
 
 As informações mais gerais sobre o \textit{dataset} MASSA@Tong0020 são as seguintes:
 \begin{description}
-    \item[\textit{Timespan}]
-    \item [\textit{Sources (Journals, Books, etc)}] 
+    \item[\textit{Timespan}] Os artigos da busca foram publicados a partir de 2010.
+    \item [\textit{Sources (Journals, Books, etc)}] São 719 fontes publicaram os documentos no \dataset\. Em média, cada \textit{scientific journal} publicou $719/1.168=2,5$ artigos
      \item [\textit{Average years from publication}] 
      \item [\textit{Average citations per documents}]
      \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 5.787 artigos do dataset MASSA@Tong00020  foi citado 2,262 vezes por ano, em média.
@@ -67,8 +83,12 @@ As informações mais gerais sobre o \textit{dataset} MASSA@Tong0020 são as seg
      
 \subsection{Evolução da Produção Científica}
      
+\subsection{nterpretação do Crescimento}
 
 \subsection{Evolução das Citações}
+
+\subsection{\textit{Three-Field Plots (Sankey diagram)} \label{MASSA:Sankey}}
+
 \subsection{Interpretação da figura}
 
 \subsection{Análises Bibliométricas: Fontes de Informação}

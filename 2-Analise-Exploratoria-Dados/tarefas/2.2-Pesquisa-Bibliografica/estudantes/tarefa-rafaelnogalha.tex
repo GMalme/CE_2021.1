@@ -9,5 +9,61 @@ Dessa forma, com o aumento exponencial de informação produzida no mundo (\text
 \begin{itemize}
     \item Como a produção científica em relação à QKD evoluiu nos últimos anos?
     \item Quais são as principais definições e campos relacionados à QKD?
-    \item Como a QKD é implementada em ambientes reais de segurança computacional
+    \item Como a QKD é implementada em ambientes reais de segurança computacional?
 \end{itemize}
+
+\subsection{Uso do Bibliometrix e Biblioshiny}
+
+A ferramenta que será utilizada para análise e filtragem dos dados será a \textit{Bibliometrix}, juntamente com a interface \textit{Biblioshiny}, para gerar gráficos e grafos iterativos, todos eles personalizáveis, auxiliando na análise dos dados referente ao assunto tratado no presente artigo.
+
+\section{Coleta de dados}
+
+A coleta de dados foi feita pelo Web of Science (WeS) no dia 8 de Fevereiro de 2022, com acesso feito por meio do Periódicos Capes disponibilizado por meio da matrícula da Universidade de Brasília (UNB).Foram feitas buscas na coleção \textit{Science Citation Index Expanded (SCI-EXPANDED)} que foca mais na área das ciências exatas e naturais. 
+
+\subsection{Query de Busca}
+
+A \textit{query} de busca pode ser acessada na seguinte listagem de código \ref{rafael-nogalha:query}
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\ de busca sobre Quantum Key Distribution(QKD) Na Segurança Computacional.},label=rafael-nogalha:query]
+{experiments/rafael-nogalha/PesquisaBibliografica/query/query-de-busca.txt}
+
+No primeiro momento, foi feita uma pesquisa com os seguintes termos "quantum key distribution (Topic)", entretanto isso resultou em muitos artigos que abordavam aspectos somentes físicos do QKD, e o foco da pesquisa é uma análise estatística sobre a influência da QKD na segurança computacional. Dessa forma, adicionou-se na \textit{query} de busca as seguintes cláusulas "(experimental  or statist* and security)", resultando assim em 1.450 resultados na WeS. Essa base de dados está presente \href{https://github.com/jhcf/Comput-Experim-20212/tree/main/experiments/rafael-nogalha/PesquisaBibliografica/QKDSegurancaComputacional/dataset/dataset.txt}{no seguinte link}. A exportação foi feita com a opção "Plain text file" na opção em inglês e "Exportar arquivo de texto sem formatação" na opção em português. A seleção personalizada foi feita com todas as 29 opções possíveis e os registros foram extraídos em um intervalo de 1000 e 1000 e depois foram concatenados de forma manual.
+
+\subsection{Filtragem dos dados}
+
+após a exportação do \textit{dataset}, foram considerados os artigos ciêntíficos publicados em periódicos, artigos de anais de congresso e artigos de acesso antecipado. Dessa forma, restaram 1.148   registros para análise. Assim, esse novo \textit{dataset} será chamado de @QKD-rafael-nogalha.
+
+\section{Análise dos dados}
+
+\subsection{Análise descritiva}
+
+Usando o bibliometrix e a interface biblioshiny, é possível obter as principais informações em relação ao \textit{dataset} @QKD-rafael-nogalha, seguem abaixo essas informações:
+\begin{description}
+    \item[\textbf{Timespan}] os artigos do \textit{dataset} @QKD-rafael-nogalha estão presentes no intervalo de 1991 a 2022.
+    Assim, é possível afirmar que o tema é muito novo, tendo em vista que antes dos anos 1991 não foi publicado nenhum artigo se referindo ao tema.
+    \item[\textbf{Sources (Journals, Books, etc)}] há 259 fontes de informação no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Documents}] há 1148 documentos no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Average years from publication}] a média de anos de publicação do \textit{dataset} @QKD-rafael-nogalha é 7.65.
+    \item[\textbf{Average citations per documents}] a média de citações por documento é de 39.39 no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Average citations per year per doc}] a média de citações por ano por documento é de 3.744 no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{References}] há 24471 referências no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{article}] há 1123 artigos no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{article; proceedings paper}] há 25 artigos de anais de congresso no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Keywords Plus (ID)}] há 1783 Keywords Plus (ID) no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Author's Keywords (DE)}] há 1200 palavras-chave que foram adicionadas pelos autores no \textit{dataset} @QKD-rafael-nogalhao.
+    \item[\textbf{Authors}] há 3614 nomes de autores distintos no \textit{dataset} @QKD-rafael-nogalha
+    \item[\textbf{Author Appearances}] os 6292 autores distintos aparecem no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Authors of single-authored documents}] 40 autores publicaram artigos sem co-autores no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Authors of multi-authored documents}] 3574 autores foram autores de artigos em conjunto com outros autores no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Single-authored documents}] 50 artigos foram escritos por um único autor no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Documents per Author}] a taxa de documentos por autor é de 0.318 no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Authors per Document}] a taxa de autor por documento é de 3.15 no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Co-Authors per Documents}] há em média 5.48 autores por artigos no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Collaboration Index}] o índice de colaboração é de 3.16 no \textit{dataset} @QKD-rafael-nogalha.
+\end{description}
+
+\section{Visualização dos dados}
+
+\subsection{Evolução da produção Científica}
+
+\subsection{Principais Definições e Campos Relacionados}

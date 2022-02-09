@@ -39,12 +39,14 @@ A coleta de dados feita usando o WoS no dia 03 de agosto de 2021, acessado por m
 
 Foram feitas buscas nas coleções \textbf{Science  Citation  Index  Expanded (SCI -EXPANDED)} e \textbf{Social  Sciences  Citation  Index (SSCI)}, que contém registros relativos a vários campos do conhecimento, no qual o SCI-EXPANDED foca mais na área das ciências exatas e naturais, enquanto que o SSCI indexa artigos da área das ciências sociais. Observe que os artigos nessas duas coleções são indexados desde 1945. 
 
+\subsection{Query de Busca}
+
 Foi usada a \query\  de busca ilustrada nas linhas 1 a 9 da listagem \ref{query20210803-2}.
 
 \lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais.},label=query20210803-2]
 {experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/query.txt}
 
-\subsection{Explicação para os termos de busca usados\label{MASSA:query}}
+\subsubsection{Explicação para os termos de busca usados\label{MASSA:query}}
 
 A busca consistiu de quatro cláusulas disjuntivas, unidas por uma conjunção \textit{and}, aplicadas à busca por tópico (O termo de busca pode aparecer no Título, no Abstract, na Author Keywords, ou nas Keywords Plus da referência)
 
@@ -64,9 +66,36 @@ A cláusula nas linhas 6 e 7 faz união entre o uso dos termos \texttt{agent} e 
 A $4^{a}$ cláusula, linha 9,  usou os termos \texttt{social} e \texttt{society} para recuperar artigos que tratem de temas ligados à sociedade.
 Os termos \texttt{group} e \texttt{behavi*} visam recuperar estudos que tratam de questões comportamentais e grupais.
 
-Os 8.115 registros obtidos encontram-se no github do projeto, em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/ WoS-20210803/classico-mais-citacoes/8115recs.txt}. 
+\subsection{Registros recuperados}
+
+Os 8.115 registros obtidos como resultado da busca encontram-se em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/ WoS-20210803/classico-mais-citacoes/8115recs.txt}. 
 
 Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 8115 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 8001-8115).
+
+A listagem \ref{record20210803-2} apresenta as 127 linhas de um registro no formato RIS, referentes a um artigo recuperado da Web of Science. Cada um dos campos de um registro é marcado por um código de dois caracteres, nas colunas 1 e 2 de cada linha. Se a coluna está em branco repete-se o mesmo campo da linha anterior.
+O significado de cada campo pode ser visto em \citep{wikipedia_ris_2017}.
+
+Alguns campos específicos serão comentados a seguir:
+\begin{description}
+    \item [PT - Publication Type] indica o tipo da publicação, no caso específico um artigo de \textit{journal} (J);
+    \item [AU - Author] Nome de um autor;
+    \item [AF - Author Full Name] Nome completo de um autor;
+    \item [TI - Title] Título da publicação;
+    \item [SO - Source] Nome da revista;
+    \item [DE - Descriptor] Palavras-chave;
+    \item [AB - Abstract] Resumo;
+    \item [CR - Cited Referente] Cada uma das referências citadas no artigo;
+    \item [TC - Times Cited] Quantidade de vezes que esse artigo foi globalmente citado;
+    \item [PY - Publication Year] Ano de publicação;
+    \item [VL - Volume, IS - Issue] Volume e número onde o artigo foi publicado, na revista;
+    \item [BP - Begin page, EP - End page] Páginas inicial e final do artigo dentro do volume e número da revista;
+    \item [DI - Digital Object Identifier] Identificador único do artigo no sistema \url{http://doi.org};
+    \item [DA - Date of Acquisition] Data em que o registro foi obtido da WoS;
+    \item [ER - End of Record] Fim do registro.
+\end{description}
+
+\lstinputlisting[language={},numbers=left,basicstyle=\tiny\ttfamily,caption={Exemplo de um registro recuperado no formato RIS, sobre o tema simulação multiagente de fenômenos sociais.},label=record20210803-2]
+{experiments/jhcf/PesqBibliogr/risrec6.txt}
 
 \section{Análise dos dados}
 
@@ -130,7 +159,7 @@ Nota-se grande estabilidade na média anual de citações, onde os artigos publi
 \subsection{Interpretação das Citações}
 Mesmo perante um crescimento aproximadamente exponencial no volume de publicações, a ocorrência de um crescimento nas citações médias ao longo dos anos sugere que os artigos do \dataset\   possuem uma tendência de crescimento no tamanho da bibliografia citada, bem como também despertam grande interesse dos cientistas nas demais áreas do conhecimento (já que se trata de citações globais).
 
-\subsection{\textit{Three-Field Plots (Sankey diagram)}}
+\subsection{\textit{Three-Field Plots (Sankey diagram)} \label{MASSA:Sankey}}
 
 As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos'') apresentam afinidades entre três conjuntos de atributos agregados que ocorrem no \dataset. Uma plotagem do tipo Sankey busca mostrar os principais fluxos entre diferentes conjuntos de itens. \footnote{Para uma introdução ver \url{https://en.wikipedia.org/wiki/Sankey_diagram}. Para obter detalhes sobre a forma de geração e utilização desse gráfico, inclusive de forma interativa, veja o vídeo em \url{https://www.youtube.com/watch?v=jBb1iha6-sg}.} 
 
@@ -144,7 +173,8 @@ As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos
 A figura \ref{fig:MASSA@jhcf:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' do \dataset\   MASSA@jhcf, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 20 Palavras-Chave mais frequentes empregadas pelos autores.
 
 \subsection{Interpretação da figura \ref{fig:MASSA@jhcf:ThreeFieldPlot}}
-Os vinte autores mais relevantes, em relação aos artigos mais relevantes citados, e as palavras-chave mais relevantes são aparentemente de origem asiática, mais especificamente chinesa, com base nos sobrenomes. De outra formal, a mesma origem chinesa parece não se aplicar aos trabalhos mais citados, aparentemente europeus ou norte-americanos. Isso sugere estar ocorrendo uma migração recente da produção científica, do ocidente para o oriente. 
+
+Os vinte autores mais relevantes, citados pelos artigos do \dataset\ MASSA, e as palavras-chave mais relevantes são aparentemente de origem asiática, mais especificamente chinesa, com base nos sobrenomes. De outra forma, a mesma origem chinesa parece não se aplicar aos trabalhos mais citados, aparentemente europeus ou norte-americanos. Isso sugere estar ocorrendo uma migração recente da produção científica, do ocidente para o oriente. 
 
 Adicionalmente, dentre as palavras-chave (DE) não relacionadas diretamente aos termos de busca, emergem os termos \textbf{distributed control}, \textbf{event-triggered control}, \textbf{consensus} e \textbf{opinion dynamics}. Isso sugere foco das pesquisas por autores de origem chinesa no uso de simulação multiagente voltada à compreensão dos fenômenos de controle social distribuído, formação de consenso e dinâmica da opinião (pública?).
 
@@ -158,19 +188,21 @@ A fim de melhor evidenciar as citações mais relevantes segundo o peso dos auto
     \label{fig:MASSA@jhcf:ThreeFieldPlot:10-20-20}
 \end{figure}
 
-Breves comentários sobre cada um desses trabalhos serão tratados em seção posterior.
+\subsubsection{Autores mais relevantes\label{MASSA:Sankey:AutoresRelevantes}}
+
+Breves comentários sobre cada um dos trabalhos mais citados serão apresentados a seguir.
 
 \begin{itemize}
-    \item  \cite{olfati-saber_consensus_2004} apresentam discussões teóricas sobre a formação de consenso em sistemas multi-agentes com topologias variáveis;
-    \item  \cite{reynolds_flocks_1987} apresenta modelos multi-agentes para simulação gráfica do movimento de rebanhos ou agregados de animais.
-    \item \cite{vicsek_novel_1995} analisam a emergência de fenômenos de transição de fase em simulações de de partículas com comportamento autônomo com interação biologicamente motivada.
-    \item \cite{barabasi_emergence_1999} investigam a emergência da distribuição livre de escala (\textit{scale-free}\footnote{Ver introdução em \url{https://en.wikipedia.org/wiki/Scale-free_network}.}) em redes que evoluem com base em ligação preferencial.
-    \item \cite{watts_collective_1998} exploram o surgimento de redes do tipo mundo pequeno (\textit{small world}\footnote{Ver introdução em \url{https://en.wikipedia.org/wiki/Small-world_network}.}) formadas a partir da reorganização aleatória de redes biológicas, genéticas e outras formas de redes auto-organizadas.
-    \item \cite{castellano_statistical_2009} exploram de que forma as técnicas de análise e simulação já usadas na física-estatística podem ser usadas para explicar vários fenômenos sociais, tais como comportamento de multidões, dispersão social, comportamento de multidões etc. Eles apresentam as afinidades entre os dados gerados pelos modelos simulados e dados empíricos obtidos junto a sistemas sociais reais. 
-    \item \cite{hegselmann_opinion_2002} exploram a emergência de fenômenos de consenso, polarização e fragmentação da opinião na simulação de sociedades artificiais.
-    \item \cite{bonabeau_agent-based_2002} apresenta os potenciais e campos de aplicação da técnicas de simulação baseada em agentes.
-    \item \cite{wilensky_netlogo_1999} apresentam a linguagem e ambiente de simulação NetLogo.
-    \item \cite{grimm_standard_2006} apresenta o protocolo ODD, proposto para padronizar a descrição de modelos de simulação multiagente.
+    \item  \cite{olfati-saber_consensus_2004} descrevem as propriedades algorítmicas fundamentais do ``problema do consenso'' entre agentes em redes com topologias fixas e móveis;
+    \item  \cite{reynolds_flocks_1987} apresenta modelos multi-agentes para simulação gráfica do movimento de rebanhos ou agregados de animais;
+    \item \cite{vicsek_novel_1995} analisam a emergência de um novo fenômeno de transição de fase em simulações de partículas com comportamento autônomo com interação biologicamente motivada, usando modelos analíticos e numéricos com uma regra de comportamento bastante simples;
+    \item \cite{barabasi_emergence_1999} investigam como ocorre a emergência da distribuição livre de escala (\textit{scale-free}, uma  propriedade emergente em sistemas interativos complexos \footnote{Ver introdução em \url{https://en.wikipedia.org/wiki/Scale-free_network}.}), em redes que evoluem com base em ligação preferencial;
+    \item \cite{watts_collective_1998} exploram a emergência do fenômeno ``mundo pequeno'' (\textit{small world}\footnote{Ver introdução em \url{https://en.wikipedia.org/wiki/Small-world_network}.}) formado a partir da reorganização aleatória de redes biológicas, genéticas e outras formas de redes auto-organizadas;
+    \item \cite{castellano_statistical_2009} exploram de que forma as técnicas de análise e simulação já usadas na física-estatística podem ser usadas para explicar vários fenômenos sociais, tais como comportamento de multidões, dispersão social, comportamento de multidões etc. Eles apresentam as afinidades entre os dados gerados pelos modelos simulados e dados empíricos obtidos junto a sistemas sociais reais;
+    \item \cite{hegselmann_opinion_2002} exploram a emergência de fenômenos de consenso, polarização e fragmentação da opinião na simulação de sociedades artificiais, descrevendo um \textit{framework} unificado para a modelagem baseada em agentes, apresentando definições matemáticas, ferramentas e teoremas;
+    \item \cite{bonabeau_agent-based_2002} descreve os fundamentos da modelagem baseada em agentes para simular sistemas humanos, apresentando aplicações práticas voltadas a quatro tipos de aplicações no mundo real: \textit{''flow simulation, organizational simulation, market simulation, and diffusion simulation''};
+    \item \cite{wilensky_netlogo_1999} apresentam a linguagem e ambiente de simulação NetLogo; e
+    \item \cite{grimm_odd_2010} apresenta uma revisão do protocolo ODD, proposto para padronizar a descrição de modelos de simulação multiagente.
 \end{itemize}
 
 Nenhum desses 10 documentos citados está contido no \dataset\   recuperado.
@@ -260,7 +292,7 @@ Após os filtros aplicados (apenas um)  obteve-se um total de 4.647 registros, q
 
 \subsubsection{Dados Sumários Gerais}
 
-\begin{table}[]
+\begin{table}[htp]
     \centering
 \csvautotabular[separator=semicolon
 %,filter not strcmp={\csvcolii}{}
@@ -277,7 +309,7 @@ Adicionalmente, o \dataset\ apresenta 157.507 referências citadas, com uma méd
 
 \subsubsection{Evolução anual da produção científica}
 
-No tema de simulação multiagente de fenômenos sociais, a evolução anual da produção científica mundial é sumarizada no gráfico da figura \ref{fig:MASSA2:Evolucao}.
+No tema de simulação multiagente de fenômenos sociais, a evolução anual da produção científica mundial é sumarizada no gráfico da figura \ref{fig:MASSA2:Annual-Scientific-Production}.
 
 \begin{figure}
     \centering
@@ -301,7 +333,7 @@ O gráfico da figura \ref{fig:MASSA2:Media:Citacoes} apresenta a evolução das 
 
 Para que melhor se compreenda como foi produzido o gráfico, a tabela \ref{tab:MASSA2:Media:Citacoes} apresenta parcialmente os dados de citação anual para os artigos do \dataset\ MASSA2@jhcf. A título de exemplo, nota-se que no \dataset\ foram encontrados 9 artigos publicados no ano de 1991, tendo sido cada artigo citado, em média, aproximadamente 31,4 vezes. Dado que esses artigos já tem 31 anos citáveis, obtém-se uma média de 1,01 citações anuais, aproximadamente.
 
-\begin{table}[]
+\begin{table}[htp]
     \centering
 \csvautotabular[separator=semicolon
 %,filter not strcmp={\csvcolii}{}
@@ -463,7 +495,7 @@ Essas medidas serão apresentadas a seguir.
 Cada registro recuperado no \dataset\ apresenta um conjunto de informações, dentre as quais pode constar a quantidade de vezes que uma citação ao mesmo foi registrada no índice do WoS, desde que no momento da extração seja feita essa solicitação (\textit{TC - Times Cited}).
 A tabela \ref{tab:MASSA2:GlobalCitations} apresenta a lista dos 25 artigos do \dataset, que foram mais citados, ordenados de forma decrescente pelo número global de citações do artigo, nos índices da WoS. Para ada artigo é apresentada a referencia abreviada, o DOI e a quantidade de vezes que ele foi citado globalmente (no índice do WoS). Para recuperar a página do artigo deve-se abrir uma url prefixada com \url{http://doi.org/}, e informar o valor do DOI indicado, por exemplo \url{http://doi.org/10.1109/TAC.2008.2010897} levará à página do artigo mais citado, cujo título é ``Flocking of Multi-Agents With a Virtual Leader''.
 
-\begin{table}[]
+\begin{table}[htp]
     \centering
 \footnotesize
 \csvreader[tabular = |r|l|l|r|,
@@ -483,7 +515,7 @@ Após a visitação do resumo do texto de vários dos documentos citados, perceb
 
 Cada registro recuperado no \dataset\ apresenta um conjunto de informações, dentre as quais consta a lista das citações feitas a outros documentos, nas seção bibliografia. O Bibliometrix computa de forma aproximada a quantidade de vezes que cada artigo do \dataset\ foi citado por outros artigos do mesmo \dataset, construindo uma tabela das maiores citações locais, que provavelmente apontará para artigos com afinidade bem maior à busca efetuada.
 
-\begin{table}[]
+\begin{table}[htp]
     \centering
 \footnotesize
 \csvreader[tabular = |r|l|l|r|r|,
@@ -517,9 +549,456 @@ ODD + D facilitates communication and comparison of models.}};
 \item ``Heterogeneous bounds of confidence: Meet, discuss and find consensus!'' investiga por métodos computacionais de simulação multiagente e análise numérica, de que forma são corroborados alguns modelos teóricos de produção de consenso em situações de confiança limitada, já existentes na literatura  \footnote{\textit{Models of continuous opinion dynamics under bounded confidence show a sharp transition between a consensus and a polarization phase at a critical global bound of confidence. In this paper, heterogeneous bounds of confidence are studied. The surprising result is that a society of agents with two different bounds of confidence (open- and closed-minded agents) can find consensus even when both bounds of confidence are significantly below the critical bound of confidence of a homogeneous society. The phenomenon is shown by examples of agent-based simulation and by numerical computation of the time evolution of the agents density. The result holds for the bounded confidence model of Deffuant, Weisbuch, and others (Weisbuch et al., Complexity 2002, 7, 55–63), as well as for the model of Hegselmann and Krause (Hegselmann and Krause, Journal of Artificial Societies and Social Simulation 2002, 5, 2).}};
 \item ``The "Wedding-Ring": An agent-based marriage model based on social interaction'' desenvolve e valida um modelo de simulação baseado em agentes para corroborar modelos teóricos de micro-sociológicos acerca da idade em que ocorre o casamento entre pessoas. \footnote{\textit{In this paper we develop an agent-based marriage model based on social interaction. We build an population of interacting agents whose chances of marrying depend on the availability of partners, and whose willingness to marry depends on the share of relevant others in their social network who are already married. We then let the typical aggregate age pattern of marriage emerge from the bottom-up. The results of our simulation show that micro-level hypotheses founded on existing theory and evidence on social interaction can reproduce age-at-marriage patterns with both realistic shape and realistic micro-level dynamics.}};
 \item ``Agent-based simulation of affordance-based human behaviors in emergency evacuation'' investiga o uso de modelos baseados em agentes para simular o compartamento de pessoas em situação de evacuações de emergência de incêndio \footnote{\textit{ical rule-based model, (2) a statistical model, or (3) an analytical predictive model. Predicting human behaviors in complex and uncertain environments like emergency evacuation is considered almost impossible (at least NP hard) in systems theory. In this paper, we explore simulating human behaviors using affordance-based finite state automata (FSA) modeling, based on the ecological concept of affordance theory. To this end, we introduce the conceptual and generic framework of affordance-based human behavior simulation developed through our previous work. Following the generic framework, formal simulation models of affordance-based human behaviors are developed, especially for emergency evacuation, to mimic perception-based dynamic human actions interacting with emergent environmental changes, such as fire. A “warehouse fire evacuation” case is used to demonstrate the applicability of the proposed framework. The human action planning algorithms in the simulation model are developed and implemented using the Adjusted Floor Field Indicators, which represent not only the evacuee’s prior knowledge of the floor layout but the perceivable information about dynamic environmental changes. The results of our simulation study verify that the proposed framework accurately simulates human fire evacuation behavior.}};
-\item ``Flocking of Multi-Agent Non-Holonomic Systems With Proximity Graphs'' desenvolve modelos de simulação multiagente para investigação do comportamento de voo coletivo em sistemas multi-agente \footnote{\textit{}};
+\item ``Flocking of Multi-Agent Non-Holonomic Systems With Proximity Graphs'' desenvolve modelos de simulação multiagente para investigação do comportamento de voo coletivo em sistemas multi-agente \footnote{\textit{A multi-agent system is composed of many agents interconnected by a communication network. This paper aims to further investigate the flocking and preserving connectedness in multi-agent nonholonomic systems with proximity graphs, in which the positions and the relative distances are not available to the distributed controllers. Several sufficient conditions are derived to resolve the above problem based on the kinematic model and the dynamic model, respectively. }};
+\item ``UNIVERSALITY OF THE THRESHOLD FOR COMPLETE CONSENSUS FOR THE OPINION DYNAMICS OF DEFFUANT et al.'' investiga e propõe uma regra para desenvolvimento de modelos de simulação multiagente para a questão da formação de consenso e dinâmica de opinões em sistemas multi-agente;
+\item ``Agent-based model simulations of future changes in migration flows for Burkina Faso'' investiga e valida empiricamente, por meio de modelos de simulação baseados em agente, a estrutura dos fluxos migratórios em Burkina Faso \footnote{\textit{agent-based modelling offers a robust method to simulate the autonomous decision making process relating to environmental migration. The Theory of Planned Behaviour provides a basis that can be used to effectively break down the reasoning process relating to the development of a behavioural intention. By developing an agent-based model of environmental migration for Burkina Faso from the basis of a combination of such theoretical developments and data analysis we further investigate the role of the environment in the decision to migrate using scenarios of future demographic, economic, social, political, and climate change in a dryland context. We find that in terms of climate change, it can be seen that that change to a drier environment produces the largest total and international migration fluxes when combined with changes to inclusive and connected social and political governance. While the lowest international migration flows are produced under a wetter climate with exclusive and diverse governance scenarios. In summary this paper illustrates how agent-based models incorporating the Theory of Planned Behaviour can be used to project evidence based future changes in migration in response to future demographic, economic social and climate change.}};
+\item ``STATISTICAL PROPERTIES AND MULTIFRACTAL BEHAVIORS OF MARKET RETURNS BY ISING DYNAMIC SYSTEMS''investiga como a simulação baseada em agente pode ser usada para modelar a formação de preços em mercados de capitais \footnote{\textit{An interacting-agent model of speculative activity explaining price formation in financial markets is considered in the present paper, which based on the stochastic Ising model and the mean field theory. The model describes the interaction strength among the agents as well as an external field, and the corresponding random logarithmic price return process is investigated. According to the empirical research of the model, the time series formed by this Ising model exhibits the bursting typical of volatility clustering, the fat-tail phenomenon, the power-law distribution tails and the long-time memory. The statistical properties of the returns of Hushen 300 Index, Shanghai Stock Exchange (SSE) Composite Index and Shenzhen Stock Exchange (SZSE) Component Index are also studied for comparison between the real time series and the simulated ones. Further, the multifractal detrended fluctuation analysis is applied to investigate the time series returns simulated by Ising model have the distribution multifractality as well as the correlation multifractality.}};
+\item ``A framework for modeling payments for ecosystem services with agent-based models, Bayesian belief networks and opinion dynamics models'' desenvolve um framework para modelagem de sistemas baseados em agentes para investigar fenômenos ligados ao uso de incentivos financeiros para melhoria da sustentabilidade ambiental \footnote{\textit{We present an integrated modeling framework for simulating land-use decision making under the influence of payments for ecosystem services. The model combines agent-based modeling (ABM) with Bayesian belief networks (BBNs) and opinion dynamics models (ODM). The model endows agents with the ability to make land-use decisions at the household and plot levels. The decision-making process is captured with the BBNs that were constructed and calibrated with both qualitative and quantitative information, i.e., knowledge gained from group discussions with stakeholders and empirical survey data. To represent interpersonal interactions within social networks, the decision process is further modulated by the opinion dynamics model. The goals of the model are to improve the ability of ABM to emulate land-use decision making and thus provide a better understanding of the potential impacts of payments for ecosystem services on land use and household livelihoods. }}.
 \end{enumerate}
 
-\paragraph{Referências aos (outros) artigos, capítulos de livros etc (documentos) citados pelos artigos no \dataset}
+Após essa breve análise dos 25 artigos mais citados do \dataset\ ganhou-se uma confiança de que os dados são de boa qualidade quanto à representatividade do uso de simulações multiagentes para modelagem de fenômenos sociais. Os principais fenômenos sociais investigados nesses artigos são relacionados com as ideias de:
+\begin{enumerate}
+    \item Formação de consenso em coletivos;
+    \item Influência da liderança na formação de consensos;
+    \item Gestão coletiva no uso da terra, em interfaces ecológico-sociais;
+    \item Modelagem do comportamento de \textit{traders} no mercado financeiro, especialmente formação de preços;
+    \item Comportamento das pessoas em situações de desastre, especialmente incêndio;
+    \item Difusão de inovações em comunidades, especialmente agrícolas;
+    \item Migração de populações; 
+    \item Idade em que as pessoas casam; e
+    \item Modelagem de marketing (uma espécie de fenômeno de difusão de inovações em rede).
+\end{enumerate}
+
+\paragraph{Referências a outros documentos (artigos, capítulos de livros etc) citados pelos artigos no \dataset}
+
+Cada registro do \dataset\ MASSA2@jhcf contém o conjunto das referências citadas, no campo CR. A tabelas \ref{tab:MASSA2:LocalCitationsReferences} apresentada de forma sumária quais foram as 25 citações mais frequentes, sugerindo os principais documentos que contém o conhecimento mais basilar usado pelos pesquisadores nesse campo do conhecimento da simulação multiagente de fenômenos sociais. Note que os registros de muitos desses documentos poderão não estar presentes no \dataset\ MASSA2@jhcf.
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[tabular = |r|l|l|r|,
+separator=semicolon
+%,filter not strcmp={\csvcolii}{},
+, table head = \hline\hline \# & Artigo Citado & DOI & Tot.Cit.\\ \hline\hline,
+table foot = \hline\hline
+]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-Most-Local-Cited-References.csv}{Cited References=\paper, DOI=\doi,Citations=\totcit}{ \thecsvrow & {\tiny\paper} & {\tiny \doi} & \totcit}
+
+    \caption{25 referências (artigos, capítulos de livros etc) mais citadas localmente no \dataset\ MASSA2@jhcf.}
+    \label{tab:MASSA2:LocalCitationsReferences}
+\end{table}
+
+Alguns desses registros serão brevemente comentados a seguir, acrescentando-se que os dez mais citados já foram descritos na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes}.
+
+\begin{enumerate}
+\item \textit{\textbf{Collective dynamics of ‘small-world networks'}} \citep{watts_collective_1998}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes} tem 25136 citações globais; 
+\item \textit{\textbf{Consensus problems in networks of agents with switching topology and time-delays}} \citep{olfati-saber_consensus_2004}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes}, possui 8465 citações globais;
+
+\item \textit{\textbf{Emergence of Scaling in Random Networks}}\citep{barabasi_emergence_1999}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes};
+
+\item \textit{\textbf{Statistical physics of social dynamics}}\citep{castellano_statistical_2009}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes}; 
+\item \textit{\textbf{Novel Type of Phase Transition in a System of Self-Driven Particles}} \citep{vicsek_novel_1995}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes}; 
+
+\item \textit{\textbf{Flocks, herds and schools: A distributed behavioral model}} \citep{reynolds_flocks_1987}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes};
+
+\item \textit{\textbf{Agent-based modeling: Methods and techniques for simulating human systems}} \citep{bonabeau_agent-based_2002}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes};
+
+\item \textit{\textbf{Opinion dynamics and bounded confidence: models, analysis and simulation}} \citep{hegselmann_opinion_2002}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes}; 
+
+\item \textit{\textbf{The ODD protocol: A review and first update}} \citep{grimm_odd_2010}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes};
+
+\item \textit{\textbf{Consensus seeking in multiagent systems under dynamically changing interaction topologies}} \citep{ren_consensus_2005} explora novas propriedades da formação de consenso em redes de múltiplos agentes com topologia variável;
+
+
+\item \textit{\textbf{Coordination of groups of mobile autonomous agents using nearest neighbor rules}} \citep{jadbabaie_coordination_2003}
+apresenta modelos teóricos que embasam o já citado trabalho de simulação feito por \citet{vicsek_novel_1995}.
+
+\item \textit{\textbf{Mixing beliefs among interacting agents}} \citep{deffuant_mixing_2000} descreve um modelo de dinâmica de opinião em grupos de agentes;
+
+\item \textit{\textbf{NetLogo (and NetLogo User Manual)}}  \citep{wilensky_netlogo_1999} é uma página web que hospeda a descrição da linguagem de simulação multiagente chamada NetLogo;
+
+
+\item \textit{\textbf{A standard protocol for describing individual-based and agent-based models}} \citep{grimm_standard_2006} introduz o protocolo ODD, para descrição de simulações multia-agentes;
+
+\item \textit{\textbf{Growing Artificial Societies: Social Science from the Bottom Up}} \citep{epstein_growing_1996} é um livro que descreve o uso de um simulador de sistemas multi-agentes chamado Sugarscape, explorando propriedades de sistemas sociais complexos, como acumulação de riqueza e formação de cultura;
+
+\item \textit{\textbf{Flocking for multi-agent dynamic systems: algorithms and theory}} \citep{olfati-saber_flocking_2006} apresenta um arcabouço para o projeto e análise de algoritmos de simulação voo/nado de pássaros/peixes;
+
+\item \textit{\textbf{Simulating dynamical features of escape panic}} \citep{helbing_simulating_2000} apresentam estudos de simulação multiagente do comportamento de multidões em situação de pânico;
+
+\item \textit{\textbf{Distributed Event-Triggered Control for Multi-Agent Systems}} \citep{dimarogonas_distributed_2012} investigam propriedades de simulações de coordenação de ações em sistemas multiagentes, baseadas no processamento distribuído de eventos;
+
+\item \textit{\textbf{Consensus and Cooperation in Networked Multi-Agent Systems}} \citep{olfati-saber_consensus_2007}  apresenta um arcabouço teórico para análise de algoritmos de formação de consenso em sistemas multiagente;
+
+\item \textit{\textbf{Opinion evolution in closed community}} \citep{sznajd-weron_opinion_2000} emprega simulações de um modelo magnético de física do estado sólido (Ising spin model) para analisar propriedades da formação de opiniões em comunidades sintéticas ``democráticas'' ou  ``ditatoriais'' (sistemas multiagentes);
+
+\item \textit{\textbf{Reinforcement Learning: An Introduction}} \citep{sutton_reinforcement_2014} é um livro que apresenta as principais ideias e algoritmos da aprendizagem por reforço;
+
+\item \textit{\textbf{Birds of a Feather: Homophily in Social Networks}} \citep{mcpherson_birds_2001} apresenta, sobre uma perspectiva sociológica, o conceito-chave da homofilia, usado em análise de redes sociais;
+
+
+\item \textit{\textbf{Social force model for pedestrian dynamics}} \citep{helbing_social_1995} emprega modelos analíticos físicos e simulações computacionais, para descrever fenômenos típicos da movimentação de pedestres em espaços urbanos;
+
+\item \textit{\textbf{Statistical mechanics of complex networks}} \citep{albert_statistical_2002}  apresenta uma ampla compilação de propriedades físicas, matemáticas, estatísticas e algorítmicas de grafos que representam redes complexas de relações entre entidades que ocorrem na natureza, em sistemas físicos, biológicos, humanos e tecnológicos;
+
+\item \textit{\textbf{The Dissemination of Culture: A Model with Local Convergence and Global Polarization
+}} \citep{axelrod_dissemination_1997} utiliza modelos de simulação baseados em agentes para esclarecer de que modo surgem heterogeneidades e homogeneidades culturais em sociedades artificiais geograficamente dispersas, que interagem por meio de múltiplos traços culturais.
+\end{enumerate}
+
+\paragraph{Espectroscopia das referências}
+
+A técnica de espectroscopia das referências bibliográficas (``reference publication year spectroscopy'' (RPYS)) de um \dataset\cite{marx_detecting_2014} possibilita identificar as raízes históricas  de um campo de conhecimento. 
+
+A figura \ref{fig:MASSA2-ReferenceSpectroscopy} apresenta, distribuída ao longo do tempo, a quantidade de referências citadas no \dataset\, para cada ano, bem como os desvios dessa quantidade em relação à média (em vermelho). A mais antiga das referências usadas é do ano de 1705, e não se detectam evidentes picos isolados de referências em anos específicos, que indicariam surgimento de publicações mais importantes que as sucederam. Há, entretanto, uma oscilação dos desvios na quantidade de citações, em períodos de aproximadamente seis anos, especialmente entre 1970 e 2013 (linha vermelha).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-ReferenceSpectroscopy.png}
+    \caption{Espectroscopia (RPYS) completa das referências do \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-ReferenceSpectroscopy}
+\end{figure}
+
+Se observamos a espectroscopia do mesmo \dataset\ apenas entre os anos de 1901 a 1970, como na figura \ref{fig:MASSA2-ReferenceSpectroscopy:1901:1970}, pode-se perceber um ponto de inflexão na curva, a partir do ano de 1946, que foi o período após o término da Segunda Guerra Mundial, quando o conhecimento científico que havia sido produzido sob sigilo no período da guerra começou a se disseminar pelo mundo.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-ReferenceSpectroscopy-1901-1970.png}
+    \caption{Espectroscopia (RPYS) das referências do \dataset\ MASSA2@jhcf, entre 1901 e 1970.}
+    \label{fig:MASSA2-ReferenceSpectroscopy:1901:1970}
+\end{figure}
+    
+Se observamos a espectroscopia do mesmo \dataset\ apenas entre os anos de 1971 a 2019, como na figura \ref{fig:MASSA2-ReferenceSpectroscopy:1971:2019}, pode-se perceber um ponto de declínio no volume de citações a partir do ano de 2010, sugerindo que esse campo de conhecimento atingiu sua maturidade cerca de 10 anos atrás.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-ReferenceSpectroscopy-1971-2019.png}
+    \caption{Espectroscopia (RPYS) das referências do \dataset\ MASSA2@jhcf, entre 1971 e 2019.}
+    \label{fig:MASSA2-ReferenceSpectroscopy:1971:2019}
+\end{figure}
 
 \paragraph{Uso de palavras dentro dos artigos no \dataset}
+
+As últimas das métricas aplicadas a documentos, disponíveis para aplicação no Bibliometrix é baseada na ocorrência de termos no texto dos documentos. A mais comum delas é baseada na simples contagem de frequência das palavras, como ilustra a tabela \ref{tab:MASSA2:Word:Occurrences}, com os 40 termos mais frequentes em uso.
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[tabular = {|l|r|l|},
+separator=semicolon,
+filter={\value{csvrow}<40}
+%,filter not strcmp={\csvcolii}{},
+, table head = \hline\hline \# & Palavra (termo) & Frequência \\ \hline\hline,
+table foot = \hline\hline
+]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-Most_Frequent_Words.csv}{Words=\palavra, Occurrences=\freq}{ \thecsvrow & \palavra & \freq}
+
+    \caption{40 palavras (termos) mais frequentes no \dataset\ MASSA2@jhcf.}
+    \label{tab:MASSA2:Word:Occurrences}
+\end{table}
+
+Outras formas de apresentação alternativas são apresentadas nas duas figuras a seguir, que ilustram de forma diferente a mesma informação, como em:
+\begin{description}
+    \item [Word Cloud] Uma nuvem de palavras, na figura \ref{fig:MASSA2-WordCloud-100words}, com evidencias para as 100 palavras mais frequentes;
+    \item [Tree Map] Um mapa em árvore, na figura \ref{fig:MASSA2-TreeMap}, com evidências para as 50 palavras mais frequentes;
+\end{description}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-WordCloud-100words.png}
+    \caption{Nuvem dos 100 termos mais frequentes do \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-WordCloud-100words}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-TreeMap.png}
+    \caption{\textit{Tree Map} dos 50 termos mais frequentes do \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-TreeMap}
+\end{figure}
+
+Por fim, o Bibliometrix permite apresentar o uso dos termos ordenado temporalmente, como nas duas figuras a seguir:
+\begin{description}
+    \item [Word Growth / Word Dynamics] que mostra o crescimento de uso das palavras mais frequentes, como na figura \ref{fig:MASSA2-WordDynamics};
+    \item [Trending topics] que mostra as tendências para uso de determinadas palavras em determinadas faixas de tempo, como em \ref{fig:MASSA2-TrendTopics}. Para obtenção do gráfico foram determinados os seguintes valores para os parâmetros: frequência mínima de ocorrência para que um termo seja considerado = 15, quantidade máxima de tópicos por ano = 7.
+\end{description}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-WordDynamics.png}
+    \caption{Dinâmica de uso ao longo do tempo, dos 20 termos mais frequentes do \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-WordDynamics}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[angle=90,width=1\textwidth,height=0.93\textheight]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-TrendTopics-WF=15:WPY=7.png}
+    \caption{\textit{Trending Topics} do \dataset\ MASSA2@jhcf, WF = 15, WPY=7.}
+    \label{fig:MASSA2-TrendTopics}
+\end{figure}
+
+\subsection{Métricas para Autores}
+
+Um autor escreve um documento científico, que eventualmente é publicado. Ao escrever esse documento cita outros, e eventualmente o trabalho do autor também é citado. Se é citado, é porque é relevante, e daí infere-se que teve impacto. Com base na medica bruta da citação, várias métricas podem ser criadas. Algumas delas são aplicadas a seguir. 
+
+\subsubsection{Autores mais produtivos no \dataset}
+
+A tabela \ref{tab:MASSA2:Author:Production} apresenta a lista ordenada e decrescente dos autores com maior número de artigos no \dataset. A coluna mais à direita divide esse primeiro valor pelo número de autores nos artigos.
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[tabular = {|r|l|r|r|},
+filter={\value{csvrow}<40}
+%,filter not strcmp={\csvcolii}{},
+, table head = \hline\hline \# & Autor & Qtd. de artigos & Qtd. Proporcional \\ \hline\hline,
+table foot = \hline\hline
+]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-Most-Productive-Authors.csv}
+{Authors=\autor,Articles=\qtdart,Fractionalized=\artfrac}{ \thecsvrow & \autor & \qtdart & \artfrac}
+    \caption{20 autores com mais artigos no \dataset\ MASSA2@jhcf.}
+    \label{tab:MASSA2:Author:Production}
+\end{table}
+
+\subsubsection{Autores mais relevantes localmente citados}
+
+A tabela \ref{tab:MASSA2:Author:Production:Local} apresenta a lista ordenada e decrescente dos autores com maior número de artigos citados por outros artigos no \dataset. Esses são, possivelmente, os autores mais impactantes para o estado da arte no \dataset\ MASSA2@jhcf.
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[tabular = {|r|l|r|},
+filter={\value{csvrow}<40},
+%,filter not strcmp={\csvcolii}{},
+table head = \hline\hline \# & Autor & Qtd artigos\\ \hline\hline,
+table foot = \hline\hline]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-Most-Local-Cited-Authors.csv}
+{Author=\autor,LocalCitations=\qtdcit}
+{ \thecsvrow & \autor & \qtdcit}
+\caption{20 autores com mais artigos citados por outros artigos no \dataset\ MASSA2@jhcf.}
+    \label{tab:MASSA2:Author:Production:Local}
+\end{table}
+
+Uma busca na aba Filter, do Bibliometrix, permite explorar os artigos mais citados desses autores, alguns tem seus títulos listados a seguir:
+\begin{itemize}
+    \item [SCHWARZ N] 
+    \begin{itemize}
+        \item DESCRIBING HUMAN DECISIONS IN AGENT-BASED MODELS - ODD PLUS D, AN EXTENSION OF THE ODD PROTOCOL;
+        \item AGENT-BASED MODELING OF THE DIFFUSION OF ENVIRONMENTAL INNOVATIONS - AN EMPIRICAL APPROACH;
+    \end{itemize}
+    \item [SU HS, WANG XF] 
+    \begin{itemize}
+        \item FLOCKING OF MULTI-AGENTS WITH A VIRTUAL LEADER;
+        \item AGENT-BASED MODELING OF THE DIFFUSION OF ENVIRONMENTAL INNOVATIONS - AN EMPIRICAL APPROACH;
+    \end{itemize}
+    \item [LIAO XF] 
+    \begin{itemize}
+        \item EVENT-TRIGGERING SAMPLING BASED LEADER-FOLLOWING CONSENSUS IN SECOND-ORDER MULTI-AGENT SYSTEMS;
+    \end{itemize}    
+\end{itemize}
+
+\subsubsection{Variação da produtividade dos autores ao longo do tempo}
+
+Os cientistas são seres humanos, que também tem um ciclo de vida de iniciante, muito produtivo, menos produtivo, e não produtivo.
+Diagramas como o da figura \ref{fig:MASSA2-TopAuthorsProductionOverTime} apresentam esse ciclo de vida, em relação ao \dataset\ MASSA2@jhcf.
+
+\begin{figure}
+    \centering
+    \includegraphics[angle=90,width=1\textwidth,height=0.93\textheight]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-TopAuthorsProductionOverTime.png}
+    \caption{Variação da produção dos autores de maior impacto, do \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-TopAuthorsProductionOverTime}
+\end{figure}
+
+\subsubsection{Lei de Lotka}
+
+A Lei de Lotka (ver \url{https://en.wikipedia.org/wiki/Lotka\%27s_law}) estabelece uma distribuição de frequência aproximadamente inversamente quadrática ou cúbica, para o número de artigos publicados pelos autores de qualquer área do conhecimento. Isso é, se 1000 pessoas publicam ao longo de sua contribuição para o campo de conhecimento apenas um documento, então
+entre $1000/x^{2}$ a $1000/x^{3}$ publicam $x$ documentos. Ou seja, entre
+$1000/2^{2}$ a $1000/2^{3}$ pessoas publicam dois documentos, $1000/3^{2}$ a $1000/3^{3}$ pessoas publicam três documentos etc.
+
+Se os dados empíricos do \dataset\ são alinhados à essas curvas, então supor dizer que o \dataset\ é bem formado. Será que isso ocorre com a tabela \ref{}, criada para o \dataset\ MASSA2@jhcf?
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[
+separator=semicolon,
+tabular = {|r|l|r|r|r|},
+filter={\value{csvrow}<40},
+%,filter not strcmp={\csvcolii}{},
+table head = \hline\hline \# & Qtd Autores & Qtd artigos & Lotka 2 & Lotka 3\\ \hline\hline,
+table foot = \hline\hline]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-Lotka_Law.csv}
+{}
+{ \thecsvrow & \csvcolii & \csvcoli & \csvcoliii & \csvcoliv}
+\caption{Comparação do \dataset\ MASSA2@jhcf com a formulação geral da Lei de Lotka.}
+    \label{tab:MASSA2:Author:Lotka}
+\end{table}
+
+\subsubsection{Medidas de Impacto dos Autores}
+
+A partir da medida básica de citações (TC) podem ser criados vários índices, sendo os mais conhecidos os índices H (Ver \url{https://en.wikipedia.org/wiki/H-index}), G (Ver \url{https://en.wikipedia.org/wiki/G-index})e M (ver \url{https://en.wikipedia.org/wiki/Author-level_metrics#m-index}).
+
+As tabelas \ref{tab:MASSA2:Author:Impacto:H}, \ref{tab:MASSA2:Author:Impacto:G}, \ref{tab:MASSA2:Author:Impacto:M} e \ref{tab:MASSA2:Author:Impacto:Qtd:Publicacoes} mostram os autores mais proeminentes do \dataset\ ordenados com base em um desses índices ou com o simples volume total de publicação, em comparação aos demais índices.
+
+Além dos índices e da quantidade total de citações (coluna TC), apresenta-se o volume de publicações (NP) e o ano de primeira publicação do autor (PY Start).
+
+Observe que os índices H e G tendem a valorizar os autores mais estabilizados, enquanto que o índice M mostra os autores mais recentes, que tem menos anos de publicação.
+
+Observe, adicionalmente, que a base para cálculo desses índices é o número total de citações, que tem alcance global, enquanto que o número de artigos publicados é o valor local.
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[
+separator=semicolon,
+tabular = {|r|l|r|r|r|r|r|r|},
+filter={\value{csvrow}<40},
+%,filter not strcmp={\csvcolii}{},
+table head = \hline\hline \# & Autor & Índice H & Índice G & Índice M & TC & NP & PY Start\\ \hline\hline,
+table foot = \hline\hline]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-H-Index-Author-Impact.csv}
+{}
+{ \thecsvrow & \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}
+\caption{10 autores de maior impacto no \dataset\ MASSA2@jhcf, conforme o índice H.}
+    \label{tab:MASSA2:Author:Impacto:H}
+\end{table}
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[
+separator=semicolon,
+tabular = {|r|l|r|r|r|r|r|r|},
+filter={\value{csvrow}<40},
+%,filter not strcmp={\csvcolii}{},
+table head = \hline\hline \# & Autor & Índice H & Índice G & Índice M & TC & NP & PY Start\\ \hline\hline,
+table foot = \hline\hline]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-G-Index-Author-Impact.csv}
+{}
+{ \thecsvrow & \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}
+\caption{10 autores de maior impacto no \dataset\ MASSA2@jhcf, conforme o índice G.}
+    \label{tab:MASSA2:Author:Impacto:G}
+\end{table}
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[
+separator=semicolon,
+tabular = {|r|l|r|r|r|r|r|r|},
+filter={\value{csvrow}<40},
+%,filter not strcmp={\csvcolii}{},
+table head = \hline\hline \# & Autor & Índice H & Índice G & Índice M & TC & NP & PY Start\\ \hline\hline,
+table foot = \hline\hline]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-M-Index-Author-Impact.csv}
+{}
+{ \thecsvrow & \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}
+\caption{25 autores de maior impacto no \dataset\ MASSA2@jhcf, conforme o índice M.}
+    \label{tab:MASSA2:Author:Impacto:M}
+\end{table}
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[
+separator=semicolon,
+tabular = {|r|l|r|r|r|r|r|r|},
+filter={\value{csvrow}<40},
+%,filter not strcmp={\csvcolii}{},
+table head = \hline\hline \# & Autor & Índice H & Índice G & Índice M & TC & NP & PY Start\\ \hline\hline,
+table foot = \hline\hline]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-Total-Citations-Author-Impact.csv}
+{}
+{ \thecsvrow & \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}
+\caption{25 autores de maior impacto no \dataset\ MASSA2@jhcf, conforme a quantidade de vezes que seus artigos foram globalmente citados.}
+    \label{tab:MASSA2:Author:Impacto:Qtd:Publicacoes}
+\end{table}
+
+\subsubsection{Filiações dos autores às instituições de P\&D}
+
+Os autores de documentos científicos são filiados como estudantes ou empregados em universidades e centros de pesquisa, e quando os publicam colocam o nome de suas filiações, criando a possibilidade de produção de \textit{rankings} para essas instituições. A tabela \ref{} apresenta as 40 instituições com maior produtividade, conforme o volume de artigos publicados presentes no \dataset. Ou seja, é nas instituições listadas na tabela onde possivelmente está mais avançado o conhecimento nesse tema. 
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[
+separator=comma,
+tabular = {|r|l|r|},
+filter={\value{csvrow}<40},
+%,filter not strcmp={\csvcolii}{},
+table head = \hline\hline \# & Instituição de filiação & Qtd de artigos publicados\\ \hline\hline,
+table foot = \hline\hline]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-Most-Relevant-Affiliations.csv}
+{}
+{ \thecsvrow & \csvcoli & \csvcolii }
+\caption{40 Instituições mais produtivas no tema do \dataset\ MASSA2@jhcf, conforme a quantidade de artigos publicados por pessoas a elas filiadas.}
+    \label{tab:MASSA2-Most-Relevant-Affiliations}
+\end{table}
+
+\subsubsection{Filiações dos autores aos Países}
+
+As instituições às quais são filiados os 
+\paragraph{Países dos autores principais dos artigos}
+
+Cada artigo escrito por mais de um autor tem um autor responsável por receber as correspondências relativas ao artigo. Esse é o  \textit{corresponding author}. A figura \ref{fig:MASSA2-Corresponding-Authors-Country} apresenta, em ordem do maior para o menor volume de correspondentes por artigo, o volume publicado por cada país. SCP são as publicações cujos autores são todos do mesmo país. MCP envolve autores de mais de um país. Note que países como Japão, Índia e Irã, no \dataset\ em pauta, não parecem colaborar muito, de forma internacional.
+
+\begin{figure}
+    \centering
+    \includegraphics[angle=90,width=1\textwidth,height=0.93\textheight]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-Corresponding-Authors-Country.png}
+    \caption{Variação da produção dos autores de maior impacto, do \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-Corresponding-Authors-Country}
+\end{figure}
+
+\paragraph{Países com maior produção científica}
+
+\paragraph{Países mais citados}
+
+\subsection{Métricas para Fontes de Informação}
+
+\subsubsection{Fontes mais relevantes (globalmente)}
+
+\subsubsection{Fontes mais relevantes localmente citadas}
+
+\subsubsection{Lei de Bradford}
+
+\subsubsection{Medidas de Impacto das fontes}
+
+\paragraph{Índice H}
+
+\paragraph{Índice G}
+
+\paragraph{Índice M}
+
+\paragraph{Número bruto de citações}
+
+\subsubsection{Dinâmica de publicação nas fontes}
+
+\subsection{Mapas de Acoplamento}
+
+\subsection{Informetrias: Estrutura do conhecimento}
+
+\subsection{Estrutura Conceitual do Conhecimento}
+
+\subsubsection{Métricas aplicadas a grafos (redes)}
+
+\paragraph{Redes de Coocorrências}
+
+\paragraph{Mapas Temáticos}
+
+\paragraph{Evolução Temática}
+
+\subsubsection{Métricas de redução da dimensionalidade (Análise Fatorial)}
+
+\subsection{Estrutura Intelectual  do Conhecimento}
+
+\subsubsection{Redes de Co-Citação}
+
+\subsubsection{Historiografia}
+
+\subsection{Estrutura Social  do Conhecimento}
+
+\subsubsection{Rede de Colaboração}
+
+\subsubsection{Mapa da Colaboração Mundial}
+
+\section{Análises}
+
+\section{Conclusões}
+
+

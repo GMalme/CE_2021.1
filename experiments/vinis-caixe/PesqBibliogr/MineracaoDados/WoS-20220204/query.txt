@@ -1,1 +1,3 @@
-data and mining and ((health and care) or medicine or medical) and patient
+data and mining 
+and ((health and care) or medicine or medical) 
+and patient

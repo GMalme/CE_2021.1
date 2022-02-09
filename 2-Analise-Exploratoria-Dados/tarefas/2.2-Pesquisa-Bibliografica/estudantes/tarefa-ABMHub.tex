@@ -26,7 +26,7 @@ A pesquisa foi realizada utilizando as edições "Science Citation Index Expande
 
 A \textit{string} (ou \textit{query}) de busca inicialmente utilizada foi a seguinte:
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre Procesasmento de Linguagem Natural.},label=queryNLP03022022]
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre Procesasmento de Linguagem Natural.},label=queryNLPABM1]
 {experiments/ABMHub/PesquisaBibliometrica/NLP/pesquisa_velha.txt}
 
 \subsection{Explicação para os termos de busca usados}
@@ -52,7 +52,7 @@ Assim, é necessário uma nova iteração da pesquisa, para evitar que registros
 
 Assim, chegamos na mais recente query:
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query refinada de busca sobre Processamento de Linguagem Natural.},label=queryRefinadaNLP03022022]
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query refinada de busca sobre Processamento de Linguagem Natural.},label=queryNLPABM2]
 {experiments/ABMHub/PesquisaBibliometrica/NLP/pesquisa_nova.txt}
 
 Esta query refinada retornou 8557 registros, e esse novo dataset, que será usado ao longo desse estudo, é nomeado de \textit{NLP2@LABM}.
@@ -115,20 +115,20 @@ Esta é, inclusive, uma das perguntas feitas como motivação de pesquisa: "Como
 
 \subsection{\textit{Three-Field Plots (Sankey diagram)}}
 
-Como o nome indica, "Three-Field Plots" são tipos de gráficos que buscam correlacionar três tipos de dados diferentes, sem a necessidade de uma terceira dimensão adicionada em cima de um gráfico bidimensional. Na imagem \ref{fig:ABMHub:TFP}, temos um exemplo de plotagem de três campos que interliga os autores presentes no dataset, com fontes que eles citaram, assim como palavras chaves que costumam usar em seus artigos. 
+Como o nome indica, "Three-Field Plots" são tipos de gráficos que buscam correlacionar três tipos de dados diferentes, sem a necessidade de uma terceira dimensão adicionada em cima de um gráfico bidimensional. Na imagem \ref{fig:ABMHub:TFP}, temos um exemplo de plotagem de três campos que interliga os autores presentes no \textit{dataset} \textit{NLP2@LABM}, com fontes que eles citaram, assim como palavras chaves que costumam usar em seus artigos. 
 
  \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/ABMHub/PesquisaBibliometrica/NLP/tfp1.png}
-    \caption{Three Field Plot - Citações, Autores e Palavras chaves}
-    \label{fig:ABMHub:TFP1}
+    \caption{Three Field Plot - Citações, Autores e Palavras chaves sobre o \textit{dataset} \textit{NLP2@LABM}}
+    \label{fig:ABMHub:TFP}
 \end{figure}
 
-Nessa plotagem, podemos extrair algumas informações muito interessantes sobre o estado atual de NLP. Primeiramente, vemos que o artigo mais citado por todos os artigos do dataset aqui apresentado é sobre computação neural (ou redes neurais), o que faz muito sentido, considerando que a NLP moderna é baseada em machine e deep learning. Outra observação interessante é que os artigos, em geral, são igualmente citados, mostrando que existe uma série de conceitos base para a NLP que são usados na maioria das aplicações do conceito.
+Nessa plotagem, podemos extrair algumas informações muito interessantes sobre o estado atual de NLP. Primeiramente, vemos que o artigo mais citado por todos os artigos do \textit{dataset} aqui apresentado é sobre computação neural (ou redes neurais), o que faz muito sentido, considerando que a NLP moderna é baseada em machine e deep learning. Outra observação interessante é que os artigos, em geral, são igualmente citados, mostrando que existe uma série de conceitos base para a NLP que são usados na maioria das aplicações do conceito.
 
 Outro ponto interessante é que quase todos os autores listados no gráfico são chineses. Isso evidencia muito claramente a ascensão da China como potencia intelectual e tecnológica, principalmente em uma área tão relevante como a Inteligência Artificial.
 
-Por último, as keywords também merecem sua atenção. Como esperado por ser o foco do dataset, Processamento de Linguagem Natural é a palavra-chave com mais menções. Mas, em seguida, vemos "Deep Learning", "Machine Learning" e "Neural Networks", o que faz muito sentido, partindo do princípio que (como dito anteriormente), NLP se apoia nesses conceitos atualmente. Também temos, com tamanho considerável, "sentiment analysis" e "task analysis", que são aplicações muito famosas de NLP.
+Por último, as keywords também merecem sua atenção. Como esperado por ser o foco do \textit{dataset} \textit{NLP2@LABM}, Processamento de Linguagem Natural é a palavra-chave com mais menções. Mas, em seguida, vemos "Deep Learning", "Machine Learning" e "Neural Networks", o que faz muito sentido, partindo do princípio que (como dito anteriormente), NLP se apoia nesses conceitos atualmente. Também temos, com tamanho considerável, "sentiment analysis" e "task analysis", que são aplicações muito famosas de NLP.
 
 \subsection{Análise da estrutura conceitual}
 

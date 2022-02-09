@@ -912,7 +912,7 @@ table foot = \hline\hline]
 
 \subsubsection{Filiações dos autores às instituições de P\&D}
 
-Os autores de documentos científicos são filiados como estudantes ou empregados em universidades e centros de pesquisa, e quando os publicam colocam o nome de suas filiações, criando a possibilidade de produção de \textit{rankings} para essas instituições. A tabela \ref{} apresenta as 40 instituições com maior produtividade, conforme o volume de artigos publicados presentes no \dataset. Ou seja, é nas instituições listadas na tabela onde possivelmente está mais avançado o conhecimento nesse tema. 
+Os autores de documentos científicos são filiados como estudantes ou empregados em universidades e centros de pesquisa, e quando os publicam colocam o nome de suas filiações, criando a possibilidade de produção de \textit{rankings} para essas instituições. A tabela \ref{tab:MASSA2-Most-Relevant-Affiliations} apresenta as 40 instituições com maior produtividade, conforme o volume de artigos publicados presentes no \dataset. Ou seja, é nas instituições listadas na tabela onde possivelmente está mais avançado o conhecimento nesse tema. 
 
 \begin{table}[htp]
     \centering
@@ -933,7 +933,25 @@ table foot = \hline\hline]
 
 \subsubsection{Filiações dos autores aos Países}
 
-As instituições às quais são filiados os 
+As instituições às quais são filiados os autores são sediadas em países, o que permite estimar a produtividade e (ou) impacto dos países em um tema de conhecimento específico, como ilustra a tabela \ref{MASSA2-Most-Cited-Countries}, que mostra a quantidade de citações obtidas pelos artigos das instituições sediadas nesses países.
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[
+separator=semicolon,
+tabular = {|r|l|r|r|},
+filter={\value{csvrow}<40},
+%,filter not strcmp={\csvcolii}{},
+table head = \hline\hline \# & País de Filiação & Qtd. Citações & Média de Citação por Artigo\\ \hline\hline,
+table foot = \hline\hline]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-Most-Cited-Countries.csv}
+{}
+{ \thecsvrow & \csvcoli & \csvcolii & \csvcoliii}
+\caption{40 países com maior impacto de citações no tema do \dataset\ MASSA2@jhcf.}
+    \label{tab:MASSA2-Most-Cited-Countries}
+\end{table}
+
 \paragraph{Países dos autores principais dos artigos}
 
 Cada artigo escrito por mais de um autor tem um autor responsável por receber as correspondências relativas ao artigo. Esse é o  \textit{corresponding author}. A figura \ref{fig:MASSA2-Corresponding-Authors-Country} apresenta, em ordem do maior para o menor volume de correspondentes por artigo, o volume publicado por cada país. SCP são as publicações cujos autores são todos do mesmo país. MCP envolve autores de mais de um país. Note que países como Japão, Índia e Irã, no \dataset\ em pauta, não parecem colaborar muito, de forma internacional.
@@ -945,11 +963,9 @@ Cada artigo escrito por mais de um autor tem um autor responsável por receber a
     \label{fig:MASSA2-Corresponding-Authors-Country}
 \end{figure}
 
-\paragraph{Países com maior produção científica}
-
-\paragraph{Países mais citados}
-
 \subsection{Métricas para Fontes de Informação}
+
+As métricas para fontes de informação permitem avaliar a qualidade das revistas, conferências, em relação ao impacto de publicações em determinado tema. Valem a maioria das medidas já vistas para autores.
 
 \subsubsection{Fontes mais relevantes (globalmente)}
 
@@ -971,9 +987,15 @@ Cada artigo escrito por mais de um autor tem um autor responsável por receber a
 
 \subsection{Mapas de Acoplamento}
 
-\subsection{Informetrias: Estrutura do conhecimento}
-
 \subsection{Estrutura Conceitual do Conhecimento}
+
+O Conhecimento científico é um fenômeno complexo que emerge a partir da agregação memética de termos e palavras, que representam conceitos e ideias, que se organizam em tópicos, temas, e que evoluem ao longo do tempo (ver \url{https://en.wikipedia.org/wiki/Memetics}).
+
+A estrutura conceitual do conhecimento pode ser produzida pela análise de relacionamento estabelecidos entre esses termos. O bibliometrix apresenta um conjunto de técnicas para evidenciar essa estrutura conceitual, e que se organizam em dois grupos:
+\begin{description}
+    \item [Métricas em rede] que usam grafos para representar relacionamentos entre termos, evidenciando, por meio de métricas de análise de redes sociais, como o conhecimento conceitualmente se organiza.
+    \item [Análise Fatorial] Que emprega métricas de redução da dimensionalidade, para explorar, usualmente em mapas bidimensionais, como os termos e palavras se relacionam. 
+\end{description}
 
 \subsubsection{Métricas aplicadas a grafos (redes)}
 

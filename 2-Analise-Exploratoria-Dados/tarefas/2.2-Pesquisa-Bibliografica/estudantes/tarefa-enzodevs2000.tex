@@ -5,7 +5,7 @@ Política, do grego \textit{politikos} significa algo relacionado com grupos soc
 
 A partir desse pensamento foi questionado sobre a participação da computação nesse tema. Mais especificamente, como o Big Data pode influenciar na política.
 
-Dessa forma, os questionamentos que norteam este estudo são:
+Dessa forma, os questionamentos que norteiam este estudo são:
 
 \begin{itemize}
     \item Qual a base de conhecimento produzida sobre o tema de Uso de Big Data na Política?
@@ -78,7 +78,7 @@ Usando o Bibliometrix pode-se obter um gráfico que mostra a produção científ
 
 Como pode-se ver na figura \ref{fig:enzodevs2000:BDP:evol}, o crescimento da produção científica sobre o tema de "Usos de Big Data na Política" vem crescendo exponencialmente de forma que a sua taxa de crescimento anual está em 13.42\%.
 
-\subsection{Interpretação do crescimento}
+\subsection{Interpretação do crescimento \label{enzodevs2000:interpret_cresc}}
 
 Pode-se interpretar que o crescimento exponencial da produção científica nesse tema represente um grande interesse por parte da comunidade acadêmica. Tal fato é compreensível, visto que, nos últimos anos tem-se tornado público alguns escândalos envolvendo o uso de dados obtidos para influenciar eleições políticas como pode ser visto neste artigo \citet{wikipedia_escandalo_nodate}.
 
@@ -99,3 +99,26 @@ Como já mencionado, o pico de citações foi no ano de 2015. Ano em que as susp
 
 \subsection{\textit{Three-Field Plots (Sankey diagram)}}
 
+A seguir foi obtido um gráfico de 3 campos \ref{fig:enzodevs2000:BDP:3plotRAK}, no qual, pode-se visualizar à esquerda as maiores citações, no meio os autores que mais contribuíram à direita as palavras-chaves mais utilizadas no registro.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Graficos/references_authors_keywords.png}
+    \caption{Gráfico de 3 campos envolvendo os parâmetro Citações, Autores, Palavras-Chave do \dataset\ BDP@enzodevs2000}
+    \label{fig:enzodevs2000:BDP:3plotRAK}
+\end{figure}
+
+Também foi registrado um gráfico de 3 campos , no qual, à esquerda mantêm-se as citações e no meio os autores, já, á direita coloca-se os países dos autores. Dessa forma, chega-se ao seguinte gráfico \ref{fig:enzodevs2000:BDP:3plotRAC}:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Graficos/references_author_countries.png}
+    \caption{Gráfico de 3 campos envolvendo os parâmetro Citações, Autores, Países do \dataset\ BDP@enzodevs2000}
+    \label{fig:enzodevs2000:BDP:3plotRAC}
+\end{figure}
+
+\subsection{Interpretações dos gráficos de 3 campos}
+
+No primeiro gráfico \ref{fig:enzodevs2000:BDP:3plotRAK} verifica-se que a palavra-chave mais citada é \textbf{big data}, justamente a principal desta pesquisa. Entretanto, verifica-se, ainda, palavras como: \textit{privacy}, \textit{security} e \textit{social media}.
+
+Tal associação pode indicar o uso de big data de forma que atinja esses aspectos. Como já foi mencionado na seção \ref{enzodevs2000:interpret_cresc}

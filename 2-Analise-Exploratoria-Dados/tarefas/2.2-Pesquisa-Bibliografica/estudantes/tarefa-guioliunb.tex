@@ -153,8 +153,6 @@ Com o crescimento das citações fica evidente o repetição do uso nos artigos 
 
 \subsection{\textit{Three-Field Plots (Sankey diagram)} \label{SBDAA:Sankey}}
 
-As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos'') apresentam afinidades entre três conjuntos de atributos agregados que ocorrem no \dataset. Uma plotagem do tipo Sankey busca mostrar os principais fluxos entre diferentes conjuntos de itens. \footnote{Para uma introdução ver \url{https://en.wikipedia.org/wiki/Sankey_diagram}. Para obter detalhes sobre a forma de geração e utilização desse gráfico, inclusive de forma interativa, veja o vídeo em \url{https://www.youtube.com/watch?v=jBb1iha6-sg}.} 
-
 \begin{figure}
     \centering
     \includegraphics[angle=0,width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/3FSE-referencesXauthorsXkeywords.png}
@@ -162,11 +160,15 @@ As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos
     \label{fig:SBDAA@guioliunb:ThreeFieldPlot}
 \end{figure}
 
+As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos'') apresentam afinidades entre três conjuntos de atributos agregados que ocorrem no \dataset. Uma plotagem do tipo Sankey busca mostrar os principais fluxos entre diferentes conjuntos de itens. \footnote{Para uma introdução ver \url{https://en.wikipedia.org/wiki/Sankey_diagram}. Para obter detalhes sobre a forma de geração e utilização desse gráfico, inclusive de forma interativa, veja o vídeo em \url{https://www.youtube.com/watch?v=jBb1iha6-sg}.} 
+
 
 
 A figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' do \dataset\   SBDAA@guioliunb, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 20 Palavras-Chave mais frequentes empregadas pelos autores.
 
 Já a figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot2} apresenta a plotagem do tipo ``Três Campos'' do \dataset\   SBDAA@guioliunb, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, os países de origem mais recorrentes , e à direita, os títulos com maior intersecção entre os artigos.
+
+
 
 \begin{figure}
     \centering
@@ -177,9 +179,11 @@ Já a figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot2} apresenta a plotagem do t
 
 \subsection{Interpretação da figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot}}
 
+
+
 A figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot} explicita uma rede de produção de conhecimento bem conectada entre os 20 autores, ou seja, são cientistas bem ativos no tema e trabalham em contribuição para um objetivo comum.
 
-\textit{Big Data} e \textit{Cloud computing} são as palavras-chaves com maior relevância fazendo jus à necessidade de integração entre as duas áreas na formação da base estudada.
+\textit{Big Data} e \textit{Cloud Computing} são as palavras-chaves com maior relevância fazendo jus à necessidade de integração entre as duas áreas na formação da base estudada.
 Também, pode-se observar o surgimento de áreas relacionadas aos dois aspectos principais como: edge computing, data mining, data analytics e outros.
 Além disso, os principais autores possuem um grande coeficiente de citações feitas e recebidas. Podendo assim ser um indicador de qualidade de seus trabalhos científicos.
 
@@ -195,35 +199,11 @@ O termo mais utilizado nos títulos é \textit{data} concordando com as palavras
 \begin{figure}
     \centering
     \includegraphics[angle=0,width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/most relevant authors.png}
-    \caption{Plotagem ``Três Campos'' (Sankey plot) do \dataset\   SBDAA@guioliunb: Autores mais relevantes.}
+    \caption{Autores mais relevantes do \dataset\   SBDAA@guioliunb.}
     \label{fig:SBDAA@guioliunb:relevantauthors}
 \end{figure}
 
-Breves comentários sobre cada um dos trabalhos mais citados serão apresentados a seguir.
-
-\begin{itemize}
-    \item  \cite{olfati-saber_consensus_2004} descrevem as propriedades algorítmicas fundamentais do ``problema do consenso'' entre agentes em redes com topologias fixas e móveis;
-    \item  \cite{reynolds_flocks_1987} apresenta modelos multi-agentes para simulação gráfica do movimento de rebanhos ou agregados de animais;
-    \item \cite{vicsek_novel_1995} analisam a emergência de um novo fenômeno de transição de fase em simulações de partículas com comportamento autônomo com interação biologicamente motivada, usando modelos analíticos e numéricos com uma regra de comportamento bastante simples;
-    \item \cite{barabasi_emergence_1999} investigam como ocorre a emergência da distribuição livre de escala (\textit{scale-free}, uma  propriedade emergente em sistemas interativos complexos \footnote{Ver introdução em \url{https://en.wikipedia.org/wiki/Scale-free_network}.}), em redes que evoluem com base em ligação preferencial;
-    \item \cite{watts_collective_1998} exploram a emergência do fenômeno ``mundo pequeno'' (\textit{small world}\footnote{Ver introdução em \url{https://en.wikipedia.org/wiki/Small-world_network}.}) formado a partir da reorganização aleatória de redes biológicas, genéticas e outras formas de redes auto-organizadas;
-    \item \cite{castellano_statistical_2009} exploram de que forma as técnicas de análise e simulação já usadas na física-estatística podem ser usadas para explicar vários fenômenos sociais, tais como comportamento de multidões, dispersão social, comportamento de multidões etc. Eles apresentam as afinidades entre os dados gerados pelos modelos simulados e dados empíricos obtidos junto a sistemas sociais reais;
-    \item \cite{hegselmann_opinion_2002} exploram a emergência de fenômenos de consenso, polarização e fragmentação da opinião na simulação de sociedades artificiais, descrevendo um \textit{framework} unificado para a modelagem baseada em agentes, apresentando definições matemáticas, ferramentas e teoremas;
-    \item \cite{bonabeau_agent-based_2002} descreve os fundamentos da modelagem baseada em agentes para simular sistemas humanos, apresentando aplicações práticas voltadas a quatro tipos de aplicações no mundo real: \textit{''flow simulation, organizational simulation, market simulation, and diffusion simulation''};
-    \item \cite{wilensky_netlogo_1999} apresentam a linguagem e ambiente de simulação NetLogo; e
-    \item \cite{grimm_odd_2010} apresenta uma revisão do protocolo ODD, proposto para padronizar a descrição de modelos de simulação multiagente.
-\end{itemize}
-
-Nenhum desses 10 documentos citados está contido no \dataset\   recuperado.
-
-%\subsection{Análises Bibliométricas: Fontes de Informação}
-
-%\begin{figure}
-%    \centering
-%    \includegraphics[angle=0,width=1\textwidth]{}
-%    \caption{Plotagem ``Três Campos'' (Sankey plot) do dataset SBDAA@guioliunb: 20 Autores, Citações e Palavras-Chave mais proeminentes.}
-%    \label{fig:SBDAA@guioliunb:ThreeFieldPlot}
-%\end{figure}
+A figura \ref{fig:SBDAA@guioliunb:relevantauthors} confirma uma grande participação chinesa nessa área de pesquisa. Porém, deve ser levado em conta a possibilidade de nomes homônimos ou participações do mesmo contribuidor com assinatura de sobrenome diferente nos trabalhos.
 
 \section{Refinamento da Coleta de Dados}
 

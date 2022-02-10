@@ -2,7 +2,7 @@
 
 \section{Planejamento do estudo}
 
-\textit{Deep Learning} para \textit{Healthcare} refere-se na utilização de \textit{deep learning}, um ramo da aprendizagem de máquina baseado na aprendizagem de representações de dados, nos cuidados de saúde das pessoas.
+\textit{Deep Learning} para \textit{Healthcare} refere-se na utilização de \textit{deep learning}, um ramo da aprendizagem de máquina baseado na aprendizagem de representações de dados, para auxiliar nos cuidados de saúde das pessoas.
 
 Algumas das representações de deep learning são inspiradas pelos avanços da neurociência e são vagamente baseadas na interpretação do processamento de informações e padrões de comunicação em um sistema nervoso, tais como codificação neural que tenta definir uma relação entre vários estímulos e as respostas neuronais associados no cérebro.
 
@@ -28,7 +28,7 @@ A coleta de dados feita usando a base Web of Science (WoS) no dia 09 de Fevereir
 Foi usada a \textit{query} de busca ilustrada na listagem:
 
 \lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca para \textit{Deep Learning} para \textit{Healthcare}}]
-{experiments/CaioMassucato/PesquisaBibliometrica/DeepLearning/query.txt}
+{experiments/CaioMassucato/PesquisaBibliometrica/queries/query1.txt}
 
 \subsection{Explicação para os termos de busca usados\label{sec:CaioMassucato:query}}
 
@@ -36,13 +36,13 @@ A busca utilizou cláusulas que retornassem registros relacionados a \textit{dep
 
 Os termos \textit{deep learning} e \textit{healthcare} com o conector AND trazem resultados apenas contendo ambos os conceitos., 
 
-Foram obtidos 4305 registros com a \textit{query} utilizada. Na exportação, foi utilizado o formato de arquivo de texto sem formatação, com os 29 campos disponíveis.
+Foram obtidos 4305 registros com a \textit{query} utilizada. Na exportação, foi utilizado o formato de arquivo de texto sem formatação, com os 29 campos disponíveis e foram exportados 2000 dos 4305.
 
 \section{Análise dos dados}
 
 \subsection{Filtragem de registros}
 
-Para a filtragem, removemos registros indesejados. O objetivo é obter apenas os artigos (supondo que o conhecimento de maior qualidade a respeito do tema está nas revistas, afinal é o método padrão de publicação científica), excluindo críticas, prévias, cartas e etc. Após a aplicação do filtro, 537 registros foram mantidos no \textit{dataset} que servirá como objeto da análise.
+Para a filtragem, removemos registros indesejados, supondo que o conhecimento de maior qualidade sobre o tema está nas publicações de artigos. Após a aplicação do filtro, 1143 registros foram mantidos no \textit{dataset} que servirá como objeto da análise.
 
 \subsection{Análise descritiva do \textit{dataset} }
 
@@ -50,54 +50,53 @@ A seguir, é feita uma análise bibliométrica descritiva do \textit{dataset} ut
 
 As informações mais gerais sobre o \textit{dataset} são as seguintes:
 \begin{description}
-    \item [\textit{Timespan}] Os artigos filtrados foram publicados entre 1960 e 2022, o que indica que ainda há algum artigo não relacionado ao tema, que é relativamente recente.
-    \item [\textit{Sources (Journals, Books, etc)}] São 340 fontes de informação que publicaram os artigos recuperados no \textit{dataset}. Logo, a média de publicações por \textit{scientific journal} é de $1.033/537=1,9$ artigos.
-    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \textit{dataset} é de 3,59 anos.
-    \item [\textit{Average citations per documents}] Cada artigo no \textit{dataset} foi citado, em média 13,63 vezes.
-    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos artigos foi citado, em média, 2,104 vezes por ano.
-    \item [\textit{References}] O \textit{dataset} contém 20.312 referências citadas.
-    \item [\textit{Keywords Plus (ID)}] 907 distintas palavras-chave do tipo Keywords Plus (ID) foram encontradas no \textit{dataset}.
-    \item [\textit{Author's Keywords (DE)}] 1863 distintas palavras-chave indicadas pelos autores foram encontradas no \textit{dataset} .
-    \item [\textit{Authors}] 2.063 distintos nomes de autores foram encontrados no \textit{dataset} .
-    \item [\textit{Author Appearances}] Os 2.063 distintos (nomes de) autores foram encontrados 2.297 vezes, como autores de artigos.
-    \item [\textit{Authors of single-authored documents}] Dentre os 2.063 distintos (nomes de) autores encontrados, 79 deles editaram artigos individualmente, isso é, sem co-autores.
-    \item [\textit{Authors of multi-authored documents}] Dentre os 2.063 distintos (nomes de) autores encontrados, 1.984 deles editaram artigos com um ou mais co-autores"
-    \item [\textit{Single-authored documents}] Dentre os 1.033 documentos presentes no \textit{dataset}, 79 foram escritos por um único autor, e os restantes foram elaborados em co-autoria.
-    \item [\textit{Documents per Author}] Dentre os 2.063 distintos (nomes de) autores, cada um publicou em média 0,26 artigos.
-    \item [\textit{Authors per Document}] Cada um dos 1.033 documentos presentes no \textit{dataset} foi autorado com 3,84 autores em média.
-    \item [\textit{Co-Authors per Documents}] As 2.297 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 4,28 vezes para os 537 documentos do \textit{dataset}.
-    \item [\textit{Collaboration Index}] Os 1.984 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 4.28 vezes para editar os 537 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 4,33. 
+    \item [\textit{Timespan}] Os artigos filtrados foram publicados entre 2004 e 2022.
+    \item [\textit{Sources (Journals, Books, etc)}] São 445 fontes de informação que publicaram os artigos recuperados no \textit{dataset}.
+    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \textit{dataset} é de 1,92 anos.
+    \item [\textit{Average citations per documents}] Cada artigo no \textit{dataset} foi citado, em média 15,14 vezes.
+    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos artigos foi citado, em média, 3.925 vezes por ano.
+    \item [\textit{References}] O \textit{dataset} contém 40.227 referências citadas.
+    \item [\textit{Keywords Plus (ID)}] 1.689 distintas palavras-chave do tipo Keywords Plus (ID) foram encontradas no \textit{dataset}.
+    \item [\textit{Author's Keywords (DE)}] 2.964 distintas palavras-chave indicadas pelos autores foram encontradas no \textit{dataset} .
+    \item [\textit{Authors}] 5.967 autores distintos foram encontrados no \textit{dataset} .
+    \item [\textit{Author Appearances}] 7.243.
+    \item [\textit{Authors of single-authored documents}] Dentre os 5.967 autores encontrados, 26 deles editaram artigos individualmente, isso é, sem co-autores.
+    \item [\textit{Authors of multi-authored documents}] Dentre os 5.967 distintos (nomes de) autores encontrados, 5.941 deles editaram artigos com um ou mais co-autores"
+    \item [\textit{Single-authored documents}] Dentre os 1.143 documentos presentes no \textit{dataset}, 27 foram escritos por um único autor, e os restantes foram elaborados em co-autoria.
+    \item [\textit{Documents per Author}] Dentre os 5.967 autores, cada um publicou em média 0,192 artigos.
+    \item [\textit{Authors per Document}] Cada um dos 1.143 documentos presentes no \textit{dataset} foi autorado com 5,22 autores em média.
+    \item [\textit{Co-Authors per Documents}] Existe em média 6,34 co-autores por documento.
+    \item [\textit{Collaboration Index}] O index de colaboração é 5,32
 \end{description}
 
 \subsection{Evolução da Produção Científica}
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/annual-plot.png}
+    \includegraphics[width=1\textwidth]{experiments/CaioMassucato/PesquisaBibliometrica/DeepLearningHC/AnnualScientificProduction-2022-02-10.png}
     \caption{Evolução da produção científica no \textit{dataset}}
-    \label{fig:evol:anual:DEEPFAKES@titofrota}
+    \label{fig:evol:anual:DEEPLEARNINGHC@CaioMassucato}
 \end{figure}
 
-A figura \ref{fig:evol:anual:DEEPFAKES@titofrota} representa a evolução em produção científica mundial a respeito do tema, de acordo com o \textit{dataset}. Houve um crescimento a notável a partir do ano de 2020, atingindo o pico em 2021. 
-É perceptível que no \textit{dataset} ainda há artigos não relacionados ao tema analisado.
+A figura \ref{fig:evol:anual:DEEPLEARNINGHC@CaioMassucato} mostra a relação da produção científica mundial a respeito do tema pelo tempo, de acordo com o \textit{dataset}. O assunto possui notoriedade desde 2013, com os maiores crescimentos nos anos de 2007 e 2018, atingindo o pico no ano de 2021. 
 
-O \textit{Annual Growth Rate} do \textit{dataset} é de 12,62\%, que é um valor alto comparado a média de crescimento da comunidade científica como um todo.
+O \textit{Annual Growth Rate} do \textit{dataset} é de 35.03\%.
 
-\subsection{Interpretação do Crescimento} a taxa de crescimento do \textit{dataset} demonstra que o tema tem chamado muita atenção nos últimos anos, provavelmente devido aos escândalos envolvendo pessoas públicas e os \textit{deepfakes}.
+\subsection{Interpretação do Crescimento} A taxa de crescimento é muito alta quando comparada com de outros temas no âmbito da produção científica. Os números mostram grande crescimento do tema nos ultimos anos, o que é esperado devido ao crescente uso das inteligências artificiais no dia-a-dia das pessoas, em casas intelignetes, \textit{wearables} e outros.
 
 \subsection{Evolução das Citações}
 
 \begin{figure}
     \centering
-    \includegraphics[angle=0,width=1\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/citations-year-plot.png}
+    \includegraphics[angle=0,width=1\textwidth]{experiments/CaioMassucato/PesquisaBibliometrica/DeepLearningHC/AverageArticleCitationPerYear-2022-02-10.png}
     \caption{Evolução das citações ao \textit{dataset}.}
-    \label{fig:evol:anual:citacoes:DEEPFAKES@titofrota}
+    \label{fig:evol:anual:citacoes:DEEPLEARNINGHC@CaioMassucato}
 \end{figure}
 
-A figura \ref{fig:evol:anual:citacoes:DEEPFAKES@titofrota} apresenta a evolução da média de citações aos artigos do \textit{dataset}. Não há muita estabilidade na média anual de citações, até mesmo nos anos mais recentes.
+A figura \ref{fig:evol:anual:citacoes:DEEPLEARNINGHC@CaioMassucato} apresenta a evolução da média de citações aos artigos do \textit{dataset}. Os números para a média de citações é um tanto incerto.
 
 \subsection{Interpretação das Citações}
-Embora a taxa de crescimento de publicações anuais seja alta, ainda há instabilidade no que diz respeito a média de citações. Demonstrando que o tema ainda é um tanto prematuro, necessitando de mais atenção pelos cientistas.
+O gráfico mostra que o tema precisa de um pouco mais de tempo no meio científico para que o número de citações atinja uma forma estável.
 
 \subsection{\textit{Three-Field Plots (Sankey diagram)}}
 
@@ -105,68 +104,24 @@ As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/ThreeFieldPlot.png}
-    \caption{Plotagem ``Três Campos'' (Sankey plot) do \textit{dataset}: 20 Autores, Citações e 14 Palavras-Chave mais proeminentes.}
-    \label{fig:DEEPFAKES@titofrota:ThreeFieldPlot}
+    \includegraphics[width=1\textwidth]{experiments/CaioMassucato/PesquisaBibliometrica/DeepLearningHC/threeFields.png}
+    \caption{Plotagem ``Três Campos'' (Sankey plot)}
+    \label{fig:threeFields:DEEPLEARNINGHC@CaioMassucato}
 \end{figure}
 
-A figura \ref{fig:DEEPFAKES@titofrota:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' realizada no \textit{dataset}, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 14 Palavras-Chave mais frequentes empregadas pelos autores.
+A figura \ref{fig:threeFields:DEEPLEARNINGHC@CaioMassucato} apresenta a plotagem do tipo ``Três Campos'' realizada sobre os dados presentes no \textit{dataset}, que relaciona:  os Autores mais relevantes (AU), as Citações mais frequentes (CR), e as Palavras-Chave mais frequentes nos registros.
 
-\subsection{Interpretação da figura \ref{fig:DEEPFAKES@titofrota:ThreeFieldPlot}}
-A maioria dos autores mais relevantes apresentados na plotagem são, aparentemente, de origem oriental, mais especificamente chinesa. Além disso, uma quantidade razoável dos artigos surgiram em universidades da China. O que sugere o avanço e a preocupação do oriente a respeito do tema analisado.
+\subsection{Interpretação da figura \ref{fig:threeFields:DEEPLEARNINGHC@CaioMassucato}}
+A maioria das publicações possui relação com a IEEE, que mostra a influencia e a investida do instituto nas pesquisas sobre o tema. Além disso, podemos notar a relação entre as diversas áreas da inteligência artificial e da aprendizagem de máquina pelas palavras chave mais frequentes, onde aparecem \textit{artificial intelligence}, \textit{machine learning}, \textit{convolutional neural networks} e outros.
 
-É possível observar nas palavras-chave que há bastante interesse na detecção de \textit{deepfakes}, apresentam-se os termos \textbf{deepfake detection}, \textbf{fake news detection} e \textbf{detection}. Os resultados sugerem que há interesse em remediar os impactos que os conteúdos criados através de algoritmos de \textit{deep learning} podem causar à sociedade.
+Além disso, pode-se notar que "covid-19" é a 4ª palavra-chave mais utilizada dentre os autores, o que pode explicar também o pico que o assunto obteve durante o ano de 2021, mostrado na figura \ref{fig:evol:anual:DEEPLEARNINGHC@CaioMassucato}.
 
 \section{Refinamento da Coleta de Dados}
 
-Após a análise do \textit{dataset}, foi possível notar que há a presença de artigos que não estão relacionados ao tema. A observação indica a necessidade de uma nova busca, visando a exclusão de artigos não relacionados ao desenvolvimento de \textit{deepfakes}.
-
-Ao analisar a rede de co-ocorrência de palavras aplicada ao \textit{dataset}, foram identificadas algumas palavras no cluster que não correspondem ao assunto trabalhado. Assim, surgiu uma nova \textit{query} para levantar artigos mais apurados e relevantes.
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/co-ocurrence.png}
-    \caption{Rede de co-ocorrência de palavras aplicada ao \textit{dataset}.}
-    \label{fig:DEEPFAKES@titofrota:redecoocorrencia}
-\end{figure}
-
-A nova \textit{query} leva em conta novos termos e a busca foi feita nas publicações entre 2017 (quando o termo \textit{deepfake} surgiu) e 2022.
-
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query refinada de busca sobre Deepfakes.}]
-{experiments/titofrota/PesquisaBibliometrica/Deepfakes/new-query.txt}
-
-
-Além das justificativas para os termos usados entre as linhas 1 a 9, já descritas em \ref{MASSA:query},  justifica-se na listagem \ref{query20220203}, a inclusão da cláusula \textit{not (
- adsoption or molecular -dynamics or force -field
- or in -vitro or nanopartic* or in -vivo
- or aqueous -solution or protein or surface)}, entre as linhas 10 e 13 da \query, pois elas irão remover artigos não se enquadram no escopo da busca desejada, por usarem uma ou mais desses termos no título, resumo ou palavras-chave do artigo.
- 
- Foram incluídas cláusulas como \textbf{deep-fake} e \textbf{face-swap*} com o intuito de encontrar mais conteúdos relacionados ao tema. Além disso, foram adicionadas novas cláusulas negadas para filtrar melhor os resultados, evitando que artigos médicos ou relacionados à outros temas façam parte do novo \textit{dataset}.
- 
-Usando a nova \textit{} de busca, foram recuperados 284 documentos. Sendo assim, aproximadamente 749 registros não se enquadravam na necessidade de busca.
-Uma nova análise dos dados recuperados é apresentada a seguir.
+Não foi observado nenhum motivo para haver refinamento da coleta de dados, os dados retornados aparentemente estão de acordo com o que foi esperado no momento da busca.
 
 \section{Nova Análise dos Dados}
 
 \subsection{Nova filtragem de registros}
 
-São aplicados dois filtros aos 284 documentos recuperados:
-\begin{itemize}
-    \item Remoção dos registros de documentos que não são artigos \textit{full paper}, isso é, artigos completos publicados em revistas;
-    \item Remoção dos registros de artigos científicos que não fazem parte do \textit{core} da bibliografa, segundo a Lei de Bradford.
-\end{itemize}
-
-Após a filtragem, foram obtidos apenas 79 registros, que correspondem ao novo \textit{dataset}.
-08
 \subsection{Análise descritiva do \textit{dataset} refinado}
-
-\begin{table}[]
-    \centering
-\csvautotabular[separator=semicolon
-%,filter not strcmp={\csvcolii}{}
-]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/main-info.csv}
-    \caption{Principais dados descritivos do dataset refinado.}
-    \label{tab:DEEPFAKE:Main}
-\end{table}
-
-Logo, de acordo com a tabela \ref{tab:DEEPFAKE:Main}, é possível notar que entre 2017 e 2022 houveram 240 artigos publicados em 94 revistas diferentes.

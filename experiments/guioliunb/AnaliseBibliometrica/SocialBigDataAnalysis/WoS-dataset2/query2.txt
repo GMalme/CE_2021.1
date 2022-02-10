@@ -1,1 +1,4 @@
-(big data OR database) AND (cloud OR cloud-based) AND (analysis OR analytics) AND (social OR society OR group OR behavi *) 
+(big data OR database) AND
+(cloud OR cloud-based) AND
+(analysis OR analytics) AND
+(social OR society OR group OR behavi *) 

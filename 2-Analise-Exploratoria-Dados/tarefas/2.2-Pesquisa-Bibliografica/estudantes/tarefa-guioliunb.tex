@@ -1,6 +1,6 @@
-\chapter{Análise Bibliográfica sobre Simulação Multiagente e Fenômenos Sociais, por Guilherme Oliveira Loiola\label{chap:bibliometria:jhcf}}
+\chapter{Análise Bibliográfica sobre Análise de Dados integradas em Nuvem para auxílio de Fenômenos Sociais, por Guilherme Oliveira Loiola\label{chap:bibliometria:guioliunb}}
 
-\section{Planejamento do estudo\label{MASSA@jhcf:questoes}}
+\section{Planejamento do estudo\label{MASSA:coleta}}
 O planejamento o  desenho do estudo deve descrever as motivações, questões de interesse, escopo, limitações e objetivos do trabalho.
 
 O planejamento do estudo deve motivar o tema escolhido e o interesse do autor.
@@ -17,11 +17,11 @@ No caso do meu trabalho, as perguntas que o nortearam foram:
 
 \cite{ma_method_2020} realizou uma pesquisa que visava  combinar a capacidade de processamento da computação em nuvem com os algoritmos de inteligência artificial para auxiliar na identificação de padrões e criação de metodologias de tratamento para dificuldades enfrentadas na psiquiatria.
 
-Assim como \cite{archenaa_interactive_2016} que promoveu um estudo enfretando desafios da saúde utilizando computação em nuvem.
+Assim como \cite{archenaa_interactive_2016} que promoveu um estudo enfrentando desafios da saúde utilizando computação em nuvem.
 
 
 \subsection{Uso do Bibliometrix e Biblioshiny}
-Serão usadas a ferramenta e o \textit{workflow} proposto pelos autores do pacote Bibliometrix, conforme indica a figura ~\ref{fig:bibliometrix:workflow}.
+Serão usadas a ferramenta e o \textit{workflow} proposto pelos autores do pacote Bibliometrix.
 
 \subsection{Limitações} O exercício relatado foi feito em uma semana, envolvendo de um autor. As bases de dados foram buscadas na plataforma WoS,
 
@@ -32,38 +32,33 @@ A coleta de dados feita usando o WoS no dia 08 de janeiro de 2022, acessado por 
 
 Foram feitas buscas na coleções \textbf{Web of Science - Coleção Principal (Clarivate Analytics) } que possui uma vasta bibliografia sobre a área de tecnologia. Através do refinamento nessa grande base foi obtido a base de dados composta por duas 'querys' de pesquisa. A primeira coleta é mais simples com as palavras de maior relevância. Já a segunda, inclui alguns termos mais abrangentes e ponderando mais a questão de influência na sociedade. 
 
+Ao todo foi agrupado um total de 2906 registros para a análise bibliométrica. Sendo 1000 registros originados da primeira query e a segunda query contando com 1906 registros.
+
+Além disso, foi realizado um refinamento das querys originais para eliminar algumas categorias de registros que fugiam do interesse do estudo. Temos os filtros: de linguagem para inglês (linguagem amplamente utilizada), restrição para o período de 2014 até 2022, documentos do tipo artigo/artigo de conferência e áreas de pesquisa ligadas à computação, engenharia e telecomunicações.
+
 \subsection{Query de Busca}
 
-Foi usada a \query\  de busca ilustrada nas linhas 1 a 9 da listagem \ref{query20210803-2}.
+Foram utilizadas duas \querys\ de busca que estão ilustradas a seguir: %\ref{fig:}.
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais.},label=query20210803-2]
-{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/query.txt}
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre análises de dados que utilizam computação em nuvem para impactar a sociedade positivamente},label=query20210803-2]
+{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/WoS-dataset1/query1.txt}
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre análises de dados que utilizam computação em nuvem para impactar a sociedade positivamente},label=query1002]
+{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/WoS-dataset2/query2.txt}
 
 \subsubsection{Explicação para os termos de busca usados\label{MASSA:query}}
 
-A busca consistiu de quatro cláusulas disjuntivas, unidas por uma conjunção \textit{and}, aplicadas à busca por tópico (O termo de busca pode aparecer no Título, no Abstract, na Author Keywords, ou nas Keywords Plus da referência)
+As \querys\ utilizadas foram criadas com intuitos semelhantes. A primeira mais restrita pelas palavras-chaves ligadas com tecnologia e sepando a expressão de \texttt{big data} em \texttt{big} e \texttt{data} podendo ser duas possibilidades de ocorrência nos artigos. E a segunda \query\ reforça o intuito que a pesquisa tenha aplicação social e possibilitando também que o assunto  \texttt{database} ingresse ao conjunto.
 
-Os termos \texttt{experimental}, \texttt{numeric*}, \texttt{statist*}, \texttt{hypothes*}, 
-\texttt{empiric*}
-e \texttt{inferen} (linhas 1 e 2 da query) foram usados na primeira cláusula da \query\  para recuperar artigos que tenham em seu título, palavras-chave e resumo, termos relacionados a métodos experimentais,
-métodos numéricos,
-métodos estatísticos,
-teste de hipóteses,
-métodos empíricos e métodos inferenciais.
+A busca consistiu basicamente de quatro principais  assuntos aplicados à busca por tópico (O termo de busca pode aparecer no Título, no Abstract, na Author Keywords, ou nas Keywords Plus da referência).
 
-O termo / cláusula  \texttt{simul*}, na linha 4, foi usado em conjunção com os demais para recuperar apenas trabalhos que explicitem o uso da simulação.
-Foi usado um único termo devido à forte adesão ao termo simulação por parte dos pesquisadores que usam simulação. Não existem outros sinônimos frequentes para esse uso.
-
-A cláusula nas linhas 6 e 7 faz união entre o uso dos termos \texttt{agent} e \texttt{multiagent}, \texttt{multi-agent},e  também \texttt{multi and agent}, para cobrir as variadas formas de escrita do conceito.
-
-A $4^{a}$ cláusula, linha 9,  usou os termos \texttt{social} e \texttt{society} para recuperar artigos que tratem de temas ligados à sociedade.
-Os termos \texttt{group} e \texttt{behavi*} visam recuperar estudos que tratam de questões comportamentais e grupais.
+Com a intersecção das áreas de competência sendo filtradas pela pesquisa de registros, juntamente, na união dos conjuntos de registros de ambas \querys/ obtivemos artigos que focavam bem no assunto proposto.
 
 \subsection{Registros recuperados}
 
-Os 8.115 registros obtidos como resultado da busca encontram-se em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/ WoS-20210803/classico-mais-citacoes/8115recs.txt}. 
+Os 2.906 registros obtidos como resultado da busca encontram-se no projeto Overleaf da ferramenta utilizada na tarefa Computação Experimental - Turma A em \textit{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/dataset.zip} . 
 
-Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 8115 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 8001-8115).
+Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 2906 registros foram recuperados em dois blocos com mil registros da primeira consulta (1000) e quatro blocos da segunda consulta (2906), assim totalizando os 2906 registro  separados de até 500 registros por vez (1-500, 501-1000, 1001-1500, 1501-2000, ...).
 
 A listagem \ref{record20210803-2} apresenta as 127 linhas de um registro no formato RIS, referentes a um artigo recuperado da Web of Science. Cada um dos campos de um registro é marcado por um código de dois caracteres, nas colunas 1 e 2 de cada linha. Se a coluna está em branco repete-se o mesmo campo da linha anterior.
 O significado de cada campo pode ser visto em \citep{wikipedia_ris_2017}.

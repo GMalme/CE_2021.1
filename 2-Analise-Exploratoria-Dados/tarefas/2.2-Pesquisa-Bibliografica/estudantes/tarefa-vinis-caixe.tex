@@ -102,5 +102,19 @@ A figura \ref{fig:cit:plot:vinis-caixe} apresenta a plotagem com três campos de
 \begin{itemize}
     \item Artigos citados: Os artigos mais citados possuem uma distribuição normal de publicação entre os anos 2001 até 2018, sugerindo que está época surgiram mais trabalho que impactaram na comunidade científica em relação ao tema.
     \item Autores: A maioria dos 20 autores aparenta ser de origem asiática por causa dos sobrenomes, porém nos artigos referenciados poucos nomes asiáticos aparecem, sugerindo que no momento atual existe maior quantidade de produções científicas no oriente do que no ocidente.
-    \item Palavras-Chave: Dentre as 20 palavras-chave temos termos relacionados tanto a mineração de dados quanto na área de saúde, o fato da árvore de decisão aparecer com mais frequência sugere ser o método mais usado na área de mineração de dados, enquanto na saúde os termos que mais aparecem são câncer de mama e carcinoma hepatocelular, indicando que a mineração de dados é bastante usada na detecção de câncer.
+    \item Palavras-Chave: Dentre as 20 palavras-chave temos termos relacionados tanto a mineração de dados quanto na área de saúde, o fato da árvore de decisão aparecer com mais frequência sugere ser o método mais usado na área de mineração de dados, enquanto na saúde os termos que mais aparecem são câncer de mama e carcinoma hepatocelular, indicando que a mineração de dados é bastante usada na detecção de câncer. Vale notar também que apesar do recente surgimento do covid-19 ele aparece como uma das palavras-chave, mostrando que nos últimos anos houveram bastante produções relacionadas a ele. 
 \end{itemize}
+
+\subsection{Refinamento da Coleta de Dados}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/vinis-caixe/PesqBibliogr/MineracaoDados/WoS-20220204/Dataset/Coocurrence-2022-02-10.PNG}
+    \caption{Rede de co-ocorrência de palavras do \dataset\ .}
+    \label{fig:cit:coocurrence:vinis-caixe}
+\end{figure}
+
+Para finalizar a análise é observada a rede de co-ocorrências apresentada na figura \ref{fig:cit:coocurrence:vinis-caixe} para verificar se é necessário refinar o \dataset\ , seja adicionando ou removendo novos termos na \query\ .Dentro os três clusters não é encontrado nenhum conjunto em específico que necessite a criação de uma nova \query\ , logo não será feito o refinamento.
+
+\section{Conclusão}
+

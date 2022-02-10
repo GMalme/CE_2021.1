@@ -1,1 +1,3 @@
-big data and economy (experimental  or  numeric* or  statist* or  hypothes* or  empiric* or  inferen * social  or  society  or  behavi *)
+big data and economy (experimental  or  numeric* or  
+statist* or  hypothes* or  empiric* or  inferen * social
+or  society  or  behavi *)

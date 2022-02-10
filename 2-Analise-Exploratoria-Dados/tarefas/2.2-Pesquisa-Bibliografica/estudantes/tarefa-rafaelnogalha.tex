@@ -9,7 +9,7 @@ Dessa forma, com o aumento exponencial de informação produzida no mundo (\text
 \begin{itemize}
     \item Como a produção científica em relação à QKD evoluiu nos últimos anos?
     \item Quais são as principais definições e campos relacionados à QKD?
-    \item Como a QKD é implementada em ambientes reais de segurança computacional?
+    \item Os países têm feito um \textit{coworking} em relação ao tema?
 \end{itemize}
 
 \subsection{Uso do Bibliometrix e Biblioshiny}
@@ -59,11 +59,80 @@ Usando o bibliometrix e a interface biblioshiny, é possível obter as principai
     \item[\textbf{Documents per Author}] a taxa de documentos por autor é de 0.318 no \textit{dataset} @QKD-rafael-nogalha.
     \item[\textbf{Authors per Document}] a taxa de autor por documento é de 3.15 no \textit{dataset} @QKD-rafael-nogalha.
     \item[\textbf{Co-Authors per Documents}] há em média 5.48 autores por artigos no \textit{dataset} @QKD-rafael-nogalha.
-    \item[\textbf{Collaboration Index}] o índice de colaboração é de 3.16 no \textit{dataset} @QKD-rafael-nogalha.
+    \item[\textbf{Collaboration Index}] o índice de colaboração é de 3.26 no \textit{dataset} @QKD-rafael-nogalha.
 \end{description}
 
 \section{Visualização dos dados}
 
 \subsection{Evolução da produção Científica}
 
-\subsection{Principais Definições e Campos Relacionados}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/producao-cientifica-anual.png}
+    \caption{Evolução da produção científica anual no \textit{dataset} @QKD-rafael-nogalha.}
+    \label{fig:evol:anual:@QKD-rafael-nogalha}
+\end{figure}
+
+De acordo com a Figura \ref{fig:evol:anual:@QKD-rafael-nogalha} é possível observar que o crescimento da produção científica no tema está acontecendo de forma exponencial, com uma taxa de 8.57\% ao ano. E especificamente a partir de 2007 foi quando ocorreu um o início do crescimento maior da produção científica em relação ao tema.
+
+\subsection{Citações Média Por Ano}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/citacoes-media-por-ano.png}
+    \caption{Citações média por ano no \textit{dataset} @QKD-rafael-nogalha.}
+    \label{fig:citacoes:anual:@QKD-rafael-nogalha}
+\end{figure}
+
+É possível observar na figura \ref{fig:citacoes:anual:@QKD-rafael-nogalha} a evolução das citações médias por ano. Observe que nos anos de 1997, 2001 e 2012 tiveram picos de citações.
+
+\subsection{Principais Definições, Campos Relacionados - \textit{Three-Field Plots (Sankey diagram)}}
+
+A análise de estrutura conceitual iniciou-se por meio da geração do mapa fatorial \ref{fig:mapa:fatorial:@QKD-rafael-nogalha}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/mapa-fatorial.png}
+    \caption{Principais campos relacionados no \textit{dataset} @QKD-rafael-nogalha.}
+    \label{fig:mapa:fatorial:@QKD-rafael-nogalha}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/three-fields-plot-qkd.png}
+    \caption{Principais campos relacionados no \textit{dataset} @QKD-rafael-nogalha.}
+    \label{fig:three:plot:@QKD-rafael-nogalha}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/palavras-relevantes.png}
+    \caption{Principais campos relacionados no \textit{dataset} @QKD-rafael-nogalha.}
+    \label{fig:campos:plot:@QKD-rafael-nogalha}
+\end{figure}
+
+
+
+\subsection{Principais Países envolvidos - \textit{Three-Field Plots (Sankey diagram)}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/especificacao-paises-producao.png}
+    \caption{Principais países que produziram artigos no \textit{dataset} @QKD-rafael-nogalha.}
+    \label{fig:map:prod:@QKD-rafael-nogalha}
+\end{figure}
+
+
+
+\subsection{Comunicação entre os países - \textit{coworking)}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/country-collaboration-map.png}
+    \caption{Coworking entre os países no \textit{dataset} @QKD-rafael-nogalha.}
+    \label{fig:cowrking:prod:@QKD-rafael-nogalha}
+\end{figure}
+
+
+
+\section{Resultados e interpretação}

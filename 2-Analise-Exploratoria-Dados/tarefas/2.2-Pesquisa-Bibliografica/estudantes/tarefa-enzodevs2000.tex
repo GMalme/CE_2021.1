@@ -69,9 +69,9 @@ Com o auxilio do pacote Bibliometrix e de sua ferramenta visual Biblioshiny. Pod
 
 Usando o Bibliometrix pode-se obter um gráfico que mostra a produção científica anual sobre o tema em questão. O gráfico obtido é o seguinte:
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Graficos/evolution.png}
+    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Figures/Graficos/evolution.png}
     \caption{Evolução da produção científica no \dataset\   BDP@enzodevs2000}
     \label{fig:enzodevs2000:BDP:evol}
 \end{figure}
@@ -84,9 +84,9 @@ Pode-se interpretar que o crescimento exponencial da produção científica ness
 
 \subsection{Evolução das citações}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Graficos/citations-evolution.png}
+    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Figures/Graficos/citations-evolution.png}
     \caption{Evolução das citações no \dataset BDP@enzodevs2000}
     \label{fig:enzodevs2000:BDP:evol_citation}
 \end{figure}
@@ -101,9 +101,9 @@ Como já mencionado, o pico de citações foi no ano de 2015. Ano em que as susp
 
 A seguir foi obtido um gráfico de 3 campos \ref{fig:enzodevs2000:BDP:3plotRAK}, no qual, pode-se visualizar 20 opções de cada. Sendo à esquerda as maiores citações, no meio os autores que mais contribuíram à direita as palavras-chaves mais utilizadas no registro.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Graficos/references_authors_keywords.png}
+    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Figures/Graficos/references_authors_keywords.png}
     \caption{Gráfico de 3 campos envolvendo os parâmetro Citações, Autores, Palavras-Chave do \dataset\ BDP@enzodevs2000}
     \label{fig:enzodevs2000:BDP:3plotRAK}
 \end{figure}
@@ -114,5 +114,52 @@ No gráfico \ref{fig:enzodevs2000:BDP:3plotRAK} verifica-se que a palavra-chave 
 
 Tal associação pode indicar o uso de big data de forma que atinja esses aspectos. Como já foi mencionado na seção \ref{enzodevs2000:interpret_cresc} houve, recentemente, a descoberta de que certos grupos utilizaram dados obtidos por redes sociais para intervir em eleições políticas.
 
-\section{Refinamento da coleta de dados}
-A partir deste ponto, um corte dos registros é feita, de forma que, os documentos menos relevantes do \dataset\ BDO@enzodevs2000 irão ser descartados seguindo a Lei de Bradford
+\subsection{Refinamento da coleta de dados}
+A partir deste ponto, um corte dos registros é feita, de forma que, os documentos menos relevantes do \dataset\ BDO@enzodevs2000 irão ser descartados seguindo a Lei de Bradford. Sendo assim, dos 1837 registros que estavam sendo analisados até o momento, sobram o valor de 647 documentos. O gráfico \ref{fig:enzodevs2000:BDP:bradford_dataset} representa a faixa de artigos que será oficialmente utilizada a partir de agora.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Figures/bradfords_law.png}
+    \caption{Gráfico utilizando a Lei de Bradford do \dataset\ BDP@enzodevs2000}
+    \label{fig:enzodevs2000:BDP:bradford_dataset}
+\end{figure}
+
+\subsection{Análise das revistas do novo \dataset\ BDP@enzodevs2000}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Figures/Graficos/NovoDataset/Sources/most_relev_sources.png}
+    \caption{Revistas mais importantes do novo \dataset\ BDP@enzodevs2000}
+    \label{fig:enzodevs2000:BDP:newdataset:most_relev_sourc}
+\end{figure}
+
+Percebe-se na figura \ref{fig:enzodevs2000:BDP:newdataset:most_relev_sourc} a liderança da \textit{PLOS ONE}, provalvemente por ela ser, uma revista de acesso livre.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Figures/Graficos/NovoDataset/Sources/sourceGrowth.png}
+    \caption{Crescimento das 5 principais revistas do novo \dataset\ BDP@enzodevs2000}
+    \label{fig:enzodevs2000:BDP:newdataset:source_growth}
+\end{figure}
+
+Já na figura \ref{fig:enzodevs2000:BDP:newdataset:source_growth} pode-se visualizar que a revista \textit{IEEE ACESS} foi a que mais cresceu nos últimos 5 anos. Mas de uma forma geral, 3 das revistas que estão no gráfico, apresentaram um crescimento de produção. Isso, pode estar atrelado ao que já foi discutido na figura \ref{fig:enzodevs2000:BDP:evol}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Figures/Graficos/NovoDataset/Sources/totalCitations.png}
+    \caption{Total de citações das revistas do novo \dataset\ BDP@enzodevs2000}
+    \label{fig:enzodevs2000:BDP:newdataset:total_citations}
+\end{figure}
+
+Por fim, a análise do gráfico \ref{fig:enzodevs2000:BDP:newdataset:total_citations} que demonstra as revistas mais citadas mostra que a \textit{NATURE}, uma das mais reconhecidas do mundo, lidera esse ranking.
+
+\subsection{Análise dos autores}
+
+\begin{table}[htp]
+    \centering
+\csvautotabular[separator=semicolon
+%,filter not strcmp={\csvcolii}{}
+]{experiments/enzodevs2000/AnaliseBibliometrica/BigDataInPolicy/Figuers/Graficos/NovoDataset/Authors/Author_Impact.csv}
+    \caption{Indices de citações do autores do \dataset\    BDP@enzodevs2000}
+    \label{tab:MASSA2:Media:Citacoes}
+\end{table}

@@ -1,6 +1,6 @@
 \chapter{Análise Bibliográfica sobre Simulação Multiagente e Fenômenos Sociais, por Jorge Fernandes\label{chap:bibliometria:jhcf}}
 
-\section{Planejamento do estudo}
+\section{Planejamento do estudo\label{MASSA@jhcf:questoes}}
 O planejamento o  desenho do estudo deve descrever as motivações, questões de interesse, escopo, limitações e objetivos do trabalho.
 
 O planejamento do estudo deve motivar o tema escolhido e o interesse do autor.
@@ -776,7 +776,7 @@ table foot = \hline\hline]
 \end{table}
 
 Uma busca na aba Filter, do Bibliometrix, permite explorar os artigos mais citados desses autores, alguns tem seus títulos listados a seguir:
-\begin{itemize}
+\begin{description}
     \item [SCHWARZ N] 
     \begin{itemize}
         \item DESCRIBING HUMAN DECISIONS IN AGENT-BASED MODELS - ODD PLUS D, AN EXTENSION OF THE ODD PROTOCOL;
@@ -791,7 +791,7 @@ Uma busca na aba Filter, do Bibliometrix, permite explorar os artigos mais citad
     \begin{itemize}
         \item EVENT-TRIGGERING SAMPLING BASED LEADER-FOLLOWING CONSENSUS IN SECOND-ORDER MULTI-AGENT SYSTEMS;
     \end{itemize}    
-\end{itemize}
+\end{description}
 
 \subsubsection{Variação da produtividade dos autores ao longo do tempo}
 
@@ -967,25 +967,90 @@ Cada artigo escrito por mais de um autor tem um autor responsável por receber a
 
 As métricas para fontes de informação permitem avaliar a qualidade das revistas, conferências, em relação ao impacto de publicações em determinado tema. Valem a maioria das medidas já vistas para autores.
 
-\subsubsection{Fontes mais relevantes (globalmente)}
+\subsubsection{Fontes mais relevantes, conforme número de artigos publicados sobre o tema}
 
-\subsubsection{Fontes mais relevantes localmente citadas}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Sources/MASSA2-Most-Relevant-Sources.png}
+    \caption{Revistas mais relevantes no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-Most-Relevant-Sources}
+\end{figure}
+
+\subsubsection{Fontes mais relevantes, conforme o número de citações globais}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Sources/MASSA2-Total-Citation-Source-Local-Impact.png.png}
+    \caption{Revistas mais relevantes no  \dataset\ MASSA2@jhcf, conforme a soma de citações aos artigos publicados.}
+    \label{fig:MASSA2-Total-Citation-Source-Local-Impact.png}
+\end{figure}
+
+\subsubsection{Fontes mais relevantes, conforme o número de citações na lista de referências locais}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Sources/MASSA2-Most-Local-Cited-Sources(from-Reference-Lists).png}
+    \caption{Revistas mais relevantes no  \dataset\ MASSA2@jhcf, conforme a soma de citações aos artigos no \dataset.}
+    \label{fig:MASSA2-Most-Local-Cited-Sources(from-Reference-Lists).png}
+\end{figure}
 
 \subsubsection{Lei de Bradford}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Sources/MASSA2-Bradfords-Law.png}
+    \caption{Revistas mais relevantes no  \dataset\ MASSA2@jhcf, conforme a Lei de Bradford.}
+    \label{fig:MASSA2-Bradfords-Law.png}
+\end{figure}
 
 \subsubsection{Medidas de Impacto das fontes}
 
 \paragraph{Índice H}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Sources/MASSA2-H-Index-Source-Local-Impact.png}
+    \caption{Revistas de maior impacto no  \dataset\ MASSA2@jhcf,  conforme o índice H.}
+    \label{fig:MASSA2-H-Index-Source-Local-Impact.png}
+\end{figure}
+
+
 \paragraph{Índice G}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Sources/MASSA2-G-Index-Source-Local-Impact.png}
+    \caption{Revistas de maior impacto no  \dataset\ MASSA2@jhcf,  conforme o índice G.}
+    \label{fig:MASSA2-G-Index-Source-Local-Impact.png}
+\end{figure}
 
 \paragraph{Índice M}
 
-\paragraph{Número bruto de citações}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Sources/MASSA2-M-Index-Source-Local-Impact.png}
+    \caption{Revistas de maior impacto no  \dataset\ MASSA2@jhcf,  conforme o índice M.}
+    \label{fig:MASSA2-M-Index-Source-Local-Impact.png}
+\end{figure}
 
 \subsubsection{Dinâmica de publicação nas fontes}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Sources/MASSA2-Source-Dynamics.png}
+    \caption{Revistas com maior volume de publicações no tema no  \dataset\ MASSA2@jhcf, ao longo do tempo.}
+    \label{fig:MASSA2-Source-Dynamics.png}
+\end{figure}
+
 \subsection{Mapas de Acoplamento}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Clustering/MASSA2-CouplingMap-4Labels-Per-Cluster.png}
+    \caption{Palavras-chave mais evidentes que surgem nos clusters formados pelo Acoplamento bibliográfico entre documentos, no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-CouplingMap-4Labels-Per-Cluster}
+\end{figure}
+
 
 \subsection{Estrutura Conceitual do Conhecimento}
 
@@ -1001,11 +1066,74 @@ A estrutura conceitual do conhecimento pode ser produzida pela análise de relac
 
 \paragraph{Redes de Coocorrências}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Conceitual/MASSA2-Co-occurrence-Network-50nodes-louvainclustering.png.png}
+    \caption{50 palavras-chave mais evidentes, clusterizadas pela coocorrência em documentos, no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-Co-occurrence-Network-50nodes-louvainclustering.png}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Conceitual/MASSA2-Cluster1-Co-occurrence-Network-50nodes-louvainclustering.png.png}
+    \caption{Detalhamento do cluster 1, na rede das 50 palavras-chave mais evidentes, clusterizadas pela coocorrência em documentos, no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-Cluster1-Co-occurrence-Network-50nodes-louvainclustering.png}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Conceitual/MASSA2-Cluster2-Co-occurrence-Network-50nodes-louvainclustering.png.png.png}
+    \caption{Detalhamento do cluster 2, na rede das 50 palavras-chave mais evidentes, clusterizadas pela coocorrência em documentos, no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-Cluster2-Co-occurrence-Network-50nodes-louvainclustering.png.png}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Conceitual/MASSA2-Cluster3-Co-occurrence-Network-50nodes-louvainclustering.png.png.png}
+    \caption{Detalhamento do cluster 3, na rede das 50 palavras-chave mais evidentes, clusterizadas pela coocorrência em documentos, no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-Cluster3-Co-occurrence-Network-50nodes-louvainclustering.png.png}
+\end{figure}
+
 \paragraph{Mapas Temáticos}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Conceitual/MASSA2-ThematicMap.png}
+    \caption{Mapa temático do  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-ThematicMap}
+\end{figure}
 
 \paragraph{Evolução Temática}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Conceitual/MASSA2-Thematic-Evolution.png}
+    \caption{Evolução temática do  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-ThematicMap}
+\end{figure}
+
 \subsubsection{Métricas de redução da dimensionalidade (Análise Fatorial)}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Conceitual/MASSA2-FactorialAnalysis-MCA-FactorialMap.png}
+    \caption{Dimensões de variabilidade mais relevantes, nas palavras-chave do  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-FactorialAnalysis-MCA-FactorialMap}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Conceitual/MASSA2-FactorialAnalysis-MCA-Dendrogram.png}
+    \caption{Dendograma das dimensões de variabilidade mais relevantes, nas palavras-chave do  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-FactorialAnalysis-MCA-Dendrogram}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Conceitual/MASSA2-FactorialAnalysis-MCA-MostContribDocuments.png}
+    \caption{Documentos que mais contribuíram para determinar das dimensões de variabilidade mais relevantes, nas palavras-chave do  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-FactorialAnalysis-MCA-MostContribDocuments}
+\end{figure}
 
 \subsection{Estrutura Intelectual  do Conhecimento}
 
@@ -1019,7 +1147,21 @@ O Bibliometrix permite exploração da estrutura intelectual do conhecimento, us
 
 \subsubsection{Redes de Co-Citação}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Intelectual/MASSA2-CoCitation-Network.png}
+    \caption{Rede de cocitação entre as 100 referências mais presentes no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-CoCitation-Network}
+\end{figure}
+
 \subsubsection{Historiografia}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Intelectual/MASSA2-HistoricalDirectCitationNetwork-100docs.png}
+    \caption{Mapa histórico das citações diretas entre os documentos mais evidentes no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-HistoricalDirectCitationNetwork-100docs}
+\end{figure}
 
 \subsection{Estrutura Social  do Conhecimento}
 
@@ -1027,10 +1169,69 @@ Conhecimento científico é produzido socialmente, por meio de autores trabalhan
 
 \subsubsection{Rede de Colaboração}
 
-\subsubsection{Mapa da Colaboração Mundial}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Social/MASSA2-Collaboration-Network-150instit.png}
+    \caption{Rede de colaboração entre as 150 instituições mais evidentes, no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-Collaboration-Network-150instit}
+\end{figure}
 
-\section{Análises}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Social/MASSA2-Collaboration-Network-150authors.png}
+    \caption{Rede de colaboração entre os 150 autores mais evidentes, no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-Collaboration-Network-150authors}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Estrutura/Social/MASSA2-Collaboration-Network-50country.png}
+    \caption{Rede de colaboração entre os 150 países, no  \dataset\ MASSA2@jhcf.}
+    \label{fig:MASSA2-Collaboration-Network-50country}
+\end{figure}
+
+%\subsubsection{Mapa da Colaboração Mundial}
+
+\section{Análises\label{MASSA2:Analises}}
+
+A pesquisa mundial no tema da simulação multiagente de fenômenos sociais é pontuada por dois grandes temas, ilustrados de forma bastante clara no mapa de estrutura conceitual da figura \ref{fig:MASSA2-FactorialAnalysis-MCA-FactorialMap}, na página \pageref{fig:MASSA2-FactorialAnalysis-MCA-FactorialMap}:
+\begin{itemize}
+    \item 
+(Em azul no mapa) um grupo de pesquisadores que estuda questões ligadas a sistemas de controle, em busca de compreender fenômenos de sincronização, consenso, rastreabilidade, coordenação, rastreamento de agentes artificiais, voando ou navegando em bando e se comunicando em redes com topologia variável. Parecem estar em busca de uma inteligência artificial distribuída e robotizada;
+\item (em vermelho no mapa) um grupo mais difuso de pesquisadores, que busca compreender a emergência de fenômenos de natureza bem mais variada, inclusive os que ocorrem em grupos sociais humanos. Esses fenômenos pode ser de cooperação, evolução, participação em jogos, crescimento, difusão de inovações, escolhas, tomadas de decisão, percepção, gerenciamento e uso da terra (no sentido geográfico), formação de preços de ativos financeiros etc. Parecem estar em busca das aplicações das leis gerais dos sistemas complexos adaptativos, bem como na investigação de novos fenômenos que expliquem a dinâmica das sociedades humanas e biológicas.
+\end{itemize}
 
 \section{Conclusões}
 
+Este trabalho está incompleto, mas apresenta o arcabouço geral de informações que possibilitam responder às  questões formuladas no início da pesquisa, em \ref{MASSA@jhcf:questoes}, para a qual serão apresentadas breves respostas preliminares:
 
+\subsection{Base de conhecimentos}
+
+Qual a base de conhecimentos científicos produzida em torno do tema simulação multiagente voltada à compreensão de fenômenos sociais, com ênfase em métodos experimentais?
+ 
+Resposta: Ver, em \ref{MASSA2:Analises}, que ela se estrutura em dois grupos principais: um voltado para a inteligência artificial distribuída, baseada em agentes artificiais, como drones, possivelmente com aplicações no campo militar.
+O outro grupo é mais abrangente, voltado para a compreensão de fenômenos na sociedade humana, e fundamentado
+nos fenômenos emergentes.
+Tomando-se também por base os mapas \ref{fig:MASSA2-Co-occurrence-Network-50nodes-louvainclustering.png} e seus detalhamentos em \ref{fig:MASSA2-Cluster1-Co-occurrence-Network-50nodes-louvainclustering.png}, \ref{fig:MASSA2-Cluster2-Co-occurrence-Network-50nodes-louvainclustering.png.png}, percebe-se que esse ultimo grupo pode ser subdidivido em dois: um de ordem mais teórica, representado pelo cluster em \ref{fig:MASSA2-Cluster3-Co-occurrence-Network-50nodes-louvainclustering.png.png}, fundamentado na evolução, possivelmente compreendida como um fenômeno emergente, e um mais aplicado, pesadamente lastreado em simulação, construção de modelos para várias áreas de aplicação.
+
+Nota-se, com base na análise da espectroscopia mais recente das referências bibliográficas do \dataset, sumarizada em \ref{fig:MASSA2-ReferenceSpectroscopy:1971:2019} entre os anos de 1971 e 2019, que a área parece atingir sua maturidade por volta do ano de 2011.
+
+\subsection{Fenômenos sociais}
+   
+Como a simulação multiagente tem sido usada para compreender fenômenos sociais, com ênfase em métodos experimentais? 
+
+Resposta: Ver \ref{MASSA2:Analises}.
+
+\subsection{Termos e conceitos centrais}
+
+Quais os principais termos e conceitos ligados à frente de pesquisa no tema simulação multiagente de fenômenos sociais, com ênfase em métodos experimentais? 
+
+Resposta: Ver e explorar os mapas das figuras \ref{fig:MASSA2-Co-occurrence-Network-50nodes-louvainclustering.png}, \ref{fig:MASSA2-ThematicMap}, entre outros.
+
+\subsection{Estrutura Social da Comunidade}
+
+Qual a estrutura social da comunidade, se é que existe, que pesquisa sobre o tema simulação multiagente de fenômenos sociais, com ênfase em métodos experimentais?
+
+Resposta: Ver e analisar os mapas das figuras \ref{fig:MASSA2-Collaboration-Network-150authors}, \ref{fig:MASSA2-Collaboration-Network-150instit} e \ref{fig:MASSA2-Collaboration-Network-50country}.
+
+A rede de cocitação 

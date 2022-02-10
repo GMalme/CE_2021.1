@@ -1,0 +1,83 @@
+\chapter{As\label{chap:bibliometria:}}
+
+\section{Planejamento do estudo\label{}}
+
+
+\begin{itemize}
+    \item 
+    \item 
+    \item 
+\end{itemize}
+
+\subsection{O que já existe de pesquisa bibliométrica sobre esse tema?}
+
+\cite{} 
+\cite{}.
+
+
+\subsection{Limitações} O exercício relatado foi feito em uma semana, envolvendo entre 5 a 10 horas de trabalho de cada autor.
+
+\section{Coleta de dados\label{MASSA:coleta}}
+
+A coleta de dados feita usando o WoS no dia 03 de agosto de 2021, acessado por meio do Portal de Periódicos da CAPES.
+
+%Foram feitas buscas nas coleções \textbf{Science  Citation  Index  Expanded (SCI -EXPANDED)} e \textbf{Social  Sciences  Citation  Index (SSCI)}, que contém registros relativos a vários campos do conhecimento, no qual o SCI-EXPANDED foca mais na área das ciências exatas e naturais, enquanto que o SSCI indexa artigos da área das ciências sociais. Observe que os artigos nessas duas coleções são indexados desde 1945. 
+
+\subsection{Query de Busca}
+
+Foi usada a \query\  de busca ilustrada nas linhas 1 a 9 da listagem \ref{query20210803-2}.
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais.},label=query20210803-2]
+{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/query.txt}
+
+\subsubsection{Explicação para os termos de busca usados\label{}}
+
+
+Os termos \texttt{experimental}, \texttt{numeric*}, \texttt{statist*}, \texttt{hypothes*}, 
+\texttt{empiric*}
+e \texttt{inferen} (linhas 1 e 2 da query) foram usados na primeira cláusula da \query\  para recuperar artigos que tenham em seu título, palavras-chave e resumo, termos relacionados a métodos experimentais,
+métodos numéricos,
+métodos estatísticos,
+teste de hipóteses,
+métodos empíricos e métodos inferenciais.
+
+
+A $4^{a}$ cláusula, linha 9,  s.
+
+\subsection{Registros recuperados}
+
+Os  registros obtidos como resultado da busca encontram-se em \url{}. 
+
+Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 8115 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 8001-8115).
+
+
+\section{Análise dos dados}
+
+\subsection{Filtragem de registros}
+Antes da análise, é possível aplicar filtros sobre os registros obtidos.
+
+Foi aplicado um filtro ao \dataset\   inicial, com 8.115 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas\footnote{A suposição é que que o conhecimento de maior qualidade sobre o tema está nas publicações em revistas.}. Após a aplicação desse filtro, 5.787 registros foram mantidos no \dataset, que será doravante chamado
+
+\subsection{Análise descritiva do \dataset\   MASSA@jhcf}
+
+
+As informações mais gerais sobre o \dataset\   MASSA@jhcf são as seguintes:
+\begin{description}
+    \item [\textit{Timespan}] 
+    \item [\textit{Sources (Journals, Books, etc)}] 
+    \item [\textit{Average years from publication}] 
+    \item [\textit{Average citations per documents}] 
+    \item [\textit{Average citations per year per doc}] 
+    \item [\textit{References}] 
+    \item [\textit{Keywords Plus (ID)}] 
+    \item [\textit{Author's Keywords (DE)}] 
+    \item [\textit{Authors}]  
+    \item [\textit{Author Appearances}] 
+    \item [\textit{Authors of single-authored documents}] 
+    \item [\textit{Authors of multi-authored documents}] "
+    \item [\textit{Single-authored documents}] 
+    \item [\textit{Documents per Author}] 
+    \item [\textit{Authors per Document}] 
+    \item [\textit{Co-Authors per Documents}] 
+    \item [\textit{Collaboration Index}] 
+\end{description}

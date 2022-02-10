@@ -1,6 +1,19 @@
 \chapter{Análise Bibliográfica sobre Redes Neurais e Deep Learning Aplicadas em Jogos, por Arthur Couto\label{chap:bibliometria:CrimsonCrown}}
 
 \section{Planejamento do estudo}
+Esse trabalho tem o intuito de treinar o uso da técnica de análise bibliométrica para fins didáticos, e no caso dessa pesquisa específica, servir para o autor como uma introdução ao mundo de pesquisas científicas sobre redes neurais e suas potenciais aplicações.
+
+A pesquisa foi feita com o intuito de responder as seguintes questões:
+
+\begin{itemize}
+    \item O que é produzido cientificamente com relação a redes neurais, especificamente aplicadas a jogos?
+    \item Quais são os tópicos mais frequentemente relacionados a essas pesquisas?
+    \item Quais são os focos do desenvolvimento científico dessa área?
+\end{itemize}
+
+As duas primeiras perguntas são referentes a estrutura conceitual de redes neurais, enquanto a terceira pergunta é referente à estrutura social desse tópico.
+
+Essas perguntas podem ser respondidas por meio de uma pesquisa bibliométrica. O método utilizado será o descrito em \citet{aria_bibliometrix_2017}, como especificado na sessão 5.8 deste documento, utilizando o pacote Bibliometrix e a interface Biblioshiny como ferramentas para a análise.
 
 \section{Coleta de dados}
 Os dados foram coletados na Web of Science no dia 8 de fevereiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
@@ -10,3 +23,5 @@ A query de busca utilizada foi ((\textit{deep learning})OR(\textit{neural networ
 Essa \textit{query} obteve 4547 resultados, porém apenas os primeiros 1000 foram exportados. A exportação foi feita utilizando a opção de exportar em formato BibTeX, \textit{records from 1 to 1000}, \textit{custom selection} com todos os campos selecionados. Uma tentativa de exportar 4547 resultados causou um arquivo com apenas 50 registros, por isso a opção de exportar apenas os primeiros 1000 foi utilizada.
 
 \section{Análise dos dados}
+Os 1000 documentos obtidos durante a coleta de dados incluíam vários tipos de documentos, mas apenas os artigos científicos publicados nos interessam. Após filtrar todos os outros tipos de documentos, sobraram apenas 412 artigos. Esse será o \textit{dataset} utilizado, e o chamaremos de NeuralNetworkGame/Artigos, ou NNGA@CrimsonCrown.
+

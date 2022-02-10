@@ -1,0 +1,3 @@
+(algorit* or (artificial and intelligen*))
+and (video or scene) and analysis and descript*
+not (endoscopy)

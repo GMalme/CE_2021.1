@@ -25,7 +25,7 @@ A coleta de dados foi feita pelo Web of Science (WeS) no dia 8 de Fevereiro de 2
 A \textit{query} de busca pode ser acessada na seguinte listagem de código \ref{rafael-nogalha:query}
 
 \lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\ de busca sobre Quantum Key Distribution(QKD) Na Segurança Computacional.},label=rafael-nogalha:query]
-{experiments/rafael-nogalha/PesquisaBibliografica/query/query-de-busca.txt}
+{experiments/rafael-nogalha/PesquisaBibliografica/query/query.txt}
 
 No primeiro momento, foi feita uma pesquisa com os seguintes termos "quantum key distribution (Topic)", entretanto isso resultou em muitos artigos que abordavam aspectos somentes físicos do QKD, e o foco da pesquisa é uma análise estatística sobre a influência da QKD na segurança computacional. Dessa forma, adicionou-se na \textit{query} de busca as seguintes cláusulas "(experimental  or statist* and security)", resultando assim em 1.450 resultados na WeS. Essa base de dados está presente \href{https://github.com/jhcf/Comput-Experim-20212/tree/main/experiments/rafael-nogalha/PesquisaBibliografica/QKDSegurancaComputacional/dataset/dataset.txt}{no seguinte link}. A exportação foi feita com a opção "Plain text file" na opção em inglês e "Exportar arquivo de texto sem formatação" na opção em português. A seleção personalizada foi feita com todas as 29 opções possíveis e os registros foram extraídos em um intervalo de 1000 e 1000 e depois foram concatenados de forma manual.
 
@@ -68,7 +68,7 @@ Usando o bibliometrix e a interface biblioshiny, é possível obter as principai
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/producao-cientifica-anual.png}
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/producao_cientifica_anual.png}
     \caption{Evolução da produção científica anual no \textit{dataset} @QKD-rafael-nogalha.}
     \label{fig:evol:anual:@QKD-rafael-nogalha}
 \end{figure}
@@ -88,47 +88,45 @@ De acordo com a Figura \ref{fig:evol:anual:@QKD-rafael-nogalha} é possível obs
 
 \subsection{Principais Definições, Campos Relacionados - \textit{Three-Field Plots (Sankey diagram)}}
 
-A análise de estrutura conceitual iniciou-se por meio da geração do mapa fatorial \ref{fig:mapa:fatorial:@QKD-rafael-nogalha}
+A análise de estrutura conceitual iniciou-se por meio da geração do mapa fatorial \ref{fig:mapa:fatorial:@QKD-rafael-nogalha}, da análise \textit{tree plot} \ref{fig:three:plot:@QKD-rafael-nogalha} e da tabela de palavras relevantes presentes na figura \ref{fig:campos:plot:@QKD-rafael-nogalha}. Pela análise das figuras é possível observar que as três palavras mais relevantes são: \textbf{cryptography} \textbf{security} e \textbf{key distribution}. Tais palavras estão em concordância com o tema \textit{Quantum Key Distribution(QKD) Na Segurança Computacional} e dão uma compreensão em relação ao conceitos relacionados a tal área.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/mapa-fatorial.png}
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/mapa_fatorial.png}
     \caption{Principais campos relacionados no \textit{dataset} @QKD-rafael-nogalha.}
     \label{fig:mapa:fatorial:@QKD-rafael-nogalha}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/three-fields-plot-qkd.png}
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/three_fields_plot_qkd.png}
     \caption{Principais campos relacionados no \textit{dataset} @QKD-rafael-nogalha.}
     \label{fig:three:plot:@QKD-rafael-nogalha}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/palavras-relevantes.png}
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/palavras_relevantes.png}
     \caption{Principais campos relacionados no \textit{dataset} @QKD-rafael-nogalha.}
     \label{fig:campos:plot:@QKD-rafael-nogalha}
 \end{figure}
 
 
 
-\subsection{Principais Países envolvidos - \textit{Three-Field Plots (Sankey diagram)}}
+\subsection{Principais Países envolvidos e \textit{Coworking} entre ele}
+
+Por meio das imagens abaixo, \ref{fig:map:prod:@QKD-rafael-nogalha} e \ref{fig:cowrking:prod:@QKD-rafael-nogalha}, é possível observar que a China e os Estados Unidos são os países com maior produção no presente tema do artigo e além disso são também os dois países que mais produzem materiais juntos em relação ao tema de QKD na segurança computacional. É importante ressaltar que a interação entre os países acerca do tema é forte e apresenta tendência de crescimento.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/especificacao-paises-producao.png}
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/especificacao_paises_producao.png}
     \caption{Principais países que produziram artigos no \textit{dataset} @QKD-rafael-nogalha.}
     \label{fig:map:prod:@QKD-rafael-nogalha}
 \end{figure}
 
-
-
-\subsection{Comunicação entre os países - \textit{coworking)}}
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/country-collaboration-map.png}
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/country_collaboration_map.png}
     \caption{Coworking entre os países no \textit{dataset} @QKD-rafael-nogalha.}
     \label{fig:cowrking:prod:@QKD-rafael-nogalha}
 \end{figure}
@@ -136,3 +134,5 @@ A análise de estrutura conceitual iniciou-se por meio da geração do mapa fato
 
 
 \section{Resultados e interpretação}
+
+Por meio desta pesquisa bibliográfica é possível afirmar que a produção científica em relação ao uso de \textit{QKD na Segurança Computacional} apresenta uma tendência de crescimento, além de também estar sendo compartilhada pesquisas sobre o tema em diferentes países, principalmente entre Estados Unidos e China. Por fim, é necessária uma análise mais profunda do tema para compreender melhor o uso de QKD na segurança computacional na década atual e se será o uso de médio ou longo prazo no mercado para empresas de pequeno e médio porte.

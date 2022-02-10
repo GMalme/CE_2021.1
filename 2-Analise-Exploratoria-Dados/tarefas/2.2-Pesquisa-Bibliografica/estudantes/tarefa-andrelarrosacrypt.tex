@@ -1,3 +1,4 @@
+
 \chapter{Análise Bibliográfica sobre Criptografia no Universo da Computação Quântica, por André Larrosa Chimpliganond}
 
 \section{Planejamento do estudo}
@@ -11,32 +12,11 @@ Partindo dessa pergunta, podemos explorar outras que irão nortear o trabalho:
 \end{itemize}
 
 
-
-% nao sei se vou colocar
-\subsection{O que já existe de pesquisa bibliométrica sobre esse tema?}
-
-\cite{gore_classifying_2016} fizeram uma pesquisa que visava aprofundar a questão da simulação multiagente em relação à computação experimental.
-
-A pesquisa é base para um posterior aprofundamento no campo da Cientometria, como fez \cite{chavalarias_whats_2017}.
-% 
-
 \subsection{Ferramentas}
 Será utilizada a interface web para o pacote Bibliometrix (Biblioshiny). O pacote Bibliometrix é uma ferramenta R que fornece um conjunto de ferramentas para a investigação quantitativa em cientometria e bibliometria.
 
 
-% nao sei se vou colocar
-\subsection{Limitações} O exercício relatado foi feito em uma semana, envolvendo entre 5 a 10 horas de trabalho de cada autor.
-
-Outros aspectos a reforçar:
-\begin{itemize}
-   
-\item Deve-se fazer buscas na base de dados WoS ou SCOPUS;
-\item é obrigatório declarar um conjunto de perguntas de pesquisa.
-\item é preciso declarar o objetivo da pesquisa, que no caso da aqui relatada foi exercitar inicialmente, e relatar, o uso da técnica de análise bibliométrica, para fins didáticos.
-\end{itemize}
-%
-
-\section{Coleta de dados}%label
+\section{Coleta de dados}
 
 A coleta de dados feita usando o Web Of Science  no dia 09 de fevereiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
 
@@ -44,17 +24,20 @@ Foram feitas buscas nas coleções \textbf{Science Citation Index Expanded (SCI-
 
 Foi usada a seguinte \query\  de busca
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre criptografia quântica.}]%label
+\textit{\textbf{(quantum or  post-quantum) and (cryptography or cryptanalysis or encryption)}}
+
+
+%\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre criptografia quântica.}, label=CQA@andrelarrosacryptQuery]%label
 %{experiments/andrelarrosacrypt/AnaliseBibliometrica/CriptografiaQuantica/query.txt}
 %nao ta achando a query
 
-\subsection{Explicação para os termos de busca usados}%label
+
+\subsection{Explicação para os termos de busca usados}
 
 Foram elaboradas duas cláusulas de busca unidas por \textit{and}. A primeira foca nos elementos relacionados ao universo quântico, enquanto a segunda faz referência à criptografia.
 
-
 Os 10522 registros obtidos encontram-se no github do projeto, em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/andrelarrosacrypt/AnaliseBibliometrica/CriptografiaQuantica/rec_1.txt} e \url{https://github.com/jhcf/Comput-Experim-20212/experiments/andrelarrosacrypt/AnaliseBibliometrica/CriptografiaQuantica/rec_2.txt}. 
-% enviar arquivo completo direto no github
+% arquivo maior que  50MB
 
 Foram exportadas todas as informações disponíveis na Web Of Science de cada documento.
 
@@ -102,9 +85,8 @@ A figura \ref{CQA@andrelarrosacrypt_ProdAnual} representa a evolução da produ�
 
 
 \subsection{Interpretação do Crescimento}
-% colocar ref em @, quantum computing timeline
 
-Como destacado em \url{https://www.quthought.com/post/history-of-quantum-computing-a-timeline}, o do desenvolvimento da computação quântica nos anos 1990 é representado na figura como o início do crescimento das pequisas. Na mesma referência, percebemos que nos últimos dez anos empreses como Google e IB, além de instituições como NASA e NSA tem investido nesse assunto. Indicando, não só um interesse econômico, mas uma necessidade governamental.
+Como destacado na \href{https://www.quthought.com/post/history-of-quantum-computing-a-timeline}{Linha do Tempo}, o do desenvolvimento da computação quântica nos anos 1990 é representado na figura como o início do crescimento das pequisas. Na mesma referência, percebemos que nos últimos dez anos empreses como Google e IB, além de instituições como NASA e NSA tem investido nesse assunto. Indicando, não só um interesse econômico, mas uma necessidade governamental.
 
 Se considerarmos os interesses da NSA (Agência de Segurança Nacional dos Estados Unidos), percebemos como esse novo tipo de computação está alterando a meneia como vemos codificação e decodificação de informações. 
 
@@ -134,9 +116,9 @@ Como mostrado na figura \ref{CQA@andrelarrosacrypt_CitaAnual}, com exceção aos
 
 \subsection{\textit{Three-Field Plots}}
 
-Gráficos do tipo \textit{Three-Field Plots} exibem três campos (autores, documentos, referências, entre outros) e como eles se relacionam (\textit{Three-Field Plots}).
+Gráficos do tipo \textit{Three-Field Plots} exibem três campos (autores, documentos, referências, entre outros) e como eles se relacionam (\textit{Sankey Diagram}).
 
-\subsection{\textit{Three-Field Plots} Autores, Referências e Palavras-chave}
+\subsubsection{\textit{Three-Field Plots} Autores, Referências e Palavras-chave}
 
 \begin{figure}
     \centering
@@ -147,9 +129,6 @@ Gráficos do tipo \textit{Three-Field Plots} exibem três campos (autores, docum
 
 A figura \ref{CQA@andrelarrosacrypt_Aut_Ref_Key} apresenta o gráfico \textit{Three-Field Plots} do  \dataset\ CQA@andrelarrosacrypt. Os campos de interesse destacados nesse gráfico são autores (centro), referência citadas (esquerda) e palavras-chave (direita) mais importantes.
 
-
-\subsubsection{Interpretação da figura \ref{CQA@andrelarrosacrypt_Aut_Ref_Key}}
-
 No campo \textit{autores}, percebemos que 19 aparentam ser de origem asiática (mais provavelmente chinesa), o único não asiático provavelmente é russo (molotkov sn). Por outro lado, as referências apresentam maior heterogeneidade, com documentos aparentemente asiáticos, europeus e norte-americanos. Isso nos sugere que pesquisadores de origem chinesa tem migrado para países ocidentais ou tem trabalhado em direta colaboração com pesquisadores europeus e norte-americanos.
 
 Relevante cometar que o autor mais destacado é \textbf{deng fg} e nas referências mais citadas temos três trabalhos de sua autoria \textbf{}{Deng FG, 2003, PHYS REV A} - DOI 10.1103/PhysRevA.68.042317 (protocolo para comunicação quântica segura), \textbf{Deng FG, 2004, PHYS REV A} - DOI 10.1103/PhysRevA.69.052319 (outro protocolo para comunicação quântica segura) e \textbf{Deng FG, 2005, PHYS REV A} - DOI 10.1103/PhysRevA.72.044302 (análise de protocolo de comunicação segura proposto por Zhang, Li, and Man). O que nos mostra a relevância de tal autor e seu aparente foco na área de comunicação segura.
@@ -157,7 +136,7 @@ Relevante cometar que o autor mais destacado é \textbf{deng fg} e nas referênc
 Ao estudarmos as \textit{palavras-chaves} fica claro o focos desses autores no temos de comunicação quântica segura, \textbf{quantum secure direct communication}, \textbf{quantum secret sharing} e \textbf{quantum communication}, e o uso de criptografia quântica, \textbf{quantum cryptography} e \textbf{quantum key distribution}, para tal fim.
 
 
-\subsection{\textit{Three-Field Plots} Autores, Afiliações e Países}
+\subsubsection{\textit{Three-Field Plots} Autores, Afiliações e Países}
 
 \begin{figure}
     \centering
@@ -166,7 +145,6 @@ Ao estudarmos as \textit{palavras-chaves} fica claro o focos desses autores no t
     \label{CQA@andrelarrosacrypt_Aut_Aff_Coun}
 \end{figure}
 
-\subsubsection{Interpretação da figura \ref{CQA@andrelarrosacrypt_Aut_Aff_Coun}}
 
 O gráfico da figura \ref{CQA@andrelarrosacrypt_Aut_Aff_Coun} confirma as suspeitas em relação à origem chinesas da maioria dos autores. Mesmo com a prevalência da China, temos a Rússia, Canada, Suíça, Alemanha, França e Estados Unidos com significativa influência.
 
@@ -194,7 +172,15 @@ Primeiro, temos em azul duas palavras que necessitam de explicação, \textbf{sc
     \label{CQA@andrelarrosacrypt_CoCit}
 \end{figure}
 
-Com relação à estrutura intelectual visível na figura \ref{CQA@andrelarrosacrypt_CoCit}, temos três principais grupos. Em vermelho, encontramos o que parecem ser autores ocidentais, em azul, autores chineses e em verde autores ocidentais e chineses.
+Com relação à estrutura intelectual visível na figura \ref{CQA@andrelarrosacrypt_CoCit}, temos três principais grupos. Em vermelho encontramos o que parecem ser autores ocidentais, em azul autores chineses e em verde autores ocidentais e chineses. Podemos esperar que os autores de cada grupo estegem trabalhando em temas semelhantes
+
+O autor de maior influência no grupo vermelho é \textit{Bennett}. Seus dois artigos mais citados, ambos de 1992, \textit{Quantum cryptography using any two nonorthogonal states} e \textit{Quantum cryptography without Bell’s theorem}. Como podemos perceber, tratam de estratégia e técnicas de criptografia quântica. Podemos esperar que os autores que citam Bennett também desenvolvem desse assunto. Para confirmar nossas suspeitas, temos \textit{Ekert} e seu artigo \textit{Quantum cryptography based on Bell’s theorem}, que também aborda diretamente a questão da criptografia.
+
+No aglomerado azul, todos parecem estar no mesmo nível, no que diz respeito à citações. Pegando como exemplo \textit{Deng}, seu artigo mais citado é \textit{Two-step quantum direct communication protocol using the Einstein-Podolsky-Rosen pair block}, que trata de protocolo de comunicação apoiado em aspectos da teoria quântica. Se selecionarmos outro autor do mesmo grupo, \textit{Li}, vemos que seu trabalho mais citado, \textit{Improving the security of secure direct communication based on the secret transmitting order of particles} também trata de comunicação. Logo, parece seguro afirmar que esse grupo foca em elemento de comunicação (segura) utilizando fatores da teoria quântica.
+
+Por fim, no grupo verde, temos \textit{Lo} como influente autor. Seu trabalho mais citado localmente \textit{Unconditional Security of Quantum Key Distribution over Arbitrarily Long Distances} aborda comunicação segura (como o grupo azul) sob o ponto de vista de chave chave distribuída. Novamente, se observarmos o trabalho de \textit{Gisin}, \textit{Trojan-horse attacks on quantum-key-distribution systems}, vemos o mesmo tópico.
+
+
 % o que mais ??
 
 \section{Estrutura Social}

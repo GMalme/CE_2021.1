@@ -81,7 +81,7 @@ Alguns campos específicos serão comentados a seguir:
     \item [ER - End of Record] Fim do registro.
 \end{description}
 
-\lstinputlisting[language={},numbers=left,basicstyle=\tiny\ttfamily,caption={Exemplo de um registro recuperado no formato RIS, sobre o tema simulação multiagente de fenômenos sociais.},label=record20210803-2]
+\lstinputlisting[language={},numbers=left,basicstyle=\tiny\ttfamily,caption={Exemplo de um registro recuperado no formato RIS, sobre o tema Cloud-based Big Data Analysis},label=record20210803-2]
 {experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/record.txt}
 
 \section{Análise dos dados}
@@ -100,7 +100,7 @@ As informações mais gerais sobre o \dataset\   SBDAA@guioliunb são as seguint
     \item [\textit{Timespan}] Os artigos que atenderam aos critérios de busca e filtragem foram publicados a partir de 2014, até 2022. Registros anteriores não formavam um conjunto de dados expressivo.
     \item [\textit{Sources (Journals, Books, etc)}] São 871 fontes de informação que publicaram os documentos recuperados no \dataset\   SBDAA@guioliunb. Ou seja, em média, cada \textit{scientific article} publicou $2.906/871=2,5$ artigos. \footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência a quantidade de artigos publicados por revista.}
     \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \dataset\   SBDAA@guioliunb é de 4.4 anos.
-    \item [\textit{Average citations per documents}] Cada artigo no \dataset\   MASSA@jhcf foi citado, em média 8.896 vezes\footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência de  citações a artigos.}.
+    \item [\textit{Average citations per documents}] Cada artigo no \dataset\   SBDAA@guioliunb foi citado, em média 8.896 vezes\footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência de  citações a artigos.}.
     \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 2.906 artigos do \dataset\   SBDAA@guioliunb  foi citado 1.575 vezes por ano, em média.
     \item [\textit{References}] O \dataset\   SBDAA@guioliunb contém 47.165 referências citadas (tags CR).
     \item [\textit{Keywords Plus (ID)}] 1.186 distintas palavras-chave do tipo Keywords Plus (ID)\footnote{\textit{KeyWords Plus} são ``termos de índice gerados automaticamente a partir dos títulos de artigos citados. Os termos do KeyWords Plus devem aparecer mais de uma vez na bibliografia e são ordenados de frases com várias palavras a termos únicos. O KeyWords Plus aumenta o número de resultados tradicional de palavras-chave ou títulos.'' Fonte: \url{https://images.webofknowledge.com/WOKRS410B4/help/pt_BR/WOS/hp_full_record.html}} foram encontradas no \dataset\   SBDAA@guioliunb. 
@@ -142,51 +142,62 @@ A taxa de crescimento anual teve o resultado negativo no, porém os últimos doi
 
 \subsection{Evolução das Citações}
 
-Somado a isso, temos a Figura \ref{fig:evol:anual:cit:SBDAA@guioliunb} que explicita que o uso do \dataset\  SBDAA@guioliunb em citações e estudos posterior é crescente. Logo, a produção de conteúdo e a evolução da área demonstra evolução e dispersão. Podendo assim responder o q
+Somado a isso, temos a Figura \ref{fig:evol:anual:cit:SBDAA@guioliunb} que explicita que o uso do \dataset\  SBDAA@guioliunb em citações e estudos posterior é crescente. Logo, a produção de conteúdo e a evolução da área demonstra evolução e dispersão. Podendo assim responder o questionamento sobre o declínio da área.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Dataset/AverageArticleCitationPerYear-2021-08-09.png}
-    \caption{Evolução das citações ao \dataset\   MASSA@jhcf.}
-    \label{fig:evol:anual:citacoes:MASSA@jhcf}
-\end{figure}
+Outro fato, é o acúmulo de citações por ano facilitando o gráfico continuar em uma crescente.
 
-A figura \ref{fig:evol:anual:citacoes:MASSA@jhcf} apresenta a evolução da média de citações aos 5.787 artigos no \dataset\   MASSA@jhcf. 
-Nota-se grande estabilidade na média anual de citações, onde os artigos publicados em 1992 possuem cerca de 2 citações médias, e em 2015 (17 anos depois) o valou alterou-se apenas para três. O pico que aparece no ano de 2008 deve-se, possivelmente, à presença de um artigo do \dataset, publicado em 2008, que possui um número surpreendente grande de citações. \footnote{Note que o cálculo do número  médio de citações, nesse caso, utiliza os valores computados no tag "TC (Times Cited)", já presentes no \dataset\   obtido. Ou seja, o gráfico baseia-se no número de citações globais (externas ao \dataset\   MASSA@jhcf), e não no número de citações locais (citações a um artigo do \dataset\   feitas por alguns dos outros artigos dentro do próprio \dataset).}.
+
 
 \subsection{Interpretação das Citações}
-Mesmo perante um crescimento aproximadamente exponencial no volume de publicações, a ocorrência de um crescimento nas citações médias ao longo dos anos sugere que os artigos do \dataset\   possuem uma tendência de crescimento no tamanho da bibliografia citada, bem como também despertam grande interesse dos cientistas nas demais áreas do conhecimento (já que se trata de citações globais).
+Com o crescimento das citações fica evidente o repetição do uso nos artigos e o ganho de relevância do \dataset\ diante o tempo. Dessa forma, os novos registros bibliográficos herdam conceitos produzidos por esse bibliografia. Assim, demonstrando crescimento do interesse pela comunidade científica e aceitação de outros profissionais. Ou seja, uma tendência posisitica do material produzido.
 
-\subsection{\textit{Three-Field Plots (Sankey diagram)} \label{MASSA:Sankey}}
+\subsection{\textit{Three-Field Plots (Sankey diagram)} \label{SBDAA:Sankey}}
 
 As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos'') apresentam afinidades entre três conjuntos de atributos agregados que ocorrem no \dataset. Uma plotagem do tipo Sankey busca mostrar os principais fluxos entre diferentes conjuntos de itens. \footnote{Para uma introdução ver \url{https://en.wikipedia.org/wiki/Sankey_diagram}. Para obter detalhes sobre a forma de geração e utilização desse gráfico, inclusive de forma interativa, veja o vídeo em \url{https://www.youtube.com/watch?v=jBb1iha6-sg}.} 
 
 \begin{figure}
     \centering
-    \includegraphics[angle=0,width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Dataset/ThreeFieldPlot-AU-CR-DE-20-20-20.png}
-    \caption{Plotagem ``Três Campos'' (Sankey plot) do \dataset\   MASSA@jhcf: 20 Autores, Citações e Palavras-Chave mais proeminentes.}
-    \label{fig:MASSA@jhcf:ThreeFieldPlot}
+    \includegraphics[angle=0,width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/3FSE-referencesXauthorsXkeywords.png}
+    \caption{Plotagem ``Três Campos'' (Sankey plot) do \dataset\   SBDAA@guioliunb: Referências, Autores, e Palavras-Chave.}
+    \label{fig:SBDAA@guioliunb:ThreeFieldPlot}
 \end{figure}
 
-A figura \ref{fig:MASSA@jhcf:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' do \dataset\   MASSA@jhcf, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 20 Palavras-Chave mais frequentes empregadas pelos autores.
 
-\subsection{Interpretação da figura \ref{fig:MASSA@jhcf:ThreeFieldPlot}}
 
-Os vinte autores mais relevantes, citados pelos artigos do \dataset\ MASSA, e as palavras-chave mais relevantes são aparentemente de origem asiática, mais especificamente chinesa, com base nos sobrenomes. De outra forma, a mesma origem chinesa parece não se aplicar aos trabalhos mais citados, aparentemente europeus ou norte-americanos. Isso sugere estar ocorrendo uma migração recente da produção científica, do ocidente para o oriente. 
+A figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' do \dataset\   SBDAA@guioliunb, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 20 Palavras-Chave mais frequentes empregadas pelos autores.
 
-Adicionalmente, dentre as palavras-chave (DE) não relacionadas diretamente aos termos de busca, emergem os termos \textbf{distributed control}, \textbf{event-triggered control}, \textbf{consensus} e \textbf{opinion dynamics}. Isso sugere foco das pesquisas por autores de origem chinesa no uso de simulação multiagente voltada à compreensão dos fenômenos de controle social distribuído, formação de consenso e dinâmica da opinião (pública?).
-
-Ainda sobre a interpretação da plotagem da figura \ref{fig:MASSA@jhcf:ThreeFieldPlot}, observa-se que os artigos mais citados encontram-se publicados pelo menos 10 anos atrás, sugerindo que não houve, nos últimos 10 anos, nenhum trabalho que tenha produzido uma mudança de paradigma no tema.
-A fim de melhor evidenciar as citações mais relevantes segundo o peso dos autores e palavras-chave, o gráfico da figura \ref{fig:MASSA@jhcf:ThreeFieldPlot:10-20-20} plota apenas as 10 referências citadas, para 20 autores e palavras-chave mais proeminentes.
+Já a figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot2} apresenta a plotagem do tipo ``Três Campos'' do \dataset\   SBDAA@guioliunb, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, os países de origem mais recorrentes , e à direita, os títulos com maior intersecção entre os artigos.
 
 \begin{figure}
     \centering
-    \includegraphics[angle=0,width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Dataset/ThreeFieldPlot-AU-CR-DE-20-10-20.png}
-    \caption{Plotagem ``Três Campos'' (Sankey plot) do \dataset\   MASSA@jhcf: 10 Autores, 20 Citações e Palavras-Chave mais proeminentes.}
-    \label{fig:MASSA@jhcf:ThreeFieldPlot:10-20-20}
+    \includegraphics[angle=0,width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/3FSE-countriesXauthorsXtitles.png}
+    \caption{Plotagem ``Três Campos'' (Sankey plot) do \dataset\   SBDAA@guioliunb: 20 Países, Autores e Títulos.}
+    \label{fig:SBDAA@guioliunb:ThreeFieldPlot2}
 \end{figure}
 
+\subsection{Interpretação da figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot}}
+
+A figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot} explicita uma rede de produção de conhecimento bem conectada entre os 20 autores, ou seja, são cientistas bem ativos no tema e trabalham em contribuição para um objetivo comum.
+
+\textit{Big Data} e \textit{Cloud computing} são as palavras-chaves com maior relevância fazendo jus à necessidade de integração entre as duas áreas na formação da base estudada.
+Também, pode-se observar o surgimento de áreas relacionadas aos dois aspectos principais como: edge computing, data mining, data analytics e outros.
+Além disso, os principais autores possuem um grande coeficiente de citações feitas e recebidas. Podendo assim ser um indicador de qualidade de seus trabalhos científicos.
+
+\subsection{Interpretação da figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot2}}
+
+Na segunda figura \ref{fig:SBDAA@guioliunb:ThreeFieldPlot2} é razoável  observar a grande contribuição da China no \dataset\ e consequentemente entender a grande participação dos chineses nos autores mais relevantes como mostrado na \ref{fig:SBDAA@guioliunb:ThreeFieldPlot}. Acrescentado com a contribuição chinesa fica também evidente uma porcentagem razoável de EUA e Austrália.
+
+O termo mais utilizado nos títulos é \textit{data} concordando com as palavras-chaves anteriormente analisadas. As outras categorias tem um significado acoplado com o termo \textit{data}, pois ao observar os artigos formam: modelos, métodos, \textit{frameworks},\textit{networks} e sistemas especializados no uso de \textit{data}.
+
+
 \subsubsection{Autores mais relevantes\label{MASSA:Sankey:AutoresRelevantes}}
+
+\begin{figure}
+    \centering
+    \includegraphics[angle=0,width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/most relevant authors.png}
+    \caption{Plotagem ``Três Campos'' (Sankey plot) do \dataset\   SBDAA@guioliunb: Autores mais relevantes.}
+    \label{fig:SBDAA@guioliunb:relevantauthors}
+\end{figure}
 
 Breves comentários sobre cada um dos trabalhos mais citados serão apresentados a seguir.
 
@@ -210,20 +221,27 @@ Nenhum desses 10 documentos citados está contido no \dataset\   recuperado.
 %\begin{figure}
 %    \centering
 %    \includegraphics[angle=0,width=1\textwidth]{}
-%    \caption{Plotagem ``Três Campos'' (Sankey plot) do dataset MASSA@jhcf: 20 Autores, Citações e Palavras-Chave mais proeminentes.}
-%    \label{fig:MASSA@jhcf:ThreeFieldPlot}
+%    \caption{Plotagem ``Três Campos'' (Sankey plot) do dataset SBDAA@guioliunb: 20 Autores, Citações e Palavras-Chave mais proeminentes.}
+%    \label{fig:SBDAA@guioliunb:ThreeFieldPlot}
 %\end{figure}
 
 \section{Refinamento da Coleta de Dados}
 
-No dia 03 de fevereiro de 2022, no decorrer das análises mais refinadas do \dataset\ MASSA@jhcf, identificou-se um grupo de artigos que não se encaixavam no tema de interesse, e que eram voltados para pesquisas no campo da biologia experimental e nanotecnologia. Isso sugeriu que a \query\  de busca precisaria ser reformulada, para excluir artigos que não se enquadrassem na temática desejada.
-O conjunto das palavras-chave que refletia essa dissonância ficou evidente na análise da estrutura intelectual do conhecimento, do tipo \textbf{Rede de Co-ocorrências de Palavras-chave}, ilustrada no cluster em roxo, à esquerda da figura \ref{fig:MASSA@jhcf:redecoocorr-150-termos}.
+No dia 03 de fevereiro de 2022, no decorrer das análises mais refinadas do \dataset\ SBDAA@guioliunb, identificou-se um grupo de artigos que não se encaixavam no tema de interesse, e que eram voltados para pesquisas no campo da biologia experimental e nanotecnologia. Isso sugeriu que a \query\  de busca precisaria ser reformulada, para excluir artigos que não se enquadrassem na temática desejada.
+O conjunto das palavras-chave que refletia essa dissonância ficou evidente na análise da estrutura intelectual do conhecimento, do tipo \textbf{Rede de Co-ocorrências de Palavras-chave}, ilustrada no cluster em roxo, à esquerda da figura \ref{fig:SBDAA@guioliunb:redecoocorr-150-termos}.
 
 \begin{figure}[htp]
     \centering
-    \includegraphics[clip=true,trim={9cm 0cm 7cm 0cm },width=0.6\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Structure-Informetric/Conceptual/Co-occurrence Network-Keywords-Plus-150-termos.png}
-    \caption{Rede de co-ocorrência de palavras, com 150 termos, aplicada ao \dataset\   MASSA@jhcf.}
-    \label{fig:MASSA@jhcf:redecoocorr-150-termos}
+    \includegraphics[clip=true,trim={9cm 0cm 7cm 0cm },width=0.6\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/3FSE-countriesXauthorsXtitles.png}
+    \caption{Rede de co-ocorrência de palavras, com 150 termos, aplicada ao \dataset\   SBDAA@guioliunb.}
+    \label{fig:SBDAA@guioliunb:redecoocorr-150-termos}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[clip=true,trim={9cm 0cm 7cm 0cm },width=0.6\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/3FSE-referencesXauthorsXkeywords.png}
+    \caption{Rede de co-ocorrência de palavras, com 150 termos, aplicada ao \dataset\   SBDAA@guioliunb.}
+    \label{fig:SBDAA@guioliunb:redecoocorr-150-termos}
 \end{figure}
 
 As seguintes 30 palavras foram identificadas nesse \textit{cluster}:
@@ -1208,7 +1226,7 @@ A pesquisa mundial no tema da simulação multiagente de fenômenos sociais é p
 
 \section{Conclusões}
 
-Este trabalho está incompleto, mas apresenta o arcabouço geral de informações que possibilitam responder às  questões formuladas no início da pesquisa, em \ref{MASSA@jhcf:questoes}, para a qual serão apresentadas breves respostas preliminares:
+Este trabalho está incompleto, mas apresenta o arcabouço geral de informações que possibilitam responder às  questões formuladas no início da pesquisa, em \ref{SBDAA@guioliunb:questoes}, para a qual serão apresentadas breves respostas preliminares:
 
 \subsection{Base de conhecimentos}
 

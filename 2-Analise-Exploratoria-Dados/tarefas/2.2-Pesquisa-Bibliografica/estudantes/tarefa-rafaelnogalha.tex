@@ -1,4 +1,4 @@
-\chapter{Análise Bibliográfica sobre Quantum Key Distribution(QKD) Na Segurança Computacional, por Rafael Henrique Nogalha de Lima}
+\chapter{Análise Bibliográfica sobre Quantum Key Distribution(QKD) Na Segurança Computacional, por Rafael Nogalha\label{chap:bibliometria:rafaelnogalha}}
 
 \section{Planejamento do estudo}
 
@@ -24,8 +24,8 @@ A coleta de dados foi feita pelo Web of Science (WeS) no dia 8 de Fevereiro de 2
 
 A \textit{query} de busca pode ser acessada na seguinte listagem de código \ref{rafael-nogalha:query}
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\ de busca sobre Quantum Key Distribution(QKD) Na Segurança Computacional.},label=rafael-nogalha:query]
-{experiments/rafael-nogalha/PesquisaBibliografica/query/query.txt}
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\ de busca sobre Mineração de Dados Educacionais.},label=rafael-nogalha:query]
+{experiments/rafaelnogalha/PesquisaBibliografica/query/query-de-busca.txt}
 
 No primeiro momento, foi feita uma pesquisa com os seguintes termos "quantum key distribution (Topic)", entretanto isso resultou em muitos artigos que abordavam aspectos somentes físicos do QKD, e o foco da pesquisa é uma análise estatística sobre a influência da QKD na segurança computacional. Dessa forma, adicionou-se na \textit{query} de busca as seguintes cláusulas "(experimental  or statist* and security)", resultando assim em 1.450 resultados na WeS. Essa base de dados está presente \href{https://github.com/jhcf/Comput-Experim-20212/tree/main/experiments/rafael-nogalha/PesquisaBibliografica/QKDSegurancaComputacional/dataset/dataset.txt}{no seguinte link}. A exportação foi feita com a opção "Plain text file" na opção em inglês e "Exportar arquivo de texto sem formatação" na opção em português. A seleção personalizada foi feita com todas as 29 opções possíveis e os registros foram extraídos em um intervalo de 1000 e 1000 e depois foram concatenados de forma manual.
 
@@ -75,12 +75,12 @@ Usando o bibliometrix e a interface biblioshiny, é possível obter as principai
 
 De acordo com a Figura \ref{fig:evol:anual:@QKD-rafael-nogalha} é possível observar que o crescimento da produção científica no tema está acontecendo de forma exponencial, com uma taxa de 8.57\% ao ano. E especificamente a partir de 2007 foi quando ocorreu um o início do crescimento maior da produção científica em relação ao tema.
 
-\subsection{Citações Média Por Ano}
+\subsection{Citações médias Por Ano}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/citacoes-media-por-ano.png}
-    \caption{Citações média por ano no \textit{dataset} @QKD-rafael-nogalha.}
+    \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/citacoes_media_por_ano.png}
+    \caption{Citações médias por ano no \textit{dataset} @QKD-rafael-nogalha.}
     \label{fig:citacoes:anual:@QKD-rafael-nogalha}
 \end{figure}
 
@@ -93,21 +93,21 @@ A análise de estrutura conceitual iniciou-se por meio da geração do mapa fato
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/mapa_fatorial.png}
-    \caption{Principais campos relacionados no \textit{dataset} @QKD-rafael-nogalha.}
+    \caption{Principais palavras-chave e o relacionamento entre si no \textit{dataset} @QKD-rafael-nogalha.}
     \label{fig:mapa:fatorial:@QKD-rafael-nogalha}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/three_fields_plot_qkd.png}
-    \caption{Principais campos relacionados no \textit{dataset} @QKD-rafael-nogalha.}
+    \caption{Relação entre autores, países e palavras-chave no \textit{dataset} @QKD-rafael-nogalha.}
     \label{fig:three:plot:@QKD-rafael-nogalha}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{experiments/rafaelnogalha/PesquisaBibliografica/QKDSegurancaComputacional/images/palavras_relevantes.png}
-    \caption{Principais campos relacionados no \textit{dataset} @QKD-rafael-nogalha.}
+    \caption{Incidência de palavras-chave no \textit{dataset} @QKD-rafael-nogalha.}
     \label{fig:campos:plot:@QKD-rafael-nogalha}
 \end{figure}
 
@@ -135,4 +135,4 @@ Por meio das imagens abaixo, \ref{fig:map:prod:@QKD-rafael-nogalha} e \ref{fig:c
 
 \section{Resultados e interpretação}
 
-Por meio desta pesquisa bibliográfica é possível afirmar que a produção científica em relação ao uso de \textit{QKD na Segurança Computacional} apresenta uma tendência de crescimento, além de também estar sendo compartilhada pesquisas sobre o tema em diferentes países, principalmente entre Estados Unidos e China. Por fim, é necessária uma análise mais profunda do tema para compreender melhor o uso de QKD na segurança computacional na década atual e se será o uso de médio ou longo prazo no mercado para empresas de pequeno e médio porte.
+Por meio desta pesquisa bibliográfica é possível afirmar que a produção científica em relação ao uso de \textit{QKD na Segurança Computacional} apresenta uma tendência de crescimento, além de também estar sendo compartilhada pesquisas sobre o tema em diferentes países, principalmente entre Estados Unidos e China. Por fim, é necessária uma análise mais profunda do tema para compreender melhor o uso de QKD na segurança computacional na década atual, e se será possível o uso desta teclnologia a médio ou longo prazo no mercado.

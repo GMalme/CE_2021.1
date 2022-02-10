@@ -102,7 +102,7 @@ Se considerarmos os interesses da NSA (Agência de Segurança Nacional dos Estad
     \label{CQA@andrelarrosacrypt_CitaAnual}
 \end{figure}
 
-No geral, o número de citações anuais se mantém estável ao longo dos anos, com uma média de aproximadamente 4. Contudo em 1991 o número de citações atingiu 110.8, provavelmente, isso ocorreu por coonta da publicação do artigo \textit{Quantum cryptography based on Bell’s theorem} que recebeu um total de 6852 citações.
+No geral, investigando a figura \ref{CQA@andrelarrosacrypt_CitaAnual}, o número de citações anuais se mantém estável ao longo dos anos, com uma média de aproximadamente 4,46 (desconsiderando o ano de 1991). Contudo em 1991 o número de citações atingiu 110.8, provavelmente, isso ocorreu por conta da publicação do artigo \textit{Quantum cryptography based on Bell’s theorem} que recebeu um total de 6852 citações.
 
 \subsection{Interpretação das Citações}
 
@@ -115,7 +115,14 @@ Interessante mostrar que, embora haja uma grande crescimento na produção de do
     \label{CQA@andrelarrosacrypt_MostCit}
 \end{figure}
 
-Analisando a figura \ref{CQA@andrelarrosacrypt_MostCit} vemos que seis são dos anos 1990, três do início dos anos 2000 e um documento de 2012. O mais citado dessa lista é de 1991, o que parece solidificar a teoria de que os novos documentos não são tão relevantes. Se considerarmos que os novos documentos não tiveram tanto tempo para se popularizarem, poderíamos ter uma justificativa, mas a figura \ref{} contradiz essa explicação. Como vemos, com exceção dos trabalho de \textit{Weedbrook} de 2012 (que parece se tornar cada vez mais relevante), os novos documentos não aparentam estarem crescendo na comunidade científica. Portanto, é provavelmente que o conhecimento mais importante sobre o assunto, divulgado até agora, tenha sido publicado a pelo menos 20 anos.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/andrelarrosacrypt/AnaliseBibliometrica/CriptografiaQuantica/imagens/CQA@andrelarrosacrypt_MostCit2.png}
+    \caption{Artigos mais citados por ano do \dataset\ CQA@andrelarrosacrypt.}
+    \label{CQA@andrelarrosacrypt_MostCit2}
+\end{figure}
+
+Analisando a figura \ref{CQA@andrelarrosacrypt_MostCit} vemos que seis são dos anos 1990, três do início dos anos 2000 e um documento de 2012. O mais citado dessa lista é de 1991, o que parece solidificar a teoria de que os novos documentos não são tão relevantes. Se considerarmos que os novos documentos não tiveram tanto tempo para se popularizarem, poderíamos ter uma justificativa, mas a figura \ref{CQA@andrelarrosacrypt_MostCit2} contradiz essa explicação. Como vemos, com exceção dos trabalho de \textit{Weedbrook} de 2012 (que parece se tornar cada vez mais relevante), os novos documentos não aparentam estarem crescendo na comunidade científica. Portanto, é provável que o conhecimento mais importante sobre o assunto, divulgado até agora, tenha sido publicado a pelo menos 20 anos.
 
 \subsection{\textit{Three-Field Plots}}
 
@@ -132,11 +139,11 @@ Gráficos do tipo \textit{Three-Field Plots} exibem três campos (autores, docum
 
 A figura \ref{CQA@andrelarrosacrypt_Aut_Ref_Key} apresenta o gráfico \textit{Three-Field Plots} do  \dataset\ CQA@andrelarrosacrypt. Os campos de interesse destacados nesse gráfico são autores (centro), referência citadas (esquerda) e palavras-chave (direita) mais importantes.
 
-No campo \textit{autores}, percebemos que 19 aparentam ser de origem asiática (mais provavelmente chinesa), o único não asiático provavelmente é russo (molotkov sn). Por outro lado, as referências apresentam maior heterogeneidade, com documentos aparentemente asiáticos, europeus e norte-americanos. Isso nos sugere que pesquisadores de origem chinesa tem migrado para países ocidentais ou tem trabalhado em direta colaboração com pesquisadores europeus e norte-americanos.
+No campo \textit{autores}, percebemos que 19 aparentam ser de origem asiática (mais provavelmente chinesa), o único não asiático provavelmente é russo (\textit{molotkov}). Por outro lado, as referências apresentam maior heterogeneidade, com documentos publicados aparentemente por asiáticos, europeus e norte-americanos. Isso nos sugere que pesquisadores de origem chinesa tem migrado para países ocidentais ou tem trabalhado em direta colaboração com pesquisadores europeus e norte-americanos.
 
-Relevante cometar que o autor mais destacado é \textbf{deng fg} e nas referências mais citadas temos três trabalhos de sua autoria \textbf{}{Deng FG, 2003, PHYS REV A} - DOI 10.1103/PhysRevA.68.042317 (protocolo para comunicação quântica segura), \textbf{Deng FG, 2004, PHYS REV A} - DOI 10.1103/PhysRevA.69.052319 (outro protocolo para comunicação quântica segura) e \textbf{Deng FG, 2005, PHYS REV A} - DOI 10.1103/PhysRevA.72.044302 (análise de protocolo de comunicação segura proposto por Zhang, Li, and Man). O que nos mostra a relevância de tal autor e seu aparente foco na área de comunicação segura.
+Relevante cometar que o autor mais destacado é \textit{Deng FG} e nas referências mais citadas, temos três trabalhos de sua autoria \textbf{}{Deng FG, 2003, PHYS REV A} - DOI 10.1103/PhysRevA.68.042317 (protocolo para comunicação quântica segura), \textbf{Deng FG, 2004, PHYS REV A} - DOI 10.1103/PhysRevA.69.052319 (outro protocolo para comunicação quântica segura) e \textbf{Deng FG, 2005, PHYS REV A} - DOI 10.1103/PhysRevA.72.044302 (análise do protocolo de comunicação segura proposto por Zhang, Li, and Man). O que nos mostra a relevância de tal autor e seu aparente foco na área de comunicação segura.
 
-Ao estudarmos as \textit{palavras-chaves} fica claro o focos desses autores no temos de comunicação quântica segura, \textbf{quantum secure direct communication}, \textbf{quantum secret sharing} e \textbf{quantum communication}, e o uso de criptografia quântica, \textbf{quantum cryptography} e \textbf{quantum key distribution}, para tal fim.
+Ao estudarmos as \textit{palavras-chaves} fica claro o focos desses autores no temas de comunicação quântica segura, \textbf{quantum secure direct communication}, \textbf{quantum secret sharing} e \textbf{quantum communication}, e o uso de criptografia quântica, \textbf{quantum cryptography} e \textbf{quantum key distribution}, para tal fim.
 
 
 \subsubsection{\textit{Three-Field Plots} Autores, Afiliações e Países}
@@ -151,7 +158,7 @@ Ao estudarmos as \textit{palavras-chaves} fica claro o focos desses autores no t
 
 O gráfico da figura \ref{CQA@andrelarrosacrypt_Aut_Aff_Coun} confirma as suspeitas em relação à origem chinesas da maioria dos autores. Mesmo com a prevalência da China, temos a Rússia, Canada, Suíça, Alemanha, França e Estados Unidos com significativa influência.
 
-Com relação às instituições afiliadas, notamos um predomínio das universidades chinesas, o que pode indicar que esses pesquisadores chineses estão trabalhando na China e não em universidades estrangeirais como havia sido sugerido. Observando o campo dos países, percebemos que muitos dos pesquisadores chineses tem afiliações com outros países. Isso indica que a segunda teoria apontada anteriormente, colaboração com pesquisadores ocidentais, parece ser verdade.
+Com relação às instituições afiliadas, notamos um predomínio das universidades chinesas, o que pode indicar que esses pesquisadores chineses estão trabalhando na China e não em universidades estrangeirais como havia sido sugerido. Observando o campo dos países, percebemos que muitos dos pesquisadores chineses tem afiliações com outros países. Isso indica que a segunda teoria apontada anteriormente (colaboração com pesquisadores ocidentais) parece ser verdade.
 
 \section{Estrutura Conceitual}
 
@@ -162,9 +169,9 @@ Com relação às instituições afiliadas, notamos um predomínio das universid
     \label{CQA@andrelarrosacrypt_MapaTematico}
 \end{figure}
 
-Fazendo um estudo da figura \ref{CQA@andrelarrosacrypt_MapaTematico} identificamos cinco aglomerados de conceitos que definem as principais áreas de estudo. Termos como \textbf{cryptograpy}, \textbf{quantum cryptograpy}, \textbf{entanglement}, \textbf{algorithm}  são esperados considerando o tema do nosso estudo. O que mais interessa são as expressões que, a priori, não parecem condizer com a pesquisa, essas que vamos focar.
+Fazendo um estudo da figura \ref{CQA@andrelarrosacrypt_MapaTematico} identificamos cinco aglomerados de conceitos que definem as principais áreas de estudo. Termos como \textbf{cryptograpy}, \textbf{quantum cryptograpy}, \textbf{entanglement}, \textbf{algorithm}  são esperados considerando o tema do nosso estudo. O que mais interessa são as expressões que, a priori, não parecem condizer com a pesquisa.
 
-Primeiro, temos em azul duas palavras que necessitam de explicação, \textbf{scheme} e \textbf{protocol}. Ambas fazem referência à comunicação segura e suas regras no mundo quântico. Passando para o aglomerado vermelho, encontramos \textbf{key distribution} está relacionado à um problema em criptografia que envolve a distribuição de chaves de acesso às partes interessadas, o que faz sentido considerando as demais expressões nesse mesmo aglomerado. Com relação ao agregado verde, temos \textbf{teleportation}. Ela se refere à teletransportação quântica, um método de se transferir informação quântica. Por fim, temos o bloco roxo, \textbf{light}, \textbf{emission} e \textbf{transmission}, todos apontam para as ótica quântica que estuda, dentre outras coisas, o uso de fótons de luz para transportar/processar informação.
+Primeiro, temos em azul duas palavras que necessitam de explicação, \textbf{scheme} e \textbf{protocol}. Ambas fazem referência à comunicação segura e suas regras no mundo quântico. Passando para o aglomerado vermelho, encontramos \textbf{key distribution}, que está relacionado à um problema em criptografia que envolve a distribuição de chaves de acesso às partes interessadas, o que faz sentido considerando as demais expressões nesse mesmo aglomerado. Com relação ao agregado verde, temos \textbf{teleportation}. Ela se refere à teletransportação quântica, um método de se transferir informação quântica. Por fim, temos o bloco roxo, \textbf{light}, \textbf{emission} e \textbf{transmission}, todos apontam para as ótica quântica que estuda, dentre outras coisas, o uso de fótons de luz para transportar/processar informação.
 
 \section{Estrutura Intelectual}
 
@@ -177,7 +184,7 @@ Primeiro, temos em azul duas palavras que necessitam de explicação, \textbf{sc
 
 Com relação à estrutura intelectual visível na figura \ref{CQA@andrelarrosacrypt_CoCit}, temos três principais grupos. Em vermelho encontramos o que parecem ser autores ocidentais, em azul autores chineses e em verde autores ocidentais e chineses. Podemos esperar que os autores de cada grupo estejam trabalhando em temas semelhantes, pois citam os trabalhos um do outro.
 
-O autor de maior influência no grupo vermelho é \textit{Bennett}. Seus dois artigos mais citados, ambos de 1992, \textit{Quantum cryptography using any two nonorthogonal states} e \textit{Quantum cryptography without Bell’s theorem}. Como podemos perceber, tratam de estratégia e técnicas de criptografia quântica. Podemos esperar que os autores que citam Bennett também desenvolvem desse assunto. Para confirmar nossas suspeitas, temos \textit{Ekert} e seu artigo \textit{Quantum cryptography based on Bell’s theorem}, que também aborda diretamente a questão da criptografia.
+O autor de maior influência no grupo vermelho é \textit{Bennett}. Seus dois artigos mais citados, ambos de 1992, \textit{Quantum cryptography using any two nonorthogonal states} e \textit{Quantum cryptography without Bell’s theorem} tratam de estratégia e técnicas de criptografia quântica. Podemos esperar que os autores que citam \textit{Bennett} também desenvolvem esse assunto. Para confirmar nossas suspeitas, temos \textit{Ekert} e seu artigo \textit{Quantum cryptography based on Bell’s theorem}, que também aborda diretamente a questão da criptografia.
 
 No aglomerado azul, todos parecem estar no mesmo nível, no que diz respeito à citações. Pegando como exemplo \textit{Deng}, seu artigo mais citado é \textit{Two-step quantum direct communication protocol using the Einstein-Podolsky-Rosen pair block}, que trata de protocolo de comunicação apoiado em aspectos da teoria quântica. Se selecionarmos outro autor do mesmo grupo, \textit{Li}, vemos que seu trabalho mais citado, \textit{Improving the security of secure direct communication based on the secret transmitting order of particles} também trata de comunicação. Logo, parece seguro afirmar que esse grupo foca em elemento de comunicação (segura) utilizando fatores da teoria quântica.
 
@@ -214,3 +221,12 @@ Complementando as informações anteriores, na figura \ref{CQA@andrelarrosacrypt
 \end{itemize}
 
 Com enfase na relação Estados Unidos - China. Esses dados estão de acordo com o cenário geral de pesquisa científica, com norte-americanos e chineses dominando as áreas de conhecimento.
+
+\section{Conclusão}
+
+Após realizar a análise bibliométrica de 7131 artigos abordando o tema da criptografia quântica, podemos elaborar algumas conclusões.
+
+\begin{itemize}
+    \item Área de estudo recente.
+    \item Anos 1990 foram um período de grandes desco
+\end{itemize}

@@ -25,23 +25,29 @@ Essa \textit{query} obteve 4547 resultados, porém apenas os primeiros 1000 fora
 \section{Análise dos dados}
 Os 1000 documentos obtidos durante a coleta de dados incluíam vários tipos de documentos, mas apenas os artigos científicos publicados nos interessam. Após filtrar todos os outros tipos de documentos, sobraram apenas 412 artigos. Esse será o \textit{dataset} utilizado, e o chamaremos de NeuralNetworkGame/Artigos, ou NNGA@CrimsonCrown.
 
+A figura \ref{fig:CrimsonCrown:NNGA:CoOcurrence} mostra a rede de coocorrências das palavras-chave encontradas nos artigos do \textit{dataset} NNGA@CrimsonCrown.
+
 \begin{figure}
     \centering
-    \includegraphics[angle=0,width=1\textwidth,height=0.9\textheight]{experiments/CrimwonCrown/AnaliseBibliometrica/RedesNeuraisJogos/NNGAConceptNetwork.png}
+    \includegraphics[angle=0,width=1\textwidth,height=0.5\textheight]{experiments/CrimsonCrown/AnaliseBibliometrica/RedesNeuraisJogos/NNGAConceptNetwork.png}
     \caption{Rede de coocorrências das palavras-chave dos artigos do \textit{dataset} gerado no biblioshiny, com alterações para facilitar visualização.}
     \label{fig:CrimsonCrown:NNGA:CoOcurrence}
 \end{figure}
 
+Pode ser observado que os dois maiores pontos são \textit{neural-networks}, go e \textit{game}. Faz sentido que os termos de busca sejam prevalentes, mas a presença de go como palavra chave tão comum é interessante. Isso pode ser explicado pelo fato de que go é um jogo que foi muito estudado em conjunto com redes neurais, e é um caso de teste simples e poderoso, já que sua árvore de possibilidades é grande demais para um algoritmo baseado em busca exaustiva conseguir bons resultados em uma quantidade razoável de tempo. Na figura \ref{fig:CrimsonCrown:NNGA:ThematicMap} go foi classificado como um tema de base para essa área do conhecimento, o que fortalece a ideia de que go é comummente utilizado como caso de teste base para estudos em redes neurais.
+
 \begin{figure}
     \centering
-    \includegraphics[angle=0,width=1\textwidth,height=0.9\textheight]{experiments/CrimwonCrown/AnaliseBibliometrica/RedesNeuraisJogos/NNGAThematicMap.png}
+    \includegraphics[angle=0,width=1\textwidth,height=0.5\textheight]{experiments/CrimsonCrown/AnaliseBibliometrica/RedesNeuraisJogos/NNGAThematicMap.png}
     \caption{Mapa temático das palavras-chave dos artigos do \textit{dataset} gerado no biblioshiny.}
     \label{fig:CrimsonCrown:NNGA:ThematicMap}
 \end{figure}
 
+Para tentar responder à terceira pergunta do estudo, o \textit{three-field plot} da figura \ref{fig:CrimsonCrown:NNGA:TFP} foi gerado. Nele podemos observar a predominância de autores da China, com Estados Unidos da América e Reino Unido sendo dois grandes focos também.  
+
 \begin{figure}
     \centering
-    \includegraphics[angle=0,width=1\textwidth,height=0.9\textheight]{experiments/CrimwonCrown/AnaliseBibliometrica/RedesNeuraisJogos/NNGASankeyAuCoKW.png}
+    \includegraphics[angle=0,width=1\textwidth,height=0.5\textheight]{experiments/CrimsonCrown/AnaliseBibliometrica/RedesNeuraisJogos/NNGASankeyAuCoKW.png}
     \caption{\textit{Three-Field Plot} do \textit{dataset} NNGA@CrimsonCrown, com 20 autores, países e palavras-chave mais proeminentes.}
-    \label{fig:CrimsonCrown:NNGA:}
+    \label{fig:CrimsonCrown:NNGA:TFP}
 \end{figure}

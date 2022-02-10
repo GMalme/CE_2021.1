@@ -1,96 +1,75 @@
-\chapter{Análise Bibliográfica sobre \label{chap:bibliometria:}}
+\chapter{Análise Bibliográfica sobre a Digitalização no Meio Educacional por Marcus Abrantes \label{chap:bibliometria:MarcusABR}}
 
-\section{Planejamento do estudo\label{}}
+\section{Planejamento do estudo}
 
-  A digitalização crescente tem transformado diversos ambientes. Quando bem empregada, possui o potencial de corrigir desigualdades, aperfeiçoar métodos e quebrar barreiras físicas. Este trabalho tem como objetivo analisar as últimas pesquisas a conclusões acerca das melhorias que a digitalização trouxe a meio educacional, bem como novas técnicas de ensino, com enfase na gameficação como método de estudo.
+A digitalização crescente tem transformado o comércio de informações. Quando bem empregada, possui o potencial de corrigir desigualdades, aperfeiçoar métodos e quebrar barreiras físicas. Este trabalho tem como objetivo analisar as últimas pesquisas a conclusões acerca das melhorias que a digitalização trouxe a meio educacional, bem como novas técnicas de ensino, dando atenção especial a gameficação. Uma técnica especial que surge inspirada em jogos para capturar a atenção dos estudantes e manter seu engajamento.
+
+As seguintes pergunta foram usadas para nortear a pesquisa:
  
 
 \begin{itemize}
     \item Qual a relevância e a atenção dada a pesquisa do uso de tecnologia na educação nos últimos anos?
-    \item A gameficação tem sido considerada como uma técnica pertinente na avaliação de métodos de ensino
+    \item A gameficação tem sido considerada como uma técnica pertinente na avaliação de métodos de ensino.
     \item Nos últimos anos com o evento da pandemia, este assunto tem alçado maior importância, dados os desafios apresentados?
 \end{itemize}
 
-\subsection{O que já existe de pesquisa bibliométrica sobre esse tema?}
-
-\cite{} 
-\cite{}.
-
-
 \subsection{Limitações} O trabalho foi desenvolvido ao decorrer de uma semana, empregando por volta de 5 a 10 horas.
 
-\section{Coleta de dados\label{}}
+\section{Coleta de dados}
 
 A coleta de dados feita usando o mecanismo Web of Science no dia 09 de fevereiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
 
-
 \subsection{Query de Busca}
 
-Foi usada a \query\  de busca ilustrada nas linhas 1 a 9 da listagem \ref{query20210803-2}.
-
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais.},label=query20210803-2]
-{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/query.txt}
+Para a busca dos artigo, foi usada a seguinte query:
+\begin{verbatim}
+educ*
+and
+(digital*  or gamific*)
+and
+improv*
+and
+learn*
+\end{verbatim}
 
 \subsubsection{Explicação para os termos de busca usados\label{}}
 
+Tendo como tópico central a educação o termo \texttt{educ*}  foi utilizado. Com enfoque no meio digital, usa-se o termo \texttt{digita*} e para aumentar a abragência para  a técnica de gameficação, o termo \texttt{or} \texttt{gamefic*}. Como este trabalho tem enfoque nas melhorias trazidas pelo meio digital, e não nas consequências e desafios de seu uso, os termos \texttt{improv*}. Ainda, para reduzir a generalidade e tratar mais das vantagens no contexto de aprendisado, também foi o usado o termo \texttt{learn*}
 
-%Os termos \texttt{experimental}, \texttt{numeric*}, \texttt{statist*}, \texttt{hypothes*}, 
-%\texttt{empiric*}
-%e \texttt{inferen} (linhas 1 e 2 da query) foram usados na primeira cláusula da \query\  para recuperar artigos que tenham em seu título, palavras-chave e resumo, termos relacionados a métodos experimentais,
-%métodos numéricos,
-%métodos estatísticos,
-%teste de hipóteses,
-%métodos empíricos e métodos inferenciais.
-
-Tendo como tópico central a educação o termo educ*  foi utilizado. Com enfoque no meio digital, usa-se o termo digita* e para aumentar a abragência para  a técnica de gameficação, o termo or gamefic*. Como este trabalho tem enfoque nas melhoras trazidas pelo meio digital, e não nas consequências e desafios de seu uso, os termos improv*. Ainda, para reduzir a generalidade e tratar mais das vantagens no contexto de aprendisado, também foi o usado o termo learn*
-
-
-
-
-
-A $4^{a}$ cláusula, linha 9,  s.
 
 \subsection{Registros recuperados}
 
-Os  registros obtidos como resultado da busca encontram-se em \url{}. 
-
-Os 7795 registros obtidos na busca podem ser encontrados no link ...
-Foi ultilziada o opção de exportação para aquivo de texto sem formatação, contemplando todos as 29 opções de campo. Os 7795 registros foram recuperado em grupos de 1000 para posteriormente serem concatenados.
-
-Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 8115 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 8001-8115).
-
+ Os 7795 registros obtidos na busca podem ser encontrados no link ...
+Foi utilizado o recurso \textit{Exportar registros para arquivo de texto sem formatação}, com todos as 29 opções de campo disponíveis. Os 7795 registros foram recuperado em grupos de 1000 para posteriormente serem concatenados.
 
 \section{Análise dos dados}
 
 \subsection{Filtragem de registros}
-Antes da análise, é possível aplicar filtros sobre os registros obtidos.
 
-Foi aplicado um filtro ao \dataset\   inicial, com 8.115 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas\footnote{A suposição é que que o conhecimento de maior qualidade sobre o tema está nas publicações em revistas.}. Após a aplicação desse filtro, 5.787 registros foram mantidos no \dataset\, que será doravante chamado
 
-Os documentos coletados foram filtrados para apenas aqueles caracterizados como artigos publicados em revistas científicas. Além disso, foram tratados sob a lei de Bradford. Dos 7795 arquivos obtídos, foram filtrados  1124 como pertinentes a análise.
+O registo inicial do \dataset\ possui 7795, para reduzir seu número e efetuar a a análise apenas sobre os documentos mais pertinentes, foram aplicados filtros. Primeiramente, foram excluídos todos os registros não caracterizados como artigos publicados em revistas científicas. Após isso, usando a lei de Bradford, os documentos foram reduzidos para apenas as fontes principais. Após a filtragem 1124 arquivos foram selecionados.
 
 \subsection{Análise descritiva do \dataset\   }
 
 Constam as informações gerais sobre os conjuntos de dados:
-As informações mais gerais sobre o \dataset\   são as seguintes:
 \begin{description}
-    \item [\textit{Timespan}] Os artgiso obtidos da busca após a filtragem foram publicados entre o período de 1991 até 2022
+    \item [\textit{Timespan}] Os artgiso obtidos da busca após a filtragem foram publicados entre o período de 1991 até 2022.
     \item [\textit{Sources (Journals, Books, etc)}] Os artigos possuem ao todo 29 fontes diferentes, sendo assim, em média, 39 artigos por revista.
-    \item [\textit{Average years from publication}] A média de tempo de publicação dos artigos é de 4.26 anos
-    \item [\textit{Average citations per documents}] A média de citações por documentos é 18,35.
+    \item [\textit{Average years from publication}] A média de tempo de publicação dos artigos é de 4.26 anos.
+    \item [\textit{Average citations per documents}] A média de citações por documentos é 18,35..
     \item [\textit{Average citations per year per doc}] Após o ano de sua publicação, das um dos dos artigos foi citado em média 2713 vezes por ano.
-    \item [\textit{References}] Ao todo, foram feitas 46553  referências por entre os artigos coletados
-    \item [\textit{Keywords Plus (ID)}] 1828 palavras chaves do tipo ID (Keyword Plus)
-    \item [\textit{Author's Keywords (DE)}]  3211 palavras chaves escolhidas pelos autores dos artigos
+    \item [\textit{References}] Ao todo, foram feitas 46553  referências por entre os artigos coletados.
+    \item [\textit{Keywords Plus (ID)}] 1828 palavras chaves do tipo ID (Keyword Plus).
+    \item [\textit{Author's Keywords (DE)}]  3211 palavras chaves escolhidas pelos autores dos artigos.
 
-    \item [\textit{Authors}]  
-    \item [\textit{Author Appearances}] 
+    \item [\textit{Authors}]  Ao todo, foram encontrados 3874 autores no dataset.
+    \item [\textit{Author Appearances}]  Os 3874 nomes apareceram 4543 vezes nos documentos.
     \item [\textit{Authors of single-authored documents}] Dos 3874 autoes, 81 escreveram artigos individualmente
     \item [\textit{Authors of multi-authored documents}] Dos 3874 autores, 3793 são autores de artigos escritos em colaboração com outros.
     \item [\textit{Single-authored documents}] Dos 1124 documentos, 85 foram escritos indidualmente, os 1039 restantes foram produzidos em co-autoria.
-    \item [\textit{Documents per Author}] A média de documentos por autor é de 0.29
+    \item [\textit{Documents per Author}] A média de documentos por autor é de 0.29.
     \item [\textit{Authors per Document}] A média de autores por dcumento é de 3.45.
-    \item [\textit{Co-Authors per Documents}] As 4543 aparições de autores se distribuem em 4.04 por documento
+    \item [\textit{Co-Authors per Documents}] As 4543 aparições de autores se distribuem em 4.04 por documento.
     \item [\textit{Collaboration Index}] O indíce de colaboração (total de autores em artigos escritos em co-autoria / total de artigos escritos em co-autoria) é de 3,65.
 \end{description}
 
@@ -100,33 +79,33 @@ As informações mais gerais sobre o \dataset\   são as seguintes:
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-citation-year.png}
-    \caption{\textit{b\_G}}
-    \label{fig:}
+    \includegraphics[width=12cm]{experiments/MarcusABR/PesquisaBibliometrica/Imagens/newplot.png}
+    \caption{Evolução da produção científica no \dataset\ }
+    \label{fig:evolucao}
 \end{figure}
 
-O gráfico mostra um enorme crescimento na área, com destaque ao ano de 2021 com 120 documentos produzidos, um crescimento de 25\% em relação ao ano de 2020.
+Conforme demonstra o gráfico houve uma crescente, alcançando o seu age dura os anos da pandemia entre 2019-2021
 
 Nos anos de 2019-2021, em particular, foram introduzidas novas placas de vídeo no mercado, com poder computacional bem maior que as anteriores (é possível comparar as placas 1080 com as gerações 2080 e 3080 e perceber um aumento substancial de qualidade).
 
 \subsection{Evolução das Citações}
 
-A figura em \ref{fig:gpu-citation-year} mostra o número de citações médias feitas por ano. Nota-se uma grande quantidade de citações no ano de 2007, provavelmente devido a um artigo muito citado por outros autores. Nota-se também o que em uma faixa de 40 anos (1981-2021) o número de citações por ano aumentou de 0.2 para 1.0, um aumento de 5 vezes.
+A figura em \ref{fig:} mostra o número de citações médias feitas por ano. Nota-se uma grande quantidade de citações no ano de 2007, provavelmente devido a um artigo muito citado por outros autores. Nota-se também o que em uma faixa de 40 anos (1981-2021) o número de citações por ano aumentou de 0.2 para 1.0, um aumento de 5 vezes.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-citation-year.png}
-    \caption{Evolução das citações por ano no \textit{db\_GPU}}
+    \includegraphics[width=12cm]{experiments/MarcusABR/PesquisaBibliometrica/Imagens/network(1).png}
+    \caption{Evolução das citações por ano no \textit{}}
     \label{fig:gpu-citation-year}
 \end{figure}
 
 \subsection{\textit{Gráfico de três campos}}
 
-O gráfico em \ref{fig:gpu-three-field} mostra um gráfico de três campos feitos com os dados acerca das referências, autores e palavras-chaves mais relevantes.
+O gráfico em \ref{fig:} mostra um gráfico de três campos feitos com os dados acerca das referências, autores e palavras-chaves mais relevantes.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-three-field.png}
+    \includegraphics[width=12cm]{experiments/MarcusABR/PesquisaBibliometrica/Imagens/network(3).png}
     \caption{Gráfico de três campos analisando palavras-chave no \textit{db\_GPU}}
     \label{fig:gpu-three-field}
 \end{figure}
@@ -144,7 +123,7 @@ Essa publicação em específico relata avanços feitos na redução do custo co
 O gráfico em \ref{fig:gpu-co-occur} mostra a rede de co-ocorrências de palavras-chave no \textit{db\_GPU}. Dentro os termos é possível perceber que os assuntos tratados são relevantes ao tópico de GPUs, com destaque ao campo em verde que separa assuntos relativos a dispersão de luz em meios turbulentos (\textit{turbid media}).
 
 \begin{figure}[ht]
-    \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-co-ocurr.png}
+    \includegraphics[width=12cm]{experiments/MarcusABR/PesquisaBibliometrica/Imagens/network.png}
     \caption{Rede de co-ocorrências de palavras-chave no \textit{db\_GPU}}
     \label{fig:gpu-co-occur}
 \end{figure}

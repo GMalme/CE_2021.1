@@ -7,17 +7,6 @@ O Big Data estuda, analisa e trata de um conjunto de dados maior e mais complexo
 Na economia, ele é utilizado desde as informações de consumo das pessoas, o preço dos produtos ao longo do tempo à medição do índice de inflação de um país.
 Esta pesquisa busca encontrar quais áreas estão sendo mais estudadas nos últimos anos, em outras palavras, quais são mais relevantes para a economia, e quais países se destacam nestes estudos.
 
-%O planejamento o  desenho do estudo deve descrever as motivações, questões de interesse, escopo, limitações e objetivos do trabalho.
-
-%O planejamento do estudo deve motivar o tema escolhido e o interesse do autor.
-
-%No caso do meu trabalho, as perguntas que o nortearam foram:
-%\begin{itemize}
-%    \item Qual a base de conhecimentos científicos produzida em torno do tema simulação multiagente voltada à compreensão de fenômenos sociais, com ênfase em métodos experimentais? 
-%    \item Como a simulação multiagente tem sido usada para compreender fenômenos sociais, com ênfase em métodos experimentais? 
-%    \item Quais os principais termos e conceitos ligados à frente de pesquisa no tema simulação multiagente de fenômenos sociais, com ênfase em métodos experimentais? 
-%    \item Qual a estrutura social da comunidade, se é que existe, que pesquisa sobre o tema simulação multiagente de fenômenos sociais, com ênfase em métodos experimentais?
-%\end{itemize}
 Algumas perguntas para basear a pesquisa são:
 \begin{itemize}
     \item Quais são os temas mais abordados nos artigos?
@@ -25,13 +14,13 @@ Algumas perguntas para basear a pesquisa são:
 \end{itemize}
 
 
-%\subsection{O que já existe de pesquisa bibliométrica sobre esse tema?}
- \cite{big_da
+\subsection{O que já existe de pesquisa bibliométrica sobre esse tema?}
+ Foi encontrado um estudo bibliométrico de publicações sobre Big Data e economia em  \cite{nobre_scientific_2017}. Ele faz um estudo focado na aplicação de big data e internet das coisas na economia circular. Nesta pesquisa a busca será feita em um contexto mais geral. 
 
 
 \subsection{Uso do Bibliometrix e Biblioshiny}
 
-A pesquisa bibliométrica foi realizada com o uso do RStudio, foram usados o pacote \textit{Bibliometrix} e o aplicativo \textit{Biblioshiny} a partir do que foi apresentado em aula, como mostrado na figura ~\ref{fig:bibliometrix:workflow}. Através do acesso café do portal Periódicos CAPES, foi utilizada a \textit{Web of Science} para extrair os artigos usados na pesquisa.
+A pesquisa bibliométrica foi realizada com o uso do RStudio, foram usados o pacote \textit{Bibliometrix} e o aplicativo \textit{Biblioshiny} a partir do que foi apresentado em aula. Através do acesso café do portal Periódicos CAPES, foi utilizada a \textit{Web of Science} para extrair os artigos usados na pesquisa.
 
 
 \subsection{Limitações} 
@@ -54,27 +43,27 @@ Foi usada a query de busca abaixo:
 
 \subsubsection{Explicação para os termos de busca usados}
 
-Nesta busca, foi utilizado primeiro, duas palavras big data e economy (economia), que são os assuntos principais da pesquisa.
+Nesta busca, foi utilizado primeiro, duas palavras big data e economy (economia), que são os assuntos principais da pesquisa.%%%
 
-Foram colocados na pesquisa, artigos de 2010 a 2022. Foram encontrados 1265 artigos.
+Foram colocados também, o filtro para que apenas artigos de 2010 a 2022 entrem na pesquisa. No final, foram encontrados 1265 artigos.
 
 
 \subsection{Registros recuperados}
 
 Os 1.265 registros obtidos como resultado da busca encontram-se em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/Tong00020/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/1265records.txt}
 
-Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS. Os 1.265 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-1265).
+Foram utilizadas as opções exporta em arquivo .txt e \textit{export full record / Gravar Conteúdo: Seleção personalizada}, com todos os 29 campos disponíveis. Os 1.265 registros foram recuperados em dois blocos de até 1.000 registros por vez (1-1000, 1001-1265).
 
 \section{Análise dos dados}
 
 \subsection{Filtragem de registros}
 
-Sobrou 1.168 artigos ao colocar apenas "ARTICLE" como tipo de documento com o uso filtro do biblioshiny.
+Sobrou 1.168 artigos ao colocar apenas 'ARTICLE' como tipo de documento com o uso filtro do biblioshiny. Os tipos de documento 'ARTICLE; BOOK CHAPTER', 'ARTICLE; DATA PAPER', 'ARTICLE; EARLY ACCESS', 'ARTICLE; PROCEEDINGS PAPER' e 'ARTICLE; RETRACTED PUBLICATION' foram deletados.
 
 
 
-\subsection{Análise descritiva do %\textit{dataset} 
-MASSA@Tong00020}
+\subsection{Análise descritiva do \textit{dataset}} 
+%MASSA@Tong00020}
 
 As informações mais gerais sobre o \textit{dataset} MASSA@Tong0020 são as seguintes:
 \begin{description}
@@ -101,11 +90,27 @@ As informações mais gerais sobre o \textit{dataset} MASSA@Tong0020 são as seg
      
 \subsection{Evolução da Produção Científica}
 A figura 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12cm]{experiments/gustavo-tomas/AnaliseBibliometrica/GPUs/Graficos/gpu-prod-cient.png}
+    \caption{Evolução da produção científica presente no \textit{db\_GPU}}
+    \label{fig:gpu-prod-cient}
+\end{figure}
+
      
 \subsubsection{Interpretação do Crescimento}
 
 \subsection{Evolução das Citações}
 A figura
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12cm]{experiments/Tong00020/PesquisaBibliometrica/DataSet/MASSA@Tong00020-Annual Scientific Production.png}
+    \caption{Evolução da produção científica presente no \textit{db\_GPU}}
+    \label{fig:gpu-prod-cient}
+\end{figure}
+
 
 \subsubsection{Interpretação da figura}
 A figura

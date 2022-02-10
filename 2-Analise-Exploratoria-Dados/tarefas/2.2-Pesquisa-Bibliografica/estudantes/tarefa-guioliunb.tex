@@ -1,7 +1,5 @@
 \chapter{Análise Bibliográfica sobre Análise de Dados integradas em Nuvem para auxílio de Fenômenos Sociais, por Guilherme Oliveira Loiola\label{chap:bibliometria:guioliunb}}
 
-\graphicspath{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/}
-
 \section{Planejamento do estudo\label{MASSA:coleta}}
 O planejamento o  desenho do estudo deve descrever as motivações, questões de interesse, escopo, limitações e objetivos do trabalho.
 
@@ -62,8 +60,7 @@ Os 2.906 registros obtidos como resultado da busca encontram-se no projeto Overl
 
 Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 2906 registros foram recuperados em dois blocos com mil registros da primeira consulta (1000) e quatro blocos da segunda consulta (2906), assim totalizando os 2906 registro  separados de até 500 registros por vez (1-500, 501-1000, 1001-1500, 1501-2000, ...).
 
-A listagem \ref{record20210803-2} apresenta as 127 linhas de um registro no formato RIS, referentes a um artigo recuperado da Web of Science. Cada um dos campos de um registro é marcado por um código de dois caracteres, nas colunas 1 e 2 de cada linha. Se a coluna está em branco repete-se o mesmo campo da linha anterior.
-O significado de cada campo pode ser visto em \citep{wikipedia_ris_2017}.
+A listagem \ref{record20210803-2} apresenta as 66 linhas de um registro no formato RIS, referentes a um artigo recuperado da Web of Science. Cada um dos campos de um registro é marcado por um código de dois caracteres, nas colunas 1 e 2 de cada linha. Se a coluna está em branco repete-se o mesmo campo da linha anterior.
 
 Alguns campos específicos serão comentados a seguir:
 \begin{description}
@@ -85,56 +82,67 @@ Alguns campos específicos serão comentados a seguir:
 \end{description}
 
 \lstinputlisting[language={},numbers=left,basicstyle=\tiny\ttfamily,caption={Exemplo de um registro recuperado no formato RIS, sobre o tema simulação multiagente de fenômenos sociais.},label=record20210803-2]
-{experiments/jhcf/PesqBibliogr/risrec6.txt}
+{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/record.txt}
 
 \section{Análise dos dados}
 
 \subsection{Filtragem de registros}
-Antes da análise, é possível aplicar filtros sobre os registros obtidos.
+Antes da análise, é possível aplicar filtros sobre os registros obtidos. Anteriormente, a primeira buscava contava com 1.343 registros e a segunda com 3.360 registros. Em ambas foi aplicado a mesma combinação de registros.
 
-Foi aplicado um filtro ao \dataset\   inicial, com 8.115 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas\footnote{A suposição é que que o conhecimento de maior qualidade sobre o tema está nas publicações em revistas.}. Após a aplicação desse filtro, 5.787 registros foram mantidos no \dataset, que será doravante chamado MultiAgentSimulationSociety/Artigos, ou MASSA@jhcf.
+Foi aplicado um filtro ao \dataset\ inicial, com 4.703 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas\footnote{A suposição é que que o conhecimento de maior qualidade sobre o tema está nas publicações em revistas.}. Após a aplicação desse filtro, 2.906 registros foram mantidos no \dataset, que será doravante chamado SocialBigDataAnalysis/Artigos, ou SBDAA@guioliunb.
 
-\subsection{Análise descritiva do \dataset\   MASSA@jhcf}
+\subsection{Análise descritiva do \dataset\   SBDAA@guioliunb}
 
 A análise bibliométrica descritiva faz uma descrição inicial do \dataset\  . Para explicação detalhada de como são calculadas as diversas taxas geradas pelo Bibliometrix veja a documentação do \textit{package} a partir da página \url{https://cran.r-project.org/web/packages/bibliometrix/index.html}. A análise bibliométrica descritiva é gerada pela função \texttt{biblioAnalysis}.
 
-As informações mais gerais sobre o \dataset\   MASSA@jhcf são as seguintes:
+As informações mais gerais sobre o \dataset\   SBDAA@guioliunb são as seguintes:
 \begin{description}
-    \item [\textit{Timespan}] Os artigos que atenderam aos critérios de busca e filtragem foram publicados a partir de 1990, até 2021. Ou seja, não foram encontrados registros entre 1945 e 1989.
-    \item [\textit{Sources (Journals, Books, etc)}] São 2.319 fontes de informação que publicaram os documentos recuperados no \dataset\   MASSA@jhcf. Ou seja, em média, cada \textit{scientific journal} publicou $5.787/2.319=2,5$ artigos. \footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência a quantidade de artigos publicados por revista.}
-    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \dataset\   MASSA@jhcf é de 7,36 anos.
-    \item [\textit{Average citations per documents}] Cada artigo no \dataset\   MASSA@jhcf foi citado, em média 20,7 vezes\footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência de  citações a artigos.}.
-    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 5.787 artigos do \dataset\   MASSA@jhcf  foi citado 2,262 vezes por ano, em média.
-    \item [\textit{References}] O \dataset\   MASSA@jhcf contém 201.464 referências citadas (tags CR).
-    \item [\textit{Keywords Plus (ID)}] 13.735 distintas palavras-chave do tipo Keywords Plus (ID)\footnote{\textit{KeyWords Plus} são ``termos de índice gerados automaticamente a partir dos títulos de artigos citados. Os termos do KeyWords Plus devem aparecer mais de uma vez na bibliografia e são ordenados de frases com várias palavras a termos únicos. O KeyWords Plus aumenta o número de resultados tradicional de palavras-chave ou títulos.'' Fonte: \url{https://images.webofknowledge.com/WOKRS410B4/help/pt_BR/WOS/hp_full_record.html}} foram encontradas no \dataset\   MASSA@jhcf. 
-    \item [\textit{Author's Keywords (DE)}] 15.704 distintas palavras-chave indicadas pelos autores foram encontradas no \dataset\  .
-    \item [\textit{Authors}] 19.410 distintos nomes de autores foram encontrados no \dataset\  \footnote{Um mesmo autor pode ter uma ou mais diferentes grafias no \dataset\  , e serão reconhecidos dois ou mais autores diferentes, embora de fato sejam apenas um. Isso significa que a quantidade de \textbf{nomes de autores} equivale à quantidade de \textbf{autores}. Adicionalmente, é possível que distintos autores sejam reconhecidos com o mesmo nome, isso é, que sejam homônimos. Ou seja, o \dataset\   em geral conterá erros de contagem na quantidade de autores reais.}.
-    \item [\textit{Author Appearances}] Os 19.410 distintos (nomes de) autores foram encontrados 23.470 vezes, como autores de artigos.
-    \item [\textit{Authors of single-authored documents}] Dentre os 19.410 distintos (nomes de) autores encontrados, 375 deles editaram artigos individualmente, isso é, sem co-autores.
-    \item [\textit{Authors of multi-authored documents}] Dentre os 19.410 distintos (nomes de) autores encontrados, 19.035 deles editaram artigos com um ou mais co-autores"
-    \item [\textit{Single-authored documents}] Dentre os 5.787 documentos presentes no \dataset\   MASSA, 409 foram escritos por um único autor, e os 5.378 restantes foram elaborados em co-autoria.
-    \item [\textit{Documents per Author}] Dentre os 19.410 distintos (nomes de) autores, cada um publicou em média 0,298 artigos.
-    \item [\textit{Authors per Document}] Cada um dos 5.787 documentos presentes no \dataset\   MASSA foi autorado com 3,35 autores em média ($19.410 / 5.787 = 3,35$).
-    \item [\textit{Co-Authors per Documents}] As 23.470 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 4,06 vezes para os 5.787 documentos do \dataset\   MASSA@jhcf.
-    \item [\textit{Collaboration Index}] Os 19.035 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 3,54 vezes para editar os 5.378 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 3,54. 
+    \item [\textit{Timespan}] Os artigos que atenderam aos critérios de busca e filtragem foram publicados a partir de 2014, até 2022. Registros anteriores não formavam um conjunto de dados expressivo.
+    \item [\textit{Sources (Journals, Books, etc)}] São 871 fontes de informação que publicaram os documentos recuperados no \dataset\   SBDAA@guioliunb. Ou seja, em média, cada \textit{scientific article} publicou $2.906/871=2,5$ artigos. \footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência a quantidade de artigos publicados por revista.}
+    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \dataset\   SBDAA@guioliunb é de 4.4 anos.
+    \item [\textit{Average citations per documents}] Cada artigo no \dataset\   MASSA@jhcf foi citado, em média 8.896 vezes\footnote{Note que a média, enquanto medida de tendência central, pode não ser a que melhor reflete a tendência de  citações a artigos.}.
+    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 2.906 artigos do \dataset\   SBDAA@guioliunb  foi citado 1.575 vezes por ano, em média.
+    \item [\textit{References}] O \dataset\   SBDAA@guioliunb contém 47.165 referências citadas (tags CR).
+    \item [\textit{Keywords Plus (ID)}] 1.186 distintas palavras-chave do tipo Keywords Plus (ID)\footnote{\textit{KeyWords Plus} são ``termos de índice gerados automaticamente a partir dos títulos de artigos citados. Os termos do KeyWords Plus devem aparecer mais de uma vez na bibliografia e são ordenados de frases com várias palavras a termos únicos. O KeyWords Plus aumenta o número de resultados tradicional de palavras-chave ou títulos.'' Fonte: \url{https://images.webofknowledge.com/WOKRS410B4/help/pt_BR/WOS/hp_full_record.html}} foram encontradas no \dataset\   SBDAA@guioliunb. 
+    \item [\textit{Author's Keywords (DE)}] 5.403 distintas palavras-chave indicadas pelos autores foram encontradas no \dataset\  .
+    \item [\textit{Authors}] 6.106 distintos nomes de autores foram encontrados no \dataset\  \footnote{Um mesmo autor pode ter uma ou mais diferentes grafias no \dataset\  , e serão reconhecidos dois ou mais autores diferentes, embora de fato sejam apenas um. Isso significa que a quantidade de \textbf{nomes de autores} equivale à quantidade de \textbf{autores}. Adicionalmente, é possível que distintos autores sejam reconhecidos com o mesmo nome, isso é, que sejam homônimos. Ou seja, o \dataset\   em geral conterá erros de contagem na quantidade de autores reais.}.
+    \item [\textit{Author Appearances}] Os 11.668 distintos (nomes de) autores foram encontrados 23.470 vezes, como autores de artigos.
+    \item [\textit{Authors of single-authored documents}] Dentre os 6.106 distintos (nomes de) autores encontrados, 109 deles editaram artigos individualmente, isso é, sem co-autores.
+    \item [\textit{Authors of multi-authored documents}] Dentre os 6.106 (nomes de) autores encontrados, 5.997 deles editaram artigos com um ou mais co-autores"
+    \item [\textit{Single-authored documents}] Dentre os 2.906 documentos presentes no \dataset\   SBDAA@guioliunb, 175 foram escritos por um único autor, e os 2.731 restantes foram elaborados em co-autoria.
+    \item [\textit{Documents per Author}] Dentre os 6.106 distintos (nomes de) autores, cada um publicou em média 0,476 artigos.
+    \item [\textit{Authors per Document}] Cada um dos 2.906 documentos presentes no \dataset\  SBDAA foi autorado com 2,1 autores em média .
+    \item [\textit{Co-Authors per Documents}] As 11.668 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 4,02 vezes para os 2.906 documentos do \dataset\  SBDAA.
+    \item [\textit{Collaboration Index}] Os 6.106 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 2,2 vezes para editar os 2.906 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 2,2. 
 \end{description}
 
 \subsection{Evolução da Produção Científica}
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/Dataset/AnnualScientificProduction-2021-08-05.png}
-    \caption{Evolução da produção científica no \dataset\   MASSA@jhcf.}
-    \label{fig:evol:anual:MASSA@jhcf}
+    \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/anual-scientific-production.JPG}
+    \caption{Evolução da produção científica no \dataset\   SBDAA@guioliunb.}
+    \label{fig:evol:anual:SBDAA@guioliunb}
 \end{figure}
 
-A figura \ref{fig:evol:anual:MASSA@jhcf} apresenta a evolução da produção científica mundial no tema de interesse, segundo o \dataset\   MASSA@jhcf. A curva mostra uma tendência de crescimento aproximadamente exponencial da quantidade de publicações, desde a primeira identificada em 1990.
+A figura \ref{fig:evol:anual:SBDAA@guioliunb} apresenta um declínio na produção mundial no tema de interesse, segundo o \dataset\  SBDAA@guioliunb. O ápice de produção foi alcançado no ano de 2018. Fica evidente que o ano de 2022 ainda não pode contribuir para a análise anual, pois ainda está em progresso.
 
-O \textit{Annual Growth Rate} do \dataset\   é de 17,06\%, bem maior que a taxa média de crescimento da publicação científica mundial, de cerca de 3,3\% anuais, em 2016, como ilustra o estudo em \url{https://www.researchgate.net/publication/333972683_Dynamics_of_scientific_production_in_the_world_in_Europe_and_in_France_2000-2016}, página 23.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/AVG citation per year.png}
+    \caption{Evolução da produção científica no \dataset\   SBDAA@guioliunb.}
+    \label{fig:evol:anual:cit:SBDAA@guioliunb}
+\end{figure}
 
-\subsection{Interpretação do Crescimento} A maior taxa de crescimento do \dataset\   MASSA@jhcf, bem como o seu grande volume, sugerem que o assunto em pauta desperta intenso interesse, inclusive de ordem econômica.
+Já figura \ref{fig:evol:anual:cit:SBDAA@guioliunb} mostra que o número de citações é na verdade crescente. Então segundo o podemos questionar se o tema realmente está em declínio ou em dispersando entre outras bases e autores. Um fato comum após algum tempo da iniciação da pesquisa sobre alguma área é a ampliação do conhecimento, logo, a distribuição também. Com a expressiva quantidade dos dados gerados nos desde 2018 é relevante considerar que os trabalhos tenham crescido, porém diluídos em outros temas e profissionais.
+
+\subsection{Interpretação do Crescimento} 
+
+A taxa de crescimento anual teve o resultado negativo no, porém os últimos dois anos apresentou grande concentração de investimentos nas áreas de \textit{big data} e \textit{cloud computing}. Dado isso, podemos questionar se a área está em declínio ou outro motivo pode ter ocasionado isso na base adquirida.
 
 \subsection{Evolução das Citações}
+
+Somado a isso, temos a Figura \ref{fig:evol:anual:cit:SBDAA@guioliunb} que explicita que o uso do \dataset\  SBDAA@guioliunb em citações e estudos posterior é crescente. Logo, a produção de conteúdo e a evolução da área demonstra evolução e dispersão. Podendo assim responder o q
 
 \begin{figure}
     \centering

@@ -19,6 +19,8 @@ O projeto foi feito ao longo de 3 dias utilizando cerca de 2 horas de cada dia p
 \section{Coleta de dados}
 A coleta de dados foi feita utilizando o WoS no dia 9 de  fevereiro de 2022, por meio do portal de periódicos da CAPES.
 
+%esse artigo ta bom em
+
 As buscas foram reazlidas nas coleções \textbf{Science  Citation  Index  Expanded (SCI -EXPANDED)} e \textbf{Social  Sciences  Citation  Index (SSCI)}.
 
 \subsection{Query de Busca}
@@ -40,4 +42,25 @@ Antes da análise foram aplicados filtros nos registros obtidos. Os 1164 registr
 
 \subsection{Análise descritiva do \dataset\   ZKPA@Faustino27}
 
-As informações principais do \dataset\ ZKPA@Faustino27
+As informações principais do \dataset\ ZKPA@Faustino27 são:
+\begin{description}
+    \item [\textit{Timespan}] Foram encontrado artigos de 1987, até 2021. Não foram encontrados registros entre 1945 e 1986.
+    \item [\textit{Sources (Journals, Books, etc)}] São 327 fontes de informação que publicaram os documentos recuperados.
+    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos é de 9,75 anos.
+    \item [\textit{Average citations per documents}] Cada artigo foi citado, em média 16,4 vezes.
+    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 870 artigos foi citado, em média, 1,654 vezes por ano.
+    \item [\textit{References}] O \dataset\ ZKPA@Faustino27 contém 21.157 referências citadas.
+    \item [\textit{Authors}] 2.169 distintos nomes de autores foram encontrados..
+    \item [\textit{Authors of single-authored documents}] Dentre os 2.169 distintos (nomes de) autores encontrados, 94 deles editaram artigos individualmente, isso é, sem co-autores.
+\end{description}
+
+\subsection{Evolução da Produção Científica}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/Faustino27/AnaliseBibliográfica/ZeroKnowledgeProof/Imagens/AnnualProduction.png}
+    \caption{Evolução da produção científica no \dataset\   ZKPA@Faustino27.}
+    \label{fig:evol:anual:ZKPA@Faustino27}
+\end{figure}
+
+A figura \ref{fig:evol:anual:ZKPA@Faustino27} mostra a quantidade de artigos publicados sobre o tema escolhido anualmente, é possível observar uma constante quantidade de artigos publicados anualmente até o ano de 2009, depois há um crescimento polinomial até o ano de 2021 em que ocorre uma queda, em 2022 ocorre uma queda, mas provavelmente devido aos dados serem do inicio de fevereiro de 2022, sendo assim não houve tempo apra demais artigos serem publicados. 

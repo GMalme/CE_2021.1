@@ -1,0 +1,66 @@
+FN Clarivate Analytics Web of Science
+VR 1.0
+PT C
+AU Tedeschi, A
+   Benedetto, F
+AF Tedeschi, A.
+   Benedetto, F.
+GP IEEE
+TI A Cloud-based Big Data Sentiment Analysis Application for Enterprises'
+   Brand Monitoring in Social Media Streams
+SO 2015 IEEE 1ST INTERNATIONAL FORUM ON RESEARCH AND TECHNOLOGIES FOR
+   SOCIETY AND INDUSTRY (RTSI 2015) PROCEEDINGS
+LA English
+DT Proceedings Paper
+CT IEEE 1st International Forum on Research and Technologies for Society
+   and Industry (RTSI 2015) Proceedings
+CY SEP 16-18, 2014
+CL Torino, ITALY
+SP IEEE, IEEE Italy Sect, AEIT, AICA
+DE Big Data Sentiment Analysis; Brand Monitoring; Social Media Streams;
+   Cloud-based Applications
+AB Due to the explosive diffusion of social media streams, users can evaluate the brands' reputation and enterprises' quality exploiting the information provided by new digital marketing channels. Consequently, enterprises need to spot and analyze a big amount of digital data in order to improve their reputation among consumers. This work proposes a cloud-based big data sentiment analysis application for brand monitoring and analysis in social media streams. Enterprises can enhance their competitiveness satisfying consumers' needs and expectations exploiting our tool, detecting the sentiment of a tweet and how it influences people, when the author's popularity is taken into account. The obtained results, showing that branding strategies play an even more important role in online environments, evidence the effectiveness of our approach for enterprises' brand monitoring and analysis.
+C1 [Tedeschi, A.; Benedetto, F.] Univ Rome Roma TRE, Signal Proc Telecommun & Econ Lab, Via Vito Volterra 62, I-00146 Rome, Italy.
+RP Tedeschi, A (corresponding author), Univ Rome Roma TRE, Signal Proc Telecommun & Econ Lab, Via Vito Volterra 62, I-00146 Rome, Italy.
+EM antonio.tedeschi@uniroma3.it; francesco.benedetto@uniroma3.it
+RI Benedetto, F./I-2358-2012; Tedeschi, Antonio/U-9017-2019
+OI Benedetto, F./0000-0002-9203-1642; 
+CR Agarwal A, 2011, P WORKSH LANG SOC ME, P30, DOI DOI 10.21105/JOSS.00764
+   Armbrust M., 2009, UCBEECS28
+   Balahur A., 2013, WASSA NAACL HLT P 4 WORKSH COMP APPR, P120
+   Becker Kip, 2013, Global Business & Economics Review, V15, P293
+   Bo Pang, 2008, Foundations and Trends in Information Retrieval, V2, P1, DOI 10.1561/1500000001
+   Cha M., 2010, P INT AAAI C WEB SOC
+   Chen X, 2013, 2013 IEEE THIRD INTERNATIONAL CONFERENCE ON CLOUD AND GREEN COMPUTING (CGC 2013), P383, DOI 10.1109/CGC.2013.67
+   Feldman R, 2013, COMMUN ACM, V56, P82, DOI 10.1145/2436256.2436274
+   Gamma E., 1994, DESIGN PATTERNS ELEM
+   Habernal I., 2013, P 4 WORKSH COMP APPR, P65
+   Hamouda A., 2011, ONLINE J COMPUTER SC, V2, P120
+   Kietzmann JH, 2011, BUS HORIZONS, V54, P241, DOI 10.1016/j.bushor.2011.01.005
+   Li L, 2013, 2013 IEEE INTERNATIONAL CONFERENCE ON SERVICE OPERATIONS AND LOGISTICS, AND INFORMATICS (SOLI), P245, DOI 10.1109/SOLI.2013.6611418
+   Moore J., 2011, TWITTER SENTIMENT AN, P538
+   O'REILLY T., 2005, WHAT IS WEB 2 0 DESI
+   Stanford University, STANF LOG LIN PART O
+   Strauss R.E., 2001, 34 ANN HAW INT C SYS, P1
+   Tedeschi A, 2014, 2014 INTERNATIONAL CONFERENCE ON FUTURE INTERNET OF THINGS AND CLOUD (FICLOUD), P541, DOI 10.1109/FiCloud.2014.94
+   VINODHINI G, 2012, INT J ADV RES COMPUT, V2
+   Zhang SA, 2010, SECOND INTERNATIONAL CONFERENCE ON FUTURE NETWORKS: ICFN 2010, P93, DOI 10.1109/ICFN.2010.58
+   Ziegler CN, 2006, 2006 IEEE/WIC/ACM INTERNATIONAL CONFERENCE ON WEB INTELLIGENCE, (WI 2006 MAIN CONFERENCE PROCEEDINGS), P1066, DOI 10.1109/WI.2006.177
+NR 21
+TC 1
+Z9 1
+U1 0
+U2 5
+PU IEEE
+PI NEW YORK
+PA 345 E 47TH ST, NEW YORK, NY 10017 USA
+BN 978-1-4673-8167-3
+PY 2015
+PG 6
+WC Engineering, Electrical & Electronic
+WE Conference Proceedings Citation Index - Science (CPCI-S)
+SC Engineering
+GA BF3TB
+UT WOS:000380575200032
+DA 2022-02-10
+ER

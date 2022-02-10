@@ -1,74 +1,50 @@
-\chapter{Análise Bibliográfica sobre Programação Competitiva, por Enzo Yoshio \label{chap:bibliometria:}}
+\chapter{Análise Bibliográfica sobre Programação Competitiva, por Enzo Yoshio}
 
-\section{Planejamento do estudo\label{}}
+\section{Planejamento do estudo}
 
     O planejamento de estudos é importante para os estudos científicos e o método científico pois sem um planejamento e questionamento do que a pesquisa deve procurar, o objetivo e o foco da pesquisa pode se perder sem esse planejamento e a organização dos pesquisadores feita previamente. Dito isso, durante o planejamento, é necessário levantar alguns questionamentos para nortear a pesquisa e ficar claro pros pesquisadores o alvo de pesquisa e o que eles devem solucionar. Em sequência há alguns questionamentos feitos para essa análise bibliográfica.
  
 
 \begin{itemize}
     \item Qual a relevância da programação competitiva para a comunidade científica? 
-    \item A programação competitiva tem influenciado a comunidade científica e o mercado de trabalho? 
-    A gameficação tem sido considerada como uma técnica pertinente na avaliação de métodos de ensino
-    \item Nos últimos anos com o evento da pandemia, este assunto tem alçado maior importância, dados os desafios apresentados?
+    \item A programação competitiva tem influenciado a comunidade científica e o mercado de trabalho?
+    \item A programação competitiva vem sendo popularizada nos últimos anos?
 \end{itemize}
 
-\subsection{O que já existe de pesquisa bibliométrica sobre esse tema?}
+\subsection{Limitações} O artigo foi proposto em uma matéria semestral na Universidade de Brasília, sendo feito como atividade semanal para aprender os usos do R Studio e bibliometrix. Logo houve pouco tempo para o desenvolvimento do artigo buscando as fontes necessárias para que ficasse um artigo substancial e bem feito. O artigo foi feito ao longo de uma semana, usando um horário de 10 horas aproximadamente.
 
-\cite{} 
-\cite{}.
+\section{Coleta de dados}
 
-
-\subsection{Limitações} O trabalho foi desenvolvido ao decorrer de uma semana, empregando por volta de 5 a 10 horas.
-
-\section{Coleta de dados\label{MASSA:coleta}}
-
-A coleta de dados feita usando o mecanismo Web of Science no dia 09 de fevereiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
-
+A coleta de dados foi realizada usando o software de busca Web Of Science no dia 8 de fevereiro de 2022, acessado por meio do Portal de Periódicos da Capes.
 
 \subsection{Query de Busca}
 
-Foi usada a \query\  de busca ilustrada nas linhas 1 a 9 da listagem \ref{query20210803-2}.
+Para a busca, foi usada uma \query\ abaixo:
+\begin{verbatim}
+(codeforces)
+(compet* and program*)
+(codechef)
+\end{verbatim}
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais.},label=query20210803-2]
-{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/query.txt}
+\subsubsection{Explicação para os termos de busca usados}
 
-\subsubsection{Explicação para os termos de busca usados\label{}}
-
-
-%Os termos \texttt{experimental}, \texttt{numeric*}, \texttt{statist*}, \texttt{hypothes*}, 
-%\texttt{empiric*}
-%e \texttt{inferen} (linhas 1 e 2 da query) foram usados na primeira cláusula da \query\  para recuperar artigos que tenham em seu título, palavras-chave e resumo, termos relacionados a métodos experimentais,
-%métodos numéricos,
-%métodos estatísticos,
-%teste de hipóteses,
-%métodos empíricos e métodos inferenciais.
-
-Tendo como tópico central a educação o termo educ*  foi utilizado. Com enfoque no meio digital, usa-se o termo digita* e para aumentar a abragência para  a técnica de gameficação, o termo or gamefic*. Como este trabalho tem enfoque nas melhoras trazidas pelo meio digital, e não nas consequências e desafios de seu uso, os termos improv*. Ainda, para reduzir a generalidade e tratar mais das vantagens no contexto de aprendisado, também foi o usado o termo learn*
-
-
-
-
-
-A $4^{a}$ cláusula, linha 9,  s.
+Como o foco era programação competitiva, o termo compet* e program* foram usados concatenados para buscar todas as referencias possíveis a programação competitiva, também foram usados os nomes de alguns sites famosos que a comunidade de programação científica usa bastante, sendo o mais famoso o codeforces. Não há um consenso em qual nome oficial deveria ser usado para programação competitiva, por exemplo, no Brasil também é conhecida como Maratona de Programação, algumas pessoas influentes nessa comunidade já usaram outros termos como sport of mind, programming sports, entre outros, mas definitivamente o mais famoso é competitive programming e esse é o motivo ao qual foi usado na query apenas o mais famoso, visto que os outros termos são muito pouco utilizados e não são famosos, logo a busca por esses termos não traria bons resultados na query, podendo até mesmo atrapalhar e trazer resultados indesejados, por isso a escolha de fazer a query apenas com o nome mais conhecido desse hobby e também de seus principais sites, visando a citação deles correlacionado com a programação competitiva.
 
 \subsection{Registros recuperados}
 
-Os  registros obtidos como resultado da busca encontram-se em \url{}. 
+Os 5000 registros obtidos na busca podem ser encontrados no link \url{}
+Foi utilizada o opção de exportação para aquivo de texto sem formatação, contemplando todos as 29 opções de campo. Os 5000 registros foram recuperado em grupos de 1000 para posteriormente serem concatenados em um único arquivo para que o bibliometrix pudesse processá-lo.
 
-Os 7795 registros obtidos na busca podem ser encontrados no link ...
-Foi ultilziada o opção de exportação para aquivo de texto sem formatação, contemplando todos as 29 opções de campo. Os 7795 registros foram recuperado em grupos de 1000 para posteriormente serem concatenados.
-
-Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no WoS, para que as citações também fosse usadas em análises da citações (estrutura intelectual do conhecimento). Os 8115 registros foram recuperados em nove blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, ..., 8001-8115).
-
+Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{export full record / Gravar Conteúdo: Seleção personalizada, com todos os 29 campos disponíveis, inclusive referências citadas} no Word Of Science, para que as citações também fossem usadas em análises da citações (estrutura intelectual do conhecimento). Os 5000 registros foram recuperados em 5 blocos de até 1.000 registros por vez (1-1000, 1001-2000, 2001-3000, 3001-4000, 4001-5000).
 
 \section{Análise dos dados}
 
 \subsection{Filtragem de registros}
-Antes da análise, é possível aplicar filtros sobre os registros obtidos.
+Para uma melhor análise, é possível fazer o uso de filtros sobre os dados bibliométricos.
 
-Foi aplicado um filtro ao \dataset\   inicial, com 8.115 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas\footnote{A suposição é que que o conhecimento de maior qualidade sobre o tema está nas publicações em revistas.}. Após a aplicação desse filtro, 5.787 registros foram mantidos no \dataset, que será doravante chamado
+Aplicou-se uma filtragem ao \dataset prévio, com 5000 registros, em que havia prévias de artigos, artigos de conferência, capítulos de livro, entre outros... Manteve-se apenas no \dataset os artigos que foram publicados em revistas de cunho científico.\footnote{Supõe-se que os conhecimentos de maior qualidade sobre o tema em questão está nas publicações feitas em revistas.}.  Logo após aplicar essa filtragem pelo bibliometrix, 3164 registros continuaram no \dataset, que seguirá fazendo alguns processos e filtragens no bibliometrix.
 
-Os documentos coletados foram filtrados para apenas aqueles caracterizados como artigos publicados em revistas científicas. Além disso, foram tratados sob a lei de Bradford. Dos 7795 arquivos obtídos, foram filtrados  1124 como pertinentes a análise.
+Todos os documentos recolhidos tiveram uma filtragem para restar apenas os artigos que podem se encaixar como artigos os quais foram publicados em revistas científicas. Após essa filtragem, também foram tratados sob a lei de Bradford. Dos 3164 arquivos já filtrados, foram filtrados novamente para 1361 que são os documentos que serão relevantes para a análise bibliográfica sobre programação competitiva.
 
 \subsection{Análise descritiva do \dataset\   }
 
@@ -76,21 +52,89 @@ Constam as informações gerais sobre os conjuntos de dados:
 As informações mais gerais sobre o \dataset\   são as seguintes:
 \begin{description}
     \item [\textit{Timespan}] Os artgiso obtidos da busca após a filtragem foram publicados entre o período de 1991 até 2022
-    \item [\textit{Sources (Journals, Books, etc)}] Os artigos possuem ao todo 29 fontes diferentes, sendo assim, em média, 39 artigos por revista.
-    \item [\textit{Average years from publication}] A média de tempo de publicação dos artigos é de 4.26 anos
-    \item [\textit{Average citations per documents}] A média de citações por documentos é 18,35.
-    \item [\textit{Average citations per year per doc}] Após o ano de sua publicação, das um dos dos artigos foi citado em média 2713 vezes por ano.
-    \item [\textit{References}] Ao todo, foram feitas 46553  referências por entre os artigos coletados
-    \item [\textit{Keywords Plus (ID)}] 1828 palavras chaves do tipo ID (Keyword Plus)
-    \item [\textit{Author's Keywords (DE)}]  3211 palavras chaves escolhidas pelos autores dos artigos
+    \item [\textit{Sources (Journals, Books, etc)}] Os artigos possuem ao todo 163 fontes diferentes, sendo assim, em média, 8 artigos por revista.
+    \item [\textit{Average years from publication}] A média de tempo de publicação dos artigos é de 5.5 anos
+    \item [\textit{Average citations per documents}] A média de citações por documentos é 10.43.
+    \item [\textit{Average citations per year per doc}] Após o ano de sua publicação, das um dos dos artigos foi citado em média 1.283 vezes por ano.
+    \item [\textit{References}] Ao todo, foram feitas 46173  referências por entre os artigos coletados
+    \item [\textit{Keywords Plus (ID)}] 2153 palavras chaves do tipo ID (Keyword Plus)
+    \item [\textit{Author's Keywords (DE)}]  4383 palavras chaves escolhidas pelos autores dos artigos
 
     \item [\textit{Authors}]  
     \item [\textit{Author Appearances}] 
-    \item [\textit{Authors of single-authored documents}] Dos 3874 autoes, 81 escreveram artigos individualmente
-    \item [\textit{Authors of multi-authored documents}] Dos 3874 autores, 3793 são autores de artigos escritos em colaboração com outros.
-    \item [\textit{Single-authored documents}] Dos 1124 documentos, 85 foram escritos indidualmente, os 1039 restantes foram produzidos em co-autoria.
-    \item [\textit{Documents per Author}] A média de documentos por autor é de 0.29
-    \item [\textit{Authors per Document}] A média de autores por dcumento é de 3.45.
-    \item [\textit{Co-Authors per Documents}] As 4543 aparições de autores se distribuem em 4.04 por documento
-    \item [\textit{Collaboration Index}] O indíce de colaboração (total de autores em artigos escritos em co-autoria / total de artigos escritos em co-autoria) é de 3,65.
+    \item [\textit{Authors of single-authored documents}] Dos 5223 autoes, 95 escreveram artigos individualmente
+    \item [\textit{Authors of multi-authored documents}] Dos 5223 autores, 5138 são autores de artigos escritos em colaboração com outros.
+    \item [\textit{Single-authored documents}] Dos 1361 documentos, 95 foram escritos indidualmente, o que sobrou foram produzidos em co-autoria.
+    \item [\textit{Documents per Author}] A média de documentos por autor é de 0.26
+    \item [\textit{Authors per Document}] A média de autores por documento é de 3.84.
+    \item [\textit{Co-Authors per Documents}] As 5749 aparições de autores se distribuem em 4.22 por documento
+    \item [\textit{Collaboration Index}] O indíce de colaboração (total de autores em artigos escritos em co-autoria / total de artigos escritos em co-autoria) é de 4.06.
 \end{description}
+
+As informações podem ser encontradas também na imagem abaixo:
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12cm]{experiments/enzoyoshio/AnaliseBibliometrica/mainInformation.PNG}
+    \caption{ Principais informações sobre os dados coletados }
+    \label{fig:mainInfo}
+\end{figure}
+
+
+\subsection{Evolução da Produção Científica}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12cm]{experiments/enzoyoshio/AnaliseBibliometrica/anualScientificProduction.png}
+    \caption{ Produção científica anual do \dataset\ }
+    \label{fig:evo}
+\end{figure}
+
+Como pode ser observado no gráfico.
+
+Nos anos de 2019-2021, em particular, foram introduzidas novas placas de vídeo no mercado, com poder computacional bem maior que as anteriores (é possível comparar as placas 1080 com as gerações 2080 e 3080 e perceber um aumento substancial de qualidade).
+
+\subsection{Evolução das Citações}
+
+A figura em \ref{fig:} mostra o número de citações médias feitas por ano. Nota-se uma grande quantidade de citações no ano de 2007, provavelmente devido a um artigo muito citado por outros autores. Nota-se também o que em uma faixa de 40 anos (1981-2021) o número de citações por ano aumentou de 0.2 para 1.0, um aumento de 5 vezes.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12cm]{experiments/MarcusABR/PesquisaBibliometrica/Imagens/network(1).png}
+    \caption{Evolução das citações por ano no \textit{}}
+    \label{fig:gpu-citation-year}
+\end{figure}
+
+\subsection{\textit{Gráfico de três campos}}
+
+O gráfico em \ref{fig:} mostra um gráfico de três campos feitos com os dados acerca das referências, autores e palavras-chaves mais relevantes.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12cm]{experiments/MarcusABR/PesquisaBibliometrica/Imagens/network(3).png}
+    \caption{Gráfico de três campos analisando palavras-chave no \textit{db\_GPU}}
+    \label{fig:gpu-three-field}
+\end{figure}
+
+Observando as palavras-chaves, é possível perceber que termos como iluminação, processamento em paralelo e \textit{ray tracing} são expressões relevantes no contexto de GPUs.
+
+Em particular, a técnica de \textit{Ray Tracing} foi otimizada nos últimos anos, de forma que é possível aplicá-la em simulações em tempo real (que antes não era possível devido ao alto custo computacional).
+
+Observando os autores é possível perceber que a maior parte é de origem asiática e que esses autores utilizam principalmente \textit{masuda n 2006 opt express} como referência.
+
+Essa publicação em específico relata avanços feitos na redução do custo computacional para geração de hologramas (objetos tridimensionais) em ambientes computacionais.
+
+\subsection{Refinamento da coleta de dados}
+
+O gráfico em \ref{fig:gpu-co-occur} mostra a rede de co-ocorrências de palavras-chave no \textit{db\_GPU}. Dentro os termos é possível perceber que os assuntos tratados são relevantes ao tópico de GPUs, com destaque ao campo em verde que separa assuntos relativos a dispersão de luz em meios turbulentos (\textit{turbid media}).
+
+\begin{figure}[ht]
+    \includegraphics[width=12cm]{experiments/MarcusABR/PesquisaBibliometrica/Imagens/network.png}
+    \caption{Rede de co-ocorrências de palavras-chave no \textit{db\_GPU}}
+    \label{fig:gpu-co-occur}
+\end{figure}
+
+Esses tópicos são de especial interesse ao tópico de simulação de luz, pois essa simulação se dá por meio de aproximações ao mundo real (modelos físicos e fórmulas matemáticas). Um modelo eficiente consegue reter a essência dos fenômenos reais, de modo que é possível realizar uma simulação realista com uma capacidade computacional não tão elevada.
+
+Softwares de animação (como blender) e de simulação possuem \textit{engines} que simulam fenômenos físicos, tais como corpos sólidos, emissores, índice de refração de materiais e reflexo da luz. Em especial, a \textbf{simulação de Monte Carlo} permite que uma amostra aleatória de possíveis caminhos de luz convirjam para uma solução correta, tornando esse método um dos métodos físicos mais precisos existentes.
+

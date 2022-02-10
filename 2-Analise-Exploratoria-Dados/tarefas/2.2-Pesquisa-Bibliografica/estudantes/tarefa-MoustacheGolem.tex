@@ -1,1 +1,201 @@
 \chapter{Análise Bibliográfica sobre Sistemas de Informação em transporte ...\label{chap:bibliometria:MoustacheGolem}}
+
+
+\section{Planejamento do estudo}
+
+Sonhos e ambições humanas relacionadas a transporte sempre frequentemente envolvem voo, afinal quem não se imaginou obtendo liberdade absoluta através de asas. De certa forma essa ambição foi conquistada a décadas, mas de forma limitada pois o carro voador não foi inventado ainda, assim esse continua sendo um sonho de meio de transporte. O desenvolvimento e popularidade de inteligência adicionou outra ambição de transporte, o carro auto condutor, desenvolvimento desse se encontra relativamente avançado. 
+
+Mas, esses não são os únicos caminhos promissores evolução do transporte, sistemas de informação, Sendo esses sistemas que utilizam hardware e software para aplicações utilizando grande quantia de informações, afetaram bastante o desenvolvimento de tecnologia na saúde e negócios, aqui vou tentar explorar pesquisas de sistemas de informação em torno de transportes.
+
+
+\begin{itemize}
+    
+
+\item Qual a base de conhecimentos científicos produzida em torno do tema
+Sistemas de informação em transporte
+
+
+\item Quais os principais termos e conceitos ligados à frente de pesquisa no tema sistemas de informação em transporte.
+
+\item Como a sistemas de informação tem sido usado para alterar tecnologias de transporte.
+
+\item Qual a estrutura social da comunidade, se é que existe, que pesquisa
+sobre o tema de sistema de informação em transporte.
+\end{itemize}
+
+\subsection{O que já existe de pesquisa bibliométrica sobre
+esse tema?}
+O tema de transporte mais generalizado possui varias pesquisas, algumas explorando décadas e décadas de bibliografia, mas \cite{cobo_bibliometric_2013} é a que mais se aproxima do que temos como alvo.
+
+
+\subsection{Uso do Bibliometrix e Biblioshiny}
+Também serão usadas a ferramenta e o workflow proposto pelos autores do pacote Bibliometrix.
+
+\subsection{Limitações} O exercício relatado foi feito em menos de uma semana, envolvendo  provavelmente mais de 10 horas, em meio a limitações impostas por outros estudos.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Coleta de dados}
+
+A coleta de dados feita usando o WoS no dia 09 de fevereiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
+
+Foram feitas buscas nas coleções Science  Citation  Index  Expanded (SCI -EXPANDED) e Social  Sciences  Citation  Index (SSCI).
+
+\subsection{Explicação dos termos de busca:}
+Todas as queries foram efetuadas tendo \textbf{Tópicos} como alvo.
+\begin{itemize}
+
+\item A primeira versão da query utilizada foi
+
+\begin{verbatim}
+    1   transportation and information systems
+\end{verbatim}
+
+Uma busca simples, mas buscar por palavras tão abrangentes
+quanto
+\textit{information} e \textit{systems} gera resultados explorando
+temas completamente separados do que temos como alvo.
+
+\item A segunda versão da query utilizada foi:
+
+\begin{verbatim}
+    1   transport* and (information system*)
+\end{verbatim}
+
+
+Nesse ponto não havia entendido os resultados osuficiente para
+Entender \newline a abrangência causado pelos termos \textit{information} e
+\textit{systems}, mas utilizar \textit{transport*} ajudou a puxar
+resultados mais relevantes.
+
+
+\item A ultima versão da query utilizada foi:
+
+\begin{verbatim}
+    1   transport* and (information-system*)
+\end{verbatim}
+
+
+Na ultima query também foi utilizado o filtro de categoria da WoS:
+\begin{verbatim}
+    1   Transportation science technology
+\end{verbatim}
+
+Que focou bastante os resultados em exatamente o que queríamos.
+Ainda assim escolhi continuar a limitar os resultados com o termo \textit{transport*}, pois ele ainda ajuda a focar os resultados, sem ele ajuda a eliminar por exemplo pesquisas tangenciais a transporte, como por exemplo, pesquisas em embarcados.
+
+\textit{information-system*} finalmente possui um \emph{-}, que foca os resultados no campo de estudo alvo.
+
+Os 1731 registros obitidos estão localizados em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/MoustacheGolem/T1/0902records.txt}
+
+Foram utilizadas as opções Exportar registros para arquivo de texto \newline sem formatação,  e o conteúdo gravado foi \textit{Registro completo e Referencias citadas}
+Os 1728 registros foram recuperados em 5
+blocos de até 500 registros por vez (1-500, 501-1000, 1001-1500, 
+1501-1731).
+
+A formatação de 127 linhas de um registro no formato RIS, referentes a um artigo recuperado da Web of Science pode ser encontrada descrita em mais detalhes em \citep{wikipedia_ris_2017}.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Análise dos dados}
+
+\subsection{Filtragem de registros}
+
+Foi aplicado um filtro ao dataset  inicial, com 1731 registros, que continham pŕevias de artigos, artigos de conferência, capítulos de livro etc. Foram mantidos apenas os registros de artigos publicados em revistas científicas. Após a aplicação desse filtro, 1274 registros foram mantidos no dataset, chamarei esses de DSF(dataset filtrado).
+
+\subsection{Análise descritiva do DSF}
+
+
+As informações mais gerais sobre o DSF são as seguintes:
+\begin{description}
+    \item [\textit{Timespan}] Os artigos que atenderam aos critérios de busca e filtragem foram publicados a partir de 1977, até 2022. Assim, não foram encontrados registros entre 1945 e 1976.
+    
+    \item [\textit{Sources (Journals, Books, etc)}] São apenas 39 fontes de informação que publicaram os documentos recuperados no DSF. Ou seja, em média, cada \textit{scientific journal} publicou $1731/39=44,4$ artigos. 
+    
+    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no DSF  é de 10,4 anos.
+    
+    \item [\textit{Average citations per documents}] Cada artigo no DSF foi citado, em média 22,3 vezes.
+    
+    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 1274 artigos do DSF  foi citado 1,962 vezes por ano, em média.
+    \item [\textit{References}] O DSF contém 31291 referências citadas (tags CR).
+    
+    \item [\textit{Keywords Plus (ID)}] 1.415 distintas palavras-chave do tipo Keywords Plus (ID).
+    
+    \item [\textit{Author's Keywords (DE)}] 3.841 distintas palavras-chave indicadas pelos autores foram encontradas no dataset.
+    
+    \item [\textit{Authors}] 3.235 distintos nomes de autores foram encontrados no dataset.
+    
+    \item [\textit{Author Appearances}] Os 3.235 distintos (nomes de) autores foram encontrados 4.159 vezes, como autores de artigos.
+    
+    \item [\textit{Authors of single-authored documents}] Dentre os 3.235 distintos (nomes de) autores encontrados, 87 deles editaram artigos individualmente, isso é, sem co-autores.
+    
+    \item [\textit{Authors of multi-authored documents}] Dentre os 3.235 distintos (nomes de) autores encontrados, 3.148 deles editaram artigos com um ou mais co-autores".
+    
+    \item [\textit{Single-authored documents}] Dentre os 1.274 documentos presentes no DSF, 94 foram escritos por um único autor, e os 1180 restantes foram elaborados em co-autoria.
+    
+    \item [\textit{Documents per Author}] Dentre os 3.235 distintos (nomes de) autores, cada um publicou em média 0,394 artigos.
+    
+    \item [\textit{Authors per Document}] Cada um dos 1.274 documentos presentes no DSF foi autorado com 2,54 autores em média ($3.235 / 1.274 = 2,54$).
+    
+    \item [\textit{Co-Authors per Documents}] As 4.159 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 3,26 vezes para os 1.274 documentos do DSF.
+    
+    \item [\textit{Collaboration Index}] Os 3.235 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 2,67 vezes para editar os 1.274 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 2,67. 
+\end{description}
+\newpage
+
+\section{Visualização dos dados representados de forma grá-
+fica.}
+
+
+\subsection{Evolução da Produção Científica}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/MoustacheGolem/T1/img1AnnualScientifiProduction.PNG}%img1
+    \caption{Evolução da produção científica no DSF.}
+    \label{fig:evol:anual:DSF@MoustacheGolem}
+\end{figure}
+
+
+A figura \ref{fig:evol:anual:DSF@MoustacheGolem} apresenta a evolução da produção científica mundial no tema de interesse, segundo o DSF. A curva mostra uma tendência de crescimento aproximadamente exponencial da quantidade de publicações, com aceleração mais pronunciada no inicio dos anos 90, mas com uma queda que obteve inicio em 2016.
+
+O \textit{Annual Growth Rate} do dataset   é de 4.45\%, é ligeiramente  maior que \newline a taxa média de crescimento da publicação científica mundial, de cerca de 3,3\% anuais, em 2016, como ilustra o estudo em: \newline \url{https://www.researchgate.net/publication/333972683_Dynamics_of_scientific_production_in_the_world_in_Europe_and_in_France_2000-2016}, página 23.
+\newpage
+\subsection{Interpretação do Crescimento} A taxa de crescimento do DSF, é relativamente mundana, mais interessante é observar a queda no numero de artigos depois de 2015, possivelmente influenciada por mudanças de interesse politicas e o advento da pandemia.
+
+
+\subsection{Evolução das Citações}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/MoustacheGolem/T1/img2AvarageArticleCitationsPerYear.PNG}%img2
+    \caption{Evolução da produção científica noDSF.}
+    \label{fig:evol:citacoes:DSF@MoustacheGolem}
+\end{figure}
+
+
+A figura \ref{fig:evol:citacoes:DSF@MoustacheGolem} apresenta a evolução das citações dos artigos no tema de interesse, segundo o DSF. A curva mostra  crescimento bem inconsistente  desde a primeira identificada em 1977.
+
+O pico observado no ano de 2005 deve-se, possivelmente, à presença de um artigo famoso, publicado em 2005, que possui um número surpreendente grande de citações, outros artigos famosos mas não no mesmo nível  são observados em outros anos. 
+
+\subsection{Interpretação das Citações}
+O relativo crescimento do numero de citações mostra que é possível que o campo de estudo tenha obtido mais relevância ao longo do tempo.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\textit{Three-Field Plots (Sankey diagram)}}
+
+As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos'') apresentam afinidades entre três conjuntos de atributos agregados que ocorrem no dataset. Uma plotagem do tipo Sankey busca mostrar os principais fluxos entre diferentes conjuntos de itens. 
+
+\begin{figure}
+    \centering
+    \includegraphics[angle=0,width=0.8\textwidth]{experiments/MoustacheGolem/T1/img3ThreeFieldsPlot.PNG}%img3
+    \caption{Plotagem ``Três Campos'' (Sankey plot) do DSF: 20 Autores, Citações e Palavras-Chave mais proeminentes.}
+    \label{fig:ThreeFieldPlot:DSF@MoustacheGolem}
+\end{figure}
+
+
+A figura \ref{fig:ThreeFieldPlot:DSF@MoustacheGolem} apresenta a plotagem do tipo ``Três Campos'' do BDF, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 20 Palavras-Chave mais frequentes empregadas pelos autores.
+
+\subsection{Interpretação da figura \ref{fig:ThreeFieldPlot:DSF@MoustacheGolem}}
+Os vinte autores mais relevantes, em relação aos artigos mais relevantes citados, e as palavras-chave mais relevantes são aparentemente de origem variada, mas com nomes chinesa ocupando bastante espaço. Isso se deve, provavelmente, a grande contribuição chinesa no geral, não a qual quer relevância especifica a nosso campo de estudo.
+
+Dentre as palavras-chave (DE) não relacionadas diretamente aos termos de busca, emergem os principalmente os termos \textbf{geografic information sistemas} e suas formas de escrita similares, e \textbf{Adcanced traveler information systems} e suas variações.Isso sugere que o foto do campo esta muito ligado a desenvolvimento de tecnologias envolvidas com GPS, e sistemas similares.

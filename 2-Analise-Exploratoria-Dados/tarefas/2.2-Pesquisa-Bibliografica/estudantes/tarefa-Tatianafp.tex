@@ -94,5 +94,33 @@ O \textit{Annual Growth Rate} encontrado no \dataset\  NewsRec@Tatianafp é de 5
 
 Ao observarmos a diferença entre a quantidade de publicações entre os anos de 2014 e 2018, os dois picos de crescimento, nota-se que o número quase que duplica. Isso indica que provavelmente ocorrera uma descoberta importante no ano de 2018, o que incentivou a pesquisa sobre o tema de sistemas de recomendação de notícias. No entanto, houve uma queda na produção científica nos anos posteriores ao ano de 2018, o motivo para tal ainda necessita de maiores investigações.  
 
+\subsection{Análise da Colaboração entre Países}
+
+Ao explorar o \dataset\  NewsRec@Tatianafp com o auxílio da ferramenta Bibliometrix, também é possível analisar como ocorre a colaboração entre os diversos países na produção científica relacionada ao tema de sistemas de recomendação de notícias. A imagem \ref{fig:country_collab_NewsRec_Tatianafp} retrata o gráfico que fora obtido. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/Tatianafp/AnaliseBibliometrica/CountryCollaborationMap.png}
+    \caption{Colaboração entre países segundo o \dataset\  NewsRec@Tatianafp.}
+    \label{fig:country_collab_NewsRec_Tatianafp}
+\end{figure}
+
+Ao analisar a imagem \ref{fig:country_collab_NewsRec_Tatianafp} nota-se uma alta colaboração entre os Estados Unidos e China, acompanhados por colaborações com países da Europa e mais alguns países da Ásia como Índia, Japão e Coréia do Sul. Também se tem um volume considerável de contribuições com a Austrális e com o Canadá. Apesar de estar destacado no mapa, o Brasil não tem suas colaborações representadas pelas linhas que ligam os países. Isso ocorre devido ao seu número pequeno de colaborações, se resumindo a apenas três, conforme apresentado na tabela \ref{tab:Brasil_collab_Tatianafp}
+
+\begin{table}[htp]
+    \centering
+\footnotesize
+\csvreader[tabular = |r|l|l|r|r|,
+separator=semicolon,
+filter={\value{csvrow}<25}
+%,filter not strcmp={\csvcolii}{},
+, table head = \hline\hline \# & País  & País  & Frequência\\ \hline\hline,
+table foot = \hline\hline
+]{experiments/Tatianafp/World_Collaboration_Map.csv}{Document=\paper, DOI=\doi}{ \thecsvrow & {\tiny\paper} & {\tiny \doi} & \csvcoliii & \csvcoliv}
+
+    \caption{Colaborações entre o Brasil e demais países no \dataset\ NewsRec@Tatianafp.}
+    \label{tab:Brasil_collab_Tatianafp}
+\end{table}
+
 
 

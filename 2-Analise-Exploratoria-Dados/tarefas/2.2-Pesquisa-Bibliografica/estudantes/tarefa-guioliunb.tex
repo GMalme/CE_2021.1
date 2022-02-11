@@ -226,15 +226,17 @@ Essas medidas serão apresentadas a seguir.
 \paragraph{Citações globais aos artigos no \dataset}
 
 Cada registro recuperado possui nos seus metadados informações, podendo constar a quantidade de vezes que uma citação ao mesmo foi registrada no índice do WoS (\textit{TC - Times Cited}).
-A figura \ref{fig:SBDAA@guioliunb:relevantdocuments} evidência as publicações mais referenciadas. Os 4 primeiros itens tem uma dominância considerável sobre os outros, contudo é interessante observar que podem ser dois trabalhos com referências acopladas, pois o número
+A figura \ref{fig:SBDAA@guioliunb:relevantdocuments} evidência as publicações mais referenciadas. Os 4 primeiros itens tem uma dominância considerável sobre os outros, contudo é interessante observar que são dois trabalhos com referências acopladas, pois o número e título do primeiro se assemelha muito ao segundo, assim como o terceiro se assemelha ao quarto. Como confirmação ambos código DOI são igual par a par.
 
-A tabela \ref{tab:MASSA2:GlobalCitations} apresenta a lista dos 25 artigos do \dataset, que foram mais citados, ordenados de forma decrescente pelo número global de citações do artigo, nos índices da WoS. Para ada artigo é apresentada a referencia abreviada, o DOI e a quantidade de vezes que ele foi citado globalmente (no índice do WoS). Para recuperar a página do artigo deve-se abrir uma url prefixada com \url{http://doi.org/}, e informar o valor do DOI indicado, por exemplo \url{http://doi.org/10.1109/TAC.2008.2010897} levará à página do artigo mais citado, cujo título é ``Flocking of Multi-Agents With a Virtual Leader''.
+Os outros registros se comportam como registros individuais. Porém, vale ressaltar que uma relevante parte deles foi publicado na organização IEEE. A ordem de relevância das fontes será analisada em seção posterior.
+
+
 
 
 \begin{figure}
     \centering
     \includegraphics[angle=0,width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/MOST GLOBAL CITED.png}
-    \caption{Autores mais relevantes do \dataset\   SBDAA@guioliunb.}
+    \caption{Autores mais relevantes do \dataset\ SBDAA@guioliunb no contexto global .}
     \label{fig:SBDAA@guioliunb:relevantdocuments}
 \end{figure}
 
@@ -242,22 +244,17 @@ Após a visitação do resumo do texto de vários dos documentos citados, perceb
 
 \paragraph{Citações locais aos artigos no \dataset}
 
-Cada registro recuperado no \dataset\ apresenta um conjunto de informações, dentre as quais consta a lista das citações feitas a outros documentos, nas seção bibliografia. O Bibliometrix computa de forma aproximada a quantidade de vezes que cada artigo do \dataset\ foi citado por outros artigos do mesmo \dataset, construindo uma tabela das maiores citações locais, que provavelmente apontará para artigos com afinidade bem maior à busca efetuada.
+Podemos também visualizar as citações feitas apenas dentro do \dataset\. Com isso o mapeamento da relevância da citações pode ser observada internamente, ou seja, com foco nas situações segundo as cláusulas definidas na consulta.  
 
-\begin{table}[htp]
+
+\begin{figure}
     \centering
-\footnotesize
-\csvreader[tabular = |r|l|l|r|r|,
-separator=semicolon,
-filter={\value{csvrow}<25}
-%,filter not strcmp={\csvcolii}{},
-, table head = \hline\hline \# & Artigo (Referência Abreviada) & DOI  & L.Cit& G.Cit\\ \hline\hline,
-table foot = \hline\hline
-]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-Most-Local-Cited-Documents.csv}{Document=\paper, DOI=\doi}{ \thecsvrow & {\tiny\paper} & {\tiny \doi} & \csvcoliii & \csvcoliv}
+    \includegraphics[angle=0,width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/MOST LOCAL CITED.png}
+    \caption{Autores mais relevantes do \dataset\ no contexto local   SBDAA@guioliunb.}
+    \label{fig:SBDAA@guioliunb:relevantdocuments}
+\end{figure}
 
-    \caption{25 artigos mais citados localmente no \dataset\ SBDAA@guioliunb.}
-    \label{tab:MASSA2:LOcalCitations}
-\end{table}
+
 
 A lista dos artigos retornados pelo critério de citação local retornou textos bastante pertinentes ao tema da simulação multiagente de fenômenos sociais, conforme os 25 títulos a seguir listados, seguindo a ordem apresentada na tabela:
 \begin{enumerate}

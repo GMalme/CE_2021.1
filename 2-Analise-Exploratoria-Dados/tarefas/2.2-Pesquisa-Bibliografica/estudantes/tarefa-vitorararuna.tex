@@ -46,17 +46,17 @@ A seguir, é feita uma análise bibliométrica descritiva do \textit{dataset} ut
 
 As informações mais gerais sobre o \textit{dataset} são as seguintes:
 \begin{description}
-    \item [\textit{Timespan}] Os artigos filtrados foram publicados entre 1960 e 2022, o que indica que ainda há algum artigo não relacionado ao tema, que é relativamente recente.
-    \item [\textit{Sources (Journals, Books, etc)}] São 340 fontes de informação que publicaram os artigos recuperados no \textit{dataset}. Logo, a média de publicações por \textit{scientific journal} é de $1.033/537=1,9$ artigos.
-    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \textit{dataset} é de 3,59 anos.
-    \item [\textit{Average citations per documents}] Cada artigo no \textit{dataset} foi citado, em média 13,63 vezes.
-    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos artigos foi citado, em média, 2,104 vezes por ano.
-    \item [\textit{References}] O \textit{dataset} contém 20.312 referências citadas.
-    \item [\textit{Keywords Plus (ID)}] 907 distintas palavras-chave do tipo Keywords Plus (ID) foram encontradas no \textit{dataset}.
-    \item [\textit{Author's Keywords (DE)}] 1863 distintas palavras-chave indicadas pelos autores foram encontradas no \textit{dataset} .
-    \item [\textit{Authors}] 2.063 distintos nomes de autores foram encontrados no \textit{dataset} .
-    \item [\textit{Author Appearances}] Os 2.063 distintos (nomes de) autores foram encontrados 2.297 vezes, como autores de artigos.
-    \item [\textit{Authors of single-authored documents}] Dentre os 2.063 distintos (nomes de) autores encontrados, 79 deles editaram artigos individualmente, isso é, sem co-autores.
+    \item [\textit{Timespan}] Os artigos filtrados foram publicados entre 1982 e 2022.
+    \item [\textit{Sources (Journals, Books, etc)}] São 1371 fontes de informação que publicaram os artigos recuperados no \textit{dataset}.
+    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \textit{dataset} é de 6,93 anos.
+    \item [\textit{Average citations per documents}] Cada artigo no \textit{dataset} foi citado, em média 6.815 vezes.
+    \item [\textit{Average citations per year per doc}] Após publicado, cada um dos artigos foi citado, em média, 0.8895 vezes por ano.
+    \item [\textit{References}] O \textit{dataset} contém 42408 referências citadas.
+    \item [\textit{Keywords Plus (ID)}] 1544 distintas palavras-chave do tipo Keywords Plus (ID) foram encontradas no \textit{dataset}.
+    \item [\textit{Author's Keywords (DE)}] 4321 distintas palavras-chave indicadas pelos autores foram encontradas no \textit{dataset} .
+    \item [\textit{Authors}] 6088 distintos nomes de autores foram encontrados no \textit{dataset} .
+    \item [\textit{Author Appearances}] Os 7185 distintos (nomes de) autores foram encontrados 2.297 vezes, como autores de artigos.
+    \item [\textit{Authors of single-authored documents}] Dentre os 2.063 distintos (nomes de) autores encontrados, 182 deles editaram artigos individualmente, isso é, sem co-autores.
     \item [\textit{Authors of multi-authored documents}] Dentre os 2.063 distintos (nomes de) autores encontrados, 1.984 deles editaram artigos com um ou mais co-autores"
     \item [\textit{Single-authored documents}] Dentre os 1.033 documentos presentes no \textit{dataset}, 79 foram escritos por um único autor, e os restantes foram elaborados em co-autoria.
     \item [\textit{Documents per Author}] Dentre os 2.063 distintos (nomes de) autores, cada um publicou em média 0,26 artigos.
@@ -117,14 +117,9 @@ Após a análise do \textit{dataset}, foi possível notar que praticamente a mai
 
 \subsection{Nova filtragem de registros}
 
-São aplicados dois filtros aos 284 documentos recuperados:
-\begin{itemize}
-    \item Remoção dos registros de documentos que não são artigos \textit{full paper}, isso é, artigos completos publicados em revistas;
-    \item Remoção dos registros de artigos científicos que não fazem parte do \textit{core} da bibliografa, segundo a Lei de Bradford.
-\end{itemize}
+Como os resultados condiziam com o esperado, decidi que para a nova filtragem seriam resgatados apenas os artigos considerados entre 2010 e 2012, onde houeram 2 picos de citações por parte dos cientistas, assim como os picos de criação de artigos por parte deles.
 
-Após a filtragem, foram obtidos apenas 79 registros, que correspondem ao novo \textit{dataset}.
-08
+
 \subsection{Análise descritiva do \textit{dataset} refinado}
 
 \begin{table}[]

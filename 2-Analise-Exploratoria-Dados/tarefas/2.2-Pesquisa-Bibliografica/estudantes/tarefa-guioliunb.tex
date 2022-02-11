@@ -30,7 +30,7 @@ Serão usadas a ferramenta e o \textit{workflow} proposto pelos autores do pacot
 
 A coleta de dados feita usando o WoS no dia 08 de janeiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
 
-Foram feitas buscas na coleções \textbf{Web of Science - Coleção Principal (Clarivate Analytics) } que possui uma vasta bibliografia sobre a área de tecnologia. Através do refinamento nessa grande base foi obtido a base de dados composta por duas \querys\ de pesquisa. A primeira coleta é mais simples com as palavras de maior relevância. Já a segunda, inclui alguns termos mais abrangentes e ponderando mais a questão de influência na sociedade. 
+Foram feitas buscas na coleções \textbf{Web of Science - Coleção Principal (Clarivate Analytics) } que possui uma vasta bibliografia sobre a área de tecnologia. Através do refinamento nessa grande base foi obtido a base de dados composta por duas \query\ de pesquisa. A primeira coleta é mais simples com as palavras de maior relevância. Já a segunda, inclui alguns termos mais abrangentes e ponderando mais a questão de influência na sociedade. 
 
 Ao todo foi agrupado um total de 2906 registros para a análise bibliométrica. Sendo 1000 registros originados da primeira \query\ e a segunda query contando com 1906 registros.
 
@@ -38,7 +38,7 @@ Além disso, foi realizado um refinamento das \query\ originais para eliminar al
 
 \subsection{Query de Busca}
 
-Foram utilizadas duas \querys\ de busca que estão ilustradas a seguir: %\ref{fig:}.
+Foram utilizadas duas \query\ de busca que estão ilustradas a seguir: %\ref{fig:}.
 
 \lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre análises de dados que utilizam computação em nuvem para impactar a sociedade positivamente},label=query20210803-2]
 {experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/WoS-dataset1/query1.txt}
@@ -48,11 +48,11 @@ Foram utilizadas duas \querys\ de busca que estão ilustradas a seguir: %\ref{fi
 
 \subsubsection{Explicação para os termos de busca usados\label{MASSA:query}}
 
-As \querys\ utilizadas foram criadas com intuitos semelhantes. A primeira mais restrita pelas palavras-chaves ligadas com tecnologia e separando a expressão de \texttt{big data} em \texttt{big} e \texttt{data} podendo ser duas possibilidades de ocorrência nos artigos. E a segunda \query\ reforça o intuito que a pesquisa tenha aplicação social e possibilitando também que o assunto  \texttt{database} ingresse ao conjunto.
+As \query\ utilizadas foram criadas com intuitos semelhantes. A primeira mais restrita pelas palavras-chaves ligadas com tecnologia e separando a expressão de \texttt{big data} em \texttt{big} e \texttt{data} podendo ser duas possibilidades de ocorrência nos artigos. E a segunda \query\ reforça o intuito que a pesquisa tenha aplicação social e possibilitando também que o assunto  \texttt{database} ingresse ao conjunto.
 
 A busca consistiu basicamente de quatro principais assuntos (\textit{Big Data}, \textit{Cloud}, \textit{Analytics}, \textit{Social}) aplicados à busca por tópico (O termo de busca pode aparecer no Título, no Abstract, na Author Keywords, ou nas Keywords Plus da referência).
 
-Com a intersecção das áreas de competência sendo filtradas pela pesquisa de registros, juntamente, na união dos conjuntos de registros de ambas \querys\ obtivemos artigos que focavam bem no assunto proposto.
+Com a intersecção das áreas de competência sendo filtradas pela pesquisa de registros, juntamente, na união dos conjuntos de registros de ambas \query\ obtivemos artigos que focavam bem no assunto proposto.
 
 \subsection{Registros recuperados}
 
@@ -309,7 +309,7 @@ Por fim, o Bibliometrix permite apresentar o uso dos termos ordenado temporalmen
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/TREND TOPICS.png}
-    \caption{Trend Topics no \dataset\SBDAA@guioliunb.}
+    \caption{Trend Topics no \dataset\ SBDAA@guioliunb.}
     \label{fig:trend:topics}
 \end{figure}
 
@@ -325,7 +325,7 @@ Como as contribuições científicas são frutos de trabalhos em conjunto é imp
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/PRODUCTION OVER THE TIME.png}
-    \caption{Autores mais produtivos \dataset\SBDAA@guioliunb.}
+    \caption{Autores mais produtivos \dataset\ SBDAA@guioliunb.}
     \label{fig:authors:production}
 \end{figure}
 
@@ -470,9 +470,20 @@ Conhecimento científico é produzido socialmente, por meio de autores trabalhan
 \section{Análises\label{MASSA2:Analises}}
 
 A pesquisa sobre análises de dados via nuvem é logicamente depende da evolução das áreas de \textit{Big Data} e \textit{Cloud Computing}. Porém fica evidente as grandes oportunidades de ramificação diante a junção dessas duas áreas. Podendo assim impactar a sociedade em diversas áreas como: saúde, segurança e eficiência de diversos processos que podem ser reproduzidos por máquina.
-Sobre o \dataset\ analisado fica evidente uma base sólida e que se propagou diante novas publicações pela consistência de referências adquiridas. Além disso, os registros analisados trouxeram uma situação de proporcionalidade real sobre os termos de as e 
+
+Sobre o \dataset\ analisado fica evidente uma base sólida e que se propagou diante novas publicações pela consistência de referências adquiridas. Além disso, os registros analisados trouxeram uma situação de proporcionalidade real sobre os termos de ascensão atuais, até mesmo sobre as tecnologias que são desafios.
+
+Todavia, é notável uma concentração alta da produção desse conhecimento. Muito presente em alguns países e autores principais, nem sempre presente com relevância em um âmbito global.
+
+As análises representaram bem as redes de colaboração, bem como as redes de termos que compõe o principais tópicos pesquisados. Fica evidente as organizações com grande esforço nessa área através das análises de fontes. Somado a isso, obteve-se um material referencial com aprovação científica, dessa forma podendo servir para estudos futuros.
 
 \section{Conclusões}
 
-Este trabalho está incompleto, mas apresenta o arcabouço geral de informações que possibilitam responder às  questões formuladas no início da pesquisa, em \ref{SBDAA@guioliunb:questoes}, para a qual serão apresentadas breves respostas preliminares:
+Enfim, a bibliometria gerada trouxe boas conclusões sobre o assunto, até mesmo confirmações de tendências já conhecidas. Em suma, o material bibliográfico pesquisado foi bem mapeado segundo publicações e autores.
+
+Também, através dos resultados obtidos podemos concluir que os dados são coerente sobre diferentes métodos, ou então os resultados certamente mostrariam algum desvio.
+
+Um bom avanço foi obtido nas análises de dados. Ainda que possa ser continuado o trabalho de análise com a agregação de novos registros relevantes para mapear o tópico estudo. Assim como a melhora dos dados que contribuam melhor para a pesquisa, através de exclusão de possíveis registros incoerentes. Também é possível adicionar novas teorias não presente no documento que podem auxiliar na tomada de novas conclusões.
+
+Grandes esclarecimentos sobre as ferramentas de trabalho e maior domínio na competência de bibliometria foi alcançado. Portanto, o trabalho foi realizado com êxito e sua proposta de entendimento foi de grande parte alcançada.
 

@@ -1,7 +1,7 @@
 \chapter{Análise Bibliográfica sobre a possível relação da tecnologia com depressão, ansiedade e insônia, por Gustavo Macedo de Carvalho\label{chap:bibliometria:GustavoMacCar}}
 
 \section{Planejamento do estudo}
-Com o passar do tempo, a tecnologia encontra-se cada vez mais presente em nosso cotidiano. Dispomos de \texttt{smartphones} , \texttt{tablets} , \texttt{smart} \texttt{TVs} , computadores poderosos, \smartwatches\ , dentre outros dispositivos que pareceriam
+Com o passar do tempo, a tecnologia encontra-se cada vez mais presente em nosso cotidiano. Dispomos de \textit{smartphones} , \textit{tablets} , \textit{smart} \textit{TVs} , computadores poderosos, \textit{smartwatches}\ , dentre outros dispositivos que pareceriam
 dignos de ficção científica há cerca de 20 anos atrás, no início da década de 2000. Não há dúvidas que a tecnologia trás muitas vantagens para nossas vidas, como: entretenimento, facilidade de comunicação e aumento da produtividade.
 Porém, também podemos apontar algumas desvantagens, como: um certo distanciamento entre as pessoas e o fato de nos tornarmos, de certa forma, dependentes da tecnologia. Entretanto, será que além dessas desvantagens citadas, a tecnologia também
 pode estar relacionada com problemas mais sérios, como algumas enfermidades psiquiátricas? Este estudo busca investigar uma possível correlação entre a tecnologia e depressão, ansiedade e insônia.
@@ -12,7 +12,7 @@ pode estar relacionada com problemas mais sérios, como algumas enfermidades psi
 \end{itemize}
 
 \subsection{Uso do Bibliometrix e Biblioshiny}
-Serão usadas a ferramenta e o \textit{workflow} proposto pelos autores do pacote Bibliometrix, conforme indica a figura ~\ref{fig:bibliometrix:workflow}.
+Serão usadas a ferramenta Biblioshiny e o \textit{workflow} proposto pelos autores do pacote Bibliometrix.
 
 \subsection{Limitações} O exercício relatado foi feito dos dias 7 a 10 de fevereiro de 2022, envolvendo em torno de 2 horas de trabalho por dia, totalizando 8 horas de trabalho.
 
@@ -26,16 +26,16 @@ os quais pareceram mais relevantes para o estudo em questão. Foram encontrados 
 Foi usada a \query\  de busca ilustrada em \ref{query20210803-2}.
 
 \lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca sobre simulação multiagente de fenômenos socials, com ênfase em métodos experimentais.},label=query20210803-2]
-{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20210803/classico-mais-citacoes/query.txt}
+{experiments/GustavoMacCar/AnaliseBibliometrica/PsychDiseasesTech/citations-per-year.png}
 
 \subsection{Explicação para os termos de busca usados}
 
 A busca consistiu de um termo, unido por uma conjunção a três termos disjuntos.
 
-O termo \texttt{smart*} faz alusão a dispositivos tecnolológicos presentes em nosso cotidiano como \texttt{smartphones}, \texttt{smartwatches} e \texttt{smartbands}. Os termos \texttt{depression}, \texttt{anxiety} e \texttt{sleep} foram 
-inseridos na \texttt{query} com o objetivo de encontrar artigos que mencionassem os problemas psiquiátricos mencionados no delineamento do estudo: depressão, ansiedade e insônia. A conjunção do termo \texttt{smart*} com esses três termos tem o 
+O termo \textit{smart*} faz alusão a dispositivos tecnolológicos presentes em nosso cotidiano como \textit{smartphones}, \textit{smartwatches} e \textit{smartbands}. Os termos \textit{depression}, \textit{anxiety} e \textit{sleep} foram 
+inseridos na \textit{query} com o objetivo de encontrar artigos que mencionassem os problemas psiquiátricos mencionados no delineamento do estudo: depressão, ansiedade e insônia. A conjunção do termo \textit{smart*} com esses três termos tem o 
 intuito de buscar por artigos que tratem de pelo menos algum dispositivo tecnológico ao mesmo que também trata de pelo menos uma das enfermidades psiquiátricas citadas. As disjunções foram usadas para indicar que para aparecer na busca, não seria 
-necessário que um artigo abordasse as três doenças simultâneamente, bastando apenas uma delas.
+necessário que um artigo abordasse as três doenças simultaneamente, bastando apenas uma delas.
 
 Foram utilizadas as opções \textit{Exportar registros para arquivo de texto sem formatação} e \textit{Gravar Conteúdo: Seleção personalizada, com os 29 campos disponíveis} no WoS. Os 3884 registros foram recuperados em quatro blocos, sendo os 3 primeiros com 1000 registros cada e o 
 último com 884 registros. Depois, os registros foram concatenados manualmente em um único arquivo txt, observando-se os indicadores de fim de cada registro e de fim do arquivo. 
@@ -47,27 +47,27 @@ Foi aplicado um filtro ao \dataset\ inicial, com 3884 registros para que se foss
 permaneceram na base de dados 3138 registros. Isso sugere que o assunto abordado nessa pesquisa tem um maior interesse por parte de pesquisadores que produzem artigos, ao invés de outras mídias.
 \subsection{Análise descritiva do \dataset\ }
 
-A análise bibliométrica descritiva é gerada pela função \texttt{biblioAnalysis}.
+A análise bibliométrica descritiva é gerada pela função \textit{biblioAnalysis}.
 
 As informações mais gerais sobre o \dataset\ são as seguintes:
 \begin{description}
-    \item [\textit{Timespan}] Os artigos que atenderam aos critérios de busca e filtragem foram publicados de 1965 até 2022. Podemos inferir que a \texttt{query} não foi muito precisa, pois as tecnologias de interesse nesse estudo não se popularizaram até a década de 2010.
+    \item [\textit{Timespan}] Os artigos que atenderam aos critérios de busca e filtragem foram publicados de 1965 até 2022. Podemos inferir que a \textit{query} não foi muito precisa, pois as tecnologias de interesse nesse estudo não se popularizaram até a década de 2010.
     \item [\textit{Sources (Journals, Books, etc)}] Existem 1074 fontes de informação para os registros filtrados.
     \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos é de 4,02.
     \item [\textit{Average citations per documents}] Cada artigo foi citado em média 25,71 vezes.
     \item [\textit{Average citations per year per doc}] Depois da publicação, cada artigo foi citado em média 4,189 vezes.
     \item [\textit{References}] O \dataset\ contém 110953 referências citadas.
     \item [\textit{Keywords Plus (ID)}] 5965 distintas palavras-chave do tipo Keywords Plus (ID). 
-    \item [\textit{Author's Keywords (DE)}] 7404 distintas palavras-chave indicadas pelos autores foram encontradas no \dataset\.
-    \item [\textit{Authors}] 19681 distintos nomes de autores foram encontrados no \dataset\.
+    \item [\textit{Author's Keywords (DE)}] 7404 distintas palavras-chave indicadas pelos autores foram encontradas no \dataset\ .
+    \item [\textit{Authors}] 19681 distintos nomes de autores foram encontrados no \dataset\ .
     \item [\textit{Author Appearances}] Os distintos (nomes de) autores foram encontrados 36284 vezes, como autores de artigos.
     \item [\textit{Authors of single-authored documents}] Dentre os autores encontrados, 49 deles editaram artigos individualmente.
     \item [\textit{Authors of multi-authored documents}] 19631 autores encontrados editaram artigos com um ou mais co-autores.
     \item [\textit{Single-authored documents}] Dentre documentos presentes no \dataset\, 50 foram escritos por um único autor, e os 3088 restantes foram elaborados em co-autoria.
     \item [\textit{Documents per Author}] Dentre os autores, cada um publicou em média 0,159 artigos.
     \item [\textit{Authors per Document}] Cada um dos documentos presentes no \dataset\ foi autorado com 6,27 autores em média.
-    \item [\textit{Co-Authors per Documents}] O \texttt{dataset}, apresenta uma média de 11,56 aparições de autor por documento.
-    \item [\textit{Collaboration Index}] O \texttt{dataset} apresenta um índice de colaboração de 6,36. 
+    \item [\textit{Co-Authors per Documents}] O \textit{dataset}, apresenta uma média de 11,56 aparições de autor por documento.
+    \item [\textit{Collaboration Index}] O \textit{dataset} apresenta um índice de colaboração de 6,36. 
 \end{description}
 
 \subsection{Evolução da Produção Científica}
@@ -84,7 +84,7 @@ A figura \ref{fig:evol:anual:psych} apresenta como a produção científica a re
 O \textit{Annual Growth Rate} do \dataset\   é de 12,19\% .
 
 \subsection{Interpretação do Crescimento} Podemos perceber pela figura \ref{fig:evol:anual:psych} que o tema teve uma produção irrisória dentre os anos de 1965 até meados do início da década de 2000. Isso pode sugerir
-que alguns registros incluídos na \texttt{query} não abordam o tema deste estudo de forma adequada, tendo em vista que os objetos tecnológicos abordados por este estudo só vieram a se popularizar pela década de 2010. A partir do
+que alguns registros incluídos na \textit{query} não abordam o tema deste estudo de forma adequada, tendo em vista que os objetos tecnológicos abordados por este estudo só vieram a se popularizar pela década de 2010. A partir do
 ano de 2011, pôde-se observar um aumento acentuado na produção científica a respeito desse tema e, ao longo do tempo, esse aumento foi se intensificando ainda mais. Isso sugere que, assim que a tecnologia começou a se popularizar, surgiu também
 a preocupação a respeito da correlação entre a tecnologia e as enfermidades psiquiátricas abordadas nessa pesquisa e essa preocupação foi aumentando juntamente com o avanço da tecnologia. Pelo fato deste estudo ter sido conduzido em fevereiro de 2022,
 não é possível afirmar que a pequena quantidade de artigos publicados após 2021 no \dataset\ representa uma queda no interesse pelo tema.
@@ -117,7 +117,7 @@ Uma evidência que apoia essa segunda hipótese é que ao ignorarmos os anos em 
 A figura \ref{fig:sankey:psych} apresenta a plotagem do tipo ``Três Campos'' do \dataset\. Estão representados títulos na coluna da esquerda, palavras-chave na coluna do meio e fontes na coluna da direita. Foram escolhidos 20 valores para cada coluna.
 
 \subsection{Interpretação da figura \ref{fig:sankey:psych}}
-Ao avaliarmos os títulos na coluna da esquerda, podemos inferir que os \texttt{smartphones} são os dispositivos tecnológicos mais relacionado aos problemas psiquiátricos citados. A julgar pelas fontes na coluna da direita, podemos inferir que as comunidades que mais 
+Ao avaliarmos os títulos na coluna da esquerda, podemos inferir que os \textit{smartphones} são os dispositivos tecnológicos mais relacionado aos problemas psiquiátricos citados. A julgar pelas fontes na coluna da direita, podemos inferir que as comunidades que mais 
 estudam a correlação entre tecnologia e depressão, ansiedade e insônia é a comunidade médica, com destaque para os estudos sobre saúde mental. A enfermidade com maior destaque parece ser a depressão.
 
 \subsection{Palavras mais frequentes}

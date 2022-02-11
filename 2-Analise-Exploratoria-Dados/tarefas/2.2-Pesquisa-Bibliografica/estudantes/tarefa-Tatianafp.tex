@@ -1,0 +1,49 @@
+\chapter{Análise Bibliográfica sobre Sistemas de Recomendação de Notícias, por Tatiana Franco Pereira\label{chap:bibliometria:Tatianafp}}
+
+\section{Planejamento do estudo}
+
+Após a transposição do conteúdo dos jornais impressos para o formato digital, sites e aplicativos de notícias passaram a ser fonte de um conteúdo gigantesco de informações, que é distribuído ao longo de inúmeras páginas. Com isso, a navegação do usuário durante o seu consumo de informação se tornou mais complexa, ao mesmo tempo em que sua navegação pelo conteúdo apresentado tem o potencial de se tornar mais personalizado. Sistemas de recomendação de notícias tem por objetivo manter o usuário interessado no conteúdo que lhe é ofertado no site ou aplicativo de notícias, com usuário mais engajados e uma maior navegação em suas páginas, a fonte de informação ganha maior relevância, além de arrecadar mais dinheiro por meio de campanhas e marketing para outras empresas. 
+
+Tendo isso em vista, este trabalho teve por objetivo responder as seguintes perguntas:
+\begin{itemize}
+    \item Qual a base de conhecimentos científicos produzida em torno do tema sistemas de recomendação de notícias? 
+    \item Quais os principais termos e conceitos ligados à frente de pesquisa no tema sistemas de recomendação de notícias? 
+    \item Qual a estrutura social da comunidade, se é que existe, que pesquisa sobre o tema sistemas de recomendação de notícias?
+    \item Quanto o Brasil estaá inserido na comunidade de pesquisadores do tema sistemas de recomendação de notícias? 
+\end{itemize}
+
+\subsection{Uso do Bibliometrix e Biblioshiny}
+
+Para este estudo, serão utilizadas as ferramentas Bibliometrix e Biblioshiny, executadas por meio do RStudio.
+
+\subsection{Limitações} 
+
+O exercício foi feito em uma semana, envolvendo aproximadamente 7 horas de trabalho, utilizando a base de dados Web of Science (WoS).
+
+\section{Coleta de dados}
+
+A coleta de dados feita usando o WoS no dia 07 de fevereiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
+
+Foram feitas buscas nas coleções \textbf{Science Citation Index Expanded (SCI-EXPANDED), Social Sciences Citation Index (SSCI), Conference Proceedings Citation Index – Science (CPCI-S), Emerging Sources Citation Index (ESCI)}, que contém registros relativos a vários campos do conhecimento. Os artigos nessas duas coleções são indexados desde 1945. 
+
+\subsection{Query de Busca}
+
+Foi usada a \textit{query} de busca ilustrada na listagem:
+
+\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre Sistemas de Recomendação de Notícias.}]
+{experiments/Tatianafp/PesquisaBibliometrica/query.txt}
+
+\subsubsection{Explicação para os termos de busca usados\label{MASSA:query}}
+
+A busca consistiu de duas cláusulas unidas por uma conjunção \textit{and}. A primeira foi aplicada à busca por tópico, ou seja, o termo de busca poderia aparecer no Título, no Abstract, na Author Keywords, ou nas Keywords Plus da referência. Já a segunda foi aplicada à busca por categorias. 
+
+O termo \texttt{news recommendation systems} foi usados na primeira cláusula da \query\  para recuperar artigos que tenham em seu título, palavras-chave e resumo, termos relacionados a sistemas de recomendação de notícias. Foi usado um único termo devido à forte adesão ao termo por parte dos pesquisadores desta área.
+
+A busca foi limitada às categorias \texttt{ Computer Science Information Systems}, \texttt{ Computer Science Artificial Intelligence} e \texttt{Computer Science Interdisciplinary Applications} por meio da segunda cláusula, visando concentrar os resultados da pesquisa à trabalhos relacionados às áreas de Sistemas de Informação, Inteligência Artificial e Aplicações Interdisciplinares. 
+
+\subsection{Registros recuperados}
+
+Os 452 registros obtidos como resultado da busca encontram-se em \url{https://www.webofscience.com/wos/woscc/summary/a921d816-49be-44eb-94ec-d0430ce03243-22c82fa6/relevance/1}. 
+
+Foram utilizadas as opções \textit{Exportar registros para arquivo Bibtex} e \textit{Gravar Conteúdo: Registro completo e Referências citadas} no WoS, para que as citações também fosse usadas em análises da citações.
+

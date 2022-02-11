@@ -2,7 +2,9 @@
 
 \section{Planejamento do estudo}
 
-Após a transposição do conteúdo dos jornais impressos para o formato digital, sites e aplicativos de notícias passaram a ser fonte de um conteúdo gigantesco de informações, que é distribuído ao longo de inúmeras páginas. Com isso, a navegação do usuário durante o seu consumo de informação se tornou mais complexa, ao mesmo tempo em que sua navegação pelo conteúdo apresentado tem o potencial de se tornar mais personalizado. Sistemas de recomendação de notícias tem por objetivo manter o usuário interessado no conteúdo que lhe é ofertado no site ou aplicativo de notícias, com usuário mais engajados e uma maior navegação em suas páginas, a fonte de informação ganha maior relevância, além de arrecadar mais dinheiro por meio de campanhas e marketing para outras empresas. 
+Após a transposição do conteúdo dos jornais impressos para o formato digital, sites e aplicativos de notícias passaram a ser fonte de um conteúdo gigantesco de informações, que é distribuído ao longo de inúmeras páginas. Com isso, a navegação do usuário durante o seu consumo de informação se tornou mais complexa, ao mesmo tempo em que sua navegação pelo conteúdo apresentado tem o potencial de se tornar mais personalizado. 
+
+Sistemas de recomendação de notícias tem por objetivo manter o usuário interessado no conteúdo que lhe é ofertado no site ou aplicativo de notícias, com usuário mais engajados e uma maior navegação em suas páginas, a fonte de informação ganha maior relevância, além de arrecadar mais dinheiro por meio de campanhas e marketing para outras empresas. 
 
 Tendo isso em vista, este trabalho teve por objetivo responder as seguintes perguntas:
 \begin{itemize}
@@ -31,9 +33,9 @@ Foram feitas buscas nas coleções \textbf{Science Citation Index Expanded (SCI-
 Foi usada a \textit{query} de busca ilustrada na listagem:
 
 \lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre Sistemas de Recomendação de Notícias.}]
-{experiments/Tatianafp/PesquisaBibliometrica/query.txt}
+{experiments/Tatianafp/PesquisaBibliometrica/query}
 
-\subsubsection{Explicação para os termos de busca usados\label{MASSA:query}}
+\subsubsection{Explicação para os termos de busca usados}
 
 A busca consistiu de duas cláusulas unidas por uma conjunção \textit{and}. A primeira foi aplicada à busca por tópico, ou seja, o termo de busca poderia aparecer no Título, no Abstract, na Author Keywords, ou nas Keywords Plus da referência. Já a segunda foi aplicada à busca por categorias. 
 
@@ -85,7 +87,7 @@ Com o Bibliometrix, podemos analisar como a produção científica de artigos so
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/Tatianafp/AnaliseBibliometrica/AnnualScientificProduction.png}
+    \includegraphics[width=1\textwidth]{experiments/Tatianafp/PesquisaBibliometrica/images/AnnualScientificProduction.png}
     \caption{Evolução da produção científica no \dataset\  NewsRec@Tatianafp.}
     \label{fig:evol_anual_NewsRec_Tatianafp}
 \end{figure}
@@ -100,27 +102,28 @@ Ao explorar o \dataset\  NewsRec@Tatianafp com o auxílio da ferramenta Bibliome
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/Tatianafp/AnaliseBibliometrica/CountryCollaborationMap.png}
+    \includegraphics[width=1\textwidth]{experiments/Tatianafp/PesquisaBibliometrica/images/CountryCollaborationMap.png}
     \caption{Colaboração entre países segundo o \dataset\  NewsRec@Tatianafp.}
     \label{fig:country_collab_NewsRec_Tatianafp}
 \end{figure}
 
 Ao analisar a imagem \ref{fig:country_collab_NewsRec_Tatianafp} nota-se uma alta colaboração entre os Estados Unidos e China, acompanhados por colaborações com países da Europa e mais alguns países da Ásia como Índia, Japão e Coréia do Sul. Também se tem um volume considerável de contribuições com a Austrális e com o Canadá. Apesar de estar destacado no mapa, o Brasil não tem suas colaborações representadas pelas linhas que ligam os países. Isso ocorre devido ao seu número pequeno de colaborações, se resumindo a apenas três, conforme apresentado na tabela \ref{tab:Brasil_collab_Tatianafp}. 
 
-\begin{table}[htp]
-    \centering
-\footnotesize
-\csvreader[tabular = |r|l|l|r|r|,
-separator=semicolon,
-filter={\value{csvrow}<25}
-%,filter not strcmp={\csvcolii}{},
-, table head = \hline\hline \# & País  & País  & Frequência\\ \hline\hline,
-table foot = \hline\hline
-]{experiments/Tatianafp/World_Collaboration_Map.csv}{Document=\paper, DOI=\doi}{ \thecsvrow & {\tiny\paper} & {\tiny \doi} & \csvcoliii & \csvcoliv}
-
-    \caption{Colaborações entre o Brasil e demais países no \dataset\ NewsRec@Tatianafp.}
-    \label{tab:Brasil_collab_Tatianafp}
-\end{table}
+\begin{center}
+\begin{tabular}{||c c c||} 
+ \hline
+ País & País & Frequência \\ [0.5ex] 
+ \hline\hline
+ Brasil & Austria & 1 \\ 
+ \hline
+ Brasil & Portugal & 1 \\
+ \hline
+ Brasil & Rússia & 1  
+ \textbf{}
+ \caption{Colaborações entre o Brasil e demais países no \dataset\ NewsRec@Tatianafp.}
+\label{tab:Brasil_collab_Tatianafp}
+\end{tabular}
+\end{center}
 
 \subsection{Análise da Fontes mais relevantes }
 
@@ -128,20 +131,20 @@ Além das análises apresentadas anteriormente, também foi analisado as fontes 
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/Tatianafp/AnaliseBibliometrica/MostRelevant_Sources.png}
+    \includegraphics[width=1\textwidth]{experiments/Tatianafp/PesquisaBibliometrica/images/MostRelevantSources.png}
     \caption{Fontes mais relevantes segundo o \dataset\ NewsRec@Tatianafp.}
     \label{fig:relevant_sources_NewsRec_Tatianafp}
 \end{figure}
 
 \subsection{Análise da WordCloud }
 
-Utilizamos a WordCloud gerada pelo Bibliometrix a fim de analisar os termos mais relevantes presentes nos documentos. Como apresentado na figura , pode-se notar um aumento de termos como textit{privacy}, textit{trust} e textit{diversity}. Mostrando uma 
+Utilizamos a WordCloud gerada pelo Bibliometrix a fim de analisar os termos mais relevantes presentes nos documentos. Como apresentado na figura , pode-se notar um aumento de termos como textit{privacy}, textit{trust} e textit{diversity}. Mostrando uma recente preocupação da comunidade de produção científica  sobre o tema Sistemas de Recomendação de Notícias com os impactos que podem ser gerados por seus softwares. 
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/Tatianafp/AnaliseBibliometrica/MostRelevant_Sources.png}
+    \includegraphics[width=1\textwidth]{experiments/Tatianafp/PesquisaBibliometrica/images/WordCloudDocuments.png}
     \caption{Fontes mais relevantes segundo o \dataset\ NewsRec@Tatianafp.}
-    \label{fig:relevant_sources_NewsRec_Tatianafp}
+    \label{fig:wordloud_NewsRec_Tatianafp}
 \end{figure}
 
 \section{Resultados e interpretação}

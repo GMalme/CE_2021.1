@@ -137,7 +137,7 @@ A figura \ref{fig:evol:anual:SBDAA@guioliunb} apresenta um declínio na produç�
 
 
 
-Já figura \ref{fig:evol:anual:cit:SBDAA@guioliunb} mostra que o número de citações é na verdade crescente. Então segundo o podemos questionar se o tema realmente está em declínio ou em dispersando entre outras bases e autores. Um fato comum após algum tempo da iniciação da pesquisa sobre alguma área é a ampliação do conhecimento, logo, a distribuição também. Com a expressiva quantidade dos dados gerados nos desde 2018 é relevante considerar que os trabalhos tenham crescido, porém diluídos em outros temas e profissionais.
+Já figura \ref{fig:evol:anual:cit:SBDAA@guioliunb} mostra que o número de citações é na verdade crescente. Então segundo o podemos questionar se o tema realmente está em declínio ou em dispersando entre outras bases e autores. Um fato comum após algum tempo da iniciação da pesquisa sobre alguma área é a ampliação do conhecimento, logo a distribuição também. Com a expressiva quantidade dos dados gerados nos desde 2018 é uma possibilidade considerar que os trabalhos podem ainda tenham crescido, porém diluídos em outros temas e profissionais.
 
 \subsection{Interpretação do Crescimento} 
 
@@ -200,14 +200,14 @@ O termo mais utilizado nos títulos é \textit{data} concordando com as palavras
 
 \subsubsection{Autores mais relevantes\label{MASSA:Sankey:AutoresRelevantes}}
 
+A figura \ref{fig:SBDAA@guioliunb:relevantauthors} confirma uma grande participação chinesa nessa área de pesquisa. Porém, deve ser levado em conta a possibilidade de nomes homônimos ou participações do mesmo contribuidor com assinatura de sobrenome diferente nos trabalhos.
+
 \begin{figure}
     \centering
     \includegraphics[angle=0,width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/most relevant authors.png}
     \caption{Autores mais relevantes do \dataset\   SBDAA@guioliunb.}
     \label{fig:SBDAA@guioliunb:relevantauthors}
 \end{figure}
-
-A figura \ref{fig:SBDAA@guioliunb:relevantauthors} confirma uma grande participação chinesa nessa área de pesquisa. Porém, deve ser levado em conta a possibilidade de nomes homônimos ou participações do mesmo contribuidor com assinatura de sobrenome diferente nos trabalhos.
 
 
 \subsection{Medidas bibliométricas}
@@ -301,7 +301,7 @@ Além dessa podemos expor outra apresentação dos mesmos termos:
     \centering
     \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/TREEMAP.png}
     \caption{Termos mais frequentes no \dataset\ com representação \textit{TreeMap} SBDAA@guioliunb.}
-    \label{fig:MASSA2-ReferenceSpectroscopy}
+    \label{fig:MASSA2-TREEMAP}
 \end{figure}
 
 
@@ -319,14 +319,8 @@ Como também é confirmado as palavras-chaves do \dataset\ com a reincidência n
 
 \subsection{Métricas para Autores}
 
-Como as contribuições científicas são frutos de trabalhos em conjunto é importante evidenciar aqueles que contribuíram para as facilidades que foram adquiridas e que estão sendo progredidas. Segue os gráficos de relevância quanto aos documentos e produção segundo tempo, respectivamente.
+Como as contribuições científicas são frutos de trabalhos em conjunto é importante evidenciar aqueles que contribuíram para as facilidades que foram adquiridas e que estão sendo progredidas. Segue os gráficos de produção segundo tempo.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/most relevant authors.png}
-    \caption{Autores mais relevantes do \dataset\ SBDAA@guioliunb no contexto global.}
-    \label{fig:authors}
-\end{figure}
 
 \begin{figure}
     \centering
@@ -366,6 +360,10 @@ As métricas para fontes de informação permitem avaliar a qualidade das revist
 
 \subsubsection{Lei de Bradford}
 
+
+
+
+
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/BRADFORDS LAW.png}
@@ -398,7 +396,7 @@ No Biblioshiny quatro tipos de redes coocorrências podem ser geradas:
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/CO OCCURRRENCE NETWORK.png}
-    \caption{Revistas mais relevantes no  \dataset\ SBDAA@guioliunb, conforme a Lei de Bradford.}
+    \caption{Redes de Coocorrências no  \dataset\ SBDAA@guioliunb, conforme a Lei de Bradford.}
     \label{fig:MASSA2-Bradfords-Law.png}
 \end{figure}
 
@@ -429,11 +427,16 @@ O Bibliometrix permite exploração da estrutura intelectual do conhecimento, us
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/CO CITATION NETWORK.png}
-    \caption{Rede de cocitação entre as 50 referências mais presentes no  \dataset\ SBDAA@guioliunb.}
+    \caption{Rede de cocitação entre as referências mais presentes no  \dataset\ SBDAA@guioliunb.}
     \label{fig:MASSA2-CoCitation-Network}
 \end{figure}
 
 \subsubsection{Historiografia}
+
+
+
+
+
 
 \begin{figure}
     \centering
@@ -442,11 +445,19 @@ O Bibliometrix permite exploração da estrutura intelectual do conhecimento, us
     \label{fig:MASSA2-HistoricalDirectCitationNetwork-100docs}
 \end{figure}
 
-\subsection{Estrutura Social  do Conhecimento}
+
+
+
+\subsection{Estrutura Social do Conhecimento}
 
 Conhecimento científico é produzido socialmente, por meio de autores trabalhando em conjunto, e uma estrutura de filiações a organizações permanentes ou periódicas, que realizam ou promovem pesquisas, nelas incluídos os centros de pesquisa, universidades, departamentos, institutos, faculdades, eventos, revistas, conferências, e que evoluem ao longo do tempo. A análise da estrutura social do conhecimento evidencia esses relacionamentos, que iniciam no plano pessoal, e evoluem para outros escopos.
 
 \subsubsection{Rede de Colaboração}
+
+
+
+
+
 
 \begin{figure}
     \centering

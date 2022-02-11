@@ -1,4 +1,4 @@
-\chapter{Análise Bibliográfica sobre Análise e Descrição de Vídeo, por Gabriel RochaFontenele\label{chap:bibliometria:ngsylar}}
+\chapter{Análise Bibliográfica sobre Análise e Descrição de Vídeo, por Gabriel Rocha Fontenele\label{chap:bibliometria:ngsylar}}
 
 \section{Planejamento do estudo}
 
@@ -48,7 +48,7 @@ Já \texttt{analysis and descript*} foram utilizados para enfatizar estudos que 
 Por fim, tudos os termos após a conjunção \textit{not} tiveram o único objetivo excluir temas não ligados a proposta inicial da busca.
 
 \subsection{Registros recuperados}
-Os 775 registros obtidos como resultado da busca encontram-se em \url{https://github.com/jhcf/Comput-Experim-20212}, no diretório {experiments/ngsylar/PesqBibliogr/WoS775recs.txt}.
+Os 775 registros obtidos como resultado da busca encontram-se em \url{https://github.com/jhcf/Comput-Experim-20212/tree/main/experiments/ngsylar/PesqBibliogr/WoS775recs.txt}.
 
 A exportação do registro, com 69342 linhas em formato de texto não formatado, foi feita a partir de 22 campos referentes a \textit{Autor, Título, Fonte, Resumo, Palavra-chave, Endereços, Referências citadas e uso} no WoS.
 
@@ -152,7 +152,9 @@ Os termos mais recorrentes são \textit{machine learning} e \textit{computer vis
 Aguns outros termos como \textit{object recognition} aparecem em menor escala, indicando a aplicação de estudos baseados no tema para analise de imagens capturadas em tempo real por robôs.
 O lado esquerdo do diagram sugere alguns dos artigos mais relevantes para embasamento de estudos relacionados ao tema de análise e descrição de vídeos.
 
-\subsection{Análises Bibliométricas}
+\subsection{Análise Bibliométrica}
+
+\subsubsection{Fontes de Informação}
 
 \begin{figure}[H]
     \centering
@@ -161,12 +163,20 @@ O lado esquerdo do diagram sugere alguns dos artigos mais relevantes para embasa
     \label{fig:ASADES@ngsylar:RelevantSources}
 \end{figure}
 
+A figura \ref{fig:ASADES@ngsylar:RelevantSources} mostra as principais fontes de informação onde se encontram os artigos presentes no dataset ASADE@ngylar, destacando as \textit{IEEE Transactions on Pattern Analysis and Machine} e \textit{IEEE Transactions on Circuits and Systems for Vide}.
+
+\subsubsection{Autores}
+
 \begin{figure}[H]
     \centering
     \includegraphics[angle=0,width=1\textwidth]{experiments/ngsylar/PesqBibliogr/Imagens/ASADES-MostRelevantAuthors.png}
     \caption{Nomes de autores com maior relevância no dataset ASADES@ngsylar.}
     \label{fig:ASADES@ngsylar:RelevantAuthors}
 \end{figure}
+
+A figura \ref{fig:ASADES@ngsylar:RelevantAuthors} sugere quais são os autores mais relevantes e com maior número de artigos publicados presentes no dataset ASADE@ngylar. Faz-se necessário entretanto analisar mais profundamente a relação que cada um dos autores tem com tema.
+
+\subsubsection{Países citados}
 
 \begin{figure}[H]
     \centering
@@ -175,13 +185,18 @@ O lado esquerdo do diagram sugere alguns dos artigos mais relevantes para embasa
     \label{fig:ASADES@ngsylar:MostCitedCountries}
 \end{figure}
 
-\subsubsection{Interpretação das figuras }
-
-A figura \ref{fig:ASADES@ngsylar:RelevantSources} mostra as principais fontes de informação onde se encontram os artigos presentes no dataset ASADE@ngylar, destacando as \textit{IEEE Transactions on Pattern Analysis and Machine} e \textit{IEEE Transactions on Circuits and Systems for Vide}.
-
-A figura \ref{fig:ASADES@ngsylar:RelevantAuthors} sugere quais são os autores mais relevantes e com maior número de artigos publicados presentes no dataset ASADE@ngylar. Faz-se necessário entretanto analisar mais profundamente a relação que cada um dos autores tem com tema.
-
 Na figura \ref{fig:ASADES@ngsylar:MostCitedCountries}, entre os países mais citados, é visto que maior parte da produção encontra-se nos Estados Unidos, seguido pela China e logo após pelo Reino Unido.
+
+\subsubsection{Estrutura Intelectual}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[angle=0,width=1\textwidth]{experiments/ngsylar/PesqBibliogr/Imagens/ASADES-Intelect.png}
+    \caption{Países mais citados no dataset ASADES@ngsylar.}
+    \label{fig:ASADES@ngsylar:StIntel}
+\end{figure}
+
+A figura \ref{fig:ASADES@ngsylar:StIntel} mostra a rede de co-citação de artigos no conjunto de dados ASADES@ngsylar. São observados quatro aglomerados principais, dentre os quais o aglomerado azul se destaca como mais importante, com o trablho de Lowe dg, no qual grande parte dos artigos se baseia com peso e buscam encontrar métodos eficientes de extração de características ou padrões que não variam e podem ser identificadas em diferentes pontos de vista de um objeto ou cena capturada num dado ambiente.
 
 \section{Conclusão}
 Dadas as questões iniciais, percebemos que grande parte dos artigos encontrados não tem o foco principal sobre a descrição de vídeos, embora a maior parte tenho bases no tocande à análise de vídeo e reconhecimento de padrões em vídeo e processamento e identificação de imagens. Fica constatado que o tema pesquisado ainda não é um tema de forte engajamento ou com uma gama muito alta de autores interessados, mas é possível observar um modesto crescimento no número de publicações na área ou em contextos similares.

@@ -47,3 +47,53 @@ Os 452 registros obtidos como resultado da busca encontram-se em \url{https://ww
 
 Foram utilizadas as opções \textit{Exportar registros para arquivo Bibtex} e \textit{Gravar Conteúdo: Registro completo e Referências citadas} no WoS, para que as citações também fosse usadas em análises da citações.
 
+\section{Análise dos Dados}
+
+\subsection{Filtragem de registros}
+
+Antes da análise, foi aplicado um filtro sobre o \dataset\ inicial, que era formado por 452 registros,contendo pŕevias de artigos, artigos de conferência, entre outros. Foram removidos os registros de prévias de artigos, restando 446 registros após a filtragem. Este conjunto de artigos será chamado de NewsRec@Tatianafp. 
+
+\subsection{Análise bibliográfica descritiva do \textit{dataset} }
+
+Será apresentado a seguir, uma análise bibliométrica descritiva do \dataset\   NewsRec@Tatianafp, a qual visa fazer um descrição inicial do conjunto de registros. Tal análise foi gerada pela função \texttt{biblioAnalysis}.
+
+As informações mais gerais sobre o \dataset\ NewsRec@Tatianafp são as seguintes:
+
+\begin{description}
+    \item [\textit{Timespan}]  Os artigos que atenderam aos critérios de busca e filtragem foram publicados a partir de 1994, até 2021. Ou seja, não foram encontrados registros entre 1945 e 1993.
+    \item [\textit{Sources (Journals, Books, etc)}] São 311 fontes de informação que publicaram os documentos recuperados no \dataset\  NewsRec@Tatianafp. Ou seja, em média, cada \textit{scientific journal} publicou $446/311=1,43$ artigos. 
+    \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \dataset\  NewsRec@Tatianafp é de 6,37 anos.
+    \item [\textit{Average citations per documents}] Cada artigo no \dataset\   NewsRec@Tatianafp  foi citado, em média 13,11 vezes.
+    \item [\textit{Average citations per year per doc}] Cada artigo no \dataset\   NewsRec@Tatianafp  foi citado, em média 1,704 vezes por ano.
+    \item [\textit{References}] O \dataset\  NewsRec@Tatianafp contém 10463 referências citadas.
+    \item [\textit{Keywords Plus (ID)}] 193 distintas palavras-chave do tipo Keywords Plus (ID) foram encontradas no \dataset\ NewsRec@Tatianafp. 
+    \item [\textit{Author's Keywords (DE)}] 1.180 distintas palavras-chave indicadas pelos autores foram encontradas no \dataset\ .
+    \item [\textit{Authors}] 1.222 distintos nomes de autores foram encontrados no \dataset\ .
+    \item [\textit{Author Appearances}] Os 1.528 distintos (nomes de) autores foram encontrados 23.470 vezes, como autores de artigos.
+    \item [\textit{Authors of single-authored documents}] Dentre os 1.528 distintos (nomes de) autores encontrados, 24 deles editaram artigos individualmente, isso é, sem co-autores.
+    \item [\textit{Authors of multi-authored documents}] Dentre os 1.528 distintos (nomes de) autores encontrados, 1.198 deles editaram artigos com um ou mais co-autores"
+    \item [\textit{Single-authored documents}] Dentre os 446 documentos presentes no \dataset\   NewsRec@Tatianafp, 26 foram escritos por um único autor, e os 420 restantes foram elaborados em co-autoria.
+    \item [\textit{Documents per Author}] Dentre os 1.528 distintos (nomes de) autores, cada um publicou em média 0,365 artigos.
+    \item [\textit{Authors per Document}] Cada um dos 446 documentos presentes no \dataset\   NewsRec@Tatianafp foi autorado com 3,35 autores em média ($19.410 / 5.787 = 3,35$).
+    \item [\textit{Co-Authors per Documents}] As 1.528 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 2,74 vezes para os 446 documentos do \dataset\  NewsRec@Tatianafp.
+    \item [\textit{Collaboration Index}] Os 1.198 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 3,43 vezes para editar os 446 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 2,85. 
+\end{description}
+
+\subsection{Análise da Evolução da Produção Científica}
+
+Com o Bibliometrix, podemos analisar como a produção científica de artigos sobre o tema Sistemas de Recomendação de Notícias evoluiu ao longo dos anos, segundo o \dataset\  NewsRec@Tatianafp. Ao realizar essa análise, encontramos a imagem \ref{fig:evol_anual_NewsRec_Tatianafp}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/Tatianafp/AnaliseBibliometrica/AnnualScientificProduction.png}
+    \caption{Evolução da produção científica no \dataset\  NewsRec@Tatianafp.}
+    \label{fig:evol_anual_NewsRec_Tatianafp}
+\end{figure}
+
+O \textit{Annual Growth Rate} encontrado no \dataset\  NewsRec@Tatianafp é de 5.12\%, consideravelmente maior que a taxa de crescimento anual da publicação científica mundial, de cerca de 3.3\%.
+
+Ao observarmos a diferença entre a quantidade de publicações entre os anos de 2014 e 2018, os dois picos de crescimento, nota-se que o número quase que duplica. Isso indica que provavelmente ocorrera uma descoberta importante no ano de 2018, o que incentivou a pesquisa sobre o tema de sistemas de recomendação de notícias. No entanto, houve uma queda na produção científica nos anos posteriores ao ano de 2018, o motivo para tal ainda necessita de maiores investigações.  
+
+\subsection{Análise Informátrica da Estrutura }
+
+

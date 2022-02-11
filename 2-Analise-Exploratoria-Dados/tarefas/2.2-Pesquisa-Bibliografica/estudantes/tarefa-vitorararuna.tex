@@ -101,34 +101,17 @@ As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/ThreeFieldPlot.png}
-    \caption{Plotagem ``Três Campos'' (Sankey plot) do \textit{dataset}}
+    \caption{Plotagem do tipo``Três Campos'' (Sankey plot) do \textit{dataset}}
     \label{fig:DEEPFAKES@titofrota:ThreeFieldPlot}
 \end{figure}
 
-A figura \ref{fig:DEEPFAKES@titofrota:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' realizada no \textit{dataset}, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 10 Citações mais frequentes (CR - Cited Records), e à direita, as 18 Palavras-Chave mais frequentes empregadas pelos autores.
-
 \subsection{Interpretação da figura \ref{fig:DEEPFAKES@titofrota:ThreeFieldPlot}}
-A maioria dos autores mais relevantes apresentados na plotagem são, aparentemente, de origem oriental, mais especificamente chinesa. Além disso, uma quantidade razoável dos artigos surgiram em universidades da China. O que sugere o avanço e a preocupação do oriente a respeito do tema analisado.
+A maioria dos autores mais relevantes apresentados na plotagem são, aparentemente, de origem oriental, mais especificamente chinesa. O que sugere o avanço e a preocupação do oriente a respeito do processamento de linguagem natural. Além disso, pode ser devido à dificuldade dos mesmos em se comunicar com outras linguas.
 
-É possível observar nas palavras-chave que há bastante interesse na detecção de \textit{deepfakes}, apresentam-se os termos \textbf{deepfake detection}, \textbf{fake news detection} e \textbf{detection}. Os resultados sugerem que há interesse em remediar os impactos que os conteúdos criados através de algoritmos de \textit{deep learning} podem causar à sociedade.
 
 \section{Refinamento da Coleta de Dados}
 
-Após a análise do \textit{dataset}, foi possível notar que há a presença de artigos que não estão relacionados ao tema. A observação indica a necessidade de uma nova busca, visando a exclusão de artigos não relacionados ao desenvolvimento de \textit{deepfakes}.
-
-Ao analisar a rede de co-ocorrência de palavras aplicada ao \textit{dataset}, foram identificadas algumas palavras no cluster que não correspondem ao assunto trabalhado. Assim, surgiu uma nova \textit{query} para levantar artigos mais apurados e relevantes.
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/co-ocurrence.png}
-    \caption{Rede de co-ocorrência de palavras aplicada ao \textit{dataset}.}
-    \label{fig:DEEPFAKES@titofrota:redecoocorrencia}
-\end{figure}
-
-A nova \textit{query} leva em conta novos termos e a busca foi feita nas publicações entre 2017 (quando o termo \textit{deepfake} surgiu) e 2022.
-
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query refinada de busca sobre Deepfakes.}]
-{experiments/titofrota/PesquisaBibliometrica/Deepfakes/new-query.txt}
+Após a análise do \textit{dataset}, foi possível notar que praticamente a maioria dos artigos condizia para que a busca retornasse o esperado. Isso de faz por conta do 
 
 
 Além das justificativas para os termos usados entre as linhas 1 a 9, já descritas em \ref{MASSA:query},  justifica-se na listagem \ref{query20220203}, a inclusão da cláusula \textit{not (

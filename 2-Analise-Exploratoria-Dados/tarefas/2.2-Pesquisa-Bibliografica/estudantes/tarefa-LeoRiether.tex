@@ -21,17 +21,18 @@ Pesquisas na Web of Science, SCOPUS e Google Scholar não encontraram resultados
 O estudo será feito com auxílio das ferramentas Bibliometrix e Biblioshiny, executados por meio do RStudio, conforme o \textit{worflow} recomendado pelos autores do pacote, indicado na figura ~\ref{fig:bibliometrix:workflow}.
 
 \subsection{Limitações}
-A pesquisa foi realizada no período de uma semana, e portanto não foi possível analisar muito a fundo. Além disso, a única base de dados utilizada foi a Web of Science, mantida pela Clarivate. Em um estudo posterior, seria interessante ter mais tempo para fazer a pesquisa e utilizar mais de uma base de dados bibliográfica.
+A pesquisa foi realizada no período de uma semana, e portanto não foi possível analisar muito a fundo. Além disso, a única base de dados utilizada foi a Web of Science, mantida pela Clarivate. Em um estudo posterior, seria interessante ter mais tempo para fazer a pesquisa e utilizar mais de uma base de dados bibliográficos.
 
 
 \section{Coleta de dados\label{leoriether:lammetrics:coleta}}
 Os dados obtidos foram coletados utilizando a ferramenta Web of Science, da Clarivate, no dia 08 de fevereiro de 2022, acessada por meio do Portal de Periódicos da CAPES. A coleção utilizada foi a Science Core Collection, edição Science Citation Index Expanded (SCI-EXPANDED), que possui artigos indexados desde 1945 sobre as áreas de ciências exatas e naturais.
 
-Como o objetivo era analisar todas as publicações relacionadas ao estudo do lambda cálculo, a query utilizada na Web of Science utiliza as palavras chave "lambda" e "calculus", ou "calculi"; a pesquisa, porém, foi limitada a categorias de Matemática, Lógica e Computação, a fim de omitir resultados relacionados à Física. A query produzida é mostrada na listagem \ref{leoriether-lammetrics-query}.
-
 \lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={\query\  de busca no WoS sobre lambda cálculo},label=leoriether-lammetrics-query]{experiments/LeoRiether/AnaliseBibliometrica/LambdaCalculus/WoS-20220208/query.txt}
 
 Com isso, foram obtidos 2612 registros bibliográficos sobre o cálculo-$\lambda$, incluindo algumas de suas variantes, como o cálculo mu-lambda, o cálculo-$\lambda$ não tipado e o com tipagem simples. Após exportação dos registros em blocos de até mil itens, com a opção \textit{Exportar registros para arquivo de texto sem formatação}, os arquivos foram concatenados, formando um arquivo de 7.99MB com todos os dados, que pode ser encontrado no GitHub da disciplina, em \url{https://github.com/jhcf/Comput-Experim-20212/blob/main/experiments/LeoRiether/AnaliseBibliometrica/LambdaCalculus/WoS-20220208/recs.txt}.
+
+\subsection{Explicação da \query de Busca}
+Como o objetivo era analisar todas as publicações relacionadas ao estudo do lambda cálculo, a query utilizada na Web of Science utiliza as palavras chave "lambda" e "calculus", ou "calculi". A pesquisa, porém, foi limitada a categorias de Matemática, Lógica e Computação, a fim de omitir resultados relacionados à Física. A query produzida é mostrada na listagem \ref{leoriether-lammetrics-query}.
 
 \section{Análise dos dados}
 
@@ -90,3 +91,45 @@ Outra análise que pode ser feita sobre o \dataset\  LC@LeoRiether é a de evolu
 
 Com base na figura, observamos que há um crescimento aproximadamente constante, porém pequeno, de citações por ano. Note que o eixo de média de citações por ano não tem uma grande extensão, indo de 0 citações até um máximo de somente 2.2, em 2015. Além disso, vemos, como no gráfico de produção científica anual da figura \ref{fig:evol:anual:LC@LeoRiether} da seção anterior, um pico de média de citações entre 1991 e 1993. Dessa vez, no entanto, esse pico é seguido de uma queda no número de citações até 1997.
 
+\subsection{\textit{Three-Field Plots (Sankey diagram)}}
+
+\begin{figure}
+    \centering
+    \includegraphics[angle=0,width=1\textwidth]{experiments/LeoRiether/AnaliseBibliometrica/LambdaCalculus/WoS-20220208/Images/ThreeFieldsPlot.png}
+    \caption{Plotagem ``Três Campos'' (Sankey plot) do \dataset\   LC@LeoRiether: 10 Países, Palavras-Chave e Revistas.}
+    \label{fig:LC@LeoRiether:ThreeFieldPlot}
+\end{figure}
+
+Outra visualização que podemos fazer sobre o \dataset\  LC@LeoRiether é uma Plotagem de Três Campos, ou \textit{Sankey diagram}. Um diagrama interessante construído é mostrado na figura \ref{fig:LC@LeoRiether:ThreeFieldPlot}, que vincula 10 países (à esquerda), palavras-chave (ao meio) e revistas (à direita) frequentemente relacionadas ao estudo do lambda cálculo. Com o Bibliometrix, é possível vincular diferentes campos no diagrama de \textit{Sankey}. Os campos selecionados na figura foram escolhidos por serem, na visão do autor, os mais interessantes para se analisar. Além disso, foram escolhidos apenas 10 itens de cada campo, para facilitar a visualização e entendimento do gráfico.
+
+\subsection{Interpretação da figura \ref{fig:LC@LeoRiether:ThreeFieldPlot}}
+Na coluna do meio, de palavras-chave, podemos perceber alguns termos ligados ao cálculo-$\lambda$, como lógica linear, linguagens, teoria dos tipos, programação funcional e semânticas denotacionais. É interessante ver que a lógica linear é a única lógica que aparece nesse conjunto de palavras chave, mesmo que o lambda cálculo esteja também relacionado a outras lógicas. Isso indica que há um interesse maior pelo estudo da lógica linear pela comunidade científica do cálculo-$\lambda$, talvez por que essa lógica tenha um significado computacional maior, sendo capaz de modelar o uso de recursos computacionais limitados.
+
+Também vemos no diagrama que a maioria das publicações vem da França, dos Estados Unidos e da Itália. Apesar disso, os Estados Unidos possuem uma proporção muito menor de publicações ligadas à lógica linear, em que França, Itália e Reino Unido dominam. De forma semelhante, a produção de artigos ligados à semântica denotacional é muito maior na França. Em outras áreas, a distribuição dos países é parecida.
+
+Na última coluna, que mostra as maiores fontes de artigos científicos, vemos que há tanto fontes da Ciência da Computação, quanto da Lógica, quanto da Matemática.
+
+\section{Colaborações entre Instituições no \dataset\  LC@LeoRiether}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/LeoRiether/AnaliseBibliometrica/LambdaCalculus/WoS-20220208/Images/CollaborationNetwork.png}
+    \caption{Grafo de colaborações entre instituições no \dataset\  LC@LeoRiether}
+    \label{fig:LC@LeoRiether:CollaborationNetwork}
+\end{figure}
+
+A figura \ref{fig:LC@LeoRiether:CollaborationNetwork} nos mostra um grafo de colaborações entre instituições no \dataset\  LC@LeoRiether. Nela, vemos universidades como a Carnegie Mellon University, americana; University of Turin, italiana; University of Bologna, também italiana; École Polytechnique, francesa; e CNRS, também francesa. Como esperado, as instituições com mais publicações estão situadas nos países que foram vistos no diagrama de \textit{Sankey}.
+
+Também podemos analisar os graus de cada nó desse grafo (cada colaboração gera uma aresta entre as duas instituições participantes). O gráfico que mostra isso é visto na figura \ref{fig:LC@LeoRiether:CollaborationNetworkDegrees}. Vemos que a distribuição dos graus é exponencial, com poucas instituições com muitas colaborações, e muitas instituições com poucas colaborações.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/LeoRiether/AnaliseBibliometrica/LambdaCalculus/WoS-20220208/Images/CollaborationNetworkDegrees.png}
+    \caption{Evolução das citações ao \dataset\   LC@LeoRiether.}
+    \label{fig:LC@LeoRiether:CollaborationNetworkDegrees}
+\end{figure}
+
+\section{Conclusões}
+Foi feita um estudo bibliométrico sobre o estudo científico do cálculo-$\lambda$, utilizando as ferramentas Bibliometrix e Biblioshiny. Com os dados obtidos da Web of Science, foi possível extraír diversas informações sobre essa área da computação.
+
+Nesse estudo, foram analisados vários aspectos dessa área de estudo. Em primeiro lugar, foi analisada a evolução da intensidade de publicações sobre o cálculo-$\lambda$, e foi possível verificar que há um aumento constante nessa intensidade, apesar dela não ser exponencial, como em outras áreas. Além disso, vimos os principais países e instituições que participam do produção científica dessa área, contrastando com quais sub-áreas ou áreas relacionadas elas mencionam em seus artigos. Por último, vimos quais termos e expressões importantes são mencionados em artigos de lambda cálculo, e portanto devem estar relacionados com a área.

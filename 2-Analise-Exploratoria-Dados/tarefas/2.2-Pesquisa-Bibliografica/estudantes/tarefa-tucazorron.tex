@@ -4,48 +4,44 @@
 
 \textit{Graph Neural Network}, uma junção de "\textit{graph}" e "\textit{neural network}", se trata de uma classe de rede neural para processamento de dados melhor representada por estruturas de dados de grafo. Eles foram popularizados por seu uso em aprendizado supervisionado sobre propriedades de várias moléculas.
 
-Atualmente, o fenômeno das \textit{fake news} é amplamente discutido, o que abre espaço para debates em torno da produção de materiais falsos utilizando essa tecnologia.
-
-O potencial das implicações sociais e políticas de tais materiais é extenso, podendo causar danos reais as vítimas de difamação política ou até mesmo "pornografia de vingança". Mas embora hajam debates éticos a respeito da tecnologia, os \textit{deepfakes} podem gerar avanços interessantes para as artes e cinema. 
+Atualmente, \textit{graph neural networks} são muito utilizados em diversas áreas como processamento de linguagem natural, aprendizado de máquina e até em jogos como engines de xadrez.
 
 Partindo dos pontos acima, as questões que nortearam a pesquisa foram:
 \begin{itemize}
-    \item Quais são as técnicas mais utilizadas na produção dos conteúdos?
-    \item Quais são os impactos dos \textit{deepfakes}?
-    \item Já existem métodos eficazes na detecção de \textit{deepfakes}? 
-    \item Quais são as posições éticas presentes na comunidade de \textit{deepfakes}?
+    \item Quais são as técnicas mais utilizadas com \textit{graph neural networks}?
+    \item Quais são os impactos dessa tecnologia hoje em dia?
+    \item Quais as principais áreas utilizando \textit{graph neural networks}?
 \end{itemize}
 
 \subsection{Uso do Bibliometrix e Biblioshiny}
 Serão usadas a ferramenta e o \textit{workflow} proposto pelos autores do pacote Bibliometrix, conforme indica a figura ~\ref{fig:bibliometrix:workflow}.
 
-\subsection{Limitações} O exercício relatado foi feito em 8 horas, utilizando a base de dados Web of Science (WoS)
+\subsection{Limitações} O exercício relatado foi feito em 6 horas e meia, utilizando a base de dados Web of Science (WoS).
 
 
 \section{Coleta de dados\label{MASSA:coleta}}
 
-A coleta de dados feita usando a base Web of Science (WoS) no dia 05 de janeiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
+A coleta de dados feita usando a base Web of Science (WoS) no dia 09 de janeiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
 
-As buscas formam feitas nas coleções \textbf{Science  Citation  Index  Expanded (SCI -EXPANDED)} e \textbf{Social  Sciences  Citation  Index (SSCI)}, que contém registros relativos a vários campos do conhecimento, no qual o SCI-EXPANDED foca mais na área das ciências exatas e naturais, enquanto que o SSCI indexa artigos da área das ciências sociais. Observe que os artigos nessas duas coleções são indexados desde 1945. 
+Foi usada a \textit{query} de busca ilustrada loog abaixo:
 
-Foi usada a \textit{query} de busca ilustrada na listagem:
-
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre Deepfakes.}]
-{experiments/titofrota/PesquisaBibliometrica/Deepfakes/query.txt}
+graph neural networks
+graph ai
+graph convolutional networks
 
 \subsection{Explicação para os termos de busca usados\label{sec:titofrota:query}}
 
-A busca utilizou cláusulas que retornassem registros relacionados a \textit{deepfakes} nos formatos visuais e auditivos. Evitando os registros que tratassem exclusivamente sobre \textit{fake news}, que não são o principal tópico da análise. Os termos podem aparecer no título, no \textit{abstract} e/ou nas \textit{keywords}. 
+A busca utilizando estes termos se deve pela lógica de tentar encontrar artigos voltados para o tema de grafos, com foco em redes neurais e inteligência artificial. Os termos podem aparecer no título, no abstract ou nas palavras chave.
 
-Os termos \texttt{deep}, \texttt{fake}, \texttt{speech}, \texttt{deepfake} buscam os resultados sobre \textit{deepfakes} e discursos falsos. O termo \texttt{news} é utilizado para excluir os resultados que tratavam sobre a detecção de \textit{fake news} através de algoritmos de \textit{deep learning}.
+O termo grafo se refere às buscas voltadas para esta estrutura de dados. Já seus adjetivos como redes neurais e inteligência artificial foram usados para entender aplicações mais específicas.
 
-Foram obtidos 1.033 registros com a \textit{query} utilizada. Na exportação, foi utilizado o formato de arquivo de texto sem formatação, com os 29 campos disponíveis.
+Foram obtidos mais de 15 mil registros com a \textit{query} utilizada. Na exportação, foi utilizado o formato de arquivo de texto sem formatação, com os 29 campos disponíveis.
 
 \section{Análise dos dados}
 
 \subsection{Filtragem de registros}
 
-Para a filtragem, removemos registros indesejados. O objetivo é obter apenas os artigos (supondo que o conhecimento de maior qualidade a respeito do tema está nas revistas, afinal é o método padrão de publicação científica), excluindo críticas, prévias, cartas e etc. Após a aplicação do filtro, 537 registros foram mantidos no \textit{dataset} que servirá como objeto da análise.
+Para não poluir demais os gráficos, foi feita uma filtragem com os 2000 artigos mais relevantes do tema.
 
 \subsection{Análise descritiva do \textit{dataset} }
 
@@ -53,7 +49,7 @@ A seguir, é feita uma análise bibliométrica descritiva do \textit{dataset} ut
 
 As informações mais gerais sobre o \textit{dataset} são as seguintes:
 \begin{description}
-    \item [\textit{Timespan}] Os artigos filtrados foram publicados entre 1960 e 2022, o que indica que ainda há algum artigo não relacionado ao tema, que é relativamente recente.
+    \item [\textit{Timespan}] Os artigos filtrados foram publicados entre 1966 e 2022.
     \item [\textit{Sources (Journals, Books, etc)}] São 340 fontes de informação que publicaram os artigos recuperados no \textit{dataset}. Logo, a média de publicações por \textit{scientific journal} é de $1.033/537=1,9$ artigos.
     \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no \textit{dataset} é de 3,59 anos.
     \item [\textit{Average citations per documents}] Cada artigo no \textit{dataset} foi citado, em média 13,63 vezes.

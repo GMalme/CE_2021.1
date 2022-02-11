@@ -2,18 +2,19 @@
 
 \section{Planejamento do estudo}
 
-\textit{NLP}, uma junção de "\textit{deep learning}" e "\textit{fake}", se trata de técnicas de síntese de sons e imagens humanas baseadas em inteligência artificial. Com o avanço no desenvolvimento de algoritmos de \textit{deep learning}, é notório o crescimento na quantidade de tais conteúdos falsos publicados na internet.
+\textit{NLP} (natural language processing) ou processamento de linguagem natural (PLN em português) é a tecnologia usada para ajudar dispositivos tecnológicos a entenderem a linguagem do ser humano de maneira a responder suas demandas.
 
-Atualmente, o fenômeno das \textit{fake news} é amplamente discutido, o que abre espaço para debates em torno da produção de materiais falsos utilizando essa tecnologia.
+Esse processo pode parecer simples para você que está acostumado a mexer no seu smartphone e nos aplicativos que o compõem, bem como realizar uma pesquisa no Google e receber uma resposta de qualidade, mas a verdade é que você e a tecnologia usam linguagens diferentes e é preciso um “tradutor automático” para permitir que vocês se entendam.
 
-O potencial das implicações sociais e políticas de tais materiais é extenso, podendo causar danos reais as vítimas de difamação política ou até mesmo "pornografia de vingança". Mas embora hajam debates éticos a respeito da tecnologia, os \textit{deepfakes} podem gerar avanços interessantes para as artes e cinema. 
-
-Partindo dos pontos acima, as questões que nortearam a pesquisa foram:
+ Natural Language Processing (NLP) é uma vertente da Inteligência Artificial que estuda a capacidade e as limitações de uma máquina em entender a linguagem dos seres humanos. Ou seja, é uma interface entre a linguagem homem-máquina. Dessa forma, o objetivo do PLN é fornecer aos computadores a capacidade de entender e compor textos.
+ 
+ Para que isso aconteça, passamos por diversas etapas de um pré-processamento, ou seja, ao recolher um texto ou uma base de textos nos quais queremos que a máquina entenda, vamos "limpar" ele de uma forma na qual eu compute somente as informações importantes.
+ 
+Algumas das técnincas usadas para pré-processar um texto:
 \begin{itemize}
-    \item Quais são as técnicas mais utilizadas na produção dos conteúdos?
-    \item Quais são os impactos dos \textit{deepfakes}?
-    \item Já existem métodos eficazes na detecção de \textit{deepfakes}? 
-    \item Quais são as posições éticas presentes na comunidade de \textit{deepfakes}?
+    \item Tokenization -> Tokens são componentes textuais independentes e contemporâneos que têm alguma sintaxe definidae semântica. (frases, setenças, paragrafos) 
+    \item Stop Words -> São palavras/letras no texto que são insignificantes para a compreensão do contexto e que também são palavras no qual os motores de busca ignoram em seus resultados, como por exemplo: a, agora, ainda, alguém, algum,, deles, depois, dessa, dessas, desse, etc.
+    \item Stemming -> Aqui vamos analisar cada palavra individualmente e reduzi-la à sua raiz ou, como é chamado na técnica, ao seu stem. Uma característica dessa técnica é que ela pode reduzir a palavra a uma outra gramaticalmente incorreta, porém ainda com valor para nossa análise
 \end{itemize}
 
 \subsection{Uso do Bibliometrix e Biblioshiny}

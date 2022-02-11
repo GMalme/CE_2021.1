@@ -1,0 +1,11 @@
+    (experimental or analy* or model*) 
+and 
+    bank*
+and
+    (risk or fraud or fake)
+and
+    (lending or loan or credit or pay* or delinquency)
+and
+    (software or algorithm or tech*)
+
+(Topic)

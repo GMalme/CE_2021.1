@@ -1,0 +1,5 @@
+(game* or  specification or requirements ) 
+and 
+(advances or computer) 
+and 
+(hardware or purchase)

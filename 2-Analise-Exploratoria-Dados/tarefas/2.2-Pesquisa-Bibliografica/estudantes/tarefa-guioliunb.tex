@@ -259,109 +259,30 @@ Após a apresentação das citações internas e externas da pesquisa feita resu
 
 \paragraph{Referências a outros documentos (artigos, capítulos de livros etc) citados pelos artigos no \dataset}
 
-Cada registro do \dataset\ SBDAA@guioliunb contém o conjunto das referências citadas, no campo CR. A tabelas \ref{tab:MASSA2:LocalCitationsReferences} apresentada de forma sumária quais foram as 25 citações mais frequentes, sugerindo os principais documentos que contém o conhecimento mais basilar usado pelos pesquisadores nesse campo do conhecimento da simulação multiagente de fenômenos sociais. Note que os registros de muitos desses documentos poderão não estar presentes no \dataset\ SBDAA@guioliunb.
-
-\begin{table}[htp]
-    \centering
-\footnotesize
-\csvreader[tabular = |r|l|l|r|,
-separator=semicolon
-%,filter not strcmp={\csvcolii}{},
-, table head = \hline\hline \# & Artigo Citado & DOI & Tot.Cit.\\ \hline\hline,
-table foot = \hline\hline
-]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-Most-Local-Cited-References.csv}{Cited References=\paper, DOI=\doi,Citations=\totcit}{ \thecsvrow & {\tiny\paper} & {\tiny \doi} & \totcit}
-
-    \caption{25 referências (artigos, capítulos de livros etc) mais citadas localmente no \dataset\ SBDAA@guioliunb.}
-    \label{tab:MASSA2:LocalCitationsReferences}
-\end{table}
-
-Alguns desses registros serão brevemente comentados a seguir, acrescentando-se que os dez mais citados já foram descritos na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes}.
-
-\begin{enumerate}
-\item \textit{\textbf{Collective dynamics of ‘small-world networks'}} \citep{watts_collective_1998}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes} tem 25136 citações globais; 
-\item \textit{\textbf{Consensus problems in networks of agents with switching topology and time-delays}} \citep{olfati-saber_consensus_2004}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes}, possui 8465 citações globais;
-
-\item \textit{\textbf{Emergence of Scaling in Random Networks}}\citep{barabasi_emergence_1999}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes};
-
-\item \textit{\textbf{Statistical physics of social dynamics}}\citep{castellano_statistical_2009}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes}; 
-\item \textit{\textbf{Novel Type of Phase Transition in a System of Self-Driven Particles}} \citep{vicsek_novel_1995}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes}; 
-
-\item \textit{\textbf{Flocks, herds and schools: A distributed behavioral model}} \citep{reynolds_flocks_1987}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes};
-
-\item \textit{\textbf{Agent-based modeling: Methods and techniques for simulating human systems}} \citep{bonabeau_agent-based_2002}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes};
-
-\item \textit{\textbf{Opinion dynamics and bounded confidence: models, analysis and simulation}} \citep{hegselmann_opinion_2002}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes}; 
-
-\item \textit{\textbf{The ODD protocol: A review and first update}} \citep{grimm_odd_2010}, já descrito na plotagem Sankey em \ref{MASSA:Sankey:AutoresRelevantes};
-
-\item \textit{\textbf{Consensus seeking in multiagent systems under dynamically changing interaction topologies}} \citep{ren_consensus_2005} explora novas propriedades da formação de consenso em redes de múltiplos agentes com topologia variável;
-
-
-\item \textit{\textbf{Coordination of groups of mobile autonomous agents using nearest neighbor rules}} \citep{jadbabaie_coordination_2003}
-apresenta modelos teóricos que embasam o já citado trabalho de simulação feito por \citet{vicsek_novel_1995}.
-
-\item \textit{\textbf{Mixing beliefs among interacting agents}} \citep{deffuant_mixing_2000} descreve um modelo de dinâmica de opinião em grupos de agentes;
-
-\item \textit{\textbf{NetLogo (and NetLogo User Manual)}}  \citep{wilensky_netlogo_1999} é uma página web que hospeda a descrição da linguagem de simulação multiagente chamada NetLogo;
-
-
-\item \textit{\textbf{A standard protocol for describing individual-based and agent-based models}} \citep{grimm_standard_2006} introduz o protocolo ODD, para descrição de simulações multia-agentes;
-
-\item \textit{\textbf{Growing Artificial Societies: Social Science from the Bottom Up}} \citep{epstein_growing_1996} é um livro que descreve o uso de um simulador de sistemas multi-agentes chamado Sugarscape, explorando propriedades de sistemas sociais complexos, como acumulação de riqueza e formação de cultura;
-
-\item \textit{\textbf{Flocking for multi-agent dynamic systems: algorithms and theory}} \citep{olfati-saber_flocking_2006} apresenta um arcabouço para o projeto e análise de algoritmos de simulação voo/nado de pássaros/peixes;
-
-\item \textit{\textbf{Simulating dynamical features of escape panic}} \citep{helbing_simulating_2000} apresentam estudos de simulação multiagente do comportamento de multidões em situação de pânico;
-
-\item \textit{\textbf{Distributed Event-Triggered Control for Multi-Agent Systems}} \citep{dimarogonas_distributed_2012} investigam propriedades de simulações de coordenação de ações em sistemas multiagentes, baseadas no processamento distribuído de eventos;
-
-\item \textit{\textbf{Consensus and Cooperation in Networked Multi-Agent Systems}} \citep{olfati-saber_consensus_2007}  apresenta um arcabouço teórico para análise de algoritmos de formação de consenso em sistemas multiagente;
-
-\item \textit{\textbf{Opinion evolution in closed community}} \citep{sznajd-weron_opinion_2000} emprega simulações de um modelo magnético de física do estado sólido (Ising spin model) para analisar propriedades da formação de opiniões em comunidades sintéticas ``democráticas'' ou  ``ditatoriais'' (sistemas multiagentes);
-
-\item \textit{\textbf{Reinforcement Learning: An Introduction}} \citep{sutton_reinforcement_2014} é um livro que apresenta as principais ideias e algoritmos da aprendizagem por reforço;
-
-\item \textit{\textbf{Birds of a Feather: Homophily in Social Networks}} \citep{mcpherson_birds_2001} apresenta, sobre uma perspectiva sociológica, o conceito-chave da homofilia, usado em análise de redes sociais;
-
-
-\item \textit{\textbf{Social force model for pedestrian dynamics}} \citep{helbing_social_1995} emprega modelos analíticos físicos e simulações computacionais, para descrever fenômenos típicos da movimentação de pedestres em espaços urbanos;
-
-\item \textit{\textbf{Statistical mechanics of complex networks}} \citep{albert_statistical_2002}  apresenta uma ampla compilação de propriedades físicas, matemáticas, estatísticas e algorítmicas de grafos que representam redes complexas de relações entre entidades que ocorrem na natureza, em sistemas físicos, biológicos, humanos e tecnológicos;
-
-\item \textit{\textbf{The Dissemination of Culture: A Model with Local Convergence and Global Polarization
-}} \citep{axelrod_dissemination_1997} utiliza modelos de simulação baseados em agentes para esclarecer de que modo surgem heterogeneidades e homogeneidades culturais em sociedades artificiais geograficamente dispersas, que interagem por meio de múltiplos traços culturais.
-\end{enumerate}
-
-\paragraph{Espectroscopia das referências}
-
-A técnica de espectroscopia das referências bibliográficas (``reference publication year spectroscopy'' (RPYS)) de um \dataset\cite{marx_detecting_2014} possibilita identificar as raízes históricas  de um campo de conhecimento. 
-
-A figura \ref{fig:MASSA2-ReferenceSpectroscopy} apresenta, distribuída ao longo do tempo, a quantidade de referências citadas no \dataset\, para cada ano, bem como os desvios dessa quantidade em relação à média (em vermelho). A mais antiga das referências usadas é do ano de 1705, e não se detectam evidentes picos isolados de referências em anos específicos, que indicariam surgimento de publicações mais importantes que as sucederam. Há, entretanto, uma oscilação dos desvios na quantidade de citações, em períodos de aproximadamente seis anos, especialmente entre 1970 e 2013 (linha vermelha).
+Ademais, é contabilizado as referências utilizadas pelos registros do \dataset\ SBDAA@guioliunb. Essa medida é um indicativo de boas fontes utilizada em comum para a produção dos artigos. Podendo assim serem utilizadas como fonte de conhecimento confiante, com aplicabilidade e em tendência de progresso.  
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-ReferenceSpectroscopy.png}
+    \includegraphics[angle=0,width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/MOST LOCAL CITED DOC.png}
+    \caption{Referências mais relevantes do \dataset\ no contexto local   SBDAA@guioliunb.}
+    \label{fig:SBDAA@guioliunb:relevantdocuments}
+\end{figure}
+
+\paragraph{Espectroscopia das referências}
+
+A técnica de espectroscopia das referências bibliográficas (\textit{reference publication year spectroscopy}(RPYS)) de um \dataset\cite{marx_detecting_2014} possibilita identificar as raízes históricas de um campo de conhecimento. 
+
+A figura \ref{fig:MASSA2-ReferenceSpectroscopy} apresenta o quantitativo de referências citadas pelo \dataset\, para cada ano.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/reference spectroscopy.png}
     \caption{Espectroscopia (RPYS) completa das referências do \dataset\ SBDAA@guioliunb.}
     \label{fig:MASSA2-ReferenceSpectroscopy}
 \end{figure}
 
-Se observamos a espectroscopia do mesmo \dataset\ apenas entre os anos de 1901 a 1970, como na figura \ref{fig:MASSA2-ReferenceSpectroscopy:1901:1970}, pode-se perceber um ponto de inflexão na curva, a partir do ano de 1946, que foi o período após o término da Segunda Guerra Mundial, quando o conhecimento científico que havia sido produzido sob sigilo no período da guerra começou a se disseminar pelo mundo.
+Através da espectroscopia fica coeso a redução do crescimento de publicações científicas anuais observado na \ref{fig:evol:anual:SBDAA@guioliunb}. Fato que faz sentido, afinal, com a diminuição das publicações é tendencioso que as citações diminuam.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-ReferenceSpectroscopy-1901-1970.png}
-    \caption{Espectroscopia (RPYS) das referências do \dataset\ SBDAA@guioliunb, entre 1901 e 1970.}
-    \label{fig:MASSA2-ReferenceSpectroscopy:1901:1970}
-\end{figure}
-    
-Se observamos a espectroscopia do mesmo \dataset\ apenas entre os anos de 1971 a 2019, como na figura \ref{fig:MASSA2-ReferenceSpectroscopy:1971:2019}, pode-se perceber um ponto de declínio no volume de citações a partir do ano de 2010, sugerindo que esse campo de conhecimento atingiu sua maturidade cerca de 10 anos atrás.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-ReferenceSpectroscopy-1971-2019.png}
-    \caption{Espectroscopia (RPYS) das referências do \dataset\ SBDAA@guioliunb, entre 1971 e 2019.}
-    \label{fig:MASSA2-ReferenceSpectroscopy:1971:2019}
-\end{figure}
 
 \paragraph{Uso de palavras dentro dos artigos no \dataset}
 

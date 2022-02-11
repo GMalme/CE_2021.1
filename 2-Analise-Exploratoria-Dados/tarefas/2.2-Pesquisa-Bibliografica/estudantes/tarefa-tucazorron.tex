@@ -111,13 +111,25 @@ As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos
 A figura \ref{fig:GNN@tucazorron:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' realizada no \textit{dataset}, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 14 Palavras-Chave mais frequentes empregadas pelos autores.
 
 \subsection{Interpretação da figura} \ref{fig:evol:anual:GNN@tucazorron:ThreeFieldPlot}
-A maioria dos autores mais relevantes apresentados na plotagem são, aparentemente, de origem oriental, mais especificamente chinesa. Além disso, uma quantidade razoável dos artigos surgiram em universidades da China. O que sugere o avanço e a preocupação do oriente a respeito do tema analisado.
+A maioria dos autores mais relevantes apresentados na plotagem são, aparentemente, dos Estados Unidos ou da China. Isso indica que é um assunto de extrema importância já que as duas maiores potências mundiais estão empenhadas em aprender mais sobre o tema.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{experiments/tucazorron/PesquisaBibliometrica/GNN/8.png}
+    \caption{Rede de co-ocorrência de palavras aplicada ao \textit{dataset}.}
+    \label{fig:GNN@tucazorron:countries}
+\end{figure}
 
 \section{Refinamento da Coleta de Dados}
 
-Após a análise do \textit{dataset}, foi possível notar que há a presença de artigos que não estão relacionados ao tema. A observação indica a necessidade de uma nova busca, visando a exclusão de artigos não relacionados ao desenvolvimento de \textit{deepfakes}.
-
 Ao analisar a rede de co-ocorrência de palavras aplicada ao \textit{dataset}, foram identificadas algumas palavras no cluster que não correspondem ao assunto trabalhado. Assim, surgiu uma nova \textit{query} para levantar artigos mais apurados e relevantes.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/co-ocurrence.png}
+    \caption{Rede de co-ocorrência de palavras aplicada ao \textit{dataset}.}
+    \label{fig:DEEPFAKES@titofrota:redecoocorrencia}
+\end{figure}
 
 \begin{figure}[htp]
     \centering

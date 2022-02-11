@@ -1,4 +1,4 @@
-\chapter{Análise Bibliográfica sobre Graph Neural Network, por Artur Filgueiras Scheiba Zorron\label{chap:bibliometria:titofrota}}
+\chapter{Análise Bibliográfica sobre Graph Neural Network, por Artur Filgueiras Scheiba Zorron\label{chap:bibliometria:tucazorron}}
 
 \section{Planejamento do estudo}
 
@@ -18,16 +18,16 @@ Serão usadas a ferramenta e o \textit{workflow} proposto pelos autores do pacot
 
 \subsection{Limitações} O exercício relatado foi feito em 6 horas e meia, utilizando a base de dados Web of Science (WoS).
 
-
 \section{Coleta de dados\label{MASSA:coleta}}
 
 A coleta de dados feita usando a base Web of Science (WoS) no dia 09 de janeiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
 
 Foi usada a \textit{query} de busca ilustrada loog abaixo:
-
-graph neural networks
-graph ai
-graph convolutional networks
+\begin{description}
+    \item{graph neural networks}
+    \item{graph ai}
+    \item{graph convolutional networks}
+\end{description}
 
 \subsection{Explicação para os termos de busca usados\label{sec:tucazorron:query}}
 
@@ -113,68 +113,31 @@ A figura \ref{fig:GNN@tucazorron:ThreeFieldPlot} apresenta a plotagem do tipo ``
 \subsection{Interpretação da figura} \ref{fig:evol:anual:GNN@tucazorron:ThreeFieldPlot}
 A maioria dos autores mais relevantes apresentados na plotagem são, aparentemente, dos Estados Unidos ou da China. Isso indica que é um assunto de extrema importância já que as duas maiores potências mundiais estão empenhadas em aprender mais sobre o tema.
 
-\begin{figure}[htp]
+\begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{experiments/tucazorron/PesquisaBibliometrica/GNN/8.png}
-    \caption{Rede de co-ocorrência de palavras aplicada ao \textit{dataset}.}
+    \caption{Países mais influentes no \textit{dataset}.}
     \label{fig:GNN@tucazorron:countries}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{experiments/tucazorron/PesquisaBibliometrica/GNN/6.png}
+    \caption{Nacionalidades de autores do \textit{dataset}.}
+    \label{fig:GNN@tucazorron:nationalities}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{experiments/tucazorron/PesquisaBibliometrica/GNN/7.png}
+    \caption{Citações de autores no \textit{dataset}.}
+    \label{fig:GNN@tucazorron:countries-citations}
 \end{figure}
 
 \section{Refinamento da Coleta de Dados}
 
-Ao analisar a rede de co-ocorrência de palavras aplicada ao \textit{dataset}, foram identificadas algumas palavras no cluster que não correspondem ao assunto trabalhado. Assim, surgiu uma nova \textit{query} para levantar artigos mais apurados e relevantes.
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/co-ocurrence.png}
-    \caption{Rede de co-ocorrência de palavras aplicada ao \textit{dataset}.}
-    \label{fig:DEEPFAKES@titofrota:redecoocorrencia}
-\end{figure}
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/co-ocurrence.png}
-    \caption{Rede de co-ocorrência de palavras aplicada ao \textit{dataset}.}
-    \label{fig:DEEPFAKES@titofrota:redecoocorrencia}
-\end{figure}
-
-A nova \textit{query} leva em conta novos termos e a busca foi feita nas publicações entre 2017 (quando o termo \textit{deepfake} surgiu) e 2022.
-
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query refinada de busca sobre Deepfakes.}]
-{experiments/titofrota/PesquisaBibliometrica/Deepfakes/new-query.txt}
-
-
-Além das justificativas para os termos usados entre as linhas 1 a 9, já descritas em \ref{MASSA:query},  justifica-se na listagem \ref{query20220203}, a inclusão da cláusula \textit{not (
- adsoption or molecular -dynamics or force -field
- or in -vitro or nanopartic* or in -vivo
- or aqueous -solution or protein or surface)}, entre as linhas 10 e 13 da \query, pois elas irão remover artigos não se enquadram no escopo da busca desejada, por usarem uma ou mais desses termos no título, resumo ou palavras-chave do artigo.
- 
- Foram incluídas cláusulas como \textbf{deep-fake} e \textbf{face-swap*} com o intuito de encontrar mais conteúdos relacionados ao tema. Além disso, foram adicionadas novas cláusulas negadas para filtrar melhor os resultados, evitando que artigos médicos ou relacionados à outros temas façam parte do novo \textit{dataset}.
- 
-Usando a nova \textit{} de busca, foram recuperados 284 documentos. Sendo assim, aproximadamente 749 registros não se enquadravam na necessidade de busca.
-Uma nova análise dos dados recuperados é apresentada a seguir.
+Mesmo tendo muitos artigos, sua maioria trouxe um peso muito maior a pesquisa e com isso melhorando o entendimento total da busca inicial. Por este motivo se manteve a mesma base de dados inicialmente.
 
 \section{Nova Análise dos Dados}
 
-\subsection{Nova filtragem de registros}
-
-São aplicados dois filtros aos 284 documentos recuperados:
-\begin{itemize}
-    \item Remoção dos registros de documentos que não são artigos \textit{full paper}, isso é, artigos completos publicados em revistas;
-    \item Remoção dos registros de artigos científicos que não fazem parte do \textit{core} da bibliografa, segundo a Lei de Bradford.
-\end{itemize}
-
-Após a filtragem, foram obtidos apenas 79 registros, que correspondem ao novo \textit{dataset}.
-08
-\subsection{Análise descritiva do \textit{dataset} refinado}
-
-\begin{table}[]
-    \centering
-\csvautotabular[separator=semicolon
-%,filter not strcmp={\csvcolii}{}
-]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/main-info.csv}
-    \caption{Principais dados descritivos do dataset refinado.}
-    \label{tab:DEEPFAKE:Main}
-\end{table}
-
-Logo, de acordo com a tabela \ref{tab:DEEPFAKE:Main}, é possível notar que entre 2017 e 2022 houveram 240 artigos publicados em 94 revistas diferentes.
+A análise inicial foi utilizada novamente e não foi realizada uma nova pelos motivos já citados anteriormente.

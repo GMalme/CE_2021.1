@@ -87,23 +87,23 @@ As informações podem ser encontradas também na imagem abaixo:
     \centering
     \includegraphics[width=12cm]{experiments/enzoyoshio/AnaliseBibliometrica/anualScientificProduction.png}
     \caption{ Produção científica anual do \dataset\ }
-    \label{fig:evo}
+    \label{fig:evoEnzoYoshio}
 \end{figure}
 
-Como pode ser observado no gráfico.
+Como pode ser observado no gráfico:
 
-Nos anos de 2019-2021, em particular, foram introduzidas novas placas de vídeo no mercado, com poder computacional bem maior que as anteriores (é possível comparar as placas 1080 com as gerações 2080 e 3080 e perceber um aumento substancial de qualidade).
+Até o ano de 2000 as publicações eram praticamente inexistentes, visto que a popularização da programação competitiva foi apenas nos anos 2000, principalmente pelo fato da criação e popularização da internet. Quanto mais pessoas começaram a ter acesso a internet, mais pessoas puderam conhecer essa nova área conhecida como computação. Logo, após os anos 2000 pudemos observar uma curva que cresce a cada ano, tendo no ano de 2021 tido seu pico de publicações e provavelmente essa curva só tende a crescer, pois mais e mais pessoas estão ingressando no mundo da programação competitiva, seja ela por ajudar em entrevistas de emprego, ou apenas pelo simples fato de conseguir aprender coisas novas e treinar o raciocínio lógico. 
 
 \subsection{Evolução das Citações}
 
-A figura em \ref{fig:} mostra o número de citações médias feitas por ano. Nota-se uma grande quantidade de citações no ano de 2007, provavelmente devido a um artigo muito citado por outros autores. Nota-se também o que em uma faixa de 40 anos (1981-2021) o número de citações por ano aumentou de 0.2 para 1.0, um aumento de 5 vezes.
-
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=12cm]{experiments/MarcusABR/PesquisaBibliometrica/Imagens/network(1).png}
-    \caption{Evolução das citações por ano no \textit{}}
-    \label{fig:gpu-citation-year}
+    \includegraphics[width=12cm]{experiments/enzoyoshio/AnaliseBibliometrica/averageCitationPerYear.png}
+    \caption{ Média de citação anual do \dataset\ }
+    \label{fig:citaEnzoYoshio}
 \end{figure}
+
+A figura em \ref{fig:citaEnzoYoshio} revela quantas citações foram feitas, em média, ao longo do ano. A curva é levemente crescente e percebe-se um leve aumento a cada ano, percebe-se que há um pico em 2006, pois provavelmente foi publicado um artigo bem conceituado na área e importante para o desenvolver da área nos anos seguintes. Percebe-se uma leve queda no ano de 2021, mas isso é de se esperar, pois ainda não foram feitas referências sobre esse ano ainda. Com isso, é interessante observar essa curva de citações por ano, para entender melhor como se desenvolve essa área.
 
 \subsection{\textit{Gráfico de três campos}}
 
@@ -111,30 +111,11 @@ O gráfico em \ref{fig:} mostra um gráfico de três campos feitos com os dados 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=12cm]{experiments/MarcusABR/PesquisaBibliometrica/Imagens/network(3).png}
+    \includegraphics[width=12cm]{experiments/enzoyoshio/AnaliseBibliometrica/threeFieldsPlot.png}
     \caption{Gráfico de três campos analisando palavras-chave no \textit{db\_GPU}}
-    \label{fig:gpu-three-field}
+    \label{fig:threeFieldEnzoY}
 \end{figure}
 
-Observando as palavras-chaves, é possível perceber que termos como iluminação, processamento em paralelo e \textit{ray tracing} são expressões relevantes no contexto de GPUs.
+Observando as palavras mais relevantes, podemos ver que tem muitos artigos em que as palavras-chave também incluem a educação, logo é importante notar a correlação entre programação competitiva e o aprendizado de alunos na graduação.
 
-Em particular, a técnica de \textit{Ray Tracing} foi otimizada nos últimos anos, de forma que é possível aplicá-la em simulações em tempo real (que antes não era possível devido ao alto custo computacional).
-
-Observando os autores é possível perceber que a maior parte é de origem asiática e que esses autores utilizam principalmente \textit{masuda n 2006 opt express} como referência.
-
-Essa publicação em específico relata avanços feitos na redução do custo computacional para geração de hologramas (objetos tridimensionais) em ambientes computacionais.
-
-\subsection{Refinamento da coleta de dados}
-
-O gráfico em \ref{fig:gpu-co-occur} mostra a rede de co-ocorrências de palavras-chave no \textit{db\_GPU}. Dentro os termos é possível perceber que os assuntos tratados são relevantes ao tópico de GPUs, com destaque ao campo em verde que separa assuntos relativos a dispersão de luz em meios turbulentos (\textit{turbid media}).
-
-\begin{figure}[ht]
-    \includegraphics[width=12cm]{experiments/MarcusABR/PesquisaBibliometrica/Imagens/network.png}
-    \caption{Rede de co-ocorrências de palavras-chave no \textit{db\_GPU}}
-    \label{fig:gpu-co-occur}
-\end{figure}
-
-Esses tópicos são de especial interesse ao tópico de simulação de luz, pois essa simulação se dá por meio de aproximações ao mundo real (modelos físicos e fórmulas matemáticas). Um modelo eficiente consegue reter a essência dos fenômenos reais, de modo que é possível realizar uma simulação realista com uma capacidade computacional não tão elevada.
-
-Softwares de animação (como blender) e de simulação possuem \textit{engines} que simulam fenômenos físicos, tais como corpos sólidos, emissores, índice de refração de materiais e reflexo da luz. Em especial, a \textbf{simulação de Monte Carlo} permite que uma amostra aleatória de possíveis caminhos de luz convirjam para uma solução correta, tornando esse método um dos métodos físicos mais precisos existentes.
-
+Vale ressaltar também que, há algumas palavras chaves diferentes, tendo em vista que o tema pode abordar diferentes assuntos, é complicado de fazer um filtro justamente pelo conteúdo poder abordar muitas coisas, porém podemos ver uma agregação entre os autores mais citados e as palavras-chave e suas referências.

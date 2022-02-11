@@ -2,10 +2,38 @@
 
 \section{Planejamento do estudo}
 
-Este é um projeto com o propósito de treinar o uso de técnicas de análises bibliométricas para fins de aprendizado. Em resumo, vivemos em um mundo altamente integrado com a tecnologia e embora muitos profissionais, por exemplo, um design gráfico necessita de um processador potente para ter uma boa eficiência no seu trabalho, um usuário comum não necessita do mesmo para o seu ambiente profissional, mas os jogos acabam por levar a necessidade para o lazer dos clientes. logo aumentando a busca por hardware e o da indústria de hardware, então o objetivo é responder as seguintes perguntas.
+Este é um projeto com o propósito de treinar o uso de técnicas de análises bibliométricas para fins de aprendizado. Em resumo, vivemos em um mundo altamente integrado com a tecnologia e embora muitos profissionais, por exemplo, um design gráfico necessita de um processador potente para ter uma boa eficiência no seu trabalho, um usuário comum não necessita do mesmo para o seu ambiente profissional, mas os jogos acabam por levar está necessidade para os clientes usuais. Logo, o lazer relacionado aos jogos aumenta a busca por hardware , então o objetivo é responder as seguintes perguntas.
 
 \begin{itemize}
     \item Quais são os principais usos para o hardware comprado por consumidores comuns?
-    \item O crescimento da compra de hardware e o aumento dos requisitos de sistemas para jogos estão relacionados?
-    \item Com a popularização dos jogos o preço do hardware subiu ou desceu? Quais acontecimentos podem está ligados a esta possível variação.
+    \item A evolução do hardware e o aumento dos requisitos de sistemas para jogos estão relacionados?
+    \item Com a popularização dos jogos o preço do hardware subiu ou desceu? Quais acontecimentos podem está ligado a esta possível variação?
 \end{itemize}
+
+\subsection{Limitações} As limitações estão relacionadas ao tempo, pois é uma atividade introdutória então não foi possível ler os artigos resultantes das buscas e a falta de experiência com a ferramenta pode levar a alguns resultados inesperados.
+
+\section{Coleta de dados} 
+Os dados foram coletados na base de dados Web of Science no dia 9 de fevereiro de 2022, acessado por meio do Portal de Periódicos da CAPES
+
+\subsection{Query de Busca}
+\begin{verbatim}
+A query utilizada para a busca foi:
+(game* or  specification or requirements ) 
+and 
+(advances or computer) 
+and 
+(hardware or purchase)
+\end{verbatim}
+
+\subsection{Explicação para os termos de busca usados}
+
+O primeiro termo utilizado busca informações sobre requisitos e especificações para determinado jogo sendo utilizado o termo game* para buscar dados sobre um jogo e também podendo retornar uma busca para as especificações e requisitos relacionados aos jogadores. O segundo termo busca relacionar o termo a avanços tecnológicos na computação que também está relacionado ao tema da pesquisa, o terceiro tem o proposito de complementar os anteriores tentando buscar informações sobre compras de componentes.
+
+\subsection{Registros recuperados}
+
+A busca retornou 6858 resultados, sendo utilizado uma exportação personalizada passando também como parâmetro as referências citadas, contagem de referências citadas, total de usos e artigos interessantes. Logo, foi feita uma exportação de 5 arquivos de texto sem formatação com um tamanho de 1000 registros e após foi realizada uma concatenação em apenas um arquivo para ser possível passar os 6858 resultados da pesquisa para o biblioshiny.
+
+\section{Análise dos dados}
+
+\subsection{Filtragem de registros}
+Após uma filtragem que deu enfoque para os artigos científicos retirando, por exemplo, notas,  

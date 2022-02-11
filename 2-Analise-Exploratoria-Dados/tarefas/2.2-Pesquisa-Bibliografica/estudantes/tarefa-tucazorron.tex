@@ -29,7 +29,7 @@ graph neural networks
 graph ai
 graph convolutional networks
 
-\subsection{Explicação para os termos de busca usados\label{sec:titofrota:query}}
+\subsection{Explicação para os termos de busca usados\label{sec:tucazorron:query}}
 
 A busca utilizando estes termos se deve pela lógica de tentar encontrar artigos voltados para o tema de grafos, com foco em redes neurais e inteligência artificial. Os termos podem aparecer no título, no abstract ou nas palavras chave.
 
@@ -55,48 +55,47 @@ As informações mais gerais sobre o \textit{dataset} são as seguintes:
     \item [\textit{Average citations per documents}] Cada artigo no \textit{dataset} foi citado, em média 7.44 vezes.
     \item [\textit{Average citations per year per doc}] Após publicado, cada um dos artigos foi citado, em média, 1.35 vezes por ano.
     \item [\textit{References}] O \textit{dataset} contém 49.429 referências citadas.
-    \item [\textit{Keywords Plus (ID)}] 907 distintas palavras-chave do tipo Keywords Plus (ID) foram encontradas no \textit{dataset}.
-    \item [\textit{Author's Keywords (DE)}] 1863 distintas palavras-chave indicadas pelos autores foram encontradas no \textit{dataset} .
-    \item [\textit{Authors}] 2.063 distintos nomes de autores foram encontrados no \textit{dataset} .
-    \item [\textit{Author Appearances}] Os 2.063 distintos (nomes de) autores foram encontrados 2.297 vezes, como autores de artigos.
-    \item [\textit{Authors of single-authored documents}] Dentre os 2.063 distintos (nomes de) autores encontrados, 79 deles editaram artigos individualmente, isso é, sem co-autores.
-    \item [\textit{Authors of multi-authored documents}] Dentre os 2.063 distintos (nomes de) autores encontrados, 1.984 deles editaram artigos com um ou mais co-autores"
-    \item [\textit{Single-authored documents}] Dentre os 1.033 documentos presentes no \textit{dataset}, 79 foram escritos por um único autor, e os restantes foram elaborados em co-autoria.
-    \item [\textit{Documents per Author}] Dentre os 2.063 distintos (nomes de) autores, cada um publicou em média 0,26 artigos.
-    \item [\textit{Authors per Document}] Cada um dos 1.033 documentos presentes no \textit{dataset} foi autorado com 3,84 autores em média.
-    \item [\textit{Co-Authors per Documents}] As 2.297 aparições de (nomes de) autores (``Author Appearances''), sem distribuem, em média 4,28 vezes para os 537 documentos do \textit{dataset}.
-    \item [\textit{Collaboration Index}] Os 1.984 (nomes de) autores que editaram artigos com um ou mais co-autores, colaboraram em media 4.28 vezes para editar os 537 artigos elaborados em co-autoria, gerando, assim, um índice de colaboração 4,33. 
+    \item [\textit{Keywords Plus (ID)}] 1444 distintas palavras-chave do tipo Keywords Plus (ID) foram encontradas no \textit{dataset}.
+    \item [\textit{Author's Keywords (DE)}] 4276 distintas palavras-chave indicadas pelos autores foram encontradas no \textit{dataset} .
+    \item [\textit{Authors}] 6.017 distintos nomes de autores foram encontrados no \textit{dataset} .
+    \item [\textit{Author Appearances}] Os autores foram encontrados 8.036 vezes, como autores de artigos.
+    \item [\textit{Authors of single-authored documents}] 121 autores editaram artigos individualmente, isso é, sem co-autores.
+    \item [\textit{Authors of multi-authored documents}] 5.896 autores editaram artigos com um ou mais co-autores.
+    \item [\textit{Single-authored documents}] 134 documentos foram escritos por um único autor, e os restantes foram elaborados em co-autoria.
+    \item [\textit{Documents per Author}] Cada autor publicou em média 0.332 artigos.
+    \item [\textit{Authors per Document}] 3.01 autores por documento.
+    \item [\textit{Co-Authors per Documents}] 4.02 co-autores por documento.
+    \item [\textit{Collaboration Index}] 3.16 indíces de colaboração.
 \end{description}
 
 \subsection{Evolução da Produção Científica}
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/annual-plot.png}
+    \includegraphics[width=1\textwidth]{experiments/tucazorron/PesquisaBibliometrica/GNN/3.png}
     \caption{Evolução da produção científica no \textit{dataset}}
-    \label{fig:evol:anual:DEEPFAKES@titofrota}
+    \label{fig:evol:anual:GNN@tucazorron}
 \end{figure}
 
-A figura \ref{fig:evol:anual:DEEPFAKES@titofrota} representa a evolução em produção científica mundial a respeito do tema, de acordo com o \textit{dataset}. Houve um crescimento a notável a partir do ano de 2020, atingindo o pico em 2021. 
-É perceptível que no \textit{dataset} ainda há artigos não relacionados ao tema analisado.
+A figura \ref{fig:evol:anual:GNN@tucazorron} representa a evolução em produção científica mundial a respeito do tema, de acordo com o \textit{dataset}. Houve um crescimento a notável a partir do ano de 2016, atingindo o pico em 2022. 
 
-O \textit{Annual Growth Rate} do \textit{dataset} é de 12,62\%, que é um valor alto comparado a média de crescimento da comunidade científica como um todo.
+O \textit{Annual Growth Rate} do \textit{dataset} é de 8.6\%, que é um valor alto comparado a média de crescimento da comunidade científica como um todo.
 
-\subsection{Interpretação do Crescimento} a taxa de crescimento do \textit{dataset} demonstra que o tema tem chamado muita atenção nos últimos anos, provavelmente devido aos escândalos envolvendo pessoas públicas e os \textit{deepfakes}.
+\subsection{Interpretação do Crescimento} a taxa de crescimento do \textit{dataset} demonstra que o tema tem chamado muita atenção nos últimos anos, provavelmente devido ao grande avanço das redes sociais pelo mundo junto da inteligência artificial.
 
 \subsection{Evolução das Citações}
 
 \begin{figure}
     \centering
-    \includegraphics[angle=0,width=1\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/citations-year-plot.png}
+    \includegraphics[angle=0,width=1\textwidth]{experiments/tucazorron/PesquisaBibliometrica/GNN/2.png}
     \caption{Evolução das citações ao \textit{dataset}.}
-    \label{fig:evol:anual:citacoes:DEEPFAKES@titofrota}
+    \label{fig:evol:anual:citacoes:GNN@tucazorron}
 \end{figure}
 
-A figura \ref{fig:evol:anual:citacoes:DEEPFAKES@titofrota} apresenta a evolução da média de citações aos artigos do \textit{dataset}. Não há muita estabilidade na média anual de citações, até mesmo nos anos mais recentes.
+A figura \ref{fig:evol:anual:citacoes:GNN@tucazorron} apresenta a evolução da média de citações aos artigos do \textit{dataset}. Não há muita estabilidade na média anual de citações, até mesmo nos anos mais recentes.
 
 \subsection{Interpretação das Citações}
-Embora a taxa de crescimento de publicações anuais seja alta, ainda há instabilidade no que diz respeito a média de citações. Demonstrando que o tema ainda é um tanto prematuro, necessitando de mais atenção pelos cientistas.
+Embora a taxa de crescimento de publicações anuais seja alta, ainda há instabilidade no que diz respeito a média de citações.
 
 \subsection{\textit{Three-Field Plots (Sankey diagram)}}
 
@@ -104,17 +103,15 @@ As \textit{Three-Field Plots (Sankey diagram)} (plotagens do tipo ``Três Campos
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/titofrota/PesquisaBibliometrica/Deepfakes/ThreeFieldPlot.png}
+    \includegraphics[width=1\textwidth]{experiments/tucazorron/PesquisaBibliometrica/GNN/1.png}
     \caption{Plotagem ``Três Campos'' (Sankey plot) do \textit{dataset}: 20 Autores, Citações e 14 Palavras-Chave mais proeminentes.}
-    \label{fig:DEEPFAKES@titofrota:ThreeFieldPlot}
+    \label{fig:GNN@tucazorron:ThreeFieldPlot}
 \end{figure}
 
-A figura \ref{fig:DEEPFAKES@titofrota:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' realizada no \textit{dataset}, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 14 Palavras-Chave mais frequentes empregadas pelos autores.
+A figura \ref{fig:GNN@tucazorron:ThreeFieldPlot} apresenta a plotagem do tipo ``Três Campos'' realizada no \textit{dataset}, vinculando, ao centro, os 20 Autores mais proeminentes (AU), à esquerda, as 20 Citações mais frequentes (CR - Cited Records), e à direita, as 14 Palavras-Chave mais frequentes empregadas pelos autores.
 
-\subsection{Interpretação da figura \ref{fig:DEEPFAKES@titofrota:ThreeFieldPlot}}
+\subsection{Interpretação da figura} \ref{fig:evol:anual:GNN@tucazorron:ThreeFieldPlot}
 A maioria dos autores mais relevantes apresentados na plotagem são, aparentemente, de origem oriental, mais especificamente chinesa. Além disso, uma quantidade razoável dos artigos surgiram em universidades da China. O que sugere o avanço e a preocupação do oriente a respeito do tema analisado.
-
-É possível observar nas palavras-chave que há bastante interesse na detecção de \textit{deepfakes}, apresentam-se os termos \textbf{deepfake detection}, \textbf{fake news detection} e \textbf{detection}. Os resultados sugerem que há interesse em remediar os impactos que os conteúdos criados através de algoritmos de \textit{deep learning} podem causar à sociedade.
 
 \section{Refinamento da Coleta de Dados}
 

@@ -289,131 +289,65 @@ Através da espectroscopia fica coeso a redução do crescimento de publicaçõe
 É interessante também a demonstração dos termos mais frequentes na base de registros. Afinal, os tópicos mais frequentes são evidenciados, podendo assim apresentar algum padrão.
 \ref{tab:MASSA2:Word:Occurrences}, com os 40 termos mais frequentes em uso.
 
-\begin{table}[htp]
-    \centering
-\footnotesize
-\csvreader[tabular = {|l|r|l|},
-separator=semicolon,
-filter={\value{csvrow}<40}
-%,filter not strcmp={\csvcolii}{},
-, table head = \hline\hline \# & Palavra (termo) & Frequência \\ \hline\hline,
-table foot = \hline\hline
-]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-Most_Frequent_Words.csv}{Words=\palavra, Occurrences=\freq}{ \thecsvrow & \palavra & \freq}
-
-    \caption{40 palavras (termos) mais frequentes no \dataset\ SBDAA@guioliunb.}
-    \label{tab:MASSA2:Word:Occurrences}
-\end{table}
-
-Outras formas de apresentação alternativas são apresentadas nas duas figuras a seguir, que ilustram de forma diferente a mesma informação, como em:
-\begin{description}
-    \item [Word Cloud] Uma nuvem de palavras, na figura \ref{fig:MASSA2-WordCloud-100words}, com evidencias para as 100 palavras mais frequentes;
-    \item [Tree Map] Um mapa em árvore, na figura \ref{fig:MASSA2-TreeMap}, com evidências para as 50 palavras mais frequentes;
-\end{description}
-
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-WordCloud-100words.png}
-    \caption{Nuvem dos 100 termos mais frequentes do \dataset\ SBDAA@guioliunb.}
-    \label{fig:MASSA2-WordCloud-100words}
+    \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/MOST FREQUENT WORDS.png}
+    \caption{Termos mais frequentes no \dataset\ SBDAA@guioliunb.}
+    \label{fig:MASSA2-ReferenceSpectroscopy}
 \end{figure}
 
+Além dessa podemos expor outra apresentação dos mesmos termos:
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-TreeMap.png}
-    \caption{\textit{Tree Map} dos 50 termos mais frequentes do \dataset\ SBDAA@guioliunb.}
-    \label{fig:MASSA2-TreeMap}
+    \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/TREEMAP.png}
+    \caption{Termos mais frequentes no \dataset\ com representação \textit{TreeMap} SBDAA@guioliunb.}
+    \label{fig:MASSA2-ReferenceSpectroscopy}
 \end{figure}
 
-Por fim, o Bibliometrix permite apresentar o uso dos termos ordenado temporalmente, como nas duas figuras a seguir:
-\begin{description}
-    \item [Word Growth / Word Dynamics] que mostra o crescimento de uso das palavras mais frequentes, como na figura \ref{fig:MASSA2-WordDynamics};
-    \item [Trending topics] que mostra as tendências para uso de determinadas palavras em determinadas faixas de tempo, como em \ref{fig:MASSA2-TrendTopics}. Para obtenção do gráfico foram determinados os seguintes valores para os parâmetros: frequência mínima de ocorrência para que um termo seja considerado = 15, quantidade máxima de tópicos por ano = 7.
-\end{description}
 
+Por fim, o Bibliometrix permite apresentar o uso dos termos ordenado temporalmente:
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-WordDynamics.png}
-    \caption{Dinâmica de uso ao longo do tempo, dos 20 termos mais frequentes do \dataset\ SBDAA@guioliunb.}
-    \label{fig:MASSA2-WordDynamics}
+    \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/TREND TOPICS.png}
+    \caption{Trend Topics no \dataset\SBDAA@guioliunb.}
+    \label{fig:trend:topics}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[angle=90,width=1\textwidth,height=0.93\textheight]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Documentos/MASSA2-TrendTopics-WF=15:WPY=7.png}
-    \caption{\textit{Trending Topics} do \dataset\ SBDAA@guioliunb, WF = 15, WPY=7.}
-    \label{fig:MASSA2-TrendTopics}
-\end{figure}
+Fato interessante na figura \ref{fig:trend:topics} é o surgimento dos termo: \texttt{5G}, \textit{security}, \textit{encryption}, \textit{privacy}, \textit{sentiment analysis} entre outros. Pois, são assuntos evidentes nos dias de hoje, em síntese ganharam relevância juntamente aos tópicos pesquisados.
+Como também é confirmado as palavras-chaves do \dataset\ com a reincidência nos \textit{trend topics}, como em outras métricas.
+
 
 \subsection{Métricas para Autores}
 
-Um autor escreve um documento científico, que eventualmente é publicado. Ao escrever esse documento cita outros, e eventualmente o trabalho do autor também é citado. Se é citado, é porque é relevante, e daí infere-se que teve impacto. Com base na medica bruta da citação, várias métricas podem ser criadas. Algumas delas são aplicadas a seguir. 
-
-\subsubsection{Autores mais produtivos no \dataset}
-
-A tabela \ref{tab:MASSA2:Author:Production} apresenta a lista ordenada e decrescente dos autores com maior número de artigos no \dataset. A coluna mais à direita divide esse primeiro valor pelo número de autores nos artigos.
-
-\begin{table}[htp]
-    \centering
-\footnotesize
-\csvreader[tabular = {|r|l|r|r|},
-filter={\value{csvrow}<40}
-%,filter not strcmp={\csvcolii}{},
-, table head = \hline\hline \# & Autor & Qtd. de artigos & Qtd. Proporcional \\ \hline\hline,
-table foot = \hline\hline
-]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-Most-Productive-Authors.csv}
-{Authors=\autor,Articles=\qtdart,Fractionalized=\artfrac}{ \thecsvrow & \autor & \qtdart & \artfrac}
-    \caption{20 autores com mais artigos no \dataset\ SBDAA@guioliunb.}
-    \label{tab:MASSA2:Author:Production}
-\end{table}
-
-\subsubsection{Autores mais relevantes localmente citados}
-
-A tabela \ref{tab:MASSA2:Author:Production:Local} apresenta a lista ordenada e decrescente dos autores com maior número de artigos citados por outros artigos no \dataset. Esses são, possivelmente, os autores mais impactantes para o estado da arte no \dataset\ SBDAA@guioliunb.
-
-\begin{table}[htp]
-    \centering
-\footnotesize
-\csvreader[tabular = {|r|l|r|},
-filter={\value{csvrow}<40},
-%,filter not strcmp={\csvcolii}{},
-table head = \hline\hline \# & Autor & Qtd artigos\\ \hline\hline,
-table foot = \hline\hline]
-{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-Most-Local-Cited-Authors.csv}
-{Author=\autor,LocalCitations=\qtdcit}
-{ \thecsvrow & \autor & \qtdcit}
-\caption{20 autores com mais artigos citados por outros artigos no \dataset\ SBDAA@guioliunb.}
-    \label{tab:MASSA2:Author:Production:Local}
-\end{table}
-
-Uma busca na aba Filter, do Bibliometrix, permite explorar os artigos mais citados desses autores, alguns tem seus títulos listados a seguir:
-\begin{description}
-    \item [SCHWARZ N] 
-    \begin{itemize}
-        \item DESCRIBING HUMAN DECISIONS IN AGENT-BASED MODELS - ODD PLUS D, AN EXTENSION OF THE ODD PROTOCOL;
-        \item AGENT-BASED MODELING OF THE DIFFUSION OF ENVIRONMENTAL INNOVATIONS - AN EMPIRICAL APPROACH;
-    \end{itemize}
-    \item [SU HS, WANG XF] 
-    \begin{itemize}
-        \item FLOCKING OF MULTI-AGENTS WITH A VIRTUAL LEADER;
-        \item AGENT-BASED MODELING OF THE DIFFUSION OF ENVIRONMENTAL INNOVATIONS - AN EMPIRICAL APPROACH;
-    \end{itemize}
-    \item [LIAO XF] 
-    \begin{itemize}
-        \item EVENT-TRIGGERING SAMPLING BASED LEADER-FOLLOWING CONSENSUS IN SECOND-ORDER MULTI-AGENT SYSTEMS;
-    \end{itemize}    
-\end{description}
-
-\subsubsection{Variação da produtividade dos autores ao longo do tempo}
-
-Os cientistas são seres humanos, que também tem um ciclo de vida de iniciante, muito produtivo, menos produtivo, e não produtivo.
-Diagramas como o da figura \ref{fig:MASSA2-TopAuthorsProductionOverTime} apresentam esse ciclo de vida, em relação ao \dataset\ SBDAA@guioliunb.
+Como as contribuições científicas são frutos de trabalhos em conjunto é importante evidenciar aqueles que contribuíram para as facilidades que foram adquiridas e que estão sendo progredidas. Segue os gráficos de relevância quanto aos documentos e produção segundo tempo, respectivamente.
 
 \begin{figure}
     \centering
-    \includegraphics[angle=90,width=1\textwidth,height=0.93\textheight]{experiments/jhcf/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/Metricas/Authors/MASSA2-TopAuthorsProductionOverTime.png}
-    \caption{Variação da produção dos autores de maior impacto, do \dataset\ SBDAA@guioliunb.}
-    \label{fig:MASSA2-TopAuthorsProductionOverTime}
+    \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/most relevant authors.png}
+    \caption{Autores mais relevantes do \dataset\ SBDAA@guioliunb no contexto global.}
+    \label{fig:authors}
 \end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/PRODUCTION OVER THE TIME.png}
+    \caption{Autores mais produtivos \dataset\SBDAA@guioliunb.}
+    \label{fig:authors:production}
+\end{figure}
+
+
+
+\subsubsection{Autores mais relevantes localmente citados}
+
+Além do mais podemos citar os autores com mais citações locais do no \dataset\ SBDAA@guioliunb.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{experiments/guioliunb/AnaliseBibliometrica/SocialBigDataAnalysis/MOST LOAL CITED AUTHORS.png}
+    \caption{Autores mais citados do \dataset\ SBDAA@guioliunb no contexto local.}
+    \label{fig:authors:production}
+\end{figure}
+
 
 \subsubsection{Lei de Lotka}
 

@@ -25,32 +25,24 @@ Serão usadas a ferramenta e o \textit{workflow} proposto pelos autores do pacot
 
 \section{Coleta de dados\label{MASSA:coleta}}
 
-A coleta de dados feita usando a base Web of Science (WoS) no dia 05 de janeiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
+A coleta de dados feita usando a base Web of Science (WoS) no dia 10 de janeiro de 2022, acessado por meio do Portal de Periódicos da CAPES.
 
 As buscas formam feitas nas coleções \textbf{Science  Citation  Index  Expanded (SCI -EXPANDED)} e \textbf{Social  Sciences  Citation  Index (SSCI)}, que contém registros relativos a vários campos do conhecimento, no qual o SCI-EXPANDED foca mais na área das ciências exatas e naturais, enquanto que o SSCI indexa artigos da área das ciências sociais. Observe que os artigos nessas duas coleções são indexados desde 1945. 
 
-Foi usada a \textit{query} de busca ilustrada na listagem:
 
-\lstinputlisting[numbers=left,basicstyle=\normalsize\ttfamily,caption={Query de busca sobre Deepfakes.}]
-{experiments/titofrota/PesquisaBibliometrica/Deepfakes/query.txt}
+\subsection{Explicação para os termos de busca usados\label{}}
 
-\subsection{Explicação para os termos de busca usados\label{sec:titofrota:query}}
-
-A busca utilizou cláusulas que retornassem registros relacionados a \textit{deepfakes} nos formatos visuais e auditivos. Evitando os registros que tratassem exclusivamente sobre \textit{fake news}, que não são o principal tópico da análise. Os termos podem aparecer no título, no \textit{abstract} e/ou nas \textit{keywords}. 
-
-Os termos \texttt{deep}, \texttt{fake}, \texttt{speech}, \texttt{deepfake} buscam os resultados sobre \textit{deepfakes} e discursos falsos. O termo \texttt{news} é utilizado para excluir os resultados que tratavam sobre a detecção de \textit{fake news} através de algoritmos de \textit{deep learning}.
-
-Foram obtidos 1.033 registros com a \textit{query} utilizada. Na exportação, foi utilizado o formato de arquivo de texto sem formatação, com os 29 campos disponíveis.
+A busca utilizou cláusulas que retornassem registros relacionados a \textit{PROCESSAMENTO DE LINGUAGEM NATURAL} (NLP) nos formatos visuais e auditivos.
 
 \section{Análise dos dados}
 
 \subsection{Filtragem de registros}
 
-Para a filtragem, removemos registros indesejados. O objetivo é obter apenas os artigos (supondo que o conhecimento de maior qualidade a respeito do tema está nas revistas, afinal é o método padrão de publicação científica), excluindo críticas, prévias, cartas e etc. Após a aplicação do filtro, 537 registros foram mantidos no \textit{dataset} que servirá como objeto da análise.
+Para a filtragem, removemos registros indesejados, como por exemplo ivros, reviews de livros, entre outros. O objetivo era obter apenas os artigos completos, visto que a análise desse assunto é mais confiável por parte de artigos.
 
 \subsection{Análise descritiva do \textit{dataset} }
 
-A seguir, é feita uma análise bibliométrica descritiva do \textit{dataset} utilizando a função \texttt{biblioAnalysis} do Bibliometrix, que realiza diversos cálculos para levantar as taxas apresentadas.
+A seguir, é feita uma análise bibliométrica descritiva do \textit{dataset} utilizando a função \texttt{biblioAnalysis} do Bibliometrix, que realiza diversos cálculos para levantar as taxas apresentadas. Mais informações mem 
 
 As informações mais gerais sobre o \textit{dataset} são as seguintes:
 \begin{description}
@@ -82,12 +74,10 @@ As informações mais gerais sobre o \textit{dataset} são as seguintes:
     \label{fig:evol:anual:DEEPFAKES@titofrota}
 \end{figure}
 
-A figura \ref{fig:evol:anual:DEEPFAKES@titofrota} representa a evolução em produção científica mundial a respeito do tema, de acordo com o \textit{dataset}. Houve um crescimento a notável a partir do ano de 2020, atingindo o pico em 2021. 
+A figura \ref{fig:evol:anual:DEEPFAKES@titofrota} representa a evolução em produção científica mundial a respeito do tema NLP, de acordo com o \textit{dataset}. Houve um crescimento a notável a partir do ano de 2014, atingindo o pico em 2020. 
 É perceptível que no \textit{dataset} ainda há artigos não relacionados ao tema analisado.
 
-O \textit{Annual Growth Rate} do \textit{dataset} é de 12,62\%, que é um valor alto comparado a média de crescimento da comunidade científica como um todo.
-
-\subsection{Interpretação do Crescimento} a taxa de crescimento do \textit{dataset} demonstra que o tema tem chamado muita atenção nos últimos anos, provavelmente devido aos escândalos envolvendo pessoas públicas e os \textit{deepfakes}.
+\subsection{Interpretação do Crescimento} a taxa de crescimento do \textit{dataset} demonstra que o tema tem chamado muita atenção nos últimos anos, provavelmente devido aos avanços nos estudos de Inteligência Artificial, juntamente com o interesse em compreender a \textit{deepfakes}.
 
 \subsection{Evolução das Citações}
 

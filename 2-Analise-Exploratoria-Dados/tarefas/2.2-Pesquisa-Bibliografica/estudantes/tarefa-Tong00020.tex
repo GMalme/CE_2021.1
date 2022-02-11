@@ -50,11 +50,8 @@ Foram colocados também, o filtro para que apenas artigos de 2010 a 2022 entrem 
 
 \subsection{Registros recuperados}
 
-Os 1.265 registros obtidos como resultado da busca encontram-se em \url{https://github.com/jhcf/Comput-Experim-20212/experiments/Tong00020/PesqBibliogr/SimulacaoMultiagente/WoS-20220203/1265records.txt}
 
 Foram utilizadas as opções exporta em arquivo .txt e \textit{export full record / Gravar Conteúdo: Seleção personalizada}, com todos os 29 campos disponíveis. Os 1.265 registros foram recuperados em dois blocos de até 1.000 registros por vez (1-1000, 1001-1265).
-
-
 
 
 \section{Análise dos dados}
@@ -62,7 +59,6 @@ Foram utilizadas as opções exporta em arquivo .txt e \textit{export full recor
 \subsection{Filtragem de registros}
 
 Sobrou 1.168 artigos ao colocar apenas 'ARTICLE' como tipo de documento com o uso filtro do biblioshiny. Os tipos de documento 'ARTICLE; BOOK CHAPTER', 'ARTICLE; DATA PAPER', 'ARTICLE; EARLY ACCESS', 'ARTICLE; PROCEEDINGS PAPER' e 'ARTICLE; RETRACTED PUBLICATION' foram deletados.
-
 
 
 \subsection{Análise descritiva do \textit{dataset}} 
@@ -79,7 +75,7 @@ Sobrou 1.168 artigos ao colocar apenas 'ARTICLE' como tipo de documento com o us
 As informações mais gerais sobre o \textit{dataset} MASSA@Tong0020 são as seguintes:
 \begin{description}
     \item[\textit{Timespan}] Os artigos da busca foram publicados a partir de 2010.
-    \item [\textit{Sources (Journals, Books, etc)}] São 719 fontes publicaram os documentos no \dataset\. Em média, cada \textit{scientific journal} publicou $1.168/719=1.62$ artigos.%%%
+    \item [\textit{Sources (Journals, Books, etc)}] São 719 fontes publicaram os documentos no \dataset\. Em média, cada \textit{scientific journal} publicou $1.168/719=1.62$ artigos.
      \item [\textit{Average years from publication}] A média do tempo de publicação dos artigos no dataset é de 3.25 anos.
      \item [\textit{Average citations per documents}] Cada artigo no dataset foi citado, em média 16.79 vezes.
      \item [\textit{Average citations per year per doc}] Após publicado, cada um dos 1.168 artigos do dataset foi citado 3.421 vezes por ano, em média.
@@ -161,9 +157,9 @@ Podemos ver que países de todos os continentes colaboram nesta pesquisa. Exceto
     \label{fig:rede-tres}
 \end{figure}
 
-\subsection{Análises Bibliométricas: Autores}
+\subsection{Análise Bibliométrica dos Autores}
 
-Podemos ver na  figura \ref{map-autor} que os autores que fazem as pequisas são de países economicamente fortes, como China, .
+Podemos ver na  figura \ref{fig:map-autor} que os autores que fazem as pequisas são de países economicamente fortes, como China, Espanha, Estados Unidos e Reino Unido.
 
 \begin{figure}[ht]
     \centering
@@ -174,19 +170,18 @@ Podemos ver na  figura \ref{map-autor} que os autores que fazem as pequisas são
 
 \subsection{Análise da estrutura conceitual}
 
-A figura \ref{fig:map-tres} apresenta o mapa Conceitual do dataset. Nele podemos ver que as palavras chaves são divididas em três grandes grupos. 
+A figura \ref{fig:map-th} apresenta o mapa Conceitual do dataset. Nele podemos ver que as palavras chaves são divididas em três grandes grupos. 
 
-O azul, onde se pesquisa sobre o impacto do crescimento da China. O vermelho, onde se fala do uso do 
+O azul, onde se pesquisa sobre o impacto do crescimento da China. O vermelho, onde se fala do uso do big data para fazer predições com as informações disponíveis. O grupo verde, em que desempenho, gerência e economia estão amplamente ligadas.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=11cm]{experiments/Tong00020/PesquisaBibliometrica/Conceptual Structure/MASSA@Tong00020-Thematic Map.png}
+    \includegraphics[width=12cm]{experiments/Tong00020/PesquisaBibliometrica/Conceptual Structure/MASSA@Tong00020-Thematic Map.png}
     \caption{Mapa Conceitual do dataset}
-    \label{fig:map-tres}
+    \label{fig:map-th}
 \end{figure}
 
 
 
-
 \section{Resultados e interpretação}
-Nesta pesquisa podemos concluir que pesquisas sobre o uso do Big Data na economia tem aumentado e muito nos últimos anos em todo o mundo. A predominância das potências mundiais nas pesquisas nessa área é evidente, uma vez que por serem mais fortes economicamente e tecnologicamente, possuem mais dados e experiências para estudo.
+Nesta pesquisa podemos concluir que pesquisas sobre o uso do Big Data na economia tem aumentado e muito nos últimos anos em todo o mundo. A predominância das potências mundiais nas pesquisas nessa área é evidente, uma vez que por serem mais fortes economicamente e tecnologicamente, possuem mais dados e experiências para estudo. Dos temas mais presentes na pesquisa, está o uso do big data para fazer predições e planos.

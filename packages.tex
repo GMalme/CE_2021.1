@@ -1,4 +1,4 @@
-\usepackage{natbib} % Tidies up citation numbers.
+\usepackage[numbers]{natbib} % Tidies up citation numbers.
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{pythonhighlight}
@@ -204,15 +204,14 @@
             linkcolor = blue,
             urlcolor  = blue,
             citecolor = blue,
-            anchorcolor = blue]{hyperref} 
+            anchorcolor = blue,
+            backref=page]{hyperref} 
 
 \usepackage[nopostdot]{glossaries}
 \setglossarystyle{altlist}
 
 % gerador de lero-lero
 \usepackage{lipsum}
-
-\usepackage{pdfpages}
 
 \newenvironment{itquote}
 {\begin{quote}\itshape}

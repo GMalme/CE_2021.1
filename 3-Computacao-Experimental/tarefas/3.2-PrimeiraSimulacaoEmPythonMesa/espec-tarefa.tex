@@ -24,34 +24,52 @@ O código da simulação apresentada deve atender às seguintes características
     \item Deve permitir que pelo menos um parâmetro ou variável de controle adicional possa ser manipulável na interface do usuário, na parte interativa do modelo. A sua hipótese causal deve estar relacionada com essa variável manipulável;
     \item Deve apresentar, na interface de interação com a simulação, algum gráfico mostrando a variação de dados de efeito, necessariamente relacionados com a sua hipótese causal. Podem ser os mesmos dados já existentes na simulação original, ou novos dados que você acha importante serem apresentados;
     \item Deve coletar e gravar dados gerados durante cada execução da simulação, em dois arquivos no formato CSV, usando as ferramentas próprias do framework, apresentadas na URL \url{https://mesa.readthedocs.io/en/stable/tutorials/intro_tutorial.html#collecting-data}. Um dos arquivos contém os dados de variáveis no nível do modelo, e outro de variáveis no nível do agente, por exemplo:
+    {\footnotesize
     \begin{itemize}
-        \item \verb|model_data_iter_10_steps_10_2021-11-05 17:32:12.906885|
-        \item \verb|agent_data_iter_10_steps_10_2021-11-05 17:32:12.906885|
+        \item \verb|model_data_iter_10_steps_10_2021-11-05 17:32:12.906885.csv|
+        \item \verb|agent_data_iter_10_steps_10_2021-11-05 17:32:12.906885.csv|
     \end{itemize}
+    }
 \end{itemize}
 
 \subsubsection{A entrega do Laboratório}
 
 Para depositar o código fonte do simulador, atenda aos seguintes aspectos de organização:
 \begin{itemize}
-    \item O código deve estar em um repositório em sua conta individual no git, usando um nome \verb|<diretorio-destino>|, para o modelo criado, possivelmente uma pequena variação em relação ao nome do diretório onde se encontra a simulação usada como base. Por exemplo, o nome do seu repositório git pode ser
-    \verb|boltzmann_wealth_model_greedy|;
+    \item O seu código deve estar em um repositório em sua conta individual no git, usando um nome \verb|<project-name>|, para o modelo criado, possivelmente uma pequena variação em relação ao nome do diretório onde se encontra a simulação usada como base. Por exemplo, o nome do seu \verb|<project-name>| pode ser
+    \verb|boltzmann_wealth_model_greedy|, com uma url \url{https://github.com/<githubusername>/<project-name>};
     \item No raiz do seu repositório, o arquivo \verb|Readme.md| deve conter:
     \begin{itemize}
         \item Apresentação do novo modelo, em sua relação ao modelo original;
         \item Descrição da hipótese causal que você deseja comprovar;
         \item Justificativa para as mudanças que você fez, em relação ao código original;
-        \item Orientação sobre como usar o simulador;
-        \item descrição das variáveis armazenadas no arquivo CSV;
-    \end{itemize}.
-    \item O resto do repositório deve conter o seu código;
+        \item Orientação sobre como usar o simulador; e
+        \item Descrição das variáveis armazenadas no arquivo CSV;
+        \item Quaisquer outras informações que você julgue importante;
+    \end{itemize}
+    \item O resto do repositório deve conter o seu código.
 \end{itemize}
 
-Ao concluir o seu código crie uma subtree dentro do diretório \verb|experiments/<githubusername>/labs/| no repositório central da disciplina, que vai apontar para o repositório onde você desenvolveu o seu simulador.
+Ao concluir o seu código crie uma subtree dentro do diretório a seguir, no repositório central da disciplina:
+
+\verb|experiments/<githubusername>/labs/|
+
+Dentro do diretório labs deve haver um ponteiro para o repositório onde você desenvolveu o seu simulador. Use o comando abaixo para criar esse ponteiro:
+
+{\footnotesize
+\begin{verbatim}
+git subtree add --prefix experiments/<githubusername>/labs/<project-name> 
+    https://github.com/<githubusername>/<project-name>|mesa master --squash
+\end{verbatim}
+}
+
+Não se esqueça de enviar suas mudanças para o repositório central com \verb|git pull|.
+
+Para mais detalhes sobre o que faz o comando \verb|git subtree| veja as urls \url{https://stackoverflow.com/questions/36554810/how-to-link-folder-from-a-git-repo-to-another-repo} e \url{https://blog.developer.atlassian.com/the-power-of-git-subtree/}
 
 \section{Dados de Simulação: Os experimentos iniciais}
 
-Além de depositar os código fonte, você precisa depositar pelo menos três pares de arquivos CSV, que apresentem resultados de três simulações (experimentos), com distintos valores para as variáveis de controle apresentadas na interface do usuário, especialmente as variáveis que você introduziu no modelo.
+Além de depositar os código fonte, você precisa depositar pelo menos três pares de arquivos CSV (\textit{Comma Separated Values}), que apresentem resultados de três simulações (experimentos), com distintos valores para as variáveis de controle apresentadas na interface do usuário, especialmente as variáveis que você introduziu no modelo.
 
 Os nomes de cada arquivo CSV devem permitir fácil identificação dos  parâmetros e valores usados na execução da simulação, por exemplo, os quatro arquivos a seguir listados indicariam os dados da execução de duas simulações (experimentos), uma delas com o valor da variável \textbf{greedy} True, outro com o valor False:
 \begin{itemize}
@@ -65,11 +83,10 @@ Os arquivos devem estar armazenados no diretório
 \textbf{experiments / <githubusername>
 / Experimento-<nome-do-experimento> / <data-experimento> /}, onde:
 \begin{itemize}
-    \item \verb|}<nome-do-experimento>| é um nome que você escolheu para o experimento, baseado na sua hipótese causal. Perceba que o nome do experimento deve obedecer às regras de nomeação de arquivos, já indicadas das orientações iniciais deste documento;
+    \item \verb|<nome-do-experimento>| é um nome que você escolheu para o experimento, baseado na sua hipótese causal. Perceba que o nome do experimento deve obedecer às regras de nomeação de arquivos, já indicadas das orientações iniciais deste documento;
     \item \verb|<data-experimento>| é a data em que você executou o experimento, no formato AAAAMMDD;
 \end{itemize}.
 
-Opcionalmente, recomenda-se que os noves individuais dos arquivos contenham a data e hora de término da simulação.
+Use o Overleaf (ou o git) para depositar nos diretórios os arquivos gerados durante os experimentos (execução da simulação). 
 
-\input{3-Computacao-Experimental/tarefas/3.2-PrimeiraSimulacaoEmPythonMesa/estudantes/main}
-
+Opcionalmente, recomenda-se que os nomes individuais dos arquivos contenham a data e hora de término da simulação.

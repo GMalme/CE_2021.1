@@ -15,7 +15,9 @@ Algumas perguntas para basear a pesquisa são:
 
 
 \subsection{O que já existe de pesquisa bibliométrica sobre esse tema?}
- Foi encontrado um estudo bibliométrico de publicações sobre Big Data e economia em  \cite{nobre_scientific_2017}. Ele faz um estudo focado na aplicação de big data e internet das coisas na economia circular. Nesta pesquisa a busca será feita em um contexto mais geral. 
+ Foi encontrado um estudo bibliométrico de publicações sobre Big Data e economia em  \cite{nobre_scientific_2017}. 
+ \todo[author=jhcf,color=red]{A referência citada não foi encontrada.} 
+ Ele faz um estudo focado na aplicação de big data e internet das coisas na economia circular. Nesta pesquisa a busca será feita em um contexto mais geral. 
 
 
 \subsection{Uso do Bibliometrix e Biblioshiny}
@@ -45,11 +47,11 @@ Foi usada a query de busca abaixo:
 
 Nesta busca, foi utilizado primeiro, duas palavras big data e economy (economia), que são os assuntos principais da pesquisa.%%%
 
+\todo[author=jhcf,color=yellow]{Faltou explicar alguns termos da busca.}
 Foram colocados também, o filtro para que apenas artigos de 2010 a 2022 entrem na pesquisa. No final, foram encontrados 1265 artigos.
-
+\todo[author=jhcf,color=yellow]{Nem todos os registros são artigos.}
 
 \subsection{Registros recuperados}
-
 
 Foram utilizadas as opções exporta em arquivo .txt e \textit{export full record / Gravar Conteúdo: Seleção personalizada}, com todos os 29 campos disponíveis. Os 1.265 registros foram recuperados em dois blocos de até 1.000 registros por vez (1-1000, 1001-1265).
 
@@ -60,10 +62,13 @@ Foram utilizadas as opções exporta em arquivo .txt e \textit{export full recor
 
 Sobrou 1.168 artigos ao colocar apenas 'ARTICLE' como tipo de documento com o uso filtro do biblioshiny. Os tipos de documento 'ARTICLE; BOOK CHAPTER', 'ARTICLE; DATA PAPER', 'ARTICLE; EARLY ACCESS', 'ARTICLE; PROCEEDINGS PAPER' e 'ARTICLE; RETRACTED PUBLICATION' foram deletados.
 
+\todo[author=jhcf,color=green]{Ok. Agora o dataset contém apenas os registros relativos aos artigos.}
 
 \subsection{Análise descritiva do \textit{dataset}} 
 %MASSA@Tong00020}
 
+\todo[author=jhcf,color=yellow]{Seria importante colocar um nome diferente de MASSA no dataset, algo como 
+BDE@Tong (Big Data Economy).}
 
 \begin{figure}[ht]
     \centering
@@ -71,6 +76,8 @@ Sobrou 1.168 artigos ao colocar apenas 'ARTICLE' como tipo de documento com o us
     \caption{Rede de co-ocorrência de palavras chaves}
     \label{fig:rede}
 \end{figure}
+
+\todo[author=jhcf,color=red]{A figura Rede de co-ocorrência de palavras chaves não foi descrita. Um melhor título para a figura seria Rede de co-ocorrência de palavras chaves no dataset MASSA@Tong.}
 
 As informações mais gerais sobre o \textit{dataset} MASSA@Tong0020 são as seguintes:
 \begin{description}

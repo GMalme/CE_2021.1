@@ -1,0 +1,72 @@
+\chapter{Minha Primeira Simulação em Python Mesa}
+
+\section{Especificação da Tarefa} 
+
+Nessa tarefa você vai:
+\begin{itemize}
+    \item criar um novo laboratório de simulação;
+    \item iniciar a realização de seus primeiros experimentos de simulação.
+\end{itemize}.
+
+A tarefa é individual, e de forma operacional consiste em codificar, descrever e executar uma simulação em Python, usando o framework Mesa, a partir de mudanças no código de qualquer um dos exemplos disponíveis no conjunto de exemplos disponível na distribuição padrão do \textit{framework} Mesa, com exceção do exemplo BoltzmannWealthModel.
+
+A codificação e descrição equivalem a criar um laboratório de simulação experimental.
+
+A execução da simulação corresponde à realização de experimentos de simulação.
+
+\subsection{O código: Criação do Laboratório}
+
+\subsubsection{Características do Laboratório}
+
+O código da simulação apresentada deve atender às seguintes características, em relação ao código original:
+\begin{itemize}
+    \item Deve apresentar uma variação no comportamento do modelo e no comportamento dos agentes. As duas variações podem ser mínimas, mas precisam ser justificadas, baseadas em alguma hipótese causal que você deve declarar, sobre o seu entendimento do modelo que está sendo simulado;
+    \item Deve permitir que pelo menos um parâmetro ou variável de controle adicional possa ser manipulável na interface do usuário, na parte interativa do modelo. A sua hipótese causal deve estar relacionada com essa variável manipulável;
+    \item Deve apresentar, na interface de interação com a simulação, algum gráfico mostrando a variação de dados de efeito, necessariamente relacionados com a sua hipótese causal. Podem ser os mesmos dados já existentes na simulação original, ou novos dados que você acha importante serem apresentados;
+    \item Deve coletar e gravar dados gerados durante cada execução da simulação, em dois arquivos no formato CSV, usando as ferramentas próprias do framework, apresentadas na URL \url{https://mesa.readthedocs.io/en/stable/tutorials/intro_tutorial.html#collecting-data}. Um dos arquivos contém os dados de variáveis no nível do modelo, e outro de variáveis no nível do agente, por exemplo:
+    \begin{itemize}
+        \item \verb|model_data_iter_10_steps_10_2021-11-05 17:32:12.906885|
+        \item \verb|agent_data_iter_10_steps_10_2021-11-05 17:32:12.906885|
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{A entrega do Laboratório}
+
+Para depositar o código fonte do simulador, atenda aos seguintes aspectos de organização:
+\begin{itemize}
+    \item O código deve estar dentro de um diretório com um nome novo, chamado \verb|<diretorio-destino>|, para o modelo criado, possivelmente uma pequena variação em relação ao nome do diretório onde se encontra a simulação usada como base, por exemplo:
+    \verb|boltzmann_wealth_model_greedy|;
+    \item O arquivo \verb|Readme.md| deve conter:
+    \begin{itemize}
+        \item Apresentação do novo modelo, em sua relação ao modelo original;
+        \item Descrição da hipótese causal que você deseja comprovar;
+        \item Justificativa para as mudanças que você fez, em relação ao código original;
+        \item Orientação sobre como usar o simulador;
+        \item descrição das variáveis armazenadas no arquivo CSV;
+    \end{itemize}.
+\end{itemize}
+
+O \verb|<diretorio-destino>| com o código fonte do simulador deve estar no diretório \verb|experiments/<githubusername>/labs/|.
+
+\section{Dados de Simulação: Os experimentos iniciais}
+
+Além de depositar os código fonte, você precisa depositar pelo menos dois pares de arquivos CSV, que apresentem resultados de três simulações (experimentos), com distintos valores para as variáveis de controle apresentadas na interface do usuário.
+
+Os nomes de cada arquivo CSV devem permitir fácil identificação dos  parâmetros e valores usados na execução da simulação, por exemplo:
+\begin{itemize}
+    \item \verb|agent_data_greedy_True|
+    \item \verb|model_data_greedy_True|
+    \item \verb|agent_data_greedy_False|
+    \item \verb|model_data_greedy_False|
+\end{itemize}
+
+Os arquivos devem estar armazenados no diretório \verb|experiments/<githubusername>/Experimento-<nome-do-experimento>/<data-experimento>|, onde:
+\begin{itemize}
+    \item \verb|}<nome-do-experimento>| é um nome que você escolheu para o experimento, baseado na sua hipótese causal. Perceba que o nome do experimento deve obedecer às regras de nomeação de arquivos, já indicadas das orientações iniciais deste documento;
+    \item \verb|<data-experimento>| é a data em que você executou o experimento, no formato AAAAMMDD;
+\end{itemize}.
+
+Opcionalmente, recomenda-se que os noves individuais dos arquivos contenham a data e hora de término da simulação.
+
+\input{3-Computacao-Experimental/tarefas/3.2-PrimeiraSimulacaoEmPythonMesa/estudantes/main}
+

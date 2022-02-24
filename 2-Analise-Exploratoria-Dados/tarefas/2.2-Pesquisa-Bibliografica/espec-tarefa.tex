@@ -1,21 +1,44 @@
-\section{Tarefa 4: Análise Bibliométrica com apoio de R/R Studio e Bibliometrix}
+\chapter{Tarefa 4: Análise Bibliométrica com apoio de R/R Studio e Bibliometrix}
 
-A tarefa vale 20 pontos, e consiste em produzir individualmente uma análise bibliométrica inicial, abordando um tema de computação que  interessa ao autor. 
+A tarefa vale 20 pontos, e consiste em produzir individualmente uma análise bibliométrica inicial, abordando um tema de computação que  interessa ao autor/à autora. 
 
-A análise bibliométrica, o produto da tarefa, deve estar apresentada num capítulo da parte \ref{part:estudos:exploratorios}, no relatório da turma no Overleaf, no diretório ``2-Analise-Exploratoria-Dados/tarefas/2.2-Pesquisa-Bibliografica/estudantes/'', em um arquivo de nome "tarefa-\githubusername.tex. Ver um exemplo com a complexidade referencial, no arquivo ``tarefa-jhcf.tex'', no diretório ``2-Analise-Exploratoria-Dados/tarefas/2.2-Pesquisa-Bibliografica/estudantes/'', que pode ser lido no capítulo \ref{chap:bibliometria:jhcf}. 
+A análise bibliométrica, o produto da tarefa, deve estar apresentada num capítulo da parte \ref{part:estudos:exploratorios}, no relatório da turma no Overleaf, no diretório:
 
-A análise deve conter texto, figuras, tabelas  etc. Todas as figuras, tabelas, dados etc, incluídas no texto, devem estar montadas no diretório /experiments/<githubusername>/AnaliseBibliometrica/\textbf{<tema-pesquisa>}. 
+{\footnotesize
+\verb|2-Analise-Exploratoria-Dados/tarefas/2.2-Pesquisa-Bibliografica/estudantes/|
+}
 
-\textbf{<tema-pesquisa>} é um nome curto, em formato CamelCase, que você dará ao diretório onde os dados, figuras, etc, do seu estudo, estarão montados. Não use caracteres acentuados em nomes de arquivos no Overleaf.
+, em um arquivo de nome ``tarefa-\githubusername.tex''. 
 
-Veja um exemplo de dados e figuras em 
-/experiments / jhcf / PesqBiblogr / SimulacaoMultiagente.
+Ver um exemplo com a complexidade referencial da tarefa, no arquivo ``tarefa-jhcf.tex'', no diretório:
 
+{\footnotesize
+\verb|2-Analise-Exploratoria-Dados / tarefas / 2.2-Pesquisa-Bibliografica / estudantes/|, 
+}
 
-Para a compilação da tarefa é necessário fazer o input do arquivo de texto em "2-Analise-Exploratoria-Dados / tarefas / 2.1-Pesquisa-Bibliografica / estudantes / main.tex".
+na Seção \ref{MASSA@jhcf:questoes} até a Seção  \ref{MASSA@jhcf:analise}, do capítulo \ref{chap:bibliometria:jhcf}. 
 
-O \textit{dataset} de análise bibliométrica deve conter, minimamente, 250 registros bibliográficos.
+A análise deve conter texto, figuras, tabelas  etc. Todas as figuras, tabelas, dados etc, incluídas no texto, devem estar montadas no diretório:
 
+{\footnotesize
+\verb|/experiments / <githubusername> / AnaliseBibliometrica / <tema-pesquisa>|. 
+}
+
+\verb|<tema-pesquisa>| é um nome curto, em formato \textit{CamelCase}, que você dará ao diretório onde os dados, figuras, etc, do seu estudo, estarão montados. Não use caracteres acentuados em nomes de arquivos no Overleaf.
+
+Veja um exemplo de dados e figuras em:
+
+{\footnotesize
+\verb|/experiments / jhcf / PesqBiblogr / SimulacaoMultiagente|.
+}
+
+Para a compilação da tarefa é necessário fazer o \textit{input} do arquivo de texto em:
+
+{\footnotesize
+\verb|2-Analise-Exploratoria-Dados / tarefas / 2.1-Pesquisa-Bibliografica / estudantes / main.tex|.
+}
+
+O \textit{dataset} de análise bibliométrica deve conter, minimamente, 250 (500) registros bibliográficos.
 
 A análise precisa ser realizada e descrita em cinco etapas, e deve seguir as orientações feitas em \ref{metodo:analise:bibliografica}, e no detalhamento proposto por \citet{aria_bibliometrix_2017}:
 \begin{enumerate}
@@ -33,6 +56,17 @@ A análise precisa ser realizada e descrita em cinco etapas, e deve seguir as or
 Na edição do \LaTeX~ deve-se atentar aos seguintes aspectos:
 \begin{enumerate}
     \item Todos os dados, inclusive as imagens, usadas na produção da análise, deve estar inseridos no diretório de experimentos individuais do estudante;
-    \item Todas as figuras e gráficos inseridos na análise devem ser individualmente rotulados com label, sem conflitar com os labels já existentes, devem ter um título (caption) descritivo do que apresenta a figura e o nome do dataset usado, e também a figura/gráfico deve ser explicitamente descritas e citadas, usando referencia (ref);
-    \item As figuras deve ser automaticamente dimensionadas, e eventualmente rotacionadas,  para caber na largura e (ou) altura do texto. 
+    \item Todas as figuras e gráficos inseridos na análise devem ser individualmente rotulados com \textit{label}, sem conflitar com os \textit{labels} já existentes, devem ter um título (\textit{caption}) descritivo do que apresenta a figura e o nome do \textit{dataset} usado, e também a figura/gráfico deve ser explicitamente descritas e citadas, usando referencia (ref);
+    \item As figuras deve ser automaticamente dimensionadas, e eventualmente rotacionadas,  para se adaptar à largura e (ou) altura do texto na página. 
+\end{enumerate}
+
+\section{Critérios opcionais}
+
+Os critérios de avaliação a seguir não foram explicitados aos estudantes quando da apresentação da tarefa original:
+\begin{enumerate}
+    \item O tema deve ser explicado, com pelo menos 200 palavras;
+    \item Na apresentação do tema de estudo devem ser citadas pelo menos duas referências bibliográficas já previamente conhecidas pelo autor. Não se pode usar a Wikipedia como referência;
+    \item Deve haver pelo menos um gráfico ou tabela para explorar cada uma das três estruturas do conhecimento: conceitual, social e intelectual;
+    \item Todas as perguntas de pesquisa formuladas no início do estudo devem ser avaliadas quanto ao atingimento de respostas, nas conclusões;  
+    \item O capítulo precisa citar e apresentar brevemente, pelo menos cinco referências bibliográficas relevantes, e presentes no \dataset\ explorado.
 \end{enumerate}

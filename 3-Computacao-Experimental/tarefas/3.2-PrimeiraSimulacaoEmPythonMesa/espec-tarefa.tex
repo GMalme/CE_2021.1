@@ -34,9 +34,9 @@ O código da simulação apresentada deve atender às seguintes características
 
 Para depositar o código fonte do simulador, atenda aos seguintes aspectos de organização:
 \begin{itemize}
-    \item O código deve estar dentro de um diretório com um nome novo, chamado \verb|<diretorio-destino>|, para o modelo criado, possivelmente uma pequena variação em relação ao nome do diretório onde se encontra a simulação usada como base, por exemplo:
+    \item O código deve estar em um repositório em sua conta individual no git, usando um nome \verb|<diretorio-destino>|, para o modelo criado, possivelmente uma pequena variação em relação ao nome do diretório onde se encontra a simulação usada como base. Por exemplo, o nome do seu repositório git pode ser
     \verb|boltzmann_wealth_model_greedy|;
-    \item O arquivo \verb|Readme.md| deve conter:
+    \item No raiz do seu repositório, o arquivo \verb|Readme.md| deve conter:
     \begin{itemize}
         \item Apresentação do novo modelo, em sua relação ao modelo original;
         \item Descrição da hipótese causal que você deseja comprovar;
@@ -44,15 +44,16 @@ Para depositar o código fonte do simulador, atenda aos seguintes aspectos de or
         \item Orientação sobre como usar o simulador;
         \item descrição das variáveis armazenadas no arquivo CSV;
     \end{itemize}.
+    \item O resto do repositório deve conter o seu código;
 \end{itemize}
 
-O \verb|<diretorio-destino>| com o código fonte do simulador deve estar no diretório \verb|experiments/<githubusername>/labs/|.
+Ao concluir o seu código crie uma subtree dentro do diretório \verb|experiments/<githubusername>/labs/| no repositório central da disciplina, que vai apontar para o repositório onde você desenvolveu o seu simulador.
 
 \section{Dados de Simulação: Os experimentos iniciais}
 
-Além de depositar os código fonte, você precisa depositar pelo menos dois pares de arquivos CSV, que apresentem resultados de três simulações (experimentos), com distintos valores para as variáveis de controle apresentadas na interface do usuário.
+Além de depositar os código fonte, você precisa depositar pelo menos três pares de arquivos CSV, que apresentem resultados de três simulações (experimentos), com distintos valores para as variáveis de controle apresentadas na interface do usuário, especialmente as variáveis que você introduziu no modelo.
 
-Os nomes de cada arquivo CSV devem permitir fácil identificação dos  parâmetros e valores usados na execução da simulação, por exemplo:
+Os nomes de cada arquivo CSV devem permitir fácil identificação dos  parâmetros e valores usados na execução da simulação, por exemplo, os quatro arquivos a seguir listados indicariam os dados da execução de duas simulações (experimentos), uma delas com o valor da variável \textbf{greedy} True, outro com o valor False:
 \begin{itemize}
     \item \verb|agent_data_greedy_True|
     \item \verb|model_data_greedy_True|
@@ -60,7 +61,9 @@ Os nomes de cada arquivo CSV devem permitir fácil identificação dos  parâmet
     \item \verb|model_data_greedy_False|
 \end{itemize}
 
-Os arquivos devem estar armazenados no diretório \verb|experiments/<githubusername>/Experimento-<nome-do-experimento>/<data-experimento>|, onde:
+Os arquivos devem estar armazenados no diretório 
+\textbf{experiments / <githubusername>
+/ Experimento-<nome-do-experimento> / <data-experimento> /}, onde:
 \begin{itemize}
     \item \verb|}<nome-do-experimento>| é um nome que você escolheu para o experimento, baseado na sua hipótese causal. Perceba que o nome do experimento deve obedecer às regras de nomeação de arquivos, já indicadas das orientações iniciais deste documento;
     \item \verb|<data-experimento>| é a data em que você executou o experimento, no formato AAAAMMDD;

@@ -1,52 +1,104 @@
-# Wolf-Sheep Predation Model
+# Human Wolf Sheep
 
-## Summary
+## Apresentação do novo modelo
 
-A simple ecological model, consisting of three agent types: wolves, sheep, and grass. The wolves and the sheep wander around the grid at random. Wolves and sheep both expend energy moving around, and replenish it by eating. Sheep eat grass, and wolves eat sheep if they end up on the same grid cell.
+O modelo Human Wolf Sheep foi desenvolvido com base no exemplo "Wolf Sheep" fornecido no repositório do [framework MESA](https://github.com/projectmesa/mesa-examples). O modelo original tem por objetivo simular o ecossistema existente entre lobos e ovelhas. Por sua vez, o novo modelo "Human Wolf Sheep" visa simular as consequência da inserção de humanos nesse ecossistema.
 
-If wolves and sheep have enough energy, they reproduce, creating a new wolf or sheep (in this simplified model, only one parent is needed for reproduction). The grass on each cell regrows at a constant rate. If any wolves and sheep run out of energy, they die.
+## Descrição da hipótese
 
-The model is tests and demonstrates several Mesa concepts and features:
- - MultiGrid
- - Multiple agent types (wolves, sheep, grass)
- - Overlay arbitrary text (wolf's energy) on agent's shapes while drawing on CanvasGrid
- - Agents inheriting a behavior (random movement) from an abstract parent
- - Writing a model composed of multiple files.
- - Dynamically adding and removing agents from the schedule
+Ao rodar o modelo "Wolf Sheep" algumas vezes, notou-se que caso se tenha as ovelhas sejam extintas antes dos lobos, estes não sobrevivem por muito tempo, pois não se alimentam de grama. Caso contrário, as ovelhas sobrevivem bem melhor, pois mantiveram sua fonte de energia e não possuem a ameaça de serem comidas por lobos. Tendo isso em vista, 
+foi criado um agente que representa um humano, o qual se alimenta de grama e ovelha, mas que também pode ser comido por lobos, a fim de se analisar a influência que este quarto
+elemento exerce perante este ecossistema.
 
-## Installation
+## Mudanças realizadas
 
-To install the dependencies use pip and the requirements.txt in this directory. e.g.
+### Agente "Human"
+Uma das mudanças mais relevantes foi a adiçao do agente "Human", que representa o ser humano que se alimenta de grama e carne de ovelha, mas que também pode ser atacado por lobos.
+
+Para tal, foi reproduzido o comportamento do lobo referente a ovelha para codificar o humano também comendo ovelha, o comportamento da ovelha comendo grama para codificar o humano também comendo grama e o comportamento do lobo ao se mexer foi alterado a fim de se incluir suas ações caso esteja no mesmo quadrado que um humano. Os comportamento referentes a reproducibilidade e quantidade de energia adiquirida a partir da alimentação também foram codificados com base nos comportamentos das ovelhas e dos lobos. 
+
+    class Human(RandomWalker):
+        """
+        A human that walks around, reproduces (asexually) and eats sheep and grass, and gets eaten by wolf.
+        """
+
+        energy = None
+
+        def __init__(self, unique_id, pos, model, moore, energy=None):
+            super().__init__(unique_id, pos, model, moore=moore)
+            self.energy = energy
+
+        def step(self):
+            self.random_move()
+            self.energy -= 1
+
+            # If there is grass available, eat it
+            this_cell = self.model.grid.get_cell_list_contents([self.pos])
+            grass_patch = [obj for obj in this_cell if isinstance(obj, GrassPatch)][0]
+            if grass_patch.fully_grown:
+                self.energy += self.model.human_gain_from_food
+                grass_patch.fully_grown = False
+
+            # If there are sheep present, eat one
+            x, y = self.pos
+            this_cell = self.model.grid.get_cell_list_contents([self.pos])
+            sheep = [obj for obj in this_cell if isinstance(obj, Sheep)]
+            if len(sheep) > 0:
+                sheep_to_eat = self.random.choice(sheep)
+                self.energy += self.model.human_gain_from_food
+
+                # Kill the sheep
+                self.model.grid._remove_agent(self.pos, sheep_to_eat)
+                self.model.schedule.remove(sheep_to_eat)
+
+            # Death or reproduction
+            if self.energy < 0:
+                self.model.grid._remove_agent(self.pos, self)
+                self.model.schedule.remove(self)
+            else:
+                if self.random.random() < self.model.human_reproduce:
+                    # Create a new human baby
+                    self.energy /= 2
+                    baby = Human(
+                        self.model.next_id(), self.pos, self.model, self.moore, self.energy
+                    )
+                    self.model.grid.place_agent(baby, baby.pos)
+                    self.model.schedule.add(baby)
+                    
+### Ajustes gerais
+- Foi adicionado o arquivo "mesa_file.py", pois o código não estava conseguindo importar "time" do módulo "mesa.time". Todo o conteúdo desse arquivo foi obtido a partir do repositório do [framework MESA, na pasta "./mesa/time"](https://github.com/projectmesa/mesa/blob/main/mesa/time.py)
+- Além da definição da classe "Humans" no arquivo "agents.py", também foram realizadas mais algumas modificações necessárias para a execução correta do código, como por exemplo a adição do Agente "Human" nos arquivos "server.py" e "model.py". 
+- Adicionou-se uma linha representando a quantidade de humanos em cada "step" na visualização presente na interface de interação com a simulação.
+
+## Como usar o simulador
+
+### Dependências
+ 
+Para a execução correta do modelo deve-se instalar o pacote **mesa** e os outros listados em **requirements.txt**. Isso pode ser feito ao se executar o seguinte comando:
 
 ```
-    $ pip install -r requirements.txt
+  $ pip install -r requirements.txt
+
 ```
 
-## How to Run
+### Execução
 
-To run the model interactively, run ``mesa runserver`` in this directory. e.g.
+Para utilizar o simulador e rodar o novo modelo, basta executar o seguinte comando: 
 
 ```
     $ mesa runserver
 ```
 
-Then open your browser to [http://127.0.0.1:8521/](http://127.0.0.1:8521/) and press Reset, then Run.
+## Descrição das variáveis armazenadas no arquivo CSV
 
-## Files
+O arquivo csv onde foram armazenados os dados dos experimentos possuem 4 variáveis. A primeira coluna indica o "step", a coluna "Wolves" indica a quantidade de lobos durante aquele instante, a coluna "Sheep" indica a quantidade de ovelhas durante aquele momento e por fim, a coluna "Human" indica a quantidade de humanos durante aquele "step". 
 
-* ``wolf_sheep/random_walker.py``: This defines the ``RandomWalker`` agent, which implements the behavior of moving randomly across a grid, one cell at a time. Both the Wolf and Sheep agents will inherit from it.
-* ``wolf_sheep/test_random_walk.py``: Defines a simple model and a text-only visualization intended to make sure the RandomWalk class was working as expected. This doesn't actually model anything, but serves as an ad-hoc unit test. To run it, ``cd`` into the ``wolf_sheep`` directory and run ``python test_random_walk.py``. You'll see a series of ASCII grids, one per model step, with each cell showing a count of the number of agents in it.
-* ``wolf_sheep/agents.py``: Defines the Wolf, Sheep, and GrassPatch agent classes.
-* ``wolf_sheep/schedule.py``: Defines a custom variant on the RandomActivation scheduler, where all agents of one class are activated (in random order) before the next class goes -- e.g. all the wolves go, then all the sheep, then all the grass.
-* ``wolf_sheep/model.py``: Defines the Wolf-Sheep Predation model itself
-* ``wolf_sheep/server.py``: Sets up the interactive visualization server
-* ``run.py``: Launches a model visualization server.
+Foram realizados 3 experimentos iniciais, alterando a espécie que seria inicializada como sendo a maioria. A seguir estão os parâmetros que foram usados em cada experimentos: 
 
-## Further Reading
+- Experimento 1: initial_sheep = 100, initial_wolves = 50, initial_humans = 50
+- Experimento 2: initial_sheep = 50, initial_wolves = 100, initial_humans = 50
+- Experimento 3: initial_sheep = 50, initial_wolves = 50, initial_humans = 100
 
-This model is closely based on the NetLogo Wolf-Sheep Predation Model:
+O nome dos arquivos csv indicam qual a espécie começou como maioria e qual durou até o final. Por exemplo, em "model_init_sheep_end_wolves_08-03-2022_18-55.csv", as ovelhas começaram como maioria, mas quem sobreviveu por mais tempo foram os lobos. 
 
-Wilensky, U. (1997). NetLogo Wolf Sheep Predation model. http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.
-
-See also the [Lotka–Volterra equations
-](https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations) for an example of a classic differential-equation model with similar dynamics.
+Repositório onde foi desenvolvido o simulador: https://github.com/Tatianafp/human_wolf_sheep_simulation

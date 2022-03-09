@@ -1,0 +1,5 @@
+,density,multispecies,Run,All Living,Dead,Living By Species,Species 1,Species 2,width,height
+0,0.5,True,0,220,2280,110.0,80,140,50,50
+1,0.5,False,1,262,2238,262.0,262,0,50,50
+2,1.0,True,2,242,2258,121.0,121,121,50,50
+3,1.0,False,3,0,2500,0.0,0,0,50,50
